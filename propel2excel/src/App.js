@@ -7,9 +7,9 @@ function App() {
     <div className="App">
       <div className="header-placeholder"></div>
       <header className="header">
-        <div className="logo">AFROTECH</div>
+        <div className="logo">Propel2Excel</div>
         <nav className="nav-links">
-          <a href="#">Schedule</a>
+          <a href="/">Schedule</a>
           <a href="#">Submit Your Resume</a>
           <a href="#">Become a Sponsor</a>
           <a href="#">Speakers</a>
