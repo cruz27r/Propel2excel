@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import logoImage from './assets/images/20230820_123817_0000.png'; //path to image
-import Home from './components/HomePage/homePage';
+import Home from './pages/HomePage/homePage';
 import Schedule from './pages/Schedule/schedule';
 import SubmitResume from './pages/Resume Submission/resumeSubmission';
 import BecomeSponsor from './pages/Sponsors/sponsors';

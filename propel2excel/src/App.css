@@ -1,3 +1,4 @@
+/* App.css - Global styles */
 .app-container, .App {
   font-family: Arial, sans-serif;
 }
@@ -37,13 +38,8 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Main Content */
-main {
-  text-align: center;
-  padding: 2rem;
-}
-
-button, .main-ticket-button {
+/* Button Styles - May be global if used in other components */
+button, .main-ticket-button, .ticket-button {
   padding: 1rem 2rem;
   background-color: #333;
   color: white;
@@ -51,138 +47,12 @@ button, .main-ticket-button {
   cursor: pointer;
 }
 
-/* Buttons Styles */
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 40px 0;
+button:hover, .main-ticket-button:hover, .ticket-button:hover {
   background-color: #333;
 }
 
-.conference-button {
-  background-color: transparent;
-  border: 2px solid #fff;
-  padding: 15px 40px;
-  font-size: 16px;
-  color: #fff;
-  cursor: pointer;
-  flex: 1;
+/* Main Content - Global if similar structure is used across different components */
+main {
   text-align: center;
-  transition: border-color 0.3s;
+  padding: 2rem;
 }
-
-.conference-button:hover {
-  border-color: yellow;
-}
-
-.conference-button.executive:hover {
-  border-color: blue;
-}
-
-.conference-button.labs:hover {
-  border-color: purple;
-}
-
-/* Main Info */
-.main-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.conference-info {
-  flex: 1;
-  padding: 20px;
-  text-align: left;
-}
-
-.ticket-section {
-  flex: 1;
-  text-align: right;
-}
-
-.conference-date-location {
-  color: yellow;
-  font-size: 18px;
-}
-
-.ticket-button {
-  display: inline-block;
-  padding: 10px 30px;
-  background-color: #000;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.ticket-button:hover {
-  background-color: #333;
-}
-
-/* Video Block */
-.video-container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 20px auto;
-  padding: 0 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Event Details */
-.event-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #ffffff;
-}
-
-.event-details h1 {
-  font-size: 32px;
-  margin-top: 20px;
-  color: #000;
-}
-
-.event-details p {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #666;
-  text-align: center;
-  max-width: 500px;
-}
-
-.cities {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 500px;
-}
-
-.cities h2 {
-  font-size: 20px;
-  color: #333;
-}
-
-.event-link {
-  margin-top: 20px;
-  color: #007BFF;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.event-link:hover {
-  text-decoration: underline;
-}
-

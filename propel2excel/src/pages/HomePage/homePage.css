@@ -1,0 +1,190 @@
+/* Home.css - Styles specific to the HomePage component */
+/* These styles are directly used in Home.js */
+
+/* Buttons Styles Specific to Home Page */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+    background-color: #333;
+    padding: 20px; /* Add padding inside the button group to prevent touching the edge */
+}
+  
+.conference-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 15px 40px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+/* New hover style for .conference-button to change text color on hover */
+.conference-button:hover {
+    border-color: yellow; /* Existing change */
+    color: red; /* New change */
+}
+  
+/* New hover styles for specific buttons */
+.conference-button.executive:hover {
+    border-color: blue; /* Existing change */
+    color: green; /* New change */
+}
+  
+.conference-button.labs:hover {
+    border-color: purple; /* Existing change */
+    color: orange; /* New change */
+}
+  
+/* Main Info Styles Specific to Home Page */
+/* ... No changes below this line ... */
+.main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 0;
+}
+  
+.conference-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+  
+.ticket-section {
+    flex: 1;
+    text-align: right;
+}
+  
+.conference-date-location {
+    color: yellow;
+    font-size: 18px;
+}
+  
+/* Video Block Specific to Home Page */
+/* ... No changes below this line ... */
+.video-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+  
+/* Event Details Specific to Home Page */
+/* ... No changes below this line ... */
+.event-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin-bottom: 80px;
+}
+  
+.event-details h1 {
+    font-size: 32px;
+    margin-top: 20px;
+    color: #000;
+}
+  
+.event-details p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #666;
+    text-align: center;
+    max-width: 500px;
+}
+  
+.cities {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+  
+.cities h2 {
+    font-size: 20px;
+    color: #333;
+}
+  
+.event-link {
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+  
+.event-link:hover {
+    text-decoration: underline;
+}
+  
+/* Brand Section Styles */
+/* ... No changes below this line ... */
+.brand-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin-top: 80px;
+    gap: 20px;
+}
+  
+.brand-content {
+    flex: 1;
+    padding-right: 40px;
+}
+  
+.brand-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.brand-description {
+    font-size: 16px;
+}
+  
+.brand-photos {
+    flex: 2;
+    position: relative;
+    padding-left: 40px;
+}
+  
+.brand-photo {
+    width: calc(50% - 20px);
+    height: auto;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+  
+.brand-photo1 {
+    right: 50%;
+    top: 0;
+    z-index: 2;
+    transform: translate(50%, 0) rotate(-10deg);
+}
+  
+.brand-photo2 {
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+    transform: translate(-50%, 0) rotate(10deg);
+}
+  
+/* Add a hover effect if you like */
+.brand-photo:hover {
+    transform: scale(1.05);
+}
