@@ -1,58 +1,33 @@
 /* App.css - Global styles */
 .app-container, .App {
   font-family: Arial, sans-serif;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Padding and border are included in the width */
 }
 
-/* Header Styles */
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background-color: #333;
-  color: #fff;
-  align-items: center;
-  position: relative;
-  z-index: 10;
+main {
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Padding and border are included in the width */
 }
 
-.logo {
-  width: auto;
-  height: 75px;
-}
-
-.header .nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.header .nav-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.header .nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Button Styles - May be global if used in other components */
 button, .main-ticket-button, .ticket-button {
-  padding: 1rem 2rem;
+  padding: 1rem; /* Fixed padding, consider using em if needed */
   background-color: #333;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
 button:hover, .main-ticket-button:hover, .ticket-button:hover {
-  background-color: #333;
+  background-color: #444;
 }
 
-/* Main Content - Global if similar structure is used across different components */
-main {
-  text-align: center;
-  padding: 2rem;
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  button, .main-ticket-button, .ticket-button {
+    padding: 0.75rem; /* Smaller padding for smaller screens */
+  }
 }
