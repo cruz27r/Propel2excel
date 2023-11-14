@@ -6,7 +6,7 @@ import './homePage.css';
 //image imports
 import photo1 from '../../assets/images/looking_over_code.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
-import background from '../../assets/images/zoom_in_on_laptop.jpg';
+import background from '../../assets/images/networking_event.jpeg';
 
 function Home() {
   return (

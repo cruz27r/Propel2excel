@@ -1,14 +1,26 @@
-// SubmitResume.js
 import React from 'react';
+import './submitLinkedIn.css';
 
-function SubmitResume() {
+function SubmitLinkedIn() {
   return (
-    <div>
-      <h1>Submit Your Resume</h1>
-      <p>Submit your resume to be part of our talent network.</p>
-      {/* Resume submission form and related content goes here */}
+    <div className="submit-linkedin-container">
+      <h1>Submit Your LinkedIn Profile</h1>
+      <p>Learn why a LinkedIn profile is essential for your professional journey.</p>
+      
+      {/* Interactive tips and information on LinkedIn importance */}
+      
+      <form>
+        <div className="form-group">
+          <label htmlFor="linkedin-url">LinkedIn Profile URL:</label>
+          <input type="url" id="linkedin-url" name="linkedin-url" placeholder="https://www.linkedin.com/in/yourprofile" />
+        </div>
+        
+        <div className="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 }
 
-export default SubmitResume;
+export default SubmitLinkedIn;

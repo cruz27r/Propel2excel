@@ -1,0 +1,38 @@
+.submit-resume-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .submit-resume-container h1 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="file"],
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+  }
+  
+  .form-group button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-group button:hover {
+    background-color: #555;
+  }
+  

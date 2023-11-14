@@ -13,6 +13,7 @@ import Speakers from './pages/Speakers/speakers';
 import FAQs from './pages/FAQs/faqs';
 import './App.css';
 import NavBar from './components/NavBar/navbar';
+import SubmitResume from './pages/SubmitResume/submitResume';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/events-for-readiness" element={<EventsForReadiness />} />
           <Route path="/submit-linkedin" element={<SubmitLinkedIn />} />
+          <Route path="/submit-resume" element={<SubmitResume />} />
           <Route path="/become-p2e" element={<BecomeP2E />} />
           <Route path="/become-speaker" element={<BecomeSpeaker />} />
           <Route path="/become-sponsor" element={<BecomeSponsor />} />
