@@ -31,3 +31,17 @@ button:hover, .main-ticket-button:hover, .ticket-button:hover {
     padding: 0.75rem; /* Smaller padding for smaller screens */
   }
 }
+
+:root {
+  --navbar-height: 90px;
+  --navbar-padding: 15px;
+}
+
+.header {
+  height: var(--navbar-height);
+  /* ... other styles ... */
+}
+
+.content-wrapper {
+  padding-top: var(--navbar-height);
+}

@@ -8,27 +8,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../../assets/images/zoom_in_on_laptop.jpg');
+    background-image: url('../../assets/images/networking_event.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 75vh; /* Adjust this value to control the banner height */
     color: #fff;
+    text-align: center;
+  }
+  
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width to center content */
+  }
+  
+  .text-box {
+    background-color: rgba(109, 109, 124, 0.7); /* Slightly transparent dark navy blue */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1rem; /* Padding around text */
+    display: inline-block; /* Fit to content width */
+    margin-bottom: 1rem; /* Space between text box and button */
   }
   
   .main-title {
     font-size: 4rem;
-    color: black;
+    color: white; /* Adjust color for better contrast */
     font-weight: bold;
     margin: 0;
   }
   
   .main-description {
     font-size: 1.5rem;
-    color: black;
-    margin: 0;
-    margin-top: 1rem;
+    color: white; /* Adjust color for better contrast */
+    margin: 0.5rem 0;
   }
+  
   
   .main-ticket-button {
     background-color: #ffd700;
@@ -39,7 +56,6 @@
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    margin-top: 2rem;
     transition: background-color 0.3s ease;
   }
   
