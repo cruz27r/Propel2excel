@@ -11,10 +11,14 @@ import background from '../../assets/images/networking_event.jpeg';
 function Home() {
   return (
     <div className="App">
-      <main className='second-sticky' style={{ background: `url(${background})` }}>
-        <h1 className="main-title">The AFROTECH EXPERIENCE</h1>
-        <p className="main-description">The only tech events you'll need all year.</p>
-        <Link to="/tickets" className="main-ticket-button">Get Tickets</Link>
+      <main className='banner' style={{ backgroundImage: `url(${background})` }}>
+        <div className="banner-content">
+          <div className="text-box">
+            <h1 className="main-title">Propel2Excel</h1>
+            <p className="main-description">Bringing Ivy league recruiting experience to schools.</p>
+          </div>
+          <Link to="/tickets" className="main-ticket-button">Get Tickets</Link>
+        </div>
       </main>
 
       <section className="button-group">

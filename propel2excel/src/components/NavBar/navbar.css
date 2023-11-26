@@ -1,66 +1,63 @@
 /* NavBar.css - Styles specific to NavBar component */
+
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem; /* Consistent padding */
-    background-color: #333;
-    color: #fff;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed; /* Stick to the top */
+  top: 0;
+  transition: top 0.3s ease-in-out; /* Smooth transition for the top property */
+  z-index: 1000; /* High z-index to ensure navbar is above other content */
+}
+
+.header.hidden {
+  top: -100%; /* Move the navbar out of view when hidden */
+}
+
+.logo {
+  flex-shrink: 0;
+  height: auto;
+  max-height: 75px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ADD8E6;
+  text-shadow: 0 0 8px #ADD8E6;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
   }
-  
-  .logo {
-    flex-shrink: 0; /* Prevents the logo from shrinking */
-    height: auto; /* Ensures the height is auto to maintain aspect ratio */
-    max-height: 75px; /* Maximum height for the logo */
-    width: auto; /* Width is auto to maintain aspect ratio */
-  }
-  
+
   .nav-links {
-    display: flex;
-    flex-grow: 1; /* Allows nav-links to take up available space */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: space-around; /* Distributes space evenly around items */
+    flex-direction: column;
+    width: 100%;
   }
-  
+
   .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: color 0.3s, text-shadow 0.3s;
+    width: 100%;
+    text-align: center;
   }
-  
-  .nav-links a:hover {
-    color: #ADD8E6; /* Light blue color on hover */
-    text-shadow: 0 0 8px #ADD8E6; /* Blue glow effect */
-  }
-  
-  @media screen and (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .logo {
-      max-height: 60px; /* Slightly smaller max-height for small screens */
-    }
-  
-    .nav-links {
-      width: 100%;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-evenly; /* Even spacing in wrap mode */
-      margin-top: 1rem; /* Adds space between logo and nav links */
-    }
-  
-    .nav-links a {
-      flex: 1; /* Each link will take up equal space */
-      text-align: center;
-      padding: 0.5rem;
-    }
-  }
-  
+}
