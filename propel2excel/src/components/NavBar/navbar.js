@@ -39,14 +39,20 @@ const NavBar = () => {
 
   return (
     <header className={`header ${showNav ? 'active' : 'hidden'}`}>
-      <Link to="/">
+      <Link to="/" className='logo-link'>
         <img src={logoImage} alt="Company Logo" className="logo" />
       </Link>
       <nav className="nav-links">
         <Link to="/events-for-readiness">Events for Readiness</Link>
-        <Link to="/submit-linkedin">Submit LinkedIn</Link>
-        <Link to="/submit-resume">Submit Resume</Link>
-        <Link to="/become-p2e">Become P2E</Link>
+        <div className="dropdown">
+          <Link to="#" className="dropbtn">Steps for the Future</Link>
+          <div className="dropdown-content">
+            <Link to="/submit-linkedin">Submit LinkedIn</Link>
+            <Link to="/submit-resume">Submit Resume</Link>
+            <Link to="/become-p2e">Become P2E</Link>
+            {/* ... (add other dropdown links if needed) ... */}
+          </div>
+        </div>
         <Link to="/become-speaker">Become Speaker</Link>
         <Link to="/become-sponsor">Become Sponsor</Link>
         <Link to="/interview-prep">Interview Prep</Link>

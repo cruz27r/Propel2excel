@@ -5,24 +5,26 @@
   padding: 0; /* Removes default padding */
   width: 100%; /* Full width */
   box-sizing: border-box; /* Padding and border are included in the width */
+  background-color: #fcf7ff;
 }
 
 main {
   width: 100%; /* Full width */
   box-sizing: border-box; /* Padding and border are included in the width */
+  background-color: #fcf7ff;
 }
 
-button, .main-ticket-button, .ticket-button {
+button, .ticket-button {
   padding: 1rem; /* Fixed padding, consider using em if needed */
-  background-color: #333;
-  color: white;
+  background-color: #373751;
+  color: #fdca40;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
-button:hover, .main-ticket-button:hover, .ticket-button:hover {
-  background-color: #444;
+button:hover, .ticket-button:hover {
+  background-color: #1fa1c4;
 }
 
 @media screen and (max-width: 768px) {
