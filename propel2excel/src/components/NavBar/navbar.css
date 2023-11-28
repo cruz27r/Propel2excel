@@ -9,7 +9,7 @@
   flex-direction: row; /* Laying out items horizontally */
   justify-content: space-between; /* Aligns logo to the left and nav links to the right */
   align-items: center; /* Center items vertically */
-  padding: 1rem;
+  padding: 2rem; /* Increased padding for a larger navbar */
   background-color: #373751;
   color: #fcf7ff;
   width: 100%;
@@ -23,35 +23,36 @@
 .logo-link {
   display: flex;
   justify-content: flex-start; /* Align logo to the start (left) */
+  padding: 0.5rem 0; /* Maintain padding around the logo */
 }
 
 .logo {
   flex-shrink: 0; /* Prevent logo from shrinking */
   height: auto;
-  max-height: 85px; /* Adjust this for logo size */
+  max-height: 75px; /* Adjusted logo size */
 }
 
 .nav-links {
   display: flex;
-  justify-content: center; /* Center the navigation links */
   align-items: center; /* Center links vertically */
   list-style: none;
-  padding: 0;
-  margin: 0; /* Removed margin-left */
-  /* width: 75%; Optionally remove or adjust the width */
+  margin: 0;
+  padding: 0.5rem 0; /* Added padding around links */
 }
 
-.nav-links a {
+.nav-links a, .dropdown .dropbtn {
   color: #fcf7ff;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: color 0.3s, text-shadow 0.3s;
+  border-radius: 4px; /* Rounded edges for each link */
+  background-color: transparent; /* Background color for individual link blocks */
+  margin: 0.5rem; /* Spacing between link blocks */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .dropdown .dropbtn:hover {
+  background-color: #1fa1c4; /* Slightly lighter background on hover */
   color: #fdca40;
-  /* text-shadow: 0 0 8px #fdca40; */
 }
 
 .dropdown {
@@ -67,35 +68,45 @@
   background-color: inherit;
   font-size: 1rem;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dropbtn::after {
+  content: '▼';
 }
 
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: #373751;
+  width: 100%; /* Set the width of the dropdown to match the dropbtn */
+  max-height: 0; /* Start with max-height 0 */
+  overflow: hidden; /* Hide the overflow content */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 4px;
+  transition: max-height 0.3s ease-in-out; /* Animate max-height */
 }
 
 .dropdown-content a {
-  color: black;
+  color: #fcf7ff;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
-  text-align: left;
+  display: block; /* Each link takes its own row */
+  text-align: center; /* Center the text */
+  background-color: #373751;
+  border-radius: 4px;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #1fa1c4;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  max-height: 200px; /* Adjust max-height to fit content */
 }
 
 @media screen and (max-width: 768px) {
@@ -103,17 +114,17 @@
     flex-direction: column;
   }
 
-  .nav-links {
-    justify-content: space-around;
+  .nav-links, .dropdown-content {
     width: 100%;
   }
 
-  .nav-links a {
-    width: 100%;
+  .nav-links a, .dropdown .dropbtn {
     text-align: center;
+    width: 100%;
+    margin: 0.5rem 0; /* Adjust margin for mobile view */
   }
 
   .logo {
-    max-height: 75px;
+    max-height: 100px; /* Adjust logo size for smaller screens if needed */
   }
 }

@@ -1,12 +1,11 @@
-// Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './homePage.css';
 
-//image imports
 import photo1 from '../../assets/images/looking_over_code.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
 import background from '../../assets/images/networking_event.jpeg';
+import video1 from '../../assets/videos/test_networking_vid.mp4';
 
 function Home() {
   return (
@@ -40,24 +39,43 @@ function Home() {
 
       <div className="video-container">
         <video controls>
-          <source src="path_to_video.mp4" type="video/mp4" />
+          <source src={video1} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <div className="event-details">
-        <h1>AFROTECH Executive</h1>
-        <p>Our multi-city event series empowers corporate executives, investors, and tech moguls.</p>
-        <Link to="/event-details" className="ticket-button">Get Tickets</Link>
-
-        <div className="cities">
-          <h2>SEATTLE, WA</h2>
-          <h2>WASHINGTON, DC</h2>
-          <h2>NEW YORK, NY</h2>
+      <section className="section-p2e-summary">
+        <div className="section-content">
+          <img src={photo1} alt="P2E Summary" className="section-image" />
+          <div className="text-box">
+            <p>Description 1</p>
+            <p>Description 2</p>
+            <p>Description 3</p>
+          </div>
         </div>
+      </section>
 
-        <Link to="/event-details" className="event-link">View Event Details</Link>
-      </div>
+      <section className="section-mission">
+        <div className="section-content">
+          <div className="text-box">
+            <p>Description 1</p>
+            <p>Description 2</p>
+            <p>Description 3</p>
+          </div>
+          <img src={photo2} alt="P2E Mission" className="section-image" />
+        </div>
+      </section>
+
+      <section className="section-focus">
+        <div className="section-content">
+          <img src={photo1} alt="P2E and UMB" className="section-image" />
+          <div className="text-box">
+            <p>Description 1</p>
+            <p>Description 2</p>
+            <p>Description 3</p>
+          </div>
+        </div>
+      </section>
 
       <div className="brand-section">
         <div className="brand-content">

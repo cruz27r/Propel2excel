@@ -1,279 +1,382 @@
 /* homePage.css */
 
 .App {
-    text-align: center;
-  }
-  
-  .banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../../assets/images/networking_event.jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 75vh; /* Adjust this value to control the banner height */
-    text-align: center;
-  }
-  
-  .banner-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Full width to center content */
-    /* color: #fdca40; */
-  }
-  
-  .text-box {
-    background-color: rgba(55, 55, 81, 0.7); /* Slightly transparent dark navy blue */
-    border-radius: 10px; /* Rounded corners */
-    padding: 1rem; /* Padding around text */
-    display: inline-block; /* Fit to content width */
-    margin-bottom: 1rem; /* Space between text box and button */
-  }
-  
-  .main-title {
-    font-size: 4rem;
-    color: #fcf7ff; /* Adjust color for better contrast */
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .main-description {
-    font-size: 1.5rem;
-    color: #fcf7ff; /* Adjust color for better contrast */
-    margin: 0.5rem 0;
-  }
-  
-  
-  .main-ticket-button {
-    background-color: #373751;
-    color: #fcf7ff;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .main-ticket-button:hover {
-    background-color: #1fa1c4;
-    color: #fdca40;
-  }
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/networking_event.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 75vh;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 4rem;
+  color: #fcf7ff;
+  font-weight: bold;
+  margin: 0;
+  text-align: center; /* Center the title */
+}
+
+.main-description {
+  font-size: 1.5rem;
+  color: #fcf7ff;
+  margin: 0.5rem 0;
+}
+
+.main-ticket-button {
+  background-color: #373751;
+  color: #fcf7ff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.main-ticket-button:hover {
+  background-color: #1fa1c4;
+  color: #fdca40;
+}
+
+/* homePage.css */
+
+.App {
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/networking_event.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 75vh;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 4rem;
+  color: #fcf7ff;
+  font-weight: bold;
+  margin: 0;
+  text-align: center; /* Center the title */
+}
+
+.main-description {
+  font-size: 1.5rem;
+  color: #fcf7ff;
+  margin: 0.5rem 0;
+}
+
+.main-ticket-button {
+  background-color: #373751;
+  color: #fcf7ff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.main-ticket-button:hover {
+  background-color: #1fa1c4;
+  color: #fdca40;
+}
 
 .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 40px 0;
-    background-color: transparent;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  background-color: transparent;
+  padding: 20px;
 }
 
 .conference-button {
-    background-color: #373751;
-    border: 2px solid #fdca40;
-    padding: 15px 40px;
-    font-size: 16px;
-    color: #fdca40;
-    cursor: pointer;
-    flex: 1;
-    text-align: center;
-    transition: all 0.3s;
+  background-color: #373751;
+  border: 2px solid #fdca40;
+  padding: 15px 40px;
+  font-size: 16px;
+  color: #fdca40;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s;
 }
 
 .conference-button:hover {
-    border-color: #1fa1c4;
-    color: #1fa1c4;
-}
-
-.conference-button.executive:hover {
-    border-color: #1fa1c4;
-    color: #1fa1c4;
-}
-
-.conference-button.labs:hover {
-    border-color: #1fa1c4;
-    color: #1fa1c4;
-}
-
-.main-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 60px 0;
-}
-
-.conference-info {
-    flex: 1;
-    padding: 20px;
-    text-align: left;
-}
-
-.ticket-section {
-    flex: 1;
-    text-align: right;
-}
-
-.conference-date-location {
-    color: yellow;
-    font-size: 18px;
+  border-color: #1fa1c4;
+  color: #1fa1c4;
 }
 
 .video-container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 20px auto;
-    padding: 0 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+  width: 100%;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 video {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
-.event-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #ffffff;
-    margin-bottom: 80px;
+.section-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
 }
 
-.event-details h1 {
-    font-size: 32px;
-    margin-top: 20px;
-    color: #000;
+.section-image {
+  width: 45%;
+  border-radius: 10px;
+  object-fit: contain;
 }
 
-.event-details p {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #666;
-    text-align: center;
-    max-width: 500px;
-}
-
-.cities {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-}
-
-.cities h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.event-link {
-    margin-top: 20px;
-    color: #007BFF;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.event-link:hover {
-    text-decoration: underline;
+.text-box {
+  background-color: rgba(55, 55, 81, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  max-width: 90%;
+  text-align: left;
+  display: inline-block;
 }
 
 .brand-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    margin-top: 80px;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin-top: 80px;
+  gap: 20px;
 }
 
 .brand-content {
-    flex: 1;
-    padding-right: 40px;
+  flex: 1;
+  padding-right: 40px;
 }
 
 .brand-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .brand-description {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .brand-photos {
-    flex: 2;
-    position: relative;
-    padding-left: 40px;
+  flex: 2;
+  position: relative;
+  padding-left: 40px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .brand-photo {
-    width: calc(50% - 20px);
-    height: auto;
-    position: absolute;
-    transition: transform 0.3s ease;
-}
-
-.brand-photo1 {
-    right: 50%;
-    top: 0;
-    z-index: 2;
-    transform: translate(50%, 0) rotate(-10deg);
-}
-
-.brand-photo2 {
-    left: 50%;
-    bottom: 0;
-    z-index: 1;
-    transform: translate(-50%, 0) rotate(10deg);
-}
-
-.brand-photo:hover {
-    transform: scale(1.05);
+  width: 45%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  margin: 10px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-.button-group,
-.main-info,
+  .main-title {
+      font-size: 2.5rem;
+  }
+
+  .main-description {
+      font-size: 1rem;
+  }
+
+  .section-content {
+      flex-direction: column;
+  }
+
+  .button-group,
+  .main-info,
+  .brand-section {
+      flex-direction: column;
+  }
+
+  .conference-button,
+  .ticket-section,
+  .brand-content,
+  .brand-photos {
+      width: 100%;
+      text-align: center;
+  }
+
+  .conference-info,
+  .ticket-section {
+      padding: 20px 0;
+  }
+
+  .brand-photo {
+      width: 80%;
+      max-width: 400px;
+  }
+}
+
+
+.video-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.section-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.section-image {
+  width: 45%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.text-box {
+  background-color: rgba(55, 55, 81, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  max-width: 90%;
+  text-align: left;
+  display: inline-block;
+}
+
 .brand-section {
-    flex-direction: column;
-}
-
-.conference-button,
-.ticket-section,
-.brand-content,
-.brand-photos {
-    width: 100%;
-    text-align: center;
-}
-
-.conference-info,
-.ticket-section {
-    padding: 20px 0;
-}
-
-.brand-photo1,
-.brand-photo2 {
-    right: 0;
-    left: 0;
-    top: 0;
-    transform: translate(0, 0) rotate(0);
-    width: 100%;
-    position: relative;
-    order: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin-top: 80px;
+  gap: 20px;
 }
 
 .brand-content {
-    order: 1;
+  flex: 1;
+  padding-right: 40px;
 }
+
+.brand-title {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
-  
+
+.brand-description {
+  font-size: 16px;
+}
+
+.brand-photos {
+  flex: 2;
+  position: relative;
+  padding-left: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.brand-photo {
+  width: 45%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  margin: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-title {
+      font-size: 2.5rem;
+  }
+
+  .main-description {
+      font-size: 1rem;
+  }
+
+  .section-content {
+      flex-direction: column;
+  }
+
+  .button-group,
+  .main-info,
+  .brand-section {
+      flex-direction: column;
+  }
+
+  .conference-button,
+  .ticket-section,
+  .brand-content,
+  .brand-photos {
+      width: 100%;
+      text-align: center;
+  }
+
+  .conference-info,
+  .ticket-section {
+      padding: 20px 0;
+  }
+
+  .brand-photo {
+      width: 80%;
+      max-width: 400px;
+  }
+}

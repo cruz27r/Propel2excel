@@ -45,7 +45,7 @@ const NavBar = () => {
       <nav className="nav-links">
         <Link to="/events-for-readiness">Events for Readiness</Link>
         <div className="dropdown">
-          <Link to="#" className="dropbtn">Steps for the Future</Link>
+          <Link to="#" className="dropbtn">P2E Support</Link>
           <div className="dropdown-content">
             <Link to="/submit-linkedin">Submit LinkedIn</Link>
             <Link to="/submit-resume">Submit Resume</Link>
