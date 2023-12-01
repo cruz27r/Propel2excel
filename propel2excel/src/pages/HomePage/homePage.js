@@ -48,9 +48,9 @@ function Home() {
         <div className="section-content">
           <img src={photo1} alt="P2E Summary" className="section-image" />
           <div className="text-box">
-            <p>Description 1</p>
-            <p>Description 2</p>
-            <p>Description 3</p>
+            <p>Unlocking Business Potential: Propel2Excel's unique approach equips young talents with the skills and networks necessary for thriving in today's competitive business landscape.</p>
+            <p>From Classroom to Boardroom: Our program transforms academic excellence into real-world success, focusing on underrepresented students aged 16-25.</p>
+            <p>Pathway to Prestige: Propel2Excel alumni have successfully secured positions at leading companies, including Google, Microsoft, and Amazon, through our intensive six-month program.</p>
           </div>
         </div>
       </section>
@@ -58,9 +58,9 @@ function Home() {
       <section className="section-mission">
         <div className="section-content">
           <div className="text-box">
-            <p>Description 1</p>
-            <p>Description 2</p>
-            <p>Description 3</p>
+            <p>Empowerment through Education: Propel2Excel aims to bridge the gap in business leadership, emphasizing representation and diversity.</p>
+            <p>Inspirational Coaching: Our team comprises current and former employees of top-tier companies, providing unparalleled mentorship and guidance.</p>
+            <p>A Legacy of Leadership: Our mission is to cultivate the next generation of diverse business leaders and entrepreneurs, changing the face of Fortune 100 companies.</p>
           </div>
           <img src={photo2} alt="P2E Mission" className="section-image" />
         </div>
@@ -70,9 +70,9 @@ function Home() {
         <div className="section-content">
           <img src={photo1} alt="P2E and UMB" className="section-image" />
           <div className="text-box">
-            <p>Description 1</p>
-            <p>Description 2</p>
-            <p>Description 3</p>
+            <p>Comprehensive Curriculum: Propel2Excel covers everything from internship readiness to mastering the intricacies of the job market.</p>
+            <p>Customizable Learning: We value input from our students and staff, allowing for additional topics to cater to specific needs and interests.</p>
+            <p>Measuring Success: Our rigorous Measure of Success (MOS) system in each tier ensures progress and tangible outcomes for all participants.</p>
           </div>
         </div>
       </section>
