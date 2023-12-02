@@ -19,11 +19,33 @@ function BecomeP2EFellow() {
     setFormData({ ...formData, resume: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would handle the submission of the form data, probably to a backend server
-    console.log(formData);
-    // Redirect to PayPal payment or open PayPal payment modal
+    const data = new FormData();
+    data.append('name', formData.name);
+    data.append('email', formData.email);
+    data.append('linkedin', formData.linkedin);
+    formData.questions.forEach((answer, index) => {
+      data.append(`question-${index + 1}`, answer);
+    });
+    if (formData.resume) {
+      data.append('resume', formData.resume);
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/submit/p2e-fellow', {
+        method: 'POST',
+        body: data,
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -34,36 +56,28 @@ function BecomeP2EFellow() {
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required />
         </div>
-
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
         </div>
-
-        {/* Map through each question */}
-        {formData.questions.map((_, index) => (
+        {formData.questions.map((question, index) => (
           <div className="form-group" key={index}>
             <label htmlFor={`question-${index + 1}`}>Question {index + 1}:</label>
-            <input type="text" id={`question-${index + 1}`} name={`question-${index + 1}`} value={formData.questions[index]} onChange={(e) => {
-              const updatedQuestions = formData.questions.map((q, qIndex) => qIndex === index ? e.target.value : q);
-              setFormData({ ...formData, questions: updatedQuestions });
+            <input type="text" id={`question-${index + 1}`} name={`question-${index + 1}`} value={question} onChange={(e) => {
+              const newQuestions = formData.questions.map((q, qIndex) => qIndex === index ? e.target.value : q);
+              setFormData({ ...formData, questions: newQuestions });
             }} required />
           </div>
         ))}
-
         <div className="form-group">
-          <label htmlFor="resume-upload">Upload Resume:</label>
-          <input type="file" id="resume-upload" name="resume-upload" onChange={handleFileChange} required />
+          <label htmlFor="resume">Resume:</label>
+          <input type="file" id="resume" name="resume" onChange={handleFileChange} required />
         </div>
-
         <div className="form-group">
           <label htmlFor="linkedin">LinkedIn Profile:</label>
           <input type="text" id="linkedin" name="linkedin" value={formData.linkedin} onChange={handleInputChange} required />
         </div>
-
-        <div className="form-group submit-section">
-          <button type="submit" className="submit-btn">Submit Application</button>
-        </div>
+        <button type="submit" className="submit-btn">Submit Application</button>
       </form>
     </div>
   );

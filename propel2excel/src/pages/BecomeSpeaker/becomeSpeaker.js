@@ -15,11 +15,25 @@ function BecomeSpeaker() {
     setSpeakerData({ ...speakerData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle the submission of the speaker application data
-    console.log(speakerData);
-    // In a real-world app, you would likely send this data to a server
+    try {
+      const response = await fetch('http://localhost:5000/api/submit/speaker', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(speakerData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -28,65 +42,25 @@ function BecomeSpeaker() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="fullName">Full Name:</label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            value={speakerData.fullName}
-            onChange={handleInputChange}
-            required
-          />
+          <input type="text" id="fullName" name="fullName" value={speakerData.fullName} onChange={handleInputChange} required />
         </div>
-        
         <div className="form-group">
           <label htmlFor="email">Email Address:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={speakerData.email}
-            onChange={handleInputChange}
-            required
-          />
+          <input type="email" id="email" name="email" value={speakerData.email} onChange={handleInputChange} required />
         </div>
-        
         <div className="form-group">
           <label htmlFor="bio">Short Bio:</label>
-          <textarea
-            id="bio"
-            name="bio"
-            value={speakerData.bio}
-            onChange={handleInputChange}
-            required
-          />
+          <textarea id="bio" name="bio" value={speakerData.bio} onChange={handleInputChange} required />
         </div>
-        
         <div className="form-group">
           <label htmlFor="topics">Topics You Can Speak About:</label>
-          <input
-            type="text"
-            id="topics"
-            name="topics"
-            value={speakerData.topics}
-            onChange={handleInputChange}
-            required
-          />
+          <input type="text" id="topics" name="topics" value={speakerData.topics} onChange={handleInputChange} required />
         </div>
-        
         <div className="form-group">
           <label htmlFor="previousExperience">Previous Speaking Experience:</label>
-          <textarea
-            id="previousExperience"
-            name="previousExperience"
-            value={speakerData.previousExperience}
-            onChange={handleInputChange}
-            required
-          />
+          <textarea id="previousExperience" name="previousExperience" value={speakerData.previousExperience} onChange={handleInputChange} required />
         </div>
-        
-        <div className="form-group">
-          <button type="submit" className="submit-btn">Apply to be a Speaker</button>
-        </div>
+        <button type="submit" className="submit-btn">Apply to be a Speaker</button>
       </form>
     </div>
   );

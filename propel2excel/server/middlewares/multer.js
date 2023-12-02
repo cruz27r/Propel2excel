@@ -10,6 +10,6 @@ const storage = multer.diskStorage({
   }
 });
 
-const uploadResume = multer({ storage: storage }).single('resume');
+const upload = multer({ storage: storage });
 
-module.exports = uploadResume;
+module.exports = upload;
