@@ -1,6 +1,15 @@
 const mongoose = require('mongoose');
 
 const linkedInSubmissionSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    // Consider adding email validation
+  },
   linkedinUrl: {
     type: String,
     required: true,

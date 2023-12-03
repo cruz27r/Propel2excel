@@ -1,71 +1,98 @@
 .submit-linkedin-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .submit-linkedin-container h1 {
-    text-align: center;
-    color: #283e4a; /* LinkedIn's brand color for text */
-  }
-  
-  .submit-linkedin-container p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    color: #666;
-    text-align: justify;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .form-group input[type="url"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form-group button {
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #0a66c2; /* LinkedIn's brand color for buttons */
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-group button:hover {
-    background-color: #084482; /* A darker shade of LinkedIn's brand color for hover effect */
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .submit-linkedin-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #f7f7f7;
+  text-align: left;
+}
+
+.linkedin-form {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="email"], 
+.form-group input[type="url"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #0a66c2;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #084482;
+}
+
+.linkedin-tips {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #eef3f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.linkedin-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .submit-linkedin-container {
       padding: 15px;
-    }
-  
-    .submit-linkedin-container h1 {
-      font-size: 1.5rem;
-    }
-  
-    .submit-linkedin-container p {
-      font-size: 0.9rem;
-    }
   }
-  
+
+  .submit-linkedin-container h1 {
+      font-size: 1.5rem;
+  }
+
+  .linkedin-form {
+      padding: 15px;
+  }
+
+  .form-group input[type="text"], 
+  .form-group input[type="email"], 
+  .form-group input[type="url"] {
+      padding: 6px;
+  }
+
+  .form-group button {
+      padding: 8px 10px;
+  }
+
+  .linkedin-tips {
+      padding: 15px;
+  }
+
+  .linkedin-image {
+      width: 100%;
+  }
+}
