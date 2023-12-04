@@ -2,11 +2,16 @@ const ResumeSubmission = require('../models/ResumeSubmission');
 
 // Function to handle POST request for submitting a resume
 exports.submitResume = async (req, res) => {
-  const { introduction } = req.body;
+  const { name, email, careerPath } = req.body;
   const resume = req.file.path; // Resume file path
 
   try {
-    const newSubmission = new ResumeSubmission({ introduction, resume });
+    const newSubmission = new ResumeSubmission({
+      name,
+      email,
+      careerPath,
+      resume
+    });
     await newSubmission.save();
     res.status(201).send({ message: 'Resume submitted successfully', submission: newSubmission });
   } catch (err) {

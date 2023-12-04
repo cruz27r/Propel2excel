@@ -1,5 +1,5 @@
 .submit-linkedin-container {
-  width: 100%;
+  margin-top: 70px; /* Adjust based on your navbar's height */
   padding: 20px;
   background-color: #f7f7f7;
   text-align: left;
@@ -52,17 +52,27 @@
 
 .linkedin-tips {
   margin-top: 30px;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   background-color: #eef3f8;
   border-radius: 5px;
+  padding: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tip {
+  width: 45%;
+  margin-bottom: 20px;
 }
 
 .linkedin-image {
   width: 100%;
   max-width: 400px;
   margin: 20px 0;
-  border-radius: 8px;
+  border-radius: 10%; /* Rounded off image */
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -90,6 +100,11 @@
 
   .linkedin-tips {
       padding: 15px;
+      flex-direction: column;
+  }
+
+  .tip {
+      width: 100%;
   }
 
   .linkedin-image {

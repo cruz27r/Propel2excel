@@ -33,7 +33,7 @@ function BecomeP2EFellow() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/submit/p2e-fellow', {
+      const response = await fetch('http://localhost:5000/api/fellow-application', {
         method: 'POST',
         body: data,
       });

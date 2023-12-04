@@ -1,7 +1,15 @@
 const mongoose = require('mongoose');
 
 const resumeSubmissionSchema = new mongoose.Schema({
-  introduction: {
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  careerPath: {
     type: String,
     required: true,
   },

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './submitLinkedIn.css';
-import photo1 from '../../assets/images/looking_over_code.jpg'; // Sample image
+import photo1 from '../../assets/images/looking_over_code.jpg'; 
+import photo2 from '../../assets/images/networking_large_table.jpg'; 
 
 function SubmitLinkedIn() {
     const [formData, setFormData] = useState({
@@ -37,10 +38,27 @@ function SubmitLinkedIn() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const tips = [
+        "Complete profiles are 40 times more likely to receive opportunities.",
+        "A professional profile photo can increase profile views by up to 14 times.",
+        "Personalizing connection requests increases acceptance rates.",
+        "Regularly updating your profile increases your visibility on the platform.",
+        "Complete profiles are 40 times more likely to receive opportunities.",
+        "A professional profile photo can increase profile views by up to 14 times.",
+        "Personalizing connection requests increases acceptance rates.",
+        "Regularly updating your profile increases your visibility on the platform.",
+        "Adding skills to your profile can lead to up to 13 times more profile views.",
+        "Recommendations and endorsements can significantly boost your profile's credibility.",
+        "Posting content regularly can increase engagement and connections.",
+        "Joining and participating in LinkedIn groups can expand your network."
+    ];
+
     return (
         <div className="submit-linkedin-container">
-            <h1>Submit Your LinkedIn Profile</h1>
+            <h1>LinkedIn Tips and Facts</h1>
+
             <form onSubmit={handleSubmit} className="linkedin-form">
+                <h2>Submit Your LinkedIn Profile</h2>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
@@ -59,20 +77,17 @@ function SubmitLinkedIn() {
             </form>
 
             <div className="linkedin-tips">
-                <img src={photo1} alt="Professional Networking" className="linkedin-image"/>
-                <h2>LinkedIn Tips and Facts</h2>
-                <ul>
-                    <li>Complete profiles are 40 times more likely to receive opportunities.</li>
-                    <li>A professional profile photo can increase profile views by up to 14 times.</li>
-                    <li>Personalizing connection requests increases acceptance rates.</li>
-                    <li>Regularly updating your profile increases your visibility on the platform.</li>
-                    <li>Adding skills to your profile can lead to up to 13 times more profile views.</li>
-                    <li>Recommendations and endorsements can significantly boost your profile's credibility.</li>
-                    <li>Posting content regularly can increase engagement and connections.</li>
-                    <li>Joining and participating in LinkedIn groups can expand your network.</li>
-                    <li>LinkedIn Learning offers numerous courses to enhance your professional skills.</li>
-                    <li>LinkedIn job alerts can help you stay updated on relevant career opportunities.</li>
-                </ul>
+                {tips.map((tip, index) => (
+                    <React.Fragment key={index}>
+                        <div className="tip">
+                            <h2>Tip {index + 1}</h2>
+                            <p>{tip}</p>
+                        </div>
+                        {index % 2 !== 0 && (
+                            <img src={index % 4 === 1 ? photo1 : photo2} alt="Networking" className="linkedin-image" />
+                        )}
+                    </React.Fragment>
+                ))}
             </div>
         </div>
     );
