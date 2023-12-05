@@ -28,7 +28,7 @@ function SubmitResume() {
         data.append('resume', formData.resume);
 
         try {
-            const response = await fetch('http://localhost:5000/api/submit/resume', {
+            const response = await fetch('http://localhost:5000/api/resume-submission', {
                 method: 'POST',
                 body: data,
             });
