@@ -14,16 +14,16 @@ function Home() {
         <div className="banner-content">
           <div className="text-box">
             <h1 className="main-title">Propel2Excel</h1>
-            <p className="main-description">Bringing Ivy league recruiting experience to schools.</p>
+            <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
           </div>
-          <Link to="/tickets" className="main-ticket-button">Get Tickets</Link>
+          <Link to="/become-p2e" className="main-ticket-button">P2E cohort</Link>
         </div>
       </main>
 
       <section className="button-group">
-        <Link to="/conference" className="conference-button">AFROTECH Conference</Link>
-        <Link to="/executive" className="conference-button executive">AFROTECH Executive</Link>
-        <Link to="/labs" className="conference-button labs">AFROTECH Labs</Link>
+        <Link to="/conference" className="conference-button">Who is Propel2Excel</Link>
+        <Link to="/executive" className="conference-button executive">Ivy league experience</Link>
+        <Link to="/labs" className="conference-button labs">Propel2Excel</Link>
       </section>
 
       <div className="main-info">
