@@ -1,0 +1,49 @@
+/* App.css - Global styles */
+.app-container, .App {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Padding and border are included in the width */
+  background-color: #fcf7ff;
+}
+
+main {
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Padding and border are included in the width */
+  background-color: #fcf7ff;
+}
+
+button, .ticket-button {
+  padding: 1rem; /* Fixed padding, consider using em if needed */
+  background-color: #373751;
+  color: #fdca40;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover, .ticket-button:hover {
+  background-color: #1fa1c4;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  button, .main-ticket-button, .ticket-button {
+    padding: 0.75rem; /* Smaller padding for smaller screens */
+  }
+}
+
+:root {
+  --navbar-height: 90px;
+  --navbar-padding: 15px;
+}
+
+.header {
+  height: var(--navbar-height);
+  /* ... other styles ... */
+}
+
+.content-wrapper {
+  padding-top: var(--navbar-height);
+}

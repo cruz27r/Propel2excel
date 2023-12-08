@@ -1,0 +1,113 @@
+.submit-linkedin-container {
+  margin-top: 70px; /* Adjust based on your navbar's height */
+  padding: 20px;
+  background-color: #f7f7f7;
+  text-align: left;
+}
+
+.linkedin-form {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="email"], 
+.form-group input[type="url"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #0a66c2;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #084482;
+}
+
+.linkedin-tips {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eef3f8;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tip {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+.linkedin-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  border-radius: 10%; /* Rounded off image */
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .submit-linkedin-container {
+      padding: 15px;
+  }
+
+  .submit-linkedin-container h1 {
+      font-size: 1.5rem;
+  }
+
+  .linkedin-form {
+      padding: 15px;
+  }
+
+  .form-group input[type="text"], 
+  .form-group input[type="email"], 
+  .form-group input[type="url"] {
+      padding: 6px;
+  }
+
+  .form-group button {
+      padding: 8px 10px;
+  }
+
+  .linkedin-tips {
+      padding: 15px;
+      flex-direction: column;
+  }
+
+  .tip {
+      width: 100%;
+  }
+
+  .linkedin-image {
+      width: 100%;
+  }
+}
