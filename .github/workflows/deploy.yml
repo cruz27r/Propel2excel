@@ -31,7 +31,7 @@ jobs:
       - name: FTP Deploy to GoDaddy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ftp.propel2excel.com  # Your FTP server
+          server: ${{ secrets.FTP_SERVER }}  # Your FTP server
           username: ${{ secrets.FTP_USERNAME }}  # Your FTP username as a GitHub secret
           password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password as a GitHub secret
           port: 21  # Standard FTP port
