@@ -28,13 +28,13 @@ jobs:
       - name: Build Project
         run: npm run build  # Runs your project's build command
 
-      - name: Deploy via SFTP
-        run: |
-          sftp -o Port=22 ${{ secrets.FTP_USERNAME }}@ftp.propel2excel.com <<EOF
-          put -r ./build/* /home/d9rk2h90n620/public_html/
-          exit
-          EOF
-        env:
-          SSH_USERNAME: ${{ secrets.FTP_USERNAME }}
-          SSH_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      - name: FTP Deploy to GoDaddy
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ftp.propel2excel.com  # Your FTP server
+          username: ${{ secrets.FTP_USERNAME }}  # Your FTP username as a GitHub secret
+          password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password as a GitHub secret
+          port: 21  # Standard FTP port
+          local-dir: ./build/  # The directory where your build output is stored
+          server-dir: /home/d9rk2h90n620/public_html/  # The target directory on your GoDaddy server
       
