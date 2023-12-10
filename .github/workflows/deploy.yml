@@ -34,7 +34,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}  # Your FTP server
           username: ${{ secrets.FTP_USERNAME }}  # Your FTP username as a GitHub secret
           password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password as a GitHub secret
-          port: 21  # Standard FTP port
-          local-dir: ./build/  # The directory where your build output is stored
-          server-dir: /home/d9rk2h90n620/public_html/  # The target directory on your GoDaddy server
       
