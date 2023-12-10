@@ -33,8 +33,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.FTP_SERVER }} >> ~/.ssh/known_hosts
-          sftp -o Port=22 ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} <<EOF
+          ssh-keyscan -H ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
+          sftp -o Port=22 ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }} <<EOF
           put -r ./build/* /home/d9rk2h90n620/public_html/
           exit
           EOF
