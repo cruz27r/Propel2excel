@@ -27,17 +27,4 @@ jobs:
 
       - name: Build Project
         run: npm run build  # Runs your project's build command
-
-      - name: Deploy via SFTP
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
-          sftp -o Port=22 d9rk2h90n620@propel2excel.com <<EOF
-          put -r ./build/* /home/d9rk2h90n620/public_html/
-          exit
-          EOF
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       
