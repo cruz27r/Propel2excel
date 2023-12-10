@@ -1,0 +1,4 @@
+---
+deployment:
+  tasks:
+    - /bin/cp -Rf build/* /home/d9rk2h90n620/public_html/
