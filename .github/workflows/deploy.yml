@@ -28,10 +28,16 @@ jobs:
       - name: Build Project
         run: npm run build  # Runs your project's build command
 
-      - name: FTP Deploy to GoDaddy
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}  # Your FTP server
-          username: ${{ secrets.FTP_USERNAME }}  # Your FTP username as a GitHub secret
-          password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password as a GitHub secret
+      - name: Deploy via SFTP
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.FTP_SERVER }} >> ~/.ssh/known_hosts
+          sftp -o Port=22 ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }} <<EOF
+          put -r ./build/* /home/d9rk2h90n620/public_html/
+          exit
+          EOF
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       
