@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy via SFTP
         run: |
-          sftp -o Port=22 ${{ secrets.FTP_USERNAME }}@ftp.propel2excel.com <<EOF
+          sftp -o Port=21 ${{ secrets.FTP_USERNAME }}@ftp.propel2excel.com <<EOF
           put -r ./build/* /home/d9rk2h90n620/public_html/
           exit
           EOF
