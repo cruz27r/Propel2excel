@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './submitLinkedIn.css';
-import photo1 from '../../assets/images/looking_over_code.jpg'; 
-import photo2 from '../../assets/images/networking_large_table.jpg'; 
+import './linkedInRebrand';
+import photo1 from '../../../assets/images/looking_over_code.jpg'; 
+import photo2 from '../../../assets/images/networking_large_table.jpg'; 
 
 function SubmitLinkedIn() {
     const [formData, setFormData] = useState({

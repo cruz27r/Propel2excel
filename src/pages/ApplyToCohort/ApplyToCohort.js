@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ApplyToCohort.css';
 
-function BecomeP2EFellow() {
+function ApplyToCohort() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

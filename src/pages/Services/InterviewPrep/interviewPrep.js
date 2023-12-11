@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './interviewPrep.css';
-import interviewTipsImage from '../../assets/images/networking_table.jpg'; // Update the path to your image
+import interviewTipsImage from '../../../assets/images/networking_table.jpg'; // Update the path to your image
 
 function InterviewPrep() {
   const [expandedSections, setExpandedSections] = useState({});

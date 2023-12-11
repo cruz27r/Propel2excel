@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './submitResume.css';
-import photo1 from '../../assets/images/looking_over_code.jpg'; 
-import photo2 from '../../assets/images/networking_large_table.jpg'; 
+import './resumeRebrand.css';
+import photo1 from '../../../assets/images/looking_over_code.jpg'; 
+import photo2 from '../../../assets/images/networking_large_table.jpg'; 
 
 function SubmitResume() {
     const [formData, setFormData] = useState({
