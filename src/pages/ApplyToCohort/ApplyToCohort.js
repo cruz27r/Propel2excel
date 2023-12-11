@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './becomeP2E.css';
+import './ApplyToCohort.css';
 
 function BecomeP2EFellow() {
   const [formData, setFormData] = useState({
@@ -83,4 +83,4 @@ function BecomeP2EFellow() {
   );
 }
 
-export default BecomeP2EFellow;
+export default ApplyToCohort;
