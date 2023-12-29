@@ -109,6 +109,18 @@
   max-height: 200px; /* Adjust max-height to fit content */
 }
 
+.logo-link:hover {
+  outline: none;
+  background-color: transparent;
+  text-decoration: none;
+  /* Add any other styles you want to apply on hover */
+}
+
+.logo-link:focus {
+  outline: none;
+  background-color: transparent;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;

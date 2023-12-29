@@ -1,91 +1,126 @@
 .interview-prep-container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.interview-prep-container h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Style for the banner with slideshow */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  background-color: #e7e7e7; /* Placeholder if images aren't loaded */
+}
+
+.banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem; /* Adjust size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the detailed description section */
+.page-description {
+  text-align: justify;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-section {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.section-header h2 {
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.section-header:hover h2 {
+  transform: scale(1.03);
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.section-header:hover .arrow {
+  transform: scale(1.3);
+}
+
+.section-content {
+  display: flex;
+  background-color: #e7e7e7;
+  padding: 10px;
+}
+
+.content-image {
+  width: 150px; /* Fixed width for the image */
+  height: auto;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+  transform: scale(1.25);
+}
+
+/* Responsive Image Handling */
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
   }
-  
-  .interview-prep-container h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .content-section {
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+
+  .content-image {
+    width: 100%;
+    height: auto;
     margin-bottom: 15px;
   }
-  
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: #f7f7f7;
-    cursor: pointer;
+
+  .banner {
+    height: 200px; /* Adjust for smaller screens */
   }
-  
-  .section-header h2 {
-    margin: 0;
-    transition: transform 0.3s ease;
+
+  .banner-title {
+    font-size: 1.8rem;
   }
-  
-  .section-header:hover h2 {
-    transform: scale(1.03);
-  }
-  
-  .arrow {
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transition: transform 0.3s ease;
-  }
-  
-  .arrow.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-  
-  .arrow.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-  }
-  
-  .section-header:hover .arrow {
-    transform: scale(1.3);
-  }
-  
-  .section-content {
-    display: flex;
-    background-color: #e7e7e7;
-    padding: 10px;
-  }
-  
-  .content-image {
-    width: 150px; /* Fixed width for the image */
-    height: auto;
-    margin-right: 15px;
-    transition: transform 0.3s ease;
-  }
-  
-  .content-image:hover {
-    transform: scale(1.25);
-  }
-  
-  /* Responsive Image Handling */
-  @media (max-width: 768px) {
-    .section-content {
-      flex-direction: column;
-    }
-  
-    .content-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 15px;
-    }
-  }
-  
+}

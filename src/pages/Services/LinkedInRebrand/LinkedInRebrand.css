@@ -1,17 +1,50 @@
-.submit-linkedin-container {
-  margin-top: 70px; /* Adjust based on your navbar's height */
+.linkedin-rebrand-container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
   padding: 20px;
-  background-color: #f7f7f7;
-  text-align: left;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 80px;
+}
+
+.explanation-section, .tips-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.tip {
+  margin-bottom: 20px;
+}
+
+.tip.half-width {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2%;
+}
+
+.tip.full-width {
+  width: 100%;
+  display: block;
+}
+
+.full-width-banner {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .linkedin-form {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
   background-color: #fff;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 30px;
 }
 
 .form-group {
@@ -21,7 +54,7 @@
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  color: #333;
+  color: #373751;
   font-weight: bold;
 }
 
@@ -36,8 +69,8 @@
 
 .form-group button {
   width: 100%;
-  padding: 10px 15px;
-  background-color: #0a66c2;
+  padding: 10px;
+  background-color: #1fa1c4;
   color: white;
   font-size: 1rem;
   border: none;
@@ -47,67 +80,12 @@
 }
 
 .form-group button:hover {
-  background-color: #084482;
-}
-
-.linkedin-tips {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #eef3f8;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.tip {
-  width: 45%;
-  margin-bottom: 20px;
-}
-
-.linkedin-image {
-  width: 100%;
-  max-width: 400px;
-  margin: 20px 0;
-  border-radius: 10%; /* Rounded off image */
-  object-fit: cover;
+  background-color: #373751;
 }
 
 @media (max-width: 768px) {
-  .submit-linkedin-container {
-      padding: 15px;
-  }
-
-  .submit-linkedin-container h1 {
-      font-size: 1.5rem;
-  }
-
-  .linkedin-form {
-      padding: 15px;
-  }
-
-  .form-group input[type="text"], 
-  .form-group input[type="email"], 
-  .form-group input[type="url"] {
-      padding: 6px;
-  }
-
-  .form-group button {
-      padding: 8px 10px;
-  }
-
-  .linkedin-tips {
-      padding: 15px;
-      flex-direction: column;
-  }
-
-  .tip {
-      width: 100%;
-  }
-
-  .linkedin-image {
-      width: 100%;
+  .tip.half-width {
+    width: 100%;
+    margin-right: 0;
   }
 }
