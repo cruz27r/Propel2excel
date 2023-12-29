@@ -8,6 +8,10 @@
   background-color: #fcf7ff;
 }
 
+.Pages{
+  padding-top: 80px;
+}
+
 main {
   width: 100%; /* Full width */
   box-sizing: border-box; /* Padding and border are included in the width */

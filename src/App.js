@@ -22,19 +22,19 @@ function App() {
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/university-partners" element={<UniversityPartners />} />
-          <Route path="/university-partners/application" element={<UniversityPartnersApplication />} />
-          <Route path="/corporate-partners" element={<CorporatePartners />} />
-          <Route path="/corporate-partners/application" element={<CorporatePartnersApplication />} />
-          <Route path="/linkedin-rebrand" element={<LinkedInRebrand />} />
-          <Route path="/resume-rebrand" element={<ResumeRebrand />} />
-          <Route path="/interview-prep" element={<InterviewPrep />} />
-          <Route path="/events-for-readiness" element={<EventsForReadiness />} />
-          <Route path="/apply-to-cohort" element={<ApplyToCohort />} />
-          <Route path="/speakers/application" element={<SpeakerApplication />} />
-          <Route path="/speakers" element={<Speakers />} />
-          <Route path="/faqs" element={<FAQs />} />
+          <Route className="Pages" path="/" element={<HomePage />} />
+          <Route className="Pages" path="/university-partners" element={<UniversityPartners />} />
+          <Route className="Pages" path="/university-partners/application" element={<UniversityPartnersApplication />} />
+          <Route className="Pages" path="/corporate-partners" element={<CorporatePartners />} />
+          <Route className="Pages" path="/corporate-partners/application" element={<CorporatePartnersApplication />} />
+          <Route className="Pages" path="/linkedin-rebrand" element={<LinkedInRebrand />} />
+          <Route className="Pages" path="/resume-rebrand" element={<ResumeRebrand />} />
+          <Route className="Pages" path="/interview-prep" element={<InterviewPrep />} />
+          <Route className="Pages" path="/events-for-readiness" element={<EventsForReadiness />} />
+          <Route className="Pages"path="/apply-to-cohort" element={<ApplyToCohort />} />
+          <Route className="Pages" path="/speakers/application" element={<SpeakerApplication />} />
+          <Route className="Pages" path="/speakers" element={<Speakers />} />
+          <Route className="Pages" path="/faqs" element={<FAQs />} />
           {/* Additional routes can be added here as needed */}
         </Routes>
       </div>

@@ -50,8 +50,8 @@ function SubmitResume() {
 
     return (
         <div className="submit-resume-container">
-           <div className="resume-banner" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h1 className="banner-title">Resume Rebrand</h1>
+            <div className="resume-banner" style={{ backgroundImage: `url(${bannerImage})` }}>
+                <h1>Resume Rebrand</h1>
             </div>
 
             <div className="resume-description">

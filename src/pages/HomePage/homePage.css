@@ -2,6 +2,7 @@
   text-align: center;
   max-width: 100%;
   overflow-x: hidden;
+  padding-top: 100px; /* Adjust based on your navbar's height */
 }
 
 .banner {
@@ -11,7 +12,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 75vh;
+  height: 80vh;
 }
 
 .banner-content {
@@ -115,14 +116,14 @@
   padding: 20px;
   width: 65%;
   text-align: left;
-  margin-right: 10px; /* Space between text and image */
+  margin-right: 10px;
 }
 
 .section-service .section-image {
   width: 35%;
   border-radius: 10px;
   object-fit: contain;
-  margin-left: 10px; /* Space between text and image */
+  margin-left: 10px;
 }
 
 .section-service:nth-child(even) {
@@ -135,11 +136,11 @@
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 20px; /* Space between stacked elements */
+  margin-bottom: 20px;
 }
 
 .section-service:nth-child(even) .section-image:last-child {
-  margin-bottom: 0; /* No extra margin for the last element */
+  margin-bottom: 0;
 }
 
 /* Responsive adjustments */
@@ -161,11 +162,11 @@
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 20px; /* Space between stacked elements on small screens */
+    margin-bottom: 20px;
   }
 
   .section-service .section-image:last-child {
-    margin-bottom: 0; /* No extra margin for the last element on small screens */
+    margin-bottom: 0;
   }
 
   .button-group {

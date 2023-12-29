@@ -17,14 +17,15 @@ function Home() {
             <h1 className="main-title">Propel2Excel</h1>
             <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
           </div>
-          <Link to="/become-p2e" className="main-ticket-button">P2E cohort</Link>
+          <Link to="/become-p2e" className="APPLY TO COHORT">P2E cohort</Link>
         </div>
       </main>
 
       <section className="button-group">
-        <Link to="/conference" className="conference-button">Who is Propel2Excel</Link>
-        <Link to="/executive" className="conference-button executive">Ivy league experience</Link>
-        <Link to="/labs" className="conference-button labs">Propel2Excel</Link>
+        {/* Update href attributes to link to respective sections */}
+        <a href="#linkedin-rebrand" className="conference-button">LinkedIn & Resume Rebrand</a>
+        <a href="#speaking-engagement" className="conference-button">Speaking Engagement</a>
+        <a href="#interview-prep" className="conference-button">Interview Preparation</a>
       </section>
 
       <div className="video-section">

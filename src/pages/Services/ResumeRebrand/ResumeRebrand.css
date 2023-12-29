@@ -3,23 +3,34 @@
   line-height: 1.6;
   color: #333;
   width: 90%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
-  padding-top: 20px;
+  padding-top: 120px; /* Adjust as needed */
 }
 
 .resume-banner {
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
+  height: 300px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  width: 100%;
 }
 
-.banner-title {
-  font-size: 2.5rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+.banner-content {
+  /* Centering content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem; /* Adjust the size as needed */
+  font-weight: bold; /* Makes the text bold */
+  color: white; /* Adjust the color as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for better visibility */
 }
 
 .resume-description {
@@ -115,9 +126,5 @@
   .row, .tip {
       width: 100%;
       margin-right: 0;
-  }
-
-  .banner-title {
-      font-size: 1.5rem;
   }
 }
