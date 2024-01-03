@@ -4,52 +4,56 @@ import logoImage from '../../assets/images/P2E_Logo.png';
 import './navbar.css';
 
 const NavBar = () => {
-  const [showNav, setShowNav] = useState(true);
-  const lastScrollY = useRef(window.scrollY); 
-  const hideTimer = useRef(); 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lastScrollY = useRef(window.scrollY);
+  const hideTimer = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowNav(window.scrollY < lastScrollY.current);
-      lastScrollY.current = window.scrollY;
       clearTimeout(hideTimer.current);
-
-      if (window.scrollY > 0) {
-        hideTimer.current = setTimeout(() => {
-          setShowNav(false);
-        }, 2500); 
-      }
+      hideTimer.current = setTimeout(() => {
+        if (window.scrollY > lastScrollY.current) {
+          setIsMobileMenuOpen(false);
+        }
+        lastScrollY.current = window.scrollY;
+      }, 100);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearTimeout(hideTimer.current);
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <header className={`header ${showNav ? 'active' : 'hidden'}`}>
+    <header className={`header ${isMobileMenuOpen ? 'open' : ''}`}>
+      <div className="hamburger-menu" onClick={toggleMenu}>
+        {isMobileMenuOpen ? '✕' : '☰'} {/* Change symbols/icons as needed */}
+      </div>
       <Link to="/" className='logo-link'>
         <img src={logoImage} alt="Company Logo" className="logo" />
       </Link>
-      <nav className="nav-links">
+      <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="dropdown">
-          <Link to="#" className="dropbtn">University Partners</Link>
+          <button className="dropbtn">University Partners</button>
           <div className="dropdown-content">
             <Link to="/university-partners">Info</Link>
             <Link to="/university-partners/application">Application</Link>
           </div>
         </div>
         <div className="dropdown">
-          <Link to="#" className="dropbtn">Corporate Partners</Link>
+          <button className="dropbtn">Corporate Partners</button>
           <div className="dropdown-content">
             <Link to="/corporate-partners">Info</Link>
             <Link to="/corporate-partners/application">Application</Link>
           </div>
         </div>
         <div className="dropdown">
-          <Link to="#" className="dropbtn">Services</Link>
+          <button className="dropbtn">Services</button>
           <div className="dropdown-content">
             <Link to="/linkedin-rebrand">LinkedIn Rebrand</Link>
             <Link to="/resume-rebrand">Resume Rebrand</Link>
@@ -59,7 +63,7 @@ const NavBar = () => {
         </div>
         <Link to="/apply-to-cohort">Apply to Cohort</Link>
         <div className="dropdown">
-          <Link to="#" className="dropbtn">Speakers</Link>
+          <button className="dropbtn">Speakers</button>
           <div className="dropdown-content">
             <Link to="/speakers">Info</Link>
             <Link to="/speakers/application">Application</Link>

@@ -19,7 +19,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="main-content">
         <NavBar />
         <Routes>
           <Route className="Pages" path="/" element={<HomePage />} />
