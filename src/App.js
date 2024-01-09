@@ -1,115 +1,42 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+//import logoImage from './assets/images/P2E_Logo.png'; // Correct path to image
 import HomePage from './pages/HomePage/homePage';
-import UniversityPartners from './pages/UniversityPartners/UniversityPartners';
-import CorporatePartners from './pages/CorporatePartners/CorporatePartners';
-import LinkedInRebrand from './pages/Services/LinkedInRebrand/linkedInRebrand';
-import ResumeRebrand from './pages/Services/ResumeRebrand/resumeRebrand';
-import InterviewPrep from './pages/Services/InterviewPrep/interviewPrep';
-import EventsForReadiness from './pages/Services/EventsForReadiness/eventsForReadiness';
-import ApplyToCohort from './pages/ApplyToCohort/ApplyToCohort';
+import EventsForReadiness from './pages/EventsForReadiness/eventsForReadiness';
+import SubmitLinkedIn from './pages/SubmitLinkedIn/submitLinkedIn';
+import BecomeP2E from './pages/BecomeP2E/becomeP2E';
+import BecomeSpeaker from './pages/BecomeSpeaker/becomeSpeaker';
+import BecomeSponsor from './pages/BecomeSponsor/becomeSponsor';
+import InterviewPrep from './pages/InterviewPrep/interviewPrep';
+import Partners from './pages/Partners/partners';
 import Speakers from './pages/Speakers/speakers';
 import FAQs from './pages/FAQs/faqs';
-import UniversityPartnersApplication from './pages/UniversityPartners/UniversityPartnersApplication';
-import CorporatePartnersApplication from './pages/CorporatePartners/CorporatePartnersApplication';
-import SpeakerApplication from './pages/Speakers/SpeakersApplication';
-import NavBar from './components/NavBar/navbar';
 import './App.css';
-import MaintenancePage from './pages/Maintenance/MaintenancePage'; // Path to your MaintenancePage component
-
-const Layout = ({ children }) => {
-  const location = useLocation(); // Get the current location
-
-  // Check if the current path is not the maintenance page
-  const showNavBar = location.pathname !== "/";
-
-  return (
-    <>
-      {showNavBar && <NavBar />}
-      <div className="main-content">
-        {children}
-      </div>
-    </>
-  );
-};
+import NavBar from './components/NavBar/navbar';
+import SubmitResume from './pages/SubmitResume/submitResume';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={
-          <Layout>
-            <MaintenancePage />
-          </Layout>
-        } />
-        <Route path="/homepage" element={
-          <Layout>
-            <HomePage />
-          </Layout>
-        } />
-        <Route path="/university-partners" element={
-          <Layout>
-            <UniversityPartners />
-          </Layout>
-        } />
-        <Route path="/university-partners/application" element={
-          <Layout>
-            <UniversityPartnersApplication />
-          </Layout>
-        } />
-        <Route path="/corporate-partners" element={
-          <Layout>
-            <CorporatePartners />
-          </Layout>
-        } />
-        <Route path="/corporate-partners/application" element={
-          <Layout>
-            <CorporatePartnersApplication />
-          </Layout>
-        } />
-        <Route path="/linkedin-rebrand" element={
-          <Layout>
-            <LinkedInRebrand />
-          </Layout>
-        } />
-        <Route path="/resume-rebrand" element={
-          <Layout>
-            <ResumeRebrand />
-          </Layout>
-        } />
-        <Route path="/interview-prep" element={
-          <Layout>
-            <InterviewPrep />
-          </Layout>
-        } />
-        <Route path="/events-for-readiness" element={
-          <Layout>
-            <EventsForReadiness />
-          </Layout>
-        } />
-        <Route path="/apply-to-cohort" element={
-          <Layout>
-            <ApplyToCohort />
-          </Layout>
-        } />
-        <Route path="/speakers/application" element={
-          <Layout>
-            <SpeakerApplication />
-          </Layout>
-        } />
-        <Route path="/speakers" element={
-          <Layout>
-            <Speakers />
-          </Layout>
-        } />
-        <Route path="/faqs" element={
-          <Layout>
-            <FAQs />
-          </Layout>
-        } />
-        {/* Additional routes can be added here as needed */}
-      </Routes>
+      <div className="App">
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/events-for-readiness" element={<EventsForReadiness />} />
+          <Route path="/submit-linkedin" element={<SubmitLinkedIn />} />
+          <Route path="/submit-resume" element={<SubmitResume />} />
+          <Route path="/become-p2e" element={<BecomeP2E />} />
+          <Route path="/become-speaker" element={<BecomeSpeaker />} />
+          <Route path="/become-sponsor" element={<BecomeSponsor />} />
+          <Route path="/interview-prep" element={<InterviewPrep />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/faqs" element={<FAQs />} />
+          {/* Add additional routes if needed */}
+        </Routes>
+
+      </div>
     </Router>
   );
 }
