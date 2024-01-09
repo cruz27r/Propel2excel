@@ -8,16 +8,6 @@
   background-color: #fcf7ff;
 }
 
-.navbar {
-  z-index: 1000; /* Any high number to ensure it's on top */;
-}
-
-/* Adjust padding to account for navbar height */
-.Pages {
-  z-index: 1; /* Any high number to ensure it's on top */
-  padding-top: 120px; /* Use CSS variable for navbar height */
-}
-
 main {
   width: 100%; /* Full width */
   box-sizing: border-box; /* Padding and border are included in the width */
@@ -45,7 +35,7 @@ button:hover, .ticket-button:hover {
 }
 
 :root {
-  --navbar-height: 90px; /* Height of the navbar */
+  --navbar-height: 90px;
   --navbar-padding: 15px;
 }
 
@@ -56,37 +46,4 @@ button:hover, .ticket-button:hover {
 
 .content-wrapper {
   padding-top: var(--navbar-height);
-}
-
-/* Styles for mobile devices */
-@media (max-width: 767px) {
-  .app-container, .App {
-      padding: 5px;
-      font-size: 14px;
-  }
-
-  /* Adjust navbar height for mobile */
-  :root {
-      --navbar-height: 60px; /* Adjusted height for mobile screens */
-  }
-
-  .Pages {
-      padding-top: var(--navbar-height); /* Adjust top padding for mobile navbar height */
-  }
-}
-
-/* Styles for tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .app-container, .App {
-      padding: 10px;
-      font-size: 16px;
-  }
-}
-
-/* Styles for desktop and larger screens */
-@media (min-width: 1025px) {
-  .app-container, .App {
-      padding: 20px;
-      font-size: 18px;
-  }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './linkedInRebrand.css'; 
+import './LinkedInRebrand.css'; 
 import bannerImage1 from '../../../assets/images/looking_into_laptop.jpg';
 import bannerImage2 from '../../../assets/images/networking_large_table.jpg';
 

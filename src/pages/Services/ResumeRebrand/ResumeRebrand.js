@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './resumeRebrand.css';
+import './ResumeRebrand.css';
 import bannerImage from '../../../assets/images/looking_over_code.jpg'; 
 import photo1 from '../../../assets/images/looking_over_code.jpg'; 
 import photo2 from '../../../assets/images/networking_large_table.jpg';
