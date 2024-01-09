@@ -4,7 +4,6 @@ import './homePage.css';
 
 import photo1 from '../../assets/images/looking_over_code.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
-import photo3 from '../../assets/images/networking_table.jpg'; // Ensure this image is in your assets
 import background from '../../assets/images/networking_event.jpeg';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
 
@@ -17,61 +16,78 @@ function Home() {
             <h1 className="main-title">Propel2Excel</h1>
             <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
           </div>
-          <Link to="/become-p2e" className="APPLY TO COHORT">P2E cohort</Link>
+          <Link to="/become-p2e" className="main-ticket-button">P2E cohort</Link>
         </div>
       </main>
 
       <section className="button-group">
-        {/* Update href attributes to link to respective sections */}
-        <a href="#linkedin-rebrand" className="conference-button">LinkedIn & Resume Rebrand</a>
-        <a href="#speaking-engagement" className="conference-button">Speaking Engagement</a>
-        <a href="#interview-prep" className="conference-button">Interview Preparation</a>
+        <Link to="/conference" className="conference-button">Who is Propel2Excel</Link>
+        <Link to="/executive" className="conference-button executive">Ivy league experience</Link>
+        <Link to="/labs" className="conference-button labs">Propel2Excel</Link>
       </section>
 
-      <div className="video-section">
+      <div className="main-info">
+        <div className="conference-info">
+          <h1 className="info-title">AFROTECH Conference</h1>
+          <p className="info-description">A global gathering where inclusive tech companies meet diverse innovators.</p>
+        </div>
+        <div className="ticket-section">
+          <p className="conference-date-location">NOVEMBER 1-5, 2023 | AUSTIN, TX</p>
+          <Link to="/tickets" className="ticket-button">Get Tickets</Link>
+        </div>
+      </div>
+
+      <div className="video-container">
         <video controls>
           <source src={video1} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <div className="p2e-description">
-        <p className="p2e-text">Propel2Excel is dedicated to empowering underrepresented students in business, providing a bridge to prestigious career opportunities through comprehensive coaching and networking.</p>
+      <section className="section-p2e-summary">
+        <div className="section-content">
+          <img src={photo1} alt="P2E Summary" className="section-image" />
+          <div className="text-box">
+            <p>Unlocking Business Potential: Propel2Excel's unique approach equips young talents with the skills and networks necessary for thriving in today's competitive business landscape.</p>
+            <p>From Classroom to Boardroom: Our program transforms academic excellence into real-world success, focusing on underrepresented students aged 16-25.</p>
+            <p>Pathway to Prestige: Propel2Excel alumni have successfully secured positions at leading companies, including Google, Microsoft, and Amazon, through our intensive six-month program.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-mission">
+        <div className="section-content">
+          <div className="text-box">
+            <p>Empowerment through Education: Propel2Excel aims to bridge the gap in business leadership, emphasizing representation and diversity.</p>
+            <p>Inspirational Coaching: Our team comprises current and former employees of top-tier companies, providing unparalleled mentorship and guidance.</p>
+            <p>A Legacy of Leadership: Our mission is to cultivate the next generation of diverse business leaders and entrepreneurs, changing the face of Fortune 100 companies.</p>
+          </div>
+          <img src={photo2} alt="P2E Mission" className="section-image" />
+        </div>
+      </section>
+
+      <section className="section-focus">
+        <div className="section-content">
+          <img src={photo1} alt="P2E and UMB" className="section-image" />
+          <div className="text-box">
+            <p>Comprehensive Curriculum: Propel2Excel covers everything from internship readiness to mastering the intricacies of the job market.</p>
+            <p>Customizable Learning: We value input from our students and staff, allowing for additional topics to cater to specific needs and interests.</p>
+            <p>Measuring Success: Our rigorous Measure of Success (MOS) system in each tier ensures progress and tangible outcomes for all participants.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className="brand-section">
+        <div className="brand-content">
+          <h1 className="brand-title">About AFROTECH</h1>
+          <p className="brand-description">AFROTECH is a transformative experience that connects leaders in tech and culture. We inspire with stories of innovation and success.</p>
+        </div>
+        <div className="brand-photos">
+          <img src={photo1} alt="AFROTECH Brand" className="brand-photo brand-photo1" />
+          <img src={photo2} alt="AFROTECH Brand" className="brand-photo brand-photo2" />
+        </div>
       </div>
 
-      <section className="section-service" id="linkedin-rebrand">
-        <div className="text-box">
-          <h2>LinkedIn & Resume Rebrand</h2>
-          <p>Revamp your professional identity with our LinkedIn & Resume Rebrand service, tailored to showcase your unique strengths and career aspirations.</p>
-          <Link to="/linkedin-rebrand" className="details-button">Learn More</Link>
-        </div>
-        <img src={photo2} alt="LinkedIn & Resume Rebrand" className="section-image" />
-      </section>
-
-      <section className="section-service" id="speaking-engagement" style={{ width: '85%', margin: '0 auto' }}>
-        <div className="text-box">
-          <h2>Speaking Engagement</h2>
-          <p>Engage with industry leaders and gain invaluable insights through our inspiring speaking engagements, designed to motivate and open doors to new opportunities. These sessions are tailored to provide practical advice, industry-specific knowledge, and motivational stories to empower and inspire the next generation of business leaders.</p>
-          <Link to="/speaking-engagement" className="details-button">Learn More</Link>
-        </div>
-      </section>
-
-      <section className="section-service" id="interview-prep" style={{ flexDirection: 'row-reverse' }}>
-        <div className="text-box">
-          <h2>Interview Preparation</h2>
-          <p>Master the art of interviewing with our personalized preparation techniques, designed to boost your confidence and performance in any interview scenario. Our program includes mock interviews, feedback sessions, and expert tips on handling tough questions, body language, and communication skills to ensure you're fully prepared for your next big opportunity.</p>
-          <Link to="/interview-preparation" className="details-button">Learn More</Link>
-        </div>
-        <img src={photo3} alt="Interview Preparation" className="section-image" />
-      </section>
-
-      <section className="section-service" id="candidate-ready" style={{ width: '85%', margin: '0 auto' }}>
-        <div className="text-box">
-          <h2>Candidate Ready</h2>
-          <p>Our comprehensive program ensures you are fully prepared to meet the demands of top-tier employers, making you an outstanding candidate ready for success. We focus on developing your soft skills, enhancing your business acumen, and refining your professional presentation to ensure you stand out in the competitive job market.</p>
-          <Link to="/candidate-ready" className="details-button">Learn More</Link>
-        </div>
-      </section>
     </div>
   );
 }

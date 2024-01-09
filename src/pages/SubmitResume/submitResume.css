@@ -1,0 +1,78 @@
+.submit-resume-container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  padding-top: 70px; /* Adjust this value based on the height of your navbar */
+}
+
+.resume-form {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px;
+}
+
+.form-group button {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-group button:hover {
+  background-color: #555;
+}
+
+.resume-tips {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tip {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+.tip h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tip p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.resume-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  border-radius: 10%;
+  object-fit: cover;
+}
