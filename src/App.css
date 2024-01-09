@@ -8,9 +8,14 @@
   background-color: #fcf7ff;
 }
 
+.navbar {
+  z-index: 1000; /* Any high number to ensure it's on top */;
+}
+
 /* Adjust padding to account for navbar height */
 .Pages {
-  padding-top: var(--navbar-height); /* Use CSS variable for navbar height */
+  z-index: 1; /* Any high number to ensure it's on top */
+  padding-top: 120px; /* Use CSS variable for navbar height */
 }
 
 main {
@@ -53,8 +58,6 @@ button:hover, .ticket-button:hover {
   padding-top: var(--navbar-height);
 }
 
-/* Existing styles */
-
 /* Styles for mobile devices */
 @media (max-width: 767px) {
   .app-container, .App {
@@ -70,11 +73,6 @@ button:hover, .ticket-button:hover {
   .Pages {
       padding-top: var(--navbar-height); /* Adjust top padding for mobile navbar height */
   }
-
-  /* Example: Adjust a specific component for mobile */
-  .some-component {
-      flex-direction: column;
-  }
 }
 
 /* Styles for tablets */
@@ -83,11 +81,6 @@ button:hover, .ticket-button:hover {
       padding: 10px;
       font-size: 16px;
   }
-
-  /* Example: Adjust a specific component for tablet */
-  .some-component {
-      flex-direction: row;
-  }
 }
 
 /* Styles for desktop and larger screens */
@@ -95,10 +88,5 @@ button:hover, .ticket-button:hover {
   .app-container, .App {
       padding: 20px;
       font-size: 18px;
-  }
-
-  /* Example: Enhance a specific component for larger screens */
-  .some-component {
-      grid-template-columns: 1fr 1fr;
   }
 }
