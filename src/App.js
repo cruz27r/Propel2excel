@@ -14,6 +14,7 @@ import FAQs from './pages/FAQs/faqs';
 import './App.css';
 import NavBar from './components/NavBar/navbar';
 import SubmitResume from './pages/SubmitResume/submitResume';
+import MaintenancePage from './pages/Maintenance/MaintenancePage'; // Path to your MaintenancePage component
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<MaintenancePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/events-for-readiness" element={<EventsForReadiness />} />
           <Route path="/submit-linkedin" element={<SubmitLinkedIn />} />
