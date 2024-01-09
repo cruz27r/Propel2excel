@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 //import logoImage from './assets/images/P2E_Logo.png'; // Correct path to image
 import HomePage from './pages/HomePage/homePage';
 import EventsForReadiness from './pages/EventsForReadiness/eventsForReadiness';
@@ -16,11 +16,26 @@ import NavBar from './components/NavBar/navbar';
 import SubmitResume from './pages/SubmitResume/submitResume';
 import MaintenancePage from './pages/Maintenance/MaintenancePage'; // Path to your MaintenancePage component
 
+const Layout = ({ children }) => {
+  const location = useLocation(); // Get the current location
+
+  // Check if the current path is not the maintenance page
+  const showNavBar = location.pathname !== "/";
+
+  return (
+    <>
+      {showNavBar && <NavBar />}
+      <div className="main-content">
+        {children}
+      </div>
+    </>
+  );
+};
+
 function App() {
   return (
     <Router>
       <div className="App">
-        <NavBar/>
         <Routes>
           <Route path="/" element={<MaintenancePage />} />
           <Route path="/home" element={<HomePage />} />
