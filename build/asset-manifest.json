@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.184be30e.css",
-    "main.js": "/static/js/main.c27591ce.js",
+    "main.css": "/static/css/main.dbf8e5da.css",
+    "main.js": "/static/js/main.6c06cb49.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
     "static/media/headshot2.jpg": "/static/media/headshot2.621a5c216ec71385284d.jpg",
+    "static/media/zoom_in_on_laptop.jpg": "/static/media/zoom_in_on_laptop.e15964f50022bace62d6.jpg",
     "static/media/networking_event.jpeg": "/static/media/networking_event.fd21fa077c9ef06bd71d.jpeg",
     "static/media/headshot1.jpg": "/static/media/headshot1.a68d52b31f6404700b74.jpg",
     "static/media/looking_over_code.jpg": "/static/media/looking_over_code.2b0925895a1ddc321c49.jpg",
     "static/media/networking_table.jpg": "/static/media/networking_table.e019f656837b493abebc.jpg",
     "static/media/headshot3.jpg": "/static/media/headshot3.1de39dd4637577a6a1ba.jpg",
+    "static/media/looking_into_laptop.jpg": "/static/media/looking_into_laptop.6f3dc600137d08c4a75f.jpg",
     "static/media/P2E_Logo.png": "/static/media/P2E_Logo.66af2ca0146b12cf9521.png",
     "index.html": "/index.html",
-    "main.184be30e.css.map": "/static/css/main.184be30e.css.map",
-    "main.c27591ce.js.map": "/static/js/main.c27591ce.js.map"
+    "main.dbf8e5da.css.map": "/static/css/main.dbf8e5da.css.map",
+    "main.6c06cb49.js.map": "/static/js/main.6c06cb49.js.map"
   },
   "entrypoints": [
-    "static/css/main.184be30e.css",
-    "static/js/main.c27591ce.js"
+    "static/css/main.dbf8e5da.css",
+    "static/js/main.6c06cb49.js"
   ]
 }
