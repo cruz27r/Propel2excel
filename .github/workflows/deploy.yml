@@ -25,6 +25,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Project
-        run: npm run build  # Runs your project's build command
+      # - name: Build Project
+      #   run: npm run build  # Runs your project's build command
       
