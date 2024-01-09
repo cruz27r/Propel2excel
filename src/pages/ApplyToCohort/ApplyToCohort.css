@@ -1,0 +1,92 @@
+.apply-to-cohort {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  padding-top: 60px;
+}
+
+.service-overview {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.service-overview h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.mission-statement {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.service {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.service h3 {
+  color: #0056b3;
+}
+
+.service p {
+  font-size: 16px;
+}
+
+.overview-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.overview-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.application-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.application-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.application-form input, .application-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.application-form button {
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.application-form button:hover {
+  background-color: #0056b3;
+}
