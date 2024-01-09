@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dbf8e5da.css",
-    "main.js": "/static/js/main.6c06cb49.js",
+    "main.js": "/static/js/main.04587557.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
     "static/media/headshot2.jpg": "/static/media/headshot2.621a5c216ec71385284d.jpg",
@@ -15,10 +15,10 @@
     "static/media/P2E_Logo.png": "/static/media/P2E_Logo.66af2ca0146b12cf9521.png",
     "index.html": "/index.html",
     "main.dbf8e5da.css.map": "/static/css/main.dbf8e5da.css.map",
-    "main.6c06cb49.js.map": "/static/js/main.6c06cb49.js.map"
+    "main.04587557.js.map": "/static/js/main.04587557.js.map"
   },
   "entrypoints": [
     "static/css/main.dbf8e5da.css",
-    "static/js/main.6c06cb49.js"
+    "static/js/main.04587557.js"
   ]
 }
