@@ -1,10 +1,14 @@
-.App {
-  text-align: center;
-  max-width: 100%;
-  overflow-x: hidden;
-  padding-top: 150px; /* Adjust based on your navbar's height */
+/* App.css - Global styles */
+.app-container, .App {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Padding and border are included in the width */
+  background-color: #fcf7ff;
 }
 
+/* Banner Styling */
 .banner {
   display: flex;
   align-items: center;
@@ -23,38 +27,53 @@
   width: 100%;
 }
 
-.main-title, .main-description {
-  color: #fcf7ff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.banner-content .main-title {
+  font-size: 3rem; /* Larger font size for the main title */
+  color: #ffffff; /* White color for contrast */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
+  margin-bottom: 20px;
 }
 
-.main-title {
-  font-size: 4rem;
-  font-weight: bold;
-  margin: 0;
+.banner-content .main-description {
+  font-size: 1.5rem; /* Readable font size for description */
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  max-width: 600px; /* Max width for better line length */
+  margin: auto; /* Centering the text */
+  padding: 0 20px; /* Padding on the sides */
 }
 
-.main-description {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+/* Enhanced Video Section Styling */
+.video-section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 40px auto; /* Increased margin for more focus */
+  padding: 20px; /* Padding around the video */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+  border-radius: 15px; /* More pronounced rounded corners */
+  overflow: hidden;
+  background-color: #fff; /* Optional: Add a background color */
+  border: 1px solid #ddd; /* Optional: Add a border */
 }
 
-.main-ticket-button, .details-button {
-  background-color: #373751;
-  color: #fcf7ff;
-  padding: 1rem 2rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+.video-section video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Cover fit to ensure full area coverage */
 }
 
-.main-ticket-button:hover, .details-button:hover {
-  background-color: #1fa1c4;
-  color: #fdca40;
+/* Main Tag Description Styling */
+.p2e-description {
+  font-size: 1.2rem; /* Slightly larger font size */
+  color: #333333; /* Dark color for readability */
+  max-width: 800px; /* Max width for better line length */
+  margin: 40px auto; /* Margin top and bottom */
+  padding: 0 20px; /* Padding on the sides */
+  line-height: 1.6; /* Line height for readability */
 }
 
+/* Button Group Styling */
 .button-group {
   display: flex;
   justify-content: center;
@@ -62,119 +81,85 @@
   margin: 40px 0;
 }
 
-.conference-button {
-  background-color: #373751;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-size: 16px;
-  color: #fcf7ff;
-  cursor: pointer;
-  flex: 1;
-  text-align: center;
-  transition: all 0.3s;
+/* Enhanced Button Styles for Specific Classes */
+.ticket-button, .conference-button, .details-button {
+  background-color: #373751; /* Dark background */
+  color: #fcf7ff; /* Light text color */
+  padding: 12px 30px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Uppercase text */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Inline-block display */
+  margin: 5px; /* Margin around buttons */
 }
 
-.conference-button:hover {
-  background-color: #373751;
-  color: #fdca40;
+/* Hover Effect for Specific Buttons */
+.ticket-button:hover, .conference-button:hover, .details-button:hover {
+  background-color: #1fa1c4; /* Background color on hover */
+  color: #fdca40; /* Text color on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
 }
 
-.video-section {
-  width: 100%;
-  max-width: 1280px;
-  margin: 20px auto;
-  padding: 0 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.video-section video {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.p2e-description {
-  padding: 20px;
-  font-size: 1.2rem;
-}
-
+/* Section Service Styling */
 .section-service {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px auto;
-  width: 95%;
+  padding: 20px;
+  background-color: #f4f4f4; /* Neutral background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 90%;
 }
 
-.section-service .text-box {
-  background-color: rgba(55, 55, 81, 0.8);
-  color: #fcf7ff;
-  border-radius: 10px;
-  padding: 20px;
-  width: 65%;
-  text-align: left;
-  margin-right: 10px;
+.section-service .text-box, .section-service .section-image {
+  width: 50%;
+  margin: 0 20px;
 }
 
 .section-service .section-image {
-  width: 35%;
-  border-radius: 10px;
-  object-fit: contain;
-  margin-left: 10px;
+  border-radius: 10px; /* Rounded corners for images */
+  object-fit: cover; /* Ensures the image covers the area */
 }
 
-.section-service:nth-child(even) {
-  flex-direction: column;
-  text-align: center;
-}
-
-.section-service:nth-child(even) .text-box, 
-.section-service:nth-child(even) .section-image {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
-}
-
-.section-service:nth-child(even) .section-image:last-child {
-  margin-bottom: 0;
-}
-
-/* Responsive adjustments */
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
-  .main-title {
+  .banner-content .main-title {
     font-size: 2.5rem;
   }
 
-  .main-description {
+  .banner-content .main-description,
+  .p2e-description {
     font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .ticket-button, .conference-button, .details-button {
+    padding: 10px 20px; /* Smaller padding on smaller screens */
+    font-size: 0.9rem; /* Slightly smaller font size for small screens */
+  }
+
+  .video-section {
+    padding: 10px; /* Smaller padding on smaller screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Smaller shadow on smaller screens */
   }
 
   .section-service {
     flex-direction: column;
-  }
-
-  .section-service .text-box, 
-  .section-service .section-image {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .section-service .section-image:last-child {
-    margin-bottom: 0;
-  }
-
-  .button-group {
-    flex-direction: column;
-  }
-
-  .conference-button {
-    width: 100%;
     text-align: center;
   }
+
+  .section-service .text-box, .section-service .section-image {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
+
+/* Additional styles, if any, can be added below */

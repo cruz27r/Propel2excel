@@ -16,31 +16,30 @@ import CorporatePartnersApplication from './pages/CorporatePartners/CorporatePar
 import SpeakerApplication from './pages/Speakers/SpeakersApplication';
 import NavBar from './components/NavBar/navbar';
 import './App.css';
-import MaintenancePage from './pages/Maintenance/MaintenancePage'; // Path to your MaintenancePage component
+import MaintenancePage from './pages/Maintenance/MaintenancePage';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* MaintenancePage is rendered without NavBar */}
-        <Route path="/maintenance" element={<MaintenancePage />} />
-
-        {/* Other pages are wrapped with NavBar */}
-        <Route path="/" element={<><NavBar /><HomePage /></>} />
-        <Route path="/university-partners" element={<><NavBar /><UniversityPartners /></>} />
-        <Route path="/university-partners/application" element={<><NavBar /><UniversityPartnersApplication /></>} />
-        <Route path="/corporate-partners" element={<><NavBar /><CorporatePartners /></>} />
-        <Route path="/corporate-partners/application" element={<><NavBar /><CorporatePartnersApplication /></>} />
-        <Route path="/linkedin-rebrand" element={<><NavBar /><LinkedInRebrand /></>} />
-        <Route path="/resume-rebrand" element={<><NavBar /><ResumeRebrand /></>} />
-        <Route path="/interview-prep" element={<><NavBar /><InterviewPrep /></>} />
-        <Route path="/events-for-readiness" element={<><NavBar /><EventsForReadiness /></>} />
-        <Route path="/apply-to-cohort" element={<><NavBar /><ApplyToCohort /></>} />
-        <Route path="/speakers/application" element={<><NavBar /><SpeakerApplication /></>} />
-        <Route path="/speakers" element={<><NavBar /><Speakers /></>} />
-        <Route path="/faqs" element={<><NavBar /><FAQs /></>} />
-        {/* Additional routes can be added here as needed */}
-      </Routes>
+      <NavBar />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/university-partners" element={<UniversityPartners />} />
+          <Route path="/university-partners/application" element={<UniversityPartnersApplication />} />
+          <Route path="/corporate-partners" element={<CorporatePartners />} />
+          <Route path="/corporate-partners/application" element={<CorporatePartnersApplication />} />
+          <Route path="/linkedin-rebrand" element={<LinkedInRebrand />} />
+          <Route path="/resume-rebrand" element={<ResumeRebrand />} />
+          <Route path="/interview-prep" element={<InterviewPrep />} />
+          <Route path="/events-for-readiness" element={<EventsForReadiness />} />
+          <Route path="/apply-to-cohort" element={<ApplyToCohort />} />
+          <Route path="/speakers/application" element={<SpeakerApplication />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/maintenance" element={<MaintenancePage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

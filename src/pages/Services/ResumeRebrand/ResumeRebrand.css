@@ -5,13 +5,13 @@
   width: 90%;
   max-width: 100%;
   margin: auto;
-  padding-top: 120px; /* Adjust as needed */
+  padding-top: 3px;
 }
 
 .resume-banner {
   background-size: cover;
   background-position: center;
-  height: 300px; /* Adjust as needed */
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,6 @@
 }
 
 .banner-content {
-  /* Centering content */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,10 +26,10 @@
 }
 
 h1 {
-  font-size: 3rem; /* Adjust the size as needed */
-  font-weight: bold; /* Makes the text bold */
-  color: white; /* Adjust the color as needed */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for better visibility */
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .resume-description {
@@ -63,6 +62,12 @@ h1 {
   margin-bottom: 20px;
   text-align: left;
   margin-right: 4%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .row .tip:nth-child(2n) {
@@ -96,9 +101,9 @@ h1 {
   font-weight: bold;
 }
 
-.form-group input[type="text"], 
-.form-group input[type="email"], 
-.form-group input[type="url"], 
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="url"],
 .form-group input[type="file"] {
   width: 100%;
   padding: 8px;
@@ -124,7 +129,12 @@ h1 {
 
 @media (max-width: 768px) {
   .row, .tip {
-      width: 100%;
-      margin-right: 0;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .tip {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }

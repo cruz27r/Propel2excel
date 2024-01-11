@@ -6,10 +6,11 @@
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding-top: 80px;
 }
 
-.explanation-section, .tips-section {
+.explanation-section,
+.tips-section,
+.linkedin-form {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -17,26 +18,38 @@
   margin-bottom: 30px;
 }
 
+.tips-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .tip {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 20px;
+  width: calc(50% - 10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tip.half-width {
-  width: 48%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 2%;
+.tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.tip.full-width {
+.tips-row {
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content: space-between;
 }
 
 .full-width-banner {
   width: 100%;
   display: block;
   margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .linkedin-form {
@@ -58,8 +71,8 @@
   font-weight: bold;
 }
 
-.form-group input[type="text"], 
-.form-group input[type="email"], 
+.form-group input[type="text"],
+.form-group input[type="email"],
 .form-group input[type="url"] {
   width: 100%;
   padding: 8px;
@@ -84,8 +97,13 @@
 }
 
 @media (max-width: 768px) {
-  .tip.half-width {
+  .tip, .tips-row {
     width: 100%;
     margin-right: 0;
+  }
+
+  .tip {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
