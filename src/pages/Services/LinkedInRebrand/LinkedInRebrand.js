@@ -42,7 +42,7 @@ function LinkedInRebrand() {
 
     return (
         <div className="linkedin-rebrand-container">
-            <div className="explanation-section">
+            <div className="explanation-section" style={{ backgroundImage: `url(${bannerImage1})` }}>
                 <h1>Optimize Your LinkedIn Profile</h1>
                 <p>Enhancing your LinkedIn profile can significantly impact your professional networking and job searching. Here are some expert tips to help you create a compelling LinkedIn presence.</p>
             </div>

@@ -8,15 +8,19 @@
   margin: auto;
 }
 
-.explanation-section,
-.tips-section,
-.linkedin-form {
-  background-color: #fff;
-  padding: 20px;
+.explanation-section {
+  background-color: #fff; /* This will be overridden by inline style */
+  padding: 40px; /* Increased padding */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 30px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 300px; /* Optional: Adjust this value as needed */
 }
+
 
 .tips-section {
   display: flex;

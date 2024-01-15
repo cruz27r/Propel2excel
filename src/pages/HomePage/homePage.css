@@ -32,6 +32,7 @@
   color: #ffffff; /* White color for contrast */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
   margin-bottom: 20px;
+  text-align: center; /* Center-align the title text */
 }
 
 .banner-content .main-description {
@@ -41,7 +42,26 @@
   max-width: 600px; /* Max width for better line length */
   margin: auto; /* Centering the text */
   padding: 0 20px; /* Padding on the sides */
+  text-align: center; /* Center-align the description text */
 }
+
+
+.details-button {
+  background-color: #373751; /* Dark background */
+  color: #fcf7ff; /* Light text color */
+  padding: 12px 30px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Uppercase text */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Inline-block display */
+  margin: 5px; /* Margin around buttons */
+}
+
 
 /* Enhanced Video Section Styling */
 .video-section {

@@ -1,7 +1,7 @@
 .interview-prep-container {
   max-width: 1000px;
-  margin: auto;
-  padding-top: 5px;
+  margin: 20px auto;
+  padding: 5px 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -9,15 +9,15 @@
 
 .interview-prep-container h1 {
   text-align: center;
-  color: #333;
+  color: #ffffff;
+  font-size: 35pt;
 }
 
-/* Style for the banner with slideshow */
 .banner {
   position: relative;
   width: 100%;
-  height: 300px; /* Adjust the height as needed */
-  background-color: #e7e7e7; /* Placeholder if images aren't loaded */
+  height: 300px;
+  background-color: #e7e7e7;
 }
 
 .banner-title {
@@ -26,11 +26,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 2.5rem; /* Adjust size as needed */
+  font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Style for the detailed description section */
 .page-description {
   text-align: justify;
   padding: 15px;
@@ -44,7 +43,10 @@
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
-  margin-bottom: 15px;
+  margin: 15px 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-header {
@@ -52,17 +54,24 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  background-color: #f7f7f7;
+  background-color: #373751;
+  color: white;
   cursor: pointer;
 }
 
-.section-header h2 {
-  margin: 0;
-  transition: transform 0.3s ease;
+.section-header:hover {
+  background-color: #1fa1c4;
 }
 
-.section-header:hover h2 {
-  transform: scale(1.03);
+.section-content {
+  display: none;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-top: 2px solid #373751;
+}
+
+.content-section.expanded .section-content {
+  display: flex;
 }
 
 .arrow {
@@ -87,14 +96,8 @@
   transform: scale(1.3);
 }
 
-.section-content {
-  display: flex;
-  background-color: #e7e7e7;
-  padding: 10px;
-}
-
 .content-image {
-  width: 150px; /* Fixed width for the image */
+  width: 150px;
   height: auto;
   margin-right: 15px;
   transition: transform 0.3s ease;
@@ -104,7 +107,6 @@
   transform: scale(1.25);
 }
 
-/* Responsive Image Handling */
 @media (max-width: 768px) {
   .section-content {
     flex-direction: column;
@@ -112,12 +114,11 @@
 
   .content-image {
     width: 100%;
-    height: auto;
     margin-bottom: 15px;
   }
 
   .banner {
-    height: 200px; /* Adjust for smaller screens */
+    height: 200px;
   }
 
   .banner-title {

@@ -39,38 +39,13 @@ function InterviewPrep() {
       content: "Practice your responses to common interview questions, but be prepared to adapt your answers to the conversation.",
       image: interviewTipsImage
     },
-    {
-      title: "Understand the Job Description",
-      content: "Make sure you thoroughly understand the job description and how your skills match the requirements.",
-      image: interviewTipsImage
-    },
-    {
-      title: "Research the Company",
-      content: "Investigate the company's background and the industry to show your interest and preparation during the interview.",
-      image: interviewTipsImage
-    },
-    {
-      title: "Prepare Your Questions",
-      content: "Prepare thoughtful questions for your interviewer, showing your interest in the role and your strategic thinking skills.",
-      image: interviewTipsImage
-    },
-    {
-      title: "Dress Appropriately",
-      content: "Dress for success. Ensure your attire is appropriate for the company culture and the position you're applying for.",
-      image: interviewTipsImage
-    },
-    {
-      title: "Practice Your Answers",
-      content: "Practice your responses to common interview questions, but be prepared to adapt your answers to the conversation.",
-      image: interviewTipsImage
-    },
-    // Add more tips as needed...
+    // Add more tips as needed
   ];
 
   return (
     <div className="interview-prep-container">
       <div className="banner" style={{ backgroundImage: `url(${bannerImage})` }}>
-          <h1 className="banner-title">Interview Preparation</h1>
+        <h1 className="banner-title">Interview Preparation</h1>
       </div>
 
       <div className="page-description">
@@ -83,7 +58,7 @@ function InterviewPrep() {
       </div>
 
       {tips.map((tip, index) => (
-        <div key={index} className="content-section">
+        <div key={index} className={`content-section ${expandedSections[index] ? 'expanded' : ''}`}>
           <div className="section-header" onClick={() => toggleSection(index)}>
             <h2>{tip.title}</h2>
             <div className={`arrow ${expandedSections[index] ? 'up' : 'down'}`}>&#9662;</div>

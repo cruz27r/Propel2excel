@@ -17,7 +17,7 @@ function Home() {
             <h1 className="main-title">Propel2Excel</h1>
             <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
           </div>
-          <Link to="/become-p2e" className="APPLY TO COHORT">P2E cohort</Link>
+          <Link to="/become-p2e" className="details-button">P2E cohort</Link>
         </div>
       </main>
 
