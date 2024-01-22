@@ -1,75 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './homePage.css';
 
 import photo1 from '../../assets/images/looking_over_code.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
-import photo3 from '../../assets/images/networking_table.jpg'; // Ensure this image is in your assets
+import photo3 from '../../assets/images/networking_table.jpg';
 import background from '../../assets/images/networking_event.jpeg';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
+import workshopImage from '../../assets/images/looking_over_code.jpg';
+import networkingImage from '../../assets/images/looking_over_code.jpg';
+import speakerSeriesImage from '../../assets/images/looking_over_code.jpg';
+import careerCoachingImage from '../../assets/images/looking_over_code.jpg';
+import resumeWorkshopImage from '../../assets/images/looking_over_code.jpg';
+import interviewPrepImage from '../../assets/images/looking_over_code.jpg';
 
 function Home() {
+  const [activeEvent, setActiveEvent] = useState('');
+
+  const handleHoverEvent = (eventName) => {
+    setActiveEvent(eventName);
+  };
+
   return (
     <div className="App">
       <main className='banner' style={{ backgroundImage: `url(${background})` }}>
         <div className="banner-content">
-          <div className="text-box">
-            <h1 className="main-title">Propel2Excel</h1>
-            <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
-          </div>
+          <h1 className="main-title">Propel2Excel</h1>
+          <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
           <Link to="/become-p2e" className="details-button">P2E cohort</Link>
         </div>
       </main>
 
-      <section className="button-group">
-        {/* Update href attributes to link to respective sections */}
-        <a href="#linkedin-rebrand" className="conference-button">LinkedIn & Resume Rebrand</a>
-        <a href="#speaking-engagement" className="conference-button">Speaking Engagement</a>
-        <a href="#interview-prep" className="conference-button">Interview Preparation</a>
-      </section>
-
-      <div className="video-section">
-        <video controls>
-          <source src={video1} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
       <div className="p2e-description">
-        <p className="p2e-text">Propel2Excel is dedicated to empowering underrepresented students in business, providing a bridge to prestigious career opportunities through comprehensive coaching and networking.</p>
+        <p className="p2e-text">Propel2Excel is dedicated to empowering underrepresented students in business, providing a bridge to prestigious career opportunities through comprehensive coaching and networking. Our mission is to bridge the gap between non-target universities and Fortune 100 companies, offering a transformative experience that opens doors to internships and lucrative careers. With a focus on inclusivity and excellence, we aim to create a diverse pipeline of future business leaders.</p>
       </div>
 
-      <section className="section-service" id="linkedin-rebrand">
+      <section className="corporate-logos">
+        <img src={photo2} alt="Networking at a large table" />
         <div className="text-box">
-          <h2>LinkedIn & Resume Rebrand</h2>
-          <p>Revamp your professional identity with our LinkedIn & Resume Rebrand service, tailored to showcase your unique strengths and career aspirations.</p>
-          <Link to="/linkedin-rebrand" className="details-button">Learn More</Link>
-        </div>
-        <img src={photo2} alt="LinkedIn & Resume Rebrand" className="section-image" />
-      </section>
-
-      <section className="section-service" id="speaking-engagement" style={{ width: '85%', margin: '0 auto' }}>
-        <div className="text-box">
-          <h2>Speaking Engagement</h2>
-          <p>Engage with industry leaders and gain invaluable insights through our inspiring speaking engagements, designed to motivate and open doors to new opportunities. These sessions are tailored to provide practical advice, industry-specific knowledge, and motivational stories to empower and inspire the next generation of business leaders.</p>
-          <Link to="/speaking-engagement" className="details-button">Learn More</Link>
+          <h2>Empowering Partnerships with Corporate Giants</h2>
+          <p>At Propel2Excel, we have established strong partnerships with industry giants such as Google, Microsoft, and Amazon. These collaborations create unique opportunities for our participants, from internships to job placements. Our corporate network offers invaluable insights and mentorship from experienced professionals in these renowned companies.</p>
+          <Link to="/corporate-companies" className="details-button">Discover Our Corporate Network</Link>
         </div>
       </section>
 
-      <section className="section-service" id="interview-prep" style={{ flexDirection: 'row-reverse' }}>
+      <section className="mentors-section">
+        <img src={photo3} alt="Networking around a table" />
         <div className="text-box">
-          <h2>Interview Preparation</h2>
-          <p>Master the art of interviewing with our personalized preparation techniques, designed to boost your confidence and performance in any interview scenario. Our program includes mock interviews, feedback sessions, and expert tips on handling tough questions, body language, and communication skills to ensure you're fully prepared for your next big opportunity.</p>
-          <Link to="/interview-preparation" className="details-button">Learn More</Link>
+          <h2>Mentorship with a Personal Touch</h2>
+          <p>Our mentorship program is the heart of Propel2Excel. Experienced mentors from leading firms offer weekly coaching, guiding students in their career journeys. Beyond group coaching, students can request private 1-on-1 meetings with mentors for personalized advice. Our mentors play a crucial role in bringing students to 80% of speaking engagements and ensuring progress in LinkedIn and resume rebranding.</p>
+          <Link to="/mentors" className="details-button">Meet Our Mentors</Link>
         </div>
-        <img src={photo3} alt="Interview Preparation" className="section-image" />
       </section>
 
-      <section className="section-service" id="candidate-ready" style={{ width: '85%', margin: '0 auto' }}>
+      <section className="coach-section">
         <div className="text-box">
-          <h2>Candidate Ready</h2>
-          <p>Our comprehensive program ensures you are fully prepared to meet the demands of top-tier employers, making you an outstanding candidate ready for success. We focus on developing your soft skills, enhancing your business acumen, and refining your professional presentation to ensure you stand out in the competitive job market.</p>
-          <Link to="/candidate-ready" className="details-button">Learn More</Link>
+          <h2>Tailored Coaching for Career Excellence</h2>
+          <p>Our 1-on-1 coaching program focuses on specific career fields, offering interview preparation, LinkedIn rebranding, and more. Our coaches are dedicated to helping students excel in their chosen paths. Additionally, students gain insights and introductions to senior leadership within their respective companies, paving the way for successful careers.</p>
+          <Link to="/coach" className="details-button">Connect with a Career Coach</Link>
+        </div>
+        <video src={video1} controls />
+      </section>
+
+      <section className="events-section">
+        <div className="events-content">
+          <h2>Events That Lead and Inspire</h2>
+          <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
+          <ul className="events-bullets">
+            <li onMouseOver={() => handleHoverEvent('workshop')} className={activeEvent === 'workshop' ? 'active' : ''}>Interactive Workshops</li>
+            <li onMouseOver={() => handleHoverEvent('networking')} className={activeEvent === 'networking' ? 'active' : ''}>Networking Events</li>
+            <li onMouseOver={() => handleHoverEvent('speaker')} className={activeEvent === 'speaker' ? 'active' : ''}>Speaker Series</li>
+          </ul>
+        </div>
+        <div className="events-image">
+          <img id="events-img" src={workshopImage} alt="Event" />
+        </div>
+      </section>
+
+      <section className="services-section">
+        <div className="services-content">
+          <h2>Comprehensive Services for Career Advancement</h2>
+          <p>We offer a range of services designed to equip students with the necessary tools for career success, from LinkedIn rebranding to expert interview preparation.</p>
+          <ul className="services-bullets">
+            <li onMouseOver={() => handleHoverEvent('coaching')} className={activeEvent === 'coaching' ? 'active' : ''}>Career Coaching</li>
+            <li onMouseOver={() => handleHoverEvent('resume')} className={activeEvent === 'resume' ? 'active' : ''}>Resume Workshops</li>
+            <li onMouseOver={() => handleHoverEvent('interview')} className={activeEvent === 'interview' ? 'active' : ''}>Interview Preparation</li>
+          </ul>
+        </div>
+        <div className="services-image">
+          <img id="services-img" src={careerCoachingImage} alt="Service" />
         </div>
       </section>
     </div>

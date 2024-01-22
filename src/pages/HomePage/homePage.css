@@ -1,11 +1,15 @@
-/* App.css - Global styles */
-.app-container, .App {
-  font-family: Arial, sans-serif;
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Padding and border are included in the width */
-  background-color: #fcf7ff;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General Styling */
+body, .app-container, .App {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  scroll-behavior: smooth;
 }
 
 /* Banner Styling */
@@ -16,170 +20,206 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 80vh;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .banner-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  text-align: center;
+  width: 80%;
+  padding: 20px;
 }
 
 .banner-content .main-title {
-  font-size: 3rem; /* Larger font size for the main title */
-  color: #ffffff; /* White color for contrast */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for better readability */
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
-  text-align: center; /* Center-align the title text */
 }
 
 .banner-content .main-description {
-  font-size: 1.5rem; /* Readable font size for description */
+  font-size: 1.5rem;
   color: #ffffff;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-  max-width: 600px; /* Max width for better line length */
-  margin: auto; /* Centering the text */
-  padding: 0 20px; /* Padding on the sides */
-  text-align: center; /* Center-align the description text */
+  max-width: 600px;
+  margin: auto;
 }
-
 
 .details-button {
-  background-color: #373751; /* Dark background */
-  color: #fcf7ff; /* Light text color */
-  padding: 12px 30px; /* Padding */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1rem; /* Font size */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase; /* Uppercase text */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
-  text-decoration: none; /* No underline */
-  display: inline-block; /* Inline-block display */
-  margin: 5px; /* Margin around buttons */
+  background-color: #373751;
+  color: #fcf7ff;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Enhanced Video Section Styling */
-.video-section {
-  width: 100%;
-  max-width: 1280px;
-  margin: 40px auto; /* Increased margin for more focus */
-  padding: 20px; /* Padding around the video */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
-  border-radius: 15px; /* More pronounced rounded corners */
-  overflow: hidden;
-  background-color: #fff; /* Optional: Add a background color */
-  border: 1px solid #ddd; /* Optional: Add a border */
-}
-
-.video-section video {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Cover fit to ensure full area coverage */
-}
-
-/* Main Tag Description Styling */
+/* P2E Description Section */
 .p2e-description {
-  font-size: 1.2rem; /* Slightly larger font size */
-  color: #333333; /* Dark color for readability */
-  max-width: 800px; /* Max width for better line length */
-  margin: 40px auto; /* Margin top and bottom */
-  padding: 0 20px; /* Padding on the sides */
-  line-height: 1.6; /* Line height for readability */
-}
-
-/* Button Group Styling */
-.button-group {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 40px 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333333;
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Enhanced Button Styles for Specific Classes */
-.ticket-button, .conference-button, .details-button {
-  background-color: #373751; /* Dark background */
-  color: #fcf7ff; /* Light text color */
-  padding: 12px 30px; /* Padding */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1rem; /* Font size */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase; /* Uppercase text */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
-  text-decoration: none; /* No underline */
-  display: inline-block; /* Inline-block display */
-  margin: 5px; /* Margin around buttons */
+.p2e-description img {
+  width: 40%;
+  margin-right: 20px;
 }
 
-/* Hover Effect for Specific Buttons */
-.ticket-button:hover, .conference-button:hover, .details-button:hover {
-  background-color: #1fa1c4; /* Background color on hover */
-  color: #fdca40; /* Text color on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
-}
-
-/* Section Service Styling */
-.section-service {
+/* Corporate Companies Section */
+.corporate-logos {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f4f4f4; /* Neutral background color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 90%;
+  padding: 40px;
+  margin: 40px auto;
 }
 
-.section-service .text-box, .section-service .section-image {
-  width: 50%;
-  margin: 0 20px;
+.corporate-logos .text-box {
+  width: 60%;
+  padding-right: 20px;
 }
 
-.section-service .section-image {
-  border-radius: 10px; /* Rounded corners for images */
-  object-fit: cover; /* Ensures the image covers the area */
+.corporate-logos img {
+  max-width: 35%;
+  margin-left: 20px;
 }
 
-/* Responsive Design Adjustments */
+/* Mentors Section */
+.mentors-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin: 40px auto;
+}
+
+.mentors-section img {
+  width: 35%;
+  margin-right: 20px;
+}
+
+/* Coach Section */
+.coach-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin: 40px auto;
+}
+
+.coach-section video {
+  width: 35%;
+  margin-left: 20px;
+}
+
+/* Events Section */
+.events-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.events-content, .services-content {
+  flex: 1;
+}
+
+.events-bullets, .services-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.events-bullets li, .services-bullets li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  list-style-type: circle;
+  font-family: 'Roboto', sans-serif;
+  color: #0056b3;
+}
+
+.events-bullets li.active, .services-bullets li.active,
+.events-bullets li:hover, .services-bullets li:hover {
+  list-style-type: disc;
+}
+
+.events-image, .services-image {
+  flex: 1;
+  text-align: center;
+}
+
+/* Services Section */
+.services-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.services-image img, .events-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+/* Interactive Hover Effect */
+.events-bullets li:hover ~ .events-image img,
+.services-bullets li:hover ~ .services-image img {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .banner-content .main-title {
-    font-size: 2.5rem;
+  .banner-content {
+    width: 95%;
   }
 
-  .banner-content .main-description,
-  .p2e-description {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .ticket-button, .conference-button, .details-button {
-    padding: 10px 20px; /* Smaller padding on smaller screens */
-    font-size: 0.9rem; /* Slightly smaller font size for small screens */
-  }
-
-  .video-section {
-    padding: 10px; /* Smaller padding on smaller screens */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Smaller shadow on smaller screens */
-  }
-
-  .section-service {
+  .p2e-description, .corporate-logos, .mentors-section, .coach-section {
     flex-direction: column;
     text-align: center;
+    width: 100%;
   }
 
-  .section-service .text-box, .section-service .section-image {
+  .p2e-description img, .corporate-logos img, .mentors-section img, .coach-section video {
     width: 100%;
-    margin: 10px 0;
+    margin: 20px 0;
+  }
+
+  .events-section, .services-section {
+    flex-direction: column;
+  }
+
+  .events-content, .services-content, .events-image, .services-image {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
-/* Additional styles, if any, can be added below */
+/* Additional Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
