@@ -36,7 +36,7 @@ function UniversityPartners() {
       <h1>Our University Partners</h1>
       
       <section className="current-partners">
-        <h2>Current University Partners</h2>
+        <h2>Current University Represented</h2>
         <div className="partners-grid">
           {universityPartners.map((partner, index) => (
             <div key={index} className="partner">
