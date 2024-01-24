@@ -1,10 +1,8 @@
-/* NavBar.css - Styles specific to NavBar component */
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem; /* Increased padding for better spacing */
   background-color: #373751;
   color: #fcf7ff;
   position: fixed;
@@ -16,34 +14,23 @@
 }
 
 .hamburger-menu {
-  display: none; /* Hidden by default, displayed on small screens */
+  display: none;
   cursor: pointer;
   position: absolute;
   left: 1rem;
-  top: 1rem; /* Position at the top left corner */
-  font-size: 24px; /* Size of the hamburger menu icon */
-  z-index: 2000; /* Higher z-index to appear above the links */
-}
-
-.hamburger-menu::before {
-  font-size: 2rem; /* Size of the hamburger icon */
-  color: #fcf7ff; /* Color of the hamburger icon */
-}
-
-.hamburger-menu.open::before {
-  content: '✕'; /* X symbol for the open menu */
-  /* Position remains the same, as defined in .hamburger-menu */
+  top: 1rem;
+  font-size: 24px;
+  z-index: 2000;
 }
 
 .logo-link {
   display: flex;
   justify-content: center;
   flex-grow: 1;
-  position: relative;
 }
 
 .logo {
-  max-height: 5em; /* Height of the logo */
+  max-height: 5em;
   width: auto;
 }
 
@@ -52,7 +39,8 @@
   align-items: center;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0 1rem; /* Added padding */
+  gap: 1rem; /* Added gap between links */
 }
 
 .nav-links a, .dropdown .dropbtn {
@@ -64,7 +52,7 @@
 
 .nav-links a:hover, .dropdown .dropbtn:hover {
   color: #fdca40;
-  background-color: #1fa1c4;
+  background-color: transparent;
 }
 
 .dropdown {
@@ -81,6 +69,16 @@
   cursor: pointer;
 }
 
+.dropdown .dropbtn::after {
+  content: '▼';
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn::after {
+  transform: rotate(180deg);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -88,6 +86,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border-radius: 5px;
 }
 
 .dropdown-content a {
@@ -96,6 +95,12 @@
   text-decoration: none;
   display: block;
   text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #1fa1c4;
+  color: #fdca40;
 }
 
 .dropdown:hover .dropdown-content {
@@ -104,12 +109,11 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
   }
 
   .hamburger-menu {
-    display: block; /* Show hamburger menu icon on smaller screens */
+    display: block;
   }
 
   .logo-link {
@@ -121,7 +125,7 @@
   }
 
   .logo {
-    max-height: 3.5em; /* Adjusted logo size for smaller screens */
+    max-height: 3.5em;
   }
 
   .nav-links {
@@ -130,20 +134,33 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 65%; /* Reduced width of the side menu */
+    width: 65%;
     flex-direction: column;
     background-color: #373751;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    padding: 1rem; /* Adjust padding for mobile menu */
   }
 
   .nav-links.open {
     display: flex;
-    transform: translateX(0); /* Slide in the menu when open */
+    transform: translateX(0);
   }
 
   .nav-links.open a, .nav-links.open .dropdown .dropbtn {
-    font-size: 1.5rem; /* Larger text size for better visibility */
+    font-size: 1.5rem;
     padding: 1rem;
   }
+}
+
+.header.show {
+  visibility: visible;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in, visibility 0.3s ease-in;
+}
+
+.header.hide {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out, visibility 0.3s ease-out;
 }

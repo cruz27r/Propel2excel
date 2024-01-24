@@ -84,142 +84,189 @@ body, .app-container, .App {
   margin-right: 20px;
 }
 
-/* Corporate Companies Section */
+/* Corporate Logos Section */
 .corporate-logos {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px;
   margin: 40px auto;
+  padding: 40px;
+  max-width: 90%;
 }
 
 .corporate-logos .text-box {
-  width: 60%;
-  padding-right: 20px;
+  width: 58%;
+  padding-right: 2%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-left: 20px;
 }
 
 .corporate-logos img {
-  max-width: 35%;
-  margin-left: 20px;
+  max-width: 40%;
+  margin-right: 20px;
 }
 
 /* Mentors Section */
 .mentors-section {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  justify-content: space-between;
   margin: 40px auto;
+  padding: 40px;
+  max-width: 90%;
 }
 
 .mentors-section img {
-  width: 35%;
-  margin-right: 20px;
-}
-
-/* Coach Section */
-.coach-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  margin: 40px auto;
-}
-
-.coach-section video {
-  width: 35%;
+  max-width: 40%;
+  order: 2;
   margin-left: 20px;
+}
+
+.mentors-section .text-box {
+  width: 58%;
+  padding-left: 2%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  order: 1;
+}
+
+/* Responsive Design for Corporate and Mentors Sections */
+@media (max-width: 768px) {
+  .corporate-logos, .mentors-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .corporate-logos img, .mentors-section img {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .corporate-logos .text-box, .mentors-section .text-box {
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+  }
 }
 
 /* Events Section */
 .events-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start;
   margin: 40px auto;
-  text-align: left;
+  padding: 40px;
+  max-width: 90%;
 }
 
-.events-content, .services-content {
-  flex: 1;
+.events-content {
+  width: 40%;
+  padding-right: 2%;
 }
 
-.events-bullets, .services-bullets {
+.events-bullets {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
-.events-bullets li, .services-bullets li {
-  margin-bottom: 10px;
+.events-bullets li {
+  margin-bottom: 15px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  list-style-type: circle;
-  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: #0056b3;
 }
 
-.events-bullets li.active, .services-bullets li.active,
-.events-bullets li:hover, .services-bullets li:hover {
-  list-style-type: disc;
+.events-bullets li.active, .events-bullets li:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.events-image, .services-image {
-  flex: 1;
+.events-image {
+  width: 40%;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
 /* Services Section */
 .services-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 40px;
+  align-items: flex-start;
   margin: 40px auto;
-  text-align: left;
+  padding: 40px;
+  max-width: 90%;
 }
 
-.services-image img, .events-image img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
+.services-content {
+  width: 40%;
+  padding-right: 2%;
 }
 
-/* Interactive Hover Effect */
+.services-bullets {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.services-bullets li {
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #0056b3;
+}
+
+.services-bullets li.active, .services-bullets li:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.services-image {
+  width: 40%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Interactive Hover Effect for Changing Content */
+/* Assuming JavaScript handles the swapping of images and content */
 .events-bullets li:hover ~ .events-image img,
 .services-bullets li:hover ~ .services-image img {
   transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Responsive Design for Events and Services Sections */
 @media (max-width: 768px) {
-  .banner-content {
-    width: 95%;
-  }
-
-  .p2e-description, .corporate-logos, .mentors-section, .coach-section {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-
-  .p2e-description img, .corporate-logos img, .mentors-section img, .coach-section video {
-    width: 100%;
-    margin: 20px 0;
-  }
-
   .events-section, .services-section {
     flex-direction: column;
+    text-align: center;
   }
 
-  .events-content, .services-content, .events-image, .services-image {
+  .events-content, .services-content {
     width: 100%;
     margin-bottom: 20px;
   }
-}
 
-/* Additional Keyframes */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  .events-image, .services-image {
+    width: 100%;
+    order: 1; /* Images on top */
+  }
+
+  .events-content, .services-content {
+    order: 2; /* Content below */
+  }
 }

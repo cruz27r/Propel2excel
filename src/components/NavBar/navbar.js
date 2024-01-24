@@ -4,40 +4,52 @@ import logoImage from '../../assets/images/P2E_Logo.png';
 import './navbar.css';
 
 const NavBar = () => {
+  const [showNavBar, setShowNavBar] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollY = useRef(window.scrollY);
-  const hideTimer = useRef();
+  const navbarRef = useRef(); // Correctly define the ref here
+  const navBarVisibilityTimeout = useRef();
+
+  const handleScroll = () => {
+    clearTimeout(navBarVisibilityTimeout.current);
+
+    if (window.scrollY > lastScrollY.current && window.scrollY > (navbarRef.current?.offsetHeight || 0)) {
+      setShowNavBar(false);
+    } else {
+      setShowNavBar(true);
+    }
+
+    navBarVisibilityTimeout.current = setTimeout(() => {
+      if (window.scrollY > (navbarRef.current?.offsetHeight || 0)) {
+        setShowNavBar(false);
+      }
+    }, 5500); // Hide navbar after 5.5 seconds of inactivity
+
+    lastScrollY.current = window.scrollY;
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      clearTimeout(hideTimer.current);
-      hideTimer.current = setTimeout(() => {
-        if (window.scrollY > lastScrollY.current) {
-          setIsMobileMenuOpen(false);
-        }
-        lastScrollY.current = window.scrollY;
-      }, 100);
-    };
-
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(navBarVisibilityTimeout.current);
     };
   }, []);
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
   return (
-    <header className={`header ${isMobileMenuOpen ? 'open' : ''}`}>
+    <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isMobileMenuOpen ? 'open' : ''}`}>
       <div className="hamburger-menu" onClick={toggleMenu}>
-        {isMobileMenuOpen ? '✕' : '☰'} {/* Change symbols/icons as needed */}
+        {isMobileMenuOpen ? '✕' : '☰'}
       </div>
       <Link to="/" className='logo-link'>
         <img src={logoImage} alt="Company Logo" className="logo" />
       </Link>
       <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
+        {/* Navigation links */}
         <div className="dropdown">
           <button className="dropbtn">University Partners</button>
           <div className="dropdown-content">
