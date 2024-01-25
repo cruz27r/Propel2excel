@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './homePage.css';
 
-import photo1 from '../../assets/images/looking_over_code.jpg';
+import photo1 from '../../assets/images/company-office-headshots-hartford-connecticut.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
 import photo3 from '../../assets/images/networking_table.jpg';
-import background from '../../assets/images/networking_event.jpeg';
+import background from '../../assets/images/company-office-headshots-hartford-connecticut.jpg';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
 import workshopImage from '../../assets/images/looking_over_code.jpg';
 import networkingImage from '../../assets/images/looking_over_code.jpg';
@@ -59,7 +59,7 @@ function Home() {
           <p>Our 1-on-1 coaching program focuses on specific career fields, offering interview preparation, LinkedIn rebranding, and more. Our coaches are dedicated to helping students excel in their chosen paths. Additionally, students gain insights and introductions to senior leadership within their respective companies, paving the way for successful careers.</p>
           <Link to="/coach" className="details-button">Connect with a Career Coach</Link>
         </div>
-        <video src={video1} controls />
+        <video src={video1} autoPlay muted loop playsInline />
       </section>
 
       <section className="events-section">

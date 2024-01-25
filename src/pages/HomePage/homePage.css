@@ -5,11 +5,27 @@
 body, .app-container, .App {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
+  padding-top: 60px;
   width: 100%;
   box-sizing: border-box;
-  background-color: #f4f4f4;
+  background-color: #FCF7FF; /* Magnolia for background */
   scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  max-width: 95%; /* Adjusted to almost full width for a more centered look */
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Banner Styling */
@@ -17,11 +33,11 @@ body, .app-container, .App {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
+  height: 90vh;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -33,22 +49,22 @@ body, .app-container, .App {
 
 .banner-content .main-title {
   font-size: 3rem;
-  color: #ffffff;
+  color: #FCF7FF; /* Magnolia for banner title */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
 }
 
 .banner-content .main-description {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #FCF7FF; /* Magnolia for banner description */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
   max-width: 600px;
   margin: auto;
 }
 
 .details-button {
-  background-color: #373751;
-  color: #fcf7ff;
+  background-color: #101D42; /* Oxford Blue for buttons */
+  color: #FCF7FF; /* Magnolia for button text */
   padding: 12px 30px;
   border-radius: 5px;
   font-size: 1rem;
@@ -63,29 +79,86 @@ body, .app-container, .App {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.details-button:hover {
+  background-color: #FCBA04; /* Selective Yellow for button hover */
+  color: #101D42; /* Oxford Blue for text on hover */
+}
+
 /* P2E Description Section */
 .p2e-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
-  color: #333333;
+  color: #000000; /* Black for text */
   max-width: 90%;
   margin: 40px auto;
   padding: 20px;
   line-height: 1.6;
-  background-color: #ffffff;
+  background-color: #ffffff; /* White for description background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.p2e-description img {
-  width: 40%;
-  margin-right: 20px;
-}
-
 /* Corporate Logos Section */
 .corporate-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 90%;
+}
+
+.corporate-logos img {
+  flex: 1;
+  margin-right: 20px;
+  max-width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.corporate-logos .text-box {
+  flex: 1;
+  max-width: 50%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-left: 20px;
+}
+
+/* Mentors Section */
+.mentors-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 90%;
+}
+
+.mentors-section img {
+  flex: 1;
+  order: 2;
+  margin-left: 20px;
+  max-width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mentors-section .text-box {
+  flex: 1;
+  order: 1;
+  max-width: 50%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Coach Section */
+.coach-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,7 +167,7 @@ body, .app-container, .App {
   max-width: 90%;
 }
 
-.corporate-logos .text-box {
+.coach-section .text-box {
   width: 58%;
   padding-right: 2%;
   background-color: #ffffff;
@@ -104,54 +177,9 @@ body, .app-container, .App {
   margin-left: 20px;
 }
 
-.corporate-logos img {
+.coach-section video {
   max-width: 40%;
   margin-right: 20px;
-}
-
-/* Mentors Section */
-.mentors-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 40px auto;
-  padding: 40px;
-  max-width: 90%;
-}
-
-.mentors-section img {
-  max-width: 40%;
-  order: 2;
-  margin-left: 20px;
-}
-
-.mentors-section .text-box {
-  width: 58%;
-  padding-left: 2%;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  order: 1;
-}
-
-/* Responsive Design for Corporate and Mentors Sections */
-@media (max-width: 768px) {
-  .corporate-logos, .mentors-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .corporate-logos img, .mentors-section img {
-    width: 100%;
-    margin: 20px 0;
-  }
-
-  .corporate-logos .text-box, .mentors-section .text-box {
-    width: 100%;
-    padding: 20px;
-    margin: 20px 0;
-  }
 }
 
 /* Events Section */
@@ -165,8 +193,8 @@ body, .app-container, .App {
 }
 
 .events-content {
-  width: 40%;
-  padding-right: 2%;
+  width: 45%;
+  padding-right: 20px;
 }
 
 .events-bullets {
@@ -183,19 +211,25 @@ body, .app-container, .App {
   border-radius: 5px;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #0056b3;
+  color: #101D42; /* Oxford Blue for text */
 }
 
 .events-bullets li.active, .events-bullets li:hover {
-  background-color: #0056b3;
-  color: #ffffff;
+  background-color: #FCBA04; /* Selective Yellow for active and hover states */
+  color: #ffffff; /* Magnolia for text */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .events-image {
-  width: 40%;
+  width: 45%;
   text-align: center;
   transition: transform 0.3s ease;
+}
+
+.events-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* Services Section */
@@ -209,8 +243,8 @@ body, .app-container, .App {
 }
 
 .services-content {
-  width: 40%;
-  padding-right: 2%;
+  width: 45%;
+  padding-right: 20px;
 }
 
 .services-bullets {
@@ -227,46 +261,40 @@ body, .app-container, .App {
   border-radius: 5px;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #0056b3;
+  color: #101D42; /* Oxford Blue for text */
 }
 
 .services-bullets li.active, .services-bullets li:hover {
-  background-color: #0056b3;
-  color: #ffffff;
+  background-color: #FCBA04; /* Selective Yellow for active and hover states */
+  color: #ffffff; /* Magnolia for text */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.services-image {
-  width: 40%;
-  text-align: center;
-  transition: transform 0.3s ease;
+.services-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-/* Interactive Hover Effect for Changing Content */
-/* Assuming JavaScript handles the swapping of images and content */
-.events-bullets li:hover ~ .events-image img,
-.services-bullets li:hover ~ .services-image img {
-  transform: scale(1.05);
-}
-
-/* Responsive Design for Events and Services Sections */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .events-section, .services-section {
+  .corporate-logos, .mentors-section, .events-section, .services-section {
     flex-direction: column;
     text-align: center;
   }
 
-  .events-content, .services-content {
+  .corporate-logos img, .mentors-section img, .events-image img, .services-image img {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 
-  .events-image, .services-image {
-    width: 100%;
-    order: 1; /* Images on top */
-  }
-
+  .corporate-logos .text-box, .mentors-section .text-box, 
   .events-content, .services-content {
-    order: 2; /* Content below */
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
   }
 }
+
+/* Additional Styles */
+/* Add any additional styles or overrides here */
