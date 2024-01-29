@@ -1,19 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FCF7FF; /* Light purple background */
+    font-family: 'Roboto', sans-serif;
+}
+
 .partners-container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #F7F7F7; /* Light gray background for container */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* Center content horizontally */
 }
 
 .partners-container h1 {
     text-align: center;
-    color: #333;
+    color: #101D42; /* Oxford Blue for text */
 }
 
 .partners-container h2 {
-    color: #007bff;
+    color: #007bff; /* Primary blue color */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -30,7 +38,7 @@
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    background-color: #f7f7f7;
+    background-color: #fff; /* White background for partners */
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

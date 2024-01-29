@@ -3,10 +3,10 @@
 
 /* General Styling */
 body, .app-container, .App {
+  max-width: 100%;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding-top: 60px;
-  width: 100%;
+  padding-top: 90px;
   box-sizing: border-box;
   background-color: #FCF7FF; /* Magnolia for background */
   scroll-behavior: smooth;
@@ -19,7 +19,7 @@ img, video {
 }
 
 section {
-  max-width: 95%; /* Adjusted to almost full width for a more centered look */
+  max-width: 95%; /* Centered look */
   margin: 40px auto;
   padding: 20px;
   display: flex;
@@ -28,30 +28,34 @@ section {
   align-items: center;
 }
 
-/* Banner Styling */
+/* Banner Section */
 .banner {
+  width: 85%;
+  margin: 0 auto; /* Center the banner */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: contain;
+  background-image: url(../../assets/images/company-office-headshots-hartford-connecticut.jpg); /* Update with the correct path */
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 90vh;
+  min-height: 400px; /* Adjust height as needed */
   animation: fadeIn 1s ease-in-out;
+  background-color: #FCF7FF; /* Set background color to match the page */
 }
 
 .banner-content {
   text-align: center;
-  width: 80%;
+  width: 100%;
   padding: 20px;
+  color: #FCF7FF; /* Adjust the text color as needed for visibility */
 }
 
-.banner-content .main-title {
-  font-size: 3rem;
-  color: #FCF7FF; /* Magnolia for banner title */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
+.banner-content .main-title img {
+  max-width: 50%; /* Adjust the logo image size */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the logo */
 }
 
 .banner-content .main-description {
@@ -86,195 +90,208 @@ section {
 
 /* P2E Description Section */
 .p2e-description {
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
-  color: #000000; /* Black for text */
-  max-width: 90%;
-  margin: 40px auto;
-  padding: 20px;
-  line-height: 1.6;
-  background-color: #ffffff; /* White for description background */
+  color: #101D42; /* Oxford Blue for text */
+  background-color: #FCF7FF; /* Magnolia for description background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.p2e-description .p2e-text {
+  flex: 1; /* Take up available space */
+  padding-right: 20px; /* Add spacing between text and image */
+}
+
+.p2e-description .p2e-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.p2e-description .description-image {
+  flex: 1; /* Take up available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p2e-description .description-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 
 /* Corporate Logos Section */
 .corporate-logos {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  max-width: 85%;
   margin: 40px auto;
   padding: 40px;
-  max-width: 90%;
+  display: flex;
+  flex-direction: row-reverse; /* Image on the right, text on the left */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F6F9FC; /* Original background color */
+  color: #101D42; /* Original text color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .corporate-logos img {
-  flex: 1;
-  margin-right: 20px;
-  max-width: 45%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 40%; /* Adjust the max-width to make the images smaller */
+  border-radius: 10px; /* Slightly round the corners of the images */
 }
 
 .corporate-logos .text-box {
-  flex: 1;
-  max-width: 50%;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-left: 20px;
+  width: calc(60% - 40px); /* Adjust text box width to allow larger space between images and text */
+  margin-left: 40px; /* Increase space between text and images */
+  margin-bottom: 0; /* No space below text */
 }
 
-/* Mentors Section */
+
+/* Mentorship Section */
 .mentors-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  max-width: 85%;
   margin: 40px auto;
   padding: 40px;
-  max-width: 90%;
+  display: flex;
+  flex-direction: row; /* Image on the left, text on the right */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F6F9FC; /* Original background color */
+  color: #101D42; /* Original text color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mentors-section img {
-  flex: 1;
-  order: 2;
-  margin-left: 20px;
-  max-width: 45%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 40%; /* Adjust the max-width to make the images smaller */
+  border-radius: 10px; /* Slightly round the corners of the images */
+  margin-right: 20px; /* Increase space between image and text */
 }
 
 .mentors-section .text-box {
-  flex: 1;
-  order: 1;
-  max-width: 50%;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  width: calc(60% - 60px); /* Adjust text box width to allow larger space between image and text */
+  margin-bottom: 0; /* No space below text */
 }
 
-/* Coach Section */
+/* Career Coach Section */
 .coach-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 85%;
   margin: 40px auto;
-  padding: 40px;
-  max-width: 90%;
-}
-
-.coach-section .text-box {
-  width: 58%;
-  padding-right: 2%;
-  background-color: #ffffff;
+  padding: 0; /* Remove padding to allow full-width header */
+  background-color: #F6F9FC; /* Original background color */
+  color: #101D42; /* Original text color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-left: 20px;
+}
+
+.coach-section .coach-text-box {
+  width: 100%; /* Full-width header text */
+  text-align: center; /* Center-align text */
+  padding: 40px; /* Add padding to header text */
+}
+
+.coach-section .video-container {
+  width: 80%; /* 80% of screen width */
+  margin: 40px auto; /* Center the video */
+  position: relative; /* Position for video container */
 }
 
 .coach-section video {
-  max-width: 40%;
-  margin-right: 20px;
+  width: 100%; /* Full-width video */
+  height: auto; /* Maintain video aspect ratio */
+  border-radius: 8px; /* Rounded corners for video container */
 }
 
-/* Events Section */
-.events-section {
+/* Events and Services Section */
+.events-services-section {
+  max-width: 85%;
+  margin: 40px auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin: 40px auto;
-  padding: 40px;
-  max-width: 90%;
+  align-items: center;
+  background-color: #F6F9FC;
+  color: #101D42;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.events-content {
-  width: 45%;
-  padding-right: 20px;
+.events-services-content {
+  flex: 1;
+  padding: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
-.events-bullets {
+.events-services-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.events-services-bullets {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin: 0;
 }
 
-.events-bullets li {
-  margin-bottom: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.events-services-bullets li {
+  background-color: #FCBA04;
+  color: #101D42;
   padding: 10px;
   border-radius: 5px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #101D42; /* Oxford Blue for text */
-}
-
-.events-bullets li.active, .events-bullets li:hover {
-  background-color: #FCBA04; /* Selective Yellow for active and hover states */
-  color: #ffffff; /* Magnolia for text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.events-image {
-  width: 45%;
+  margin-bottom: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.events-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Services Section */
-.services-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 40px auto;
-  padding: 40px;
-  max-width: 90%;
-}
-
-.services-content {
-  width: 45%;
-  padding-right: 20px;
-}
-
-.services-bullets {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.services-bullets li {
-  margin-bottom: 15px;
-  cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #101D42; /* Oxford Blue for text */
+  cursor: pointer;
 }
 
-.services-bullets li.active, .services-bullets li:hover {
-  background-color: #FCBA04; /* Selective Yellow for active and hover states */
-  color: #ffffff; /* Magnolia for text */
+.events-services-bullets li.active, .events-services-bullets li:hover {
+  background-color: #101D42;
+  color: #FCBA04;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.services-image img {
+.events-services-image {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.events-services-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .events-services-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .events-services-content {
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .events-services-image {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -288,8 +305,7 @@ section {
     margin: 20px 0;
   }
 
-  .corporate-logos .text-box, .mentors-section .text-box, 
-  .events-content, .services-content {
+  .corporate-logos .text-box, .mentors-section .text-box, .events-content, .services-content {
     width: 100%;
     padding: 20px;
     margin: 20px 0;
