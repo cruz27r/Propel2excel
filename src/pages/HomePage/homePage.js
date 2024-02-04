@@ -6,7 +6,7 @@ import photo1 from '../../assets/images/company-office-headshots-hartford-connec
 import photo2 from '../../assets/images/networking_large_table.jpg';
 import photo3 from '../../assets/images/networking_table.jpg';
 import logoImage from '../../assets/images/Full-blue-p2e-logoAsset 6.png';
-import background from '../../assets/images/fellow-collage2.jpg';
+import background from '../../assets/images/event_wide_photo.jpeg';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
 import workshopImage from '../../assets/images/looking_over_code.jpg';
 import networkingImage from '../../assets/images/looking_over_code.jpg';

@@ -46,13 +46,14 @@ section {
 
 .banner-content {
   text-align: center;
-  width: 100%;
+  width: 50%; /* Adjust the width as needed */
   padding: 20px;
   color: #FCF7FF; /* Adjust the text color as needed for visibility */
+  background-color: rgba(255, 255, 255, 0); /* Use rgba for transparent background */
 }
 
 .banner-content .main-title img {
-  max-width: 50%; /* Adjust the logo image size */
+  max-width: 75%; /* Adjust the logo image size */
   height: auto;
   display: block;
   margin: 0 auto; /* Center the logo */
@@ -61,7 +62,6 @@ section {
 .banner-content .main-description {
   font-size: 1.5rem;
   color: #FCF7FF; /* Magnolia for banner description */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
   max-width: 600px;
   margin: auto;
 }
@@ -127,7 +127,6 @@ section {
   border-radius: 8px;
 }
 
-
 /* Corporate Logos Section */
 .corporate-logos {
   max-width: 85%;
@@ -153,7 +152,6 @@ section {
   margin-left: 40px; /* Increase space between text and images */
   margin-bottom: 0; /* No space below text */
 }
-
 
 /* Mentorship Section */
 .mentors-section {
@@ -181,39 +179,22 @@ section {
   margin-bottom: 0; /* No space below text */
 }
 
-/* Career Coach Section */
+/* Coach Section */
 .coach-section {
-  max-width: 85%;
+  max-width: 85%; /* Adjust the max-width as needed to match the width of the other sections */
   margin: 40px auto;
-  padding: 0; /* Remove padding to allow full-width header */
+  padding: 40px; /* Add padding to match the other sections */
   background-color: #F6F9FC; /* Original background color */
   color: #101D42; /* Original text color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.coach-section .coach-text-box {
-  width: 100%; /* Full-width header text */
-  text-align: center; /* Center-align text */
-  padding: 40px; /* Add padding to header text */
-}
-
-.coach-section .video-container {
-  width: 80%; /* 80% of screen width */
-  margin: 40px auto; /* Center the video */
-  position: relative; /* Position for video container */
-}
-
-.coach-section video {
-  width: 100%; /* Full-width video */
-  height: auto; /* Maintain video aspect ratio */
-  border-radius: 8px; /* Rounded corners for video container */
-}
-
 /* Events and Services Section */
 .events-services-section {
-  max-width: 85%;
+  max-width: 85%; /* Adjust the max-width as needed to match the width of the other sections */
   margin: 40px auto;
+  padding: 40px; /* Add padding to match the other sections */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,7 +202,25 @@ section {
   color: #101D42;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .corporate-logos, .mentors-section, .events-services-section, .coach-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .corporate-logos img, .mentors-section img, .events-services-image img, .coach-section img {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .corporate-logos .text-box, .mentors-section .text-box, .events-services-content, .coach-text-box {
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+  }
 }
 
 .events-services-content {
@@ -291,26 +290,3 @@ section {
     border-top-right-radius: 8px;
   }
 }
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .corporate-logos, .mentors-section, .events-section, .services-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .corporate-logos img, .mentors-section img, .events-image img, .services-image img {
-    width: 100%;
-    margin: 20px 0;
-  }
-
-  .corporate-logos .text-box, .mentors-section .text-box, .events-content, .services-content {
-    width: 100%;
-    padding: 20px;
-    margin: 20px 0;
-  }
-}
-
-/* Additional Styles */
-/* Add any additional styles or overrides here */
