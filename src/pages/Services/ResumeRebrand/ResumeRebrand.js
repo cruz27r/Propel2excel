@@ -23,7 +23,29 @@ function SubmitResume() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Form submission logic here
+        const data = new FormData();
+        data.append('name', formData.name);
+        data.append('email', formData.email);
+        data.append('careerPath', formData.careerPath);
+        data.append('resume', formData.resume);
+
+        try {
+            const response = await fetch('http://localhost:5000/api/resume-submission', {
+                method: 'POST',
+                body: data,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log(result);
+            // Handle success, maybe clear the form or show a success message
+        } catch (error) {
+            console.error('Submission failed', error);
+            // Handle errors, show an error message
+        }
     };
 
     return (
@@ -81,7 +103,28 @@ function SubmitResume() {
 
             <form onSubmit={handleSubmit} className="resume-form">
                 <h2>Submit Your Resume</h2>
-                {/* Form fields and submit button here */}
+                <p className="form-description"> This form serves as your initial application to request assistance from the Propel2Excel team of 
+                experts and professionals. By submitting your resume here, you'll be taking the first step towards a professional rebranding of your 
+                resume. Our team will review your submission and provide tailored support to enhance and optimize your resume for your career path.</p>
+                <div className="form-group">
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="career-path">Prospective Career Path:</label>
+                    <input type="text" id="career-path" name="careerPath" value={formData.careerPath} onChange={handleInputChange} required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="resume-upload">Upload Resume:</label>
+                    <input type="file" id="resume-upload" name="resume-upload" onChange={handleFileChange} required />
+                </div>
+                <div className="form-group submit-section">
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
     );
