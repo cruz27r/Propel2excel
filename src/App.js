@@ -7,7 +7,7 @@ import CorporatePartners from './pages/CorporatePartners/CorporatePartners';
 import LinkedInRebrand from './pages/Services/LinkedInRebrand/LinkedInRebrand';
 import ResumeRebrand from './pages/Services/ResumeRebrand/ResumeRebrand';
 import InterviewPrep from './pages/Services/InterviewPrep/interviewPrep';
-import EventsForReadiness from './pages/Services/EventsForReadiness/eventsForReadiness';
+import EventsForReadiness from './pages/EventsForReadiness/eventsForReadiness';
 import ApplyToCohort from './pages/ApplyToCohort/ApplyToCohort';
 import Speakers from './pages/Speakers/speakers';
 import FAQs from './pages/FAQs/faqs';
