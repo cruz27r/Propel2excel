@@ -31,8 +31,16 @@
 }
 
 .logo {
-  max-height: 4em; /* Slightly smaller logo */
-  width: auto;
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Allow width to adjust based on max-height */
+  max-height: 5em; /* Increase max-height for a slightly larger logo */
+}
+
+/* Adjustments for mobile screens specifically, if needed */
+@media screen and (max-width: 768px) {
+  .logo {
+    max-height: 7em; /* Adjust if you want the logo to be larger on mobile as well */
+  }
 }
 
 .nav-links {

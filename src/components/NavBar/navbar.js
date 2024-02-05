@@ -42,6 +42,7 @@ const NavBar = () => {
 
   return (
     <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isMobileMenuOpen ? 'open' : ''}`}>
+      <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
       <div className="logo-section">
         <Link to="/" className='logo-link'>
           <img src={logoImage} alt="Company Logo" className="logo" />
@@ -52,22 +53,22 @@ const NavBar = () => {
         <div className="dropdown">
           <button className="dropbtn">University Partners</button>
           <div className="dropdown-content">
-            <Link to="/university-partners">Info</Link>
-            <Link to="/university-partners/application">Application</Link>
+            <Link to="/university-partners">Learn More</Link>
+            <Link to="/university-partners/application">Apply Now</Link>
           </div>
         </div>
         <div className="dropdown">
           <button className="dropbtn">Corporate Partners</button>
           <div className="dropdown-content">
-            <Link to="/corporate-partners">Info</Link>
-            <Link to="/corporate-partners/application">Application</Link>
+            <Link to="/corporate-partners">Learn More</Link>
+            <Link to="/corporate-partners/application">Apply Now</Link>
           </div>
         </div>
         <div className="dropdown">
           <button className="dropbtn">Speakers</button>
           <div className="dropdown-content">
-            <Link to="/speakers">Info</Link>
-            <Link to="/speakers/application">Application</Link>
+            <Link to="/speakers">Learn More</Link>
+            <Link to="/speakers/application">Apply Now</Link>
           </div>
         </div>
         <div className="dropdown">
