@@ -5,8 +5,8 @@ import './homePage.css';
 import photo1 from '../../assets/images/company-office-headshots-hartford-connecticut.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
 import photo3 from '../../assets/images/networking_table.jpg';
-import logoImage from '../../assets/images/Full-blue-p2e-logoAsset 6.png';
-import background from '../../assets/images/event_wide_photo.jpeg';
+import logoImage from '../../assets/images/Propel2excel-Banner-textAsset 2.png';
+import background from '../../assets/images/Fellow-collage.png';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
 import workshopImage from '../../assets/images/looking_over_code.jpg';
 import networkingImage from '../../assets/images/looking_over_code.jpg';
@@ -29,14 +29,18 @@ function Home() {
           <h1 className="main-title">
             <img src={logoImage} alt="Propel2Excel Logo" />
           </h1>
-          <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p>
-          <Link to="/become-p2e" className="details-button">P2E cohort</Link>
+          {/* <p className="main-description">Bridging the Ivey-league recruiting experience to ambitious students at non-target universities</p> */}
         </div>
       </main>
 
       <div className="p2e-description">
-        <p className="p2e-text">Propel2Excel is dedicated to empowering underrepresented students in business, providing a bridge to prestigious career opportunities through comprehensive coaching and networking. Our mission is to bridge the gap between non-target universities and Fortune 100 companies, offering a transformative experience that opens doors to internships and lucrative careers. With a focus on inclusivity and excellence, we aim to create a diverse pipeline of future business leaders.</p>
-      </div>
+  <div className="header-container">
+    <h2>Our Mission</h2>
+    <Link to="/apply-to-cohort" className="details-button">Cohort Application</Link>
+  </div>
+  <p className="p2e-text">Propel2Excel is a six-month coaching program led by corporate professionals from Tier 1 companies, for ambitious students at non-target schools to secure competitive internships & careers at top tier tech, consulting, and banking companies.</p>
+</div>
+
 
       {/* Corporate Logos Section */}
       <section className="corporate-logos">

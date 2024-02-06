@@ -28,103 +28,88 @@ section {
   align-items: center;
 }
 
-/* Banner Section */
 .banner {
-  width: 85%;
-  margin: 0 auto; /* Center the banner */
+  position: relative; /* This ensures that the pseudo-element is positioned relative to the banner */
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../../assets/images/company-office-headshots-hartford-connecticut.jpg); /* Update with the correct path */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 400px; /* Adjust height as needed */
-  animation: fadeIn 1s ease-in-out;
-  background-color: #FCF7FF; /* Set background color to match the page */
+  padding: 0 15px;
 }
 
+/* Adding a pseudo-element for the blue filter */
+.banner::after {
+  content: '';
+  position: absolute; /* Position it over the banner */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(230, 237, 255, 0.5); /* Semi-transparent blue */
+  pointer-events: none; /* Allows clicks to pass through to the banner */
+}
+
+/* Ensure the content of the banner is placed above the pseudo-element */
 .banner-content {
+  position: relative;
+  z-index: 1; /* Higher z-index to ensure it's above the ::after pseudo-element */
+  width: auto;
   text-align: center;
-  width: 50%; /* Adjust the width as needed */
-  padding: 20px;
-  color: #FCF7FF; /* Adjust the text color as needed for visibility */
-  background-color: rgba(255, 255, 255, 0); /* Use rgba for transparent background */
+}
+
+
+.banner-content .main-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .banner-content .main-title img {
-  max-width: 75%; /* Adjust the logo image size */
+  max-width: 60%;
   height: auto;
-  display: block;
-  margin: 0 auto; /* Center the logo */
 }
 
-.banner-content .main-description {
-  font-size: 1.5rem;
-  color: #FCF7FF; /* Magnolia for banner description */
-  max-width: 600px;
-  margin: auto;
-}
-
-.details-button {
-  background-color: #101D42; /* Oxford Blue for buttons */
-  color: #FCF7FF; /* Magnolia for button text */
-  padding: 12px 30px;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  margin: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.details-button:hover {
-  background-color: #FCBA04; /* Selective Yellow for button hover */
-  color: #101D42; /* Oxford Blue for text on hover */
-}
-
-/* P2E Description Section */
+/* P2E Description Section Adjustments */
 .p2e-description {
   max-width: 90%;
   margin: 40px auto;
   padding: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.p2e-description .header-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2rem;
-  color: #101D42; /* Oxford Blue for text */
-  background-color: #FCF7FF; /* Magnolia for description background */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.p2e-description h2 {
+  color: #125D98; /* Slightly darker shade */
+  font-size: 1.75rem; /* Slightly larger size */
+  margin-bottom: 10px; /* Reduced space between title and description */
+}
+
+.details-button {
+  background-color: #101D42; /* Dark blue color */
+  color: #FFFFFF; /* White text */
+  padding: 10px 20px;
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 20px; /* Space between the title and button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .p2e-description .p2e-text {
-  flex: 1; /* Take up available space */
-  padding-right: 20px; /* Add spacing between text and image */
-}
-
-.p2e-description .p2e-text p {
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.p2e-description .description-image {
-  flex: 1; /* Take up available space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.p2e-description .description-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  padding-top: 10px; /* Smaller space between title/button and description */
 }
 
 /* Corporate Logos Section */
@@ -143,14 +128,14 @@ section {
 }
 
 .corporate-logos img {
-  max-width: 40%; /* Adjust the max-width to make the images smaller */
-  border-radius: 10px; /* Slightly round the corners of the images */
+  max-width: 40%;
+  border-radius: 10px;
 }
 
 .corporate-logos .text-box {
-  width: calc(60% - 40px); /* Adjust text box width to allow larger space between images and text */
-  margin-left: 40px; /* Increase space between text and images */
-  margin-bottom: 0; /* No space below text */
+  width: calc(60% - 40px);
+  margin-left: 40px;
+  margin-bottom: 0;
 }
 
 /* Mentorship Section */
@@ -159,42 +144,42 @@ section {
   margin: 40px auto;
   padding: 40px;
   display: flex;
-  flex-direction: row; /* Image on the left, text on the right */
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #F6F9FC; /* Original background color */
-  color: #101D42; /* Original text color */
+  background-color: #F6F9FC;
+  color: #101D42;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mentors-section img {
-  max-width: 40%; /* Adjust the max-width to make the images smaller */
-  border-radius: 10px; /* Slightly round the corners of the images */
-  margin-right: 20px; /* Increase space between image and text */
+  max-width: 40%;
+  border-radius: 10px;
+  margin-right: 20px;
 }
 
 .mentors-section .text-box {
-  width: calc(60% - 60px); /* Adjust text box width to allow larger space between image and text */
-  margin-bottom: 0; /* No space below text */
+  width: calc(60% - 60px);
+  margin-bottom: 0;
 }
 
 /* Coach Section */
 .coach-section {
-  max-width: 85%; /* Adjust the max-width as needed to match the width of the other sections */
+  max-width: 85%;
   margin: 40px auto;
-  padding: 40px; /* Add padding to match the other sections */
-  background-color: #F6F9FC; /* Original background color */
-  color: #101D42; /* Original text color */
+  padding: 40px;
+  background-color: #F6F9FC;
+  color: #101D42;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Events and Services Section */
 .events-services-section {
-  max-width: 85%; /* Adjust the max-width as needed to match the width of the other sections */
+  max-width: 85%;
   margin: 40px auto;
-  padding: 40px; /* Add padding to match the other sections */
+  padding: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
