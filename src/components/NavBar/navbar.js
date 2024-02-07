@@ -51,7 +51,7 @@ const NavBar = () => {
 
       <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="dropdown">
-          <button className="dropbtn">University Partners</button>
+          <button className="dropbtn">University Reached</button>
           <div className="dropdown-content">
             <Link to="/university-partners">Learn More</Link>
             <Link to="/university-partners/application">Apply Now</Link>
@@ -65,7 +65,7 @@ const NavBar = () => {
           </div>
         </div>
         <div className="dropdown">
-          <button className="dropbtn">Speakers</button>
+          <button className="dropbtn">Mentors</button>
           <div className="dropdown-content">
             <Link to="/speakers">Learn More</Link>
             <Link to="/speakers/application">Apply Now</Link>

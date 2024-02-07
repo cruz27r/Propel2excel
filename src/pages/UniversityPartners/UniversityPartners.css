@@ -1,78 +1,137 @@
-/* General Body Style */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #F5F5FA; /* Adjusted to a more subtle shade */
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Container for Partners Section */
-.partners-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px 0; /* Adjusted top and bottom padding */
+/* University Partners Section */
+.university-partners-section {
     text-align: center;
+    padding: 40px;
+    margin: auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Slider Wrapper */
-.slider-wrapper {
-    width: 85%;
-    margin: 20px auto; /* Adds space above and below the slider */
-    padding: 0;
+/* Description Text */
+.university-description {
+    max-width: 800px;
+    margin: 90px auto 100px;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 18px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.partner-slide {
-    padding: 15px;
-    background-color: rgba(245, 245, 250, 0.8);
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin: 5px; /* Ensure there's a 5px gap around each slide */
-    width: 220px;
-    height: 220px;
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    margin: auto;
+    width: 80%;
     overflow: hidden;
+}
+
+/* Carousel Inner Wrapper */
+.carousel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+/* Individual Item Styling */
+.item {
+    flex: 0 0 calc(30% - 30px);
+    margin: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    transition: all 0.5s ease;
+    opacity: 0.5;
 }
 
-
-/* Ensures text fits within the square container */
-.partner-slide h3 {
-    font-size: 0.95rem;
-    text-align: center;
-    margin: 10px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.item.active {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-.partner-logo {
+/* Item Images - Ensuring uniform height */
+.item img {
+    height: 180px;
     width: auto;
-    max-height: 120px; /* Adjusted for consistent size */
-    margin-bottom: 15px;
+    object-fit: contain;
 }
 
-/* Customizing slick slider dots and arrows for better visibility */
-.slick-dots li button:before, .slick-prev:before, .slick-next:before {
-    color: #4A4A4A; /* Ensures visibility against the semi-transparent background */
+/* Carousel Control - General */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    z-index: 100;
+    text-decoration: none;
+    outline: none;
 }
 
-/* Responsive Design Adjustments */
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    color: #666;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.carousel-indicators li {
+    background-color: #ccc;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators li.active {
+    background-color: #333;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .partner-slide {
-        width: 180px; /* Smaller size for responsive design */
-        height: 180px;
+    .university-description {
+        text-align: center;
+    }
+
+    .carousel {
+        width: 95%;
+    }
+
+    .item {
+        flex: 0 0 48%;
     }
 }
 
 @media (max-width: 480px) {
-    .slider-wrapper {
-        width: 95%; /* Allows more width on very small screens */
-    }
-    .partner-slide {
-        width: 150px; /* Further reduction for small devices */
-        height: 150px;
+    .item {
+        flex: 0 0 100%;
     }
 }

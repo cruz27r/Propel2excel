@@ -1,95 +1,49 @@
-import React, { useMemo } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css'; 
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect } from 'react';
 import './UniversityPartners.css';
-import universityPartnerLogo1 from '../../assets/images/umBoston.jpg';
-import universityPartnerLogo2 from '../../assets/images/umassA.jpg';
-import universityPartnerLogo3 from '../../assets/images/bc.png';
-import universityPartnerLogo4 from '../../assets/images/Northeastern.png';
-import universityPartnerLogo5 from '../../assets/images/Wentworth.png';
+
+// Import your logos
+import logo1 from '../../assets/images/UMass_Boston_logo.png';
+import logo2 from '../../assets/images/umassA.png';
+import logo3 from '../../assets/images/bc.png';
+import logo4 from '../../assets/images/Northeastern-University-Logo.png';
+import logo5 from '../../assets/images/Wentworth.png';
+import logo6 from '../../assets/images/BU.png';
 
 function UniversityPartners() {
-    const reachedUniversities = useMemo(() => [
-        { name: 'University of Massachusetts Boston', image: universityPartnerLogo1 },
-        { name: 'University of Massachusetts Amherst', image: universityPartnerLogo2 },
-        { name: 'Boston College', image: universityPartnerLogo3 },
-        { name: 'Northeastern University', image: universityPartnerLogo4 },
-        // Duplicating to fill 8 slots
-        { name: 'Wentworth Institute of Technology', image: universityPartnerLogo5 },
-        { name: 'University of Massachusetts Boston - Duplicate', image: universityPartnerLogo1 },
-        { name: 'University of Massachusetts Amherst - Duplicate', image: universityPartnerLogo2 },
-        { name: 'Boston College - Duplicate', image: universityPartnerLogo3 },
-    ], []);
+    const [activeIndex, setActiveIndex] = useState(2); // Initialize with an index that allows for a previous and next image
+    const logos = [logo1, logo2, logo3, logo4, logo5, logo6,logo1, logo2, logo3, logo4, logo5, logo6];
 
-    const upcomingUniversities = useMemo(() => [
-        { name: 'Upcoming University 1', image: universityPartnerLogo5 },
-        { name: 'Upcoming University 2', image: universityPartnerLogo3 },
-        // Duplicating to fill 8 slots
-        { name: 'Upcoming University 3', image: universityPartnerLogo1 },
-        { name: 'Upcoming University 4', image: universityPartnerLogo2 },
-        { name: 'Upcoming University 5 - Duplicate', image: universityPartnerLogo5 },
-        { name: 'Upcoming University 6 - Duplicate', image: universityPartnerLogo3 },
-        { name: 'Upcoming University 7 - Duplicate', image: universityPartnerLogo1 },
-        { name: 'Upcoming University 8 - Duplicate', image: universityPartnerLogo2 },
-    ], []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex(current => (current + 1) % logos.length);
+        }, 4500); // Change slide every 5 seconds
+        return () => clearInterval(interval);
+    }, [logos.length]);
 
-    // Slider settings
-    const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    };
+    const nextSlide = () => setActiveIndex(current => (current + 1) % logos.length);
+    const prevSlide = () => setActiveIndex(current => (current - 1 + logos.length) % logos.length);
 
     return (
-        <div className="partners-container">
-            <h1>Our Reached Universities</h1>
-            <div className="university-introduction">
-                <p>The Universities represent more than just those to whom we are bringing educational resources and support. These schools are the homes of our fellows who are preparing themselves to enter and take over in their careers, following the path and lessons that P2E has carved for their empowerment.</p>
+        <div className="university-partners-section">
+            <h2>Our Reached Universities</h2>
+            <p className="university-description">
+                The universities we partner with are the nurturing grounds for our fellows - the future leaders in tech, banking, and consulting industries. These institutions are more than just educational establishments; they are the pillars that support the aspirations of our students. At Propel, we are dedicated to not only providing resources but also expanding our reach to support more students in their journey to excellence. Below are some of the esteemed universities we've had the privilege of working with, and we're excited about the prospect of partnering with many more as we progress.
+            </p>
+            <div className="carousel">
+                <div className="carousel-inner">
+                    <div className={`item ${activeIndex === (logos.length + activeIndex - 1) % logos.length ? 'prev' : ''}`}>
+                        <img src={logos[(logos.length + activeIndex - 1) % logos.length]} alt="Previous" />
+                    </div>
+                    <div className="item active">
+                        <img src={logos[activeIndex]} alt="Active" />
+                    </div>
+                    <div className={`item ${activeIndex === (activeIndex + 1) % logos.length ? 'next' : ''}`}>
+                        <img src={logos[(activeIndex + 1) % logos.length]} alt="Next" />
+                    </div>
+                </div>
+                <button className="carousel-control left" onClick={prevSlide}>&lt;</button>
+                <button className="carousel-control right" onClick={nextSlide}>&gt;</button>
             </div>
-            <Slider {...sliderSettings}>
-                {reachedUniversities.map((uni, index) => (
-                    <div key={index} className="partner-slide">
-                        <img src={uni.image} alt={uni.name} className="partner-logo" />
-                        <h3>{uni.name}</h3>
-                    </div>
-                ))}
-            </Slider>
-
-            <h1>Universities We're Coming to Soon</h1>
-            <Slider {...sliderSettings}>
-                {upcomingUniversities.map((uni, index) => (
-                    <div key={index} className="partner-slide">
-                        <img src={uni.image} alt={uni.name} className="partner-logo" />
-                        <h3>{uni.name}</h3>
-                    </div>
-                ))}
-            </Slider>
         </div>
     );
 }
