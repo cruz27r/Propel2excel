@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Increased padding for better spacing */
+  padding: 1.5rem 2rem; /* Slightly increased padding for taller navbar */
   background-color: #FCF7FF; /* Light purple background for the header */
   color: #101D42; /* Dark blue for the text */
   position: fixed;
@@ -28,19 +28,13 @@
   display: flex;
   justify-content: center;
   flex-grow: 1;
+  margin-left: 30px; /* Increased margin to move the logo more to the right */
 }
 
 .logo {
   height: auto; /* Maintain aspect ratio */
-  width: auto; /* Allow width to adjust based on max-height */
-  max-height: 5em; /* Increase max-height for a slightly larger logo */
-}
-
-/* Adjustments for mobile screens specifically, if needed */
-@media screen and (max-width: 768px) {
-  .logo {
-    max-height: 7em; /* Adjust if you want the logo to be larger on mobile as well */
-  }
+  width: auto; /* Allow width to adjust based on original max-height */
+  max-height: 5em; /* Reverted to original logo size */
 }
 
 .nav-links {
@@ -134,7 +128,6 @@
   background-color: #0056b3; /* Darker shade for hover effect */
   color: #FFFFFF;
 }
-
 
 @media screen and (max-width: 768px) {
   .header {

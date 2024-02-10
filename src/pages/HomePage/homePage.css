@@ -28,48 +28,22 @@ section {
   align-items: center;
 }
 
-.banner {
-  position: relative; /* This ensures that the pseudo-element is positioned relative to the banner */
-  width: 100%;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
+/* Banner Styling */
+.banner-container {
+  width: 90%; /* Increase the width for a larger banner */
+  margin: 2rem auto 0; /* Adjust top margin as needed */
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  padding: 0 15px;
+  border-radius: 15px; /* Maintain curved edges */
+  overflow: hidden; /* Keeps the image within the border-radius */
 }
 
-/* Adding a pseudo-element for the blue filter */
-.banner::after {
-  content: '';
-  position: absolute; /* Position it over the banner */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(230, 237, 255, 0.5); /* Semi-transparent blue */
-  pointer-events: none; /* Allows clicks to pass through to the banner */
-}
-
-/* Ensure the content of the banner is placed above the pseudo-element */
-.banner-content {
-  position: relative;
-  z-index: 1; /* Higher z-index to ensure it's above the ::after pseudo-element */
-  width: auto;
-  text-align: center;
-}
-
-
-.banner-content .main-title {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.banner-content .main-title img {
-  max-width: 60%;
-  height: auto;
+.banner-image {
+  width: 100%; /* Ensures the image fills the container */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 15px; /* Optional, as overflow is hidden in the container */
+  object-fit: cover; /* Ensures the image covers the banner area nicely */
 }
 
 /* P2E Description Section Adjustments */
@@ -77,9 +51,8 @@ section {
   max-width: 90%;
   margin: 40px auto;
   padding: 20px;
-  background-color: #ffffff;
-  color: #000000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: transparent; /* Making background transparent */
+  color: #010446; /* Updated to new shade of blue */
   border-radius: 8px;
 }
 
@@ -91,25 +64,21 @@ section {
 }
 
 .p2e-description h2 {
-  color: #125D98; /* Slightly darker shade */
-  font-size: 1.75rem; /* Slightly larger size */
-  margin-bottom: 10px; /* Reduced space between title and description */
+  color: #010446; /* Dark blue */
+  font-size: 1.75rem;
+  margin-bottom: 10px;
 }
 
 .details-button {
-  background-color: #101D42; /* Dark blue color */
-  color: #FFFFFF; /* White text */
+  background-color: #010446; /* Dark blue color */
+  color: #FFFFFF;
   padding: 10px 20px;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  margin-left: 20px; /* Space between the title and button */
+  margin-left: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.p2e-description .p2e-text {
-  padding-top: 10px; /* Smaller space between title/button and description */
 }
 
 /* Corporate Logos Section */
@@ -118,50 +87,49 @@ section {
   margin: 40px auto;
   padding: 40px;
   display: flex;
-  flex-direction: row-reverse; /* Image on the right, text on the left */
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  background-color: #F6F9FC; /* Original background color */
-  color: #101D42; /* Original text color */
+  background-color: #F0F2F5; /* Soft gray for a subtle contrast */
+  color: #010446; /* Dark blue color */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .corporate-logos img {
   max-width: 40%;
+  height: auto;
+  object-fit: contain; /* Adjust logos to fit without distortion */
   border-radius: 10px;
 }
 
-.corporate-logos .text-box {
-  width: calc(60% - 40px);
-  margin-left: 40px;
-  margin-bottom: 0;
-}
-
-/* Mentorship Section */
+/* Mentorship Section Adjustments */
 .mentors-section {
   max-width: 85%;
   margin: 40px auto;
-  padding: 40px;
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F6F9FC;
-  color: #101D42;
+  align-items: center; /* Align items vertically in the center */
+  background-color: transparent;
+  color: #010446; /* Dark blue text */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mentors-section .text-content {
+  width: 60%; /* Text content width */
+  /* Additional styling for text content */
 }
 
 .mentors-section img {
-  max-width: 40%;
-  border-radius: 10px;
-  margin-right: 20px;
+  width: 40%; /* Image width */
+  /* Additional styling for the image */
 }
 
-.mentors-section .text-box {
-  width: calc(60% - 60px);
-  margin-bottom: 0;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mentors-section {
+    /* Adjustments for smaller screens */
+  }
 }
 
 /* Coach Section */
@@ -169,8 +137,12 @@ section {
   max-width: 85%;
   margin: 40px auto;
   padding: 40px;
-  background-color: #F6F9FC;
-  color: #101D42;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F0F2F5; /* Soft gray background for contrast */
+  color: #010446; /* Dark blue text */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -183,8 +155,8 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F6F9FC;
-  color: #101D42;
+  background-color: #F0F2F5; /* Consistent with coach section for design unity */
+  color: #010446; /* Dark blue text */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -194,84 +166,16 @@ section {
   .corporate-logos, .mentors-section, .events-services-section, .coach-section {
     flex-direction: column;
     text-align: center;
+    margin: 20px auto; /* Adjusting for smaller screens */
   }
 
   .corporate-logos img, .mentors-section img, .events-services-image img, .coach-section img {
-    width: 100%;
-    margin: 20px 0;
+    width: 100%; /* Full width for images on smaller screens */
+    margin-top: 20px; /* Adding space above images */
   }
 
   .corporate-logos .text-box, .mentors-section .text-box, .events-services-content, .coach-text-box {
-    width: 100%;
     padding: 20px;
-    margin: 20px 0;
-  }
-}
-
-.events-services-content {
-  flex: 1;
-  padding: 20px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-.events-services-content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.events-services-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.events-services-bullets li {
-  background-color: #FCBA04;
-  color: #101D42;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-.events-services-bullets li.active, .events-services-bullets li:hover {
-  background-color: #101D42;
-  color: #FCBA04;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.events-services-image {
-  flex: 1;
-  text-align: center;
-  overflow: hidden;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.events-services-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .events-services-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .events-services-content {
-    border-radius: 0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
-
-  .events-services-image {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    width: 100%; /* Ensuring full width usage on smaller screens */
   }
 }

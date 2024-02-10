@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import logoImage from '../../assets/images/P2E_Logo.png';
+import logoImage from '../../assets/images/P2E-logo-symbolAsset 7@2x.png';
 import './navbar.css';
 
 const NavBar = () => {
