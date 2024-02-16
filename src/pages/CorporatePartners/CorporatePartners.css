@@ -1,53 +1,176 @@
-.partners-container {
-    max-width: 1200px;
+/* Corporate Partners Section */
+.corporate-partners-section {
+    text-align: center;
+    padding: 40px;
     margin: auto;
-    padding: 20px;
-    background-color: #fff;
+    background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.partners-container h1 {
-    text-align: center;
-    color: #333;
+/* Headers */
+.corporate-partners-section h2 {
+    color: #101D42; /* Updated header color */
+    font-size: 3em;
 }
 
-.partners-container h2 {
-    color: #007bff;
-    text-align: center;
-    margin-bottom: 20px;
+/* Description Text */
+.corporate-description {
+    max-width: 800px;
+    margin: 90px auto 100px;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 18px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #101D42; /* Updated text color */
+    font-size: 1.5em;
 }
 
-.partners-grid {
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+}
+
+/* Carousel Inner Wrapper */
+.carousel-inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+    transition: transform 0.5s ease;
 }
 
-.partner {
-    width: 300px;
+/* Individual Item Styling */
+.item {
+    flex: 0 0 calc(30% - 30px);
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+.item.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Item Images - Ensuring uniform height */
+.item img {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Carousel Control - General */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    z-index: 100;
+    text-decoration: none;
+    outline: none;
+}
+
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    color: #666;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.carousel-indicators li {
+    background-color: #ccc;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators li.active {
+    background-color: #333;
+}
+
+/* Slider Section Names */
+.slider-section-names {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: #101D42; /* Dark blue background color */
     border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    background-color: #f7f7f7;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 5px; /* Adjusted padding for smaller width */
+    width: 50%;
+    margin: 0 auto; /* Center the section names */
 }
 
-.partner-logo {
-    width: 100px;
-    height: auto;
-    margin: auto;
-    display: block;
+
+.slider-item-name {
+    cursor: pointer;
+    transition: color 0.3s;
+    color: white; /* White text color */
 }
 
+.slider-item-name.active {
+    color: #101D42; /* Dark blue text color */
+    background-color: #f8f9fa; /* Background color for selected word */
+    padding: 5px 10px; /* Padding for selected word */
+    border-radius: 20px; /* Rounded border radius for selected word */
+}
+
+.slider-item-name:hover {
+    color: #0056b3;
+}
+
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .partners-grid {
-        flex-direction: column;
+    .corporate-description {
+        text-align: center;
     }
 
-    .partner {
-        width: 100%;
+    .carousel {
+        width: 95%;
+    }
+
+    .item {
+        flex: 0 0 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 0 0 100%;
     }
 }

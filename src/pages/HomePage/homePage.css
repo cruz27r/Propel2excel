@@ -6,7 +6,7 @@ body, .app-container, .App {
   max-width: 100%;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding-top: 90px;
+  padding-top: 0px;
   box-sizing: border-box;
   background-color: #FCF7FF; /* Magnolia for background */
   scroll-behavior: smooth;
@@ -30,7 +30,8 @@ section {
 
 /* Banner Styling */
 .banner-container {
-  width: 90%; /* Increase the width for a larger banner */
+  width: 85%; /* Increase the width for a larger banner */
+  height: 1025px;
   margin: 2rem auto 0; /* Adjust top margin as needed */
   display: flex;
   justify-content: center;
@@ -48,81 +49,179 @@ section {
 
 /* P2E Description Section Adjustments */
 .p2e-description {
-  max-width: 90%;
+  max-width: 70%; /* Smaller width */
   margin: 40px auto;
   padding: 20px;
-  background-color: transparent; /* Making background transparent */
-  color: #010446; /* Updated to new shade of blue */
+  background-color: transparent;
+  color: #010446;
   border-radius: 8px;
-}
-
-.p2e-description .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  text-align: center; /* Center aligning text */
 }
 
 .p2e-description h2 {
-  color: #010446; /* Dark blue */
-  font-size: 1.75rem;
-  margin-bottom: 10px;
+  font-size: 1.75rem; /* Increase font size for header */
+}
+
+.p2e-description .p2e-text {
+  max-width: 100%; /* Adjusting width for description */
+  margin: 0 300px 0px; /* Center aligning description and adding bottom margin */
+  font-size: 2rem;
+  padding-bottom: 30px;
 }
 
 .details-button {
+  display: inline-block;
   background-color: #010446; /* Dark blue color */
   color: #FFFFFF;
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
-  display: inline-block;
-  margin-left: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Corporate Logos Section */
-.corporate-logos {
-  max-width: 85%;
+.corporate-section {
+  width: 100%;
+  max-width: 80%; /* Adjusted to 80% of page width */
   margin: 40px auto;
-  padding: 40px;
+  padding: 20px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  background-color: #F0F2F5; /* Soft gray for a subtle contrast */
-  color: #010446; /* Dark blue color */
+  background-color: #F0F2F5;
+  color: #010446;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.corporate-logos img {
+.corporate-section img {
   max-width: 40%;
   height: auto;
-  object-fit: contain; /* Adjust logos to fit without distortion */
+  object-fit: contain;
   border-radius: 10px;
 }
 
-/* Mentorship Section Adjustments */
-.mentors-section {
-  max-width: 85%;
+.corporate-section .corporate-text-box {
+  max-width: 50%;
+  text-align: center;
+}
+
+.corporate-section p {
+  font-size: 1.4rem; /* Increase text size for paragraph */
+}
+
+/* Coach Section */
+.coach-section-box {
+  max-width: 80%; /* Adjusted to 80% of page width */
   margin: 40px auto;
   padding: 20px;
   display: flex;
-  align-items: center; /* Align items vertically in the center */
-  background-color: transparent;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F0F2F5; /* Soft gray background for contrast */
   color: #010446; /* Dark blue text */
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mentors-section .text-content {
-  width: 60%; /* Text content width */
-  /* Additional styling for text content */
+.coach-section-box .coach-text-box {
+  width: 40%; /* Adjusted width for text box */
+  text-align: center; /* Center aligning text */
+  padding-left: 10px; /* Add padding space between video and text box */
+}
+
+.coach-section-box p {
+  font-size: 1.4rem; /* Increase text size for paragraph */
+}
+
+.coach-section-box video {
+  max-width: 50%; /* Reduce video width */
+  height: auto;
+  border-radius: 10px;
+  margin-right: 10px; /* Add margin space between video and text box */
+}
+
+
+/* Mentorship Section */
+.mentors-section {
+  width: 100%;
+  max-width: 80%; /* Adjusted to 80% of page width */
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F2F5; /* Soft gray background for contrast */
+  color: #010446; /* Dark blue text */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mentors-section img {
-  width: 40%; /* Image width */
-  /* Additional styling for the image */
+  width: 100%;
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.mentor-text-box {
+  flex: 1;
+  padding: 20px; /* Add padding for better spacing */
+  text-align: center; /* Center align text */
+}
+
+.mentor-text-box h2 {
+  margin-bottom: 20px;
+  font-size: 2rem; /* Increase font size for heading */
+}
+
+.mentor-text-box p {
+  font-size: 1.4rem; /* Increase font size for paragraph */
+  line-height: 1.6; /* Adjust line height for better readability */
+  color: #555; /* Darken text color for better contrast */
+}
+
+
+.button-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  margin-top: 10px; /* Add space between the header and the button */
+}
+
+.arrow-button {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #010446;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 20px; /* Add 20px space to the right of the header */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.arrow-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #010446;
+  border-right: 2px solid #010446;
+}
+
+/* Fill the circle and make the arrow white on hover */
+.arrow-button:hover {
+  background-color: #010446;
+}
+
+.arrow-button:hover::after {
+  border-color: #FFFFFF;
 }
 
 /* Responsive adjustments */
@@ -134,7 +233,7 @@ section {
 
 /* Coach Section */
 .coach-section {
-  max-width: 85%;
+  max-width: 70%; /* Adjusted to match Mentor section */
   margin: 40px auto;
   padding: 40px;
   display: flex;
@@ -147,19 +246,98 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.coach-section .coach-text-box {
+  max-width: 50%; /* Adjusting width for text box */
+  text-align: center; /* Center aligning text */
+}
+
+.coach-section p {
+  font-size: 1.4rem; /* Increase text size for paragraph */
+}
+
+.coach-section video {
+  max-width: 40%; /* Adjust video width */
+  height: auto;
+  border-radius: 10px;
+}
+
 /* Events and Services Section */
 .events-services-section {
-  max-width: 85%;
+  width: 80%; /* Adjusted to match Mentor section */
   margin: 40px auto;
-  padding: 40px;
+  padding: 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  background-color: #F0F2F5; /* Consistent with coach section for design unity */
-  color: #010446; /* Dark blue text */
+  align-items: flex-start; /* Align items at the start */
+  background-color: #F0F2F5; /* Soft gray background for contrast */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.events-services-content {
+  max-width: 45%; /* Adjusted width for text content */
+}
+
+.events-services-content h2 {
+  margin-bottom: 20px;
+}
+
+.events-services-content p {
+  font-size: 1.4rem; /* Adjusted text size */
+}
+
+.events-services-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
+.events-services-bullets li {
+  font-size: 1.4rem; /* Adjusted font size for bullets */
+  margin-bottom: 15px; /* Added more space between bullets */
+  cursor: pointer;
+  position: relative; /* Ensure relative positioning */
+  padding: 10px; /* Added padding */
+  border: 1px solid #010446; /* Added border */
+  border-radius: 5px; /* Added border radius */
+  color: #010446; /* Dark blue text color */
+}
+
+.events-services-bullets li:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #010446; /* Dark blue background color */
+  border-radius: 5px; /* Rounded corners */
+  z-index: -1; /* Place behind the text */
+  transition: width 0.3s ease; /* Smooth transition effect */
+}
+
+.events-services-bullets li.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #010446; /* Dark blue background color */
+  border-radius: 5px; /* Rounded corners */
+  z-index: -1; /* Place behind the text */
+}
+
+.events-services-bullets li.active {
+  color: #FFFFFF; /* White text color */
+}
+
+.events-services-image {
+  max-width: 45%; /* Adjusted width for image */
+  border-radius: 10px; /* Rounded corners for image */
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -34,7 +34,7 @@
 .logo {
   height: auto; /* Maintain aspect ratio */
   width: auto; /* Allow width to adjust based on original max-height */
-  max-height: 5em; /* Reverted to original logo size */
+  max-height: 4em; /* Reverted to original logo size */
 }
 
 .nav-links {

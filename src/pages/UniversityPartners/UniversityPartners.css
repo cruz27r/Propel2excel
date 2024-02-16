@@ -8,6 +8,12 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Headers */
+.university-partners-section h2 {
+    color: #101D42; /* Updated header color */
+    font-size: 3em;
+}
+
 /* Description Text */
 .university-description {
     max-width: 800px;
@@ -18,6 +24,8 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #101D42; /* Updated text color */
+    font-size: 1.5em;
 }
 
 /* Carousel Styling */
