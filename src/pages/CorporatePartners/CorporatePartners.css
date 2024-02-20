@@ -123,7 +123,6 @@
     background-color: #333;
 }
 
-/* Slider Section Names */
 .slider-section-names {
     display: flex;
     justify-content: space-around;
@@ -135,6 +134,14 @@
     margin: 0 auto; /* Center the section names */
 }
 
+/* Add padding between slider and carousel */
+.carousel {
+    position: relative;
+    padding-top: 30px;
+    margin: 20px auto; /* Updated margin with added padding */
+    width: 80%;
+    overflow: hidden;
+}
 
 .slider-item-name {
     cursor: pointer;

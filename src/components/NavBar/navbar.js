@@ -50,24 +50,28 @@ const NavBar = () => {
       </div>
 
       <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
+      <Link to="/events-for-readiness">Meet Our Students</Link>
         <div className="dropdown">
-          <button className="dropbtn">University Reached</button>
+          <button className="dropbtn">Universities</button>
           <div className="dropdown-content">
-            <Link to="/university-partners">Learn More</Link>
+            <Link to="/university-partners">Universities representing</Link>
+            <Link to="/university-partners">Universities anticipated</Link>
             <Link to="/university-partners/application">Apply Now</Link>
           </div>
         </div>
         <div className="dropdown">
-          <button className="dropbtn">Corporate Partners</button>
+          <button className="dropbtn">Corporate</button>
           <div className="dropdown-content">
-            <Link to="/corporate-partners">Learn More</Link>
+            <Link to="/corporate-partners">Partners</Link>
+            <Link to="/corporate-partners">Anticipated Partners</Link>
+            <Link to="/corporate-partners">Coaches</Link>
             <Link to="/corporate-partners/application">Apply Now</Link>
           </div>
         </div>
         <div className="dropdown">
           <button className="dropbtn">Mentors</button>
           <div className="dropdown-content">
-            <Link to="/speakers">Learn More</Link>
+            <Link to="/speakers">Current Mentors</Link>
             <Link to="/speakers/application">Apply Now</Link>
           </div>
         </div>
@@ -84,7 +88,7 @@ const NavBar = () => {
       </nav>
 
       <div className="apply-section">
-        <Link to="/apply-to-cohort">Apply Here</Link>
+        <Link to="/apply-to-cohort">Excel Here</Link>
       </div>
     </header>
   );

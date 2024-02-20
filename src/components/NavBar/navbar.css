@@ -122,6 +122,10 @@
   font-weight: bold; /* Optional: Makes the text bold */
   white-space: nowrap; /* Prevents text from wrapping */
   display: inline-block; /* Ensures proper padding and spacing are applied */
+  width: 150px;
+  height: 30px;
+  font-size: x-large;
+  text-align: center;
 }
 
 .apply-section a:hover {

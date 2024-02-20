@@ -30,7 +30,7 @@ section {
 
 /* Banner Styling */
 .banner-container {
-  width: 85%; /* Increase the width for a larger banner */
+  width: 95%; /* Increase the width for a larger banner */
   height: 1025px;
   margin: 2rem auto 0; /* Adjust top margin as needed */
   display: flex;

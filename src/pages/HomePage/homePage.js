@@ -7,7 +7,7 @@ import photo1 from '../../assets/images/company-office-headshots-hartford-connec
 import photo2 from '../../assets/images/networking_large_table.jpg';
 import mentors from '../../assets/images/meetmentor.jpg';
 import logoImage from '../../assets/images/Propel2excel-Banner-textAsset 2.png';
-import background from '../../assets/images/4x/Logo-P2e-blue-v2Asset 11.png';
+import background from '../../assets/images/4x/Logo-P2e-final-v4Asset 2.png';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
 
 

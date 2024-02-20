@@ -29,6 +29,50 @@ function Speakers() {
     // Add more speakers as needed...
   ];
 
+  const banking = [
+    {
+      name: 'John Doe',
+      bio: 'John Doe has over 20 years of experience in the industry and has spoken at numerous international conferences.',
+      topics: 'Innovation, Technology, Future Trends',
+      image: speakerImage1
+    },
+    {
+      name: 'Jane Smith',
+      bio: 'Jane Smith is a renowned expert in her field and has authored several influential papers.',
+      topics: 'Leadership, Organizational Culture, Productivity',
+      image: speakerImage2
+    },
+    {
+      name: 'Jane Smith',
+      bio: 'Jane Smith is a renowned expert in her field and has authored several influential papers.',
+      topics: 'Leadership, Organizational Culture, Productivity',
+      image: speakerImage3
+    },
+    // Add more speakers as needed...
+  ];
+
+  const consulting = [
+    {
+      name: 'John Doe',
+      bio: 'John Doe has over 20 years of experience in the industry and has spoken at numerous international conferences.',
+      topics: 'Innovation, Technology, Future Trends',
+      image: speakerImage1
+    },
+    {
+      name: 'Jane Smith',
+      bio: 'Jane Smith is a renowned expert in her field and has authored several influential papers.',
+      topics: 'Leadership, Organizational Culture, Productivity',
+      image: speakerImage2
+    },
+    {
+      name: 'Jane Smith',
+      bio: 'Jane Smith is a renowned expert in her field and has authored several influential papers.',
+      topics: 'Leadership, Organizational Culture, Productivity',
+      image: speakerImage3
+    },
+    // Add more speakers as needed...
+  ];
+
   return (
     <div className="speakers-container">
       <h1>Event Speakers</h1>
