@@ -50,7 +50,7 @@ const NavBar = () => {
       </div>
 
       <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-      <Link to="/events-for-readiness">Meet Our Students</Link>
+      <Link to="/students">Meet Our Students</Link>
         <div className="dropdown">
           <button className="dropbtn">Universities</button>
           <div className="dropdown-content">

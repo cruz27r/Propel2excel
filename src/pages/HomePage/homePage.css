@@ -8,7 +8,7 @@ body, .app-container, .App {
   margin: 0;
   padding-top: 0px;
   box-sizing: border-box;
-  background-color: #FCF7FF; /* Magnolia for background */
+  background-color: #FCF7FF;
   scroll-behavior: smooth;
 }
 
@@ -19,9 +19,8 @@ img, video {
 }
 
 section {
-  max-width: 95%; /* Centered look */
+  max-width: 90%;
   margin: 40px auto;
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,48 +29,42 @@ section {
 
 /* Banner Styling */
 .banner-container {
-  width: 95%; /* Increase the width for a larger banner */
-  height: 1025px;
-  margin: 2rem auto 0; /* Adjust top margin as needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px; /* Maintain curved edges */
-  overflow: hidden; /* Keeps the image within the border-radius */
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .banner-image {
-  width: 100%; /* Ensures the image fills the container */
-  height: auto; /* Maintains aspect ratio */
-  border-radius: 15px; /* Optional, as overflow is hidden in the container */
-  object-fit: cover; /* Ensures the image covers the banner area nicely */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* P2E Description Section Adjustments */
 .p2e-description {
-  max-width: 70%; /* Smaller width */
+  max-width: 70%;
   margin: 40px auto;
   padding: 20px;
   background-color: transparent;
   color: #010446;
   border-radius: 8px;
-  text-align: center; /* Center aligning text */
+  text-align: center;
 }
 
 .p2e-description h2 {
-  font-size: 1.75rem; /* Increase font size for header */
+  font-size: 1.75rem;
 }
 
 .p2e-description .p2e-text {
-  max-width: 100%; /* Adjusting width for description */
-  margin: 0 300px 0px; /* Center aligning description and adding bottom margin */
+  max-width: 100%;
+  margin: 0 300px 0px;
   font-size: 2rem;
   padding-bottom: 30px;
 }
 
 .details-button {
   display: inline-block;
-  background-color: #010446; /* Dark blue color */
+  background-color: #010446;
   color: #FFFFFF;
   padding: 10px 20px;
   border-radius: 5px;
@@ -82,8 +75,7 @@ section {
 
 /* Corporate Logos Section */
 .corporate-section {
-  width: 100%;
-  max-width: 80%; /* Adjusted to 80% of page width */
+  width: 90%;
   margin: 40px auto;
   padding: 20px;
   display: flex;
@@ -109,251 +101,132 @@ section {
 }
 
 .corporate-section p {
-  font-size: 1.4rem; /* Increase text size for paragraph */
+  font-size: 1.4rem;
 }
 
-/* Coach Section */
+/* Career Coach Section */
 .coach-section-box {
-  max-width: 80%; /* Adjusted to 80% of page width */
+  width: 90%;
   margin: 40px auto;
   padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #F0F2F5; /* Soft gray background for contrast */
-  color: #010446; /* Dark blue text */
+  background-color: #F0F2F5;
+  color: #010446;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.coach-section-box .coach-text-box {
-  width: 40%; /* Adjusted width for text box */
-  text-align: center; /* Center aligning text */
-  padding-left: 10px; /* Add padding space between video and text box */
-}
-
-.coach-section-box p {
-  font-size: 1.4rem; /* Increase text size for paragraph */
-}
-
 .coach-section-box video {
-  max-width: 50%; /* Reduce video width */
+  width: 40%;
   height: auto;
   border-radius: 10px;
-  margin-right: 10px; /* Add margin space between video and text box */
 }
 
+.coach-section-box .coach-text-box {
+  width: 50%;
+  text-align: center;
+}
 
 /* Mentorship Section */
 .mentors-section {
-  width: 100%;
-  max-width: 80%; /* Adjusted to 80% of page width */
+  width: 90%;
   margin: 40px auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #F0F2F5; /* Soft gray background for contrast */
-  color: #010446; /* Dark blue text */
+  background-color: #F0F2F5;
+  color: #010446;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mentors-section img {
+.video-container {
   width: 100%;
-  max-width: 100%;
-  max-height: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.mentors-section video {
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 10px;
+  margin-top: -70px;
 }
 
 .mentor-text-box {
-  flex: 1;
-  padding: 20px; /* Add padding for better spacing */
-  text-align: center; /* Center align text */
+  max-width: 100%;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.mentor-text-box h2 {
-  margin-bottom: 20px;
-  font-size: 2rem; /* Increase font size for heading */
-}
-
-.mentor-text-box p {
-  font-size: 1.4rem; /* Increase font size for paragraph */
-  line-height: 1.6; /* Adjust line height for better readability */
-  color: #555; /* Darken text color for better contrast */
-}
-
-
-.button-container {
-  display: flex;
-  align-items: center; /* Center vertically */
-  margin-top: 10px; /* Add space between the header and the button */
-}
-
-.arrow-button {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #010446;
-  border-radius: 50%;
-  position: relative;
-  margin-left: 20px; /* Add 20px space to the right of the header */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-.arrow-button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid #010446;
-  border-right: 2px solid #010446;
-}
-
-/* Fill the circle and make the arrow white on hover */
-.arrow-button:hover {
-  background-color: #010446;
-}
-
-.arrow-button:hover::after {
-  border-color: #FFFFFF;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .mentors-section {
-    /* Adjustments for smaller screens */
-  }
-}
-
-/* Coach Section */
-.coach-section {
-  max-width: 70%; /* Adjusted to match Mentor section */
-  margin: 40px auto;
-  padding: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F0F2F5; /* Soft gray background for contrast */
-  color: #010446; /* Dark blue text */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.coach-section .coach-text-box {
-  max-width: 50%; /* Adjusting width for text box */
-  text-align: center; /* Center aligning text */
-}
-
-.coach-section p {
-  font-size: 1.4rem; /* Increase text size for paragraph */
-}
-
-.coach-section video {
-  max-width: 40%; /* Adjust video width */
-  height: auto;
-  border-radius: 10px;
-}
 
 /* Events and Services Section */
-.events-services-section {
-  width: 80%; /* Adjusted to match Mentor section */
+.events-services-container {
+  width: 90%;
   margin: 40px auto;
-  padding: 20px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start; /* Align items at the start */
-  background-color: #F0F2F5; /* Soft gray background for contrast */
-  border-radius: 8px;
+}
+
+.events-services-section {
+  flex-basis: 45%;
+  padding: 20px;
+  background-color: #F0F2F5;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-.events-services-content {
-  max-width: 45%; /* Adjusted width for text content */
+.events-services-section h2 {
+  text-align: center;
 }
 
-.events-services-content h2 {
-  margin-bottom: 20px;
+.events-services-section p {
+  text-align: center;
 }
 
-.events-services-content p {
-  font-size: 1.4rem; /* Adjusted text size */
+.events-buttons,
+.services-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.events-services-bullets {
-  list-style-type: none;
-  padding: 0;
-}
-
-.events-services-bullets li {
-  font-size: 1.4rem; /* Adjusted font size for bullets */
-  margin-bottom: 15px; /* Added more space between bullets */
+.events-buttons button,
+.services-buttons button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0;
+  font-size: 1.2rem;
   cursor: pointer;
-  position: relative; /* Ensure relative positioning */
-  padding: 10px; /* Added padding */
-  border: 1px solid #010446; /* Added border */
-  border-radius: 5px; /* Added border radius */
-  color: #010446; /* Dark blue text color */
+  background-color: transparent;
+  color: #010446;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.events-services-bullets li:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.events-buttons button:hover,
+.services-buttons button:hover {
+  background-color: #010446;
+  color: #FFFFFF;
+}
+
+.events-services-image img {
   width: 100%;
-  height: 100%;
-  background-color: #010446; /* Dark blue background color */
-  border-radius: 5px; /* Rounded corners */
-  z-index: -1; /* Place behind the text */
-  transition: width 0.3s ease; /* Smooth transition effect */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-.events-services-bullets li.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #010446; /* Dark blue background color */
-  border-radius: 5px; /* Rounded corners */
-  z-index: -1; /* Place behind the text */
-}
-
-.events-services-bullets li.active {
-  color: #FFFFFF; /* White text color */
-}
-
-.events-services-image {
-  max-width: 45%; /* Adjusted width for image */
-  border-radius: 10px; /* Rounded corners for image */
-}
-
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .corporate-logos, .mentors-section, .events-services-section, .coach-section {
-    flex-direction: column;
-    text-align: center;
-    margin: 20px auto; /* Adjusting for smaller screens */
-  }
-
-  .corporate-logos img, .mentors-section img, .events-services-image img, .coach-section img {
-    width: 100%; /* Full width for images on smaller screens */
-    margin-top: 20px; /* Adding space above images */
-  }
-
-  .corporate-logos .text-box, .mentors-section .text-box, .events-services-content, .coach-text-box {
-    padding: 20px;
-    width: 100%; /* Ensuring full width usage on smaller screens */
-  }
+/* Active button style */
+.active-button {
+  background-color: #010446;
+  color: #FFFFFF;
 }

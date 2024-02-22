@@ -91,9 +91,6 @@ function CorporatePartners() {
     return (
         <div className="corporate-partners-section">
             <h2>Our Current Corporate Partners</h2>
-            <p className="corporate-description">
-                Our current corporate partners play a pivotal role in providing strong connections between our fellows and the industry. These companies offer positions and interview opportunities, along with employees who act as coaches for our 1-on-1 sessions. They help prepare resumes, review interviews, and provide practice tailored to their specific companies. These relationships with the top companies build the bridge for our fellows to start their professional journeys.
-            </p>
             <div className="slider-section-names">
                 <div className={`slider-item-name ${activeSection === 'tech' ? 'active' : ''}`} onClick={() => handleSectionClick('tech')}>
                     <h3>Tech</h3>
@@ -121,6 +118,9 @@ function CorporatePartners() {
                 <button className="carousel-control left" onClick={prevSlideReached}>&lt;</button>
                 <button className="carousel-control right" onClick={nextSlideReached}>&gt;</button>
             </div>
+            <p className="corporate-description">
+                Our current corporate partners play a pivotal role in providing strong connections between our fellows and the industry. These companies offer positions and interview opportunities, along with employees who act as coaches for our 1-on-1 sessions. They help prepare resumes, review interviews, and provide practice tailored to their specific companies. These relationships with the top companies build the bridge for our fellows to start their professional journeys.
+            </p>
 
             <h2>Our Anticipated Corporate Partners</h2>
             <p className="corporate-description">

@@ -5,7 +5,7 @@ import './homePage.css';
 
 import photo1 from '../../assets/images/company-office-headshots-hartford-connecticut.jpg';
 import photo2 from '../../assets/images/networking_large_table.jpg';
-import mentors from '../../assets/images/meetmentor.jpg';
+import mentors from '../../assets/videos/mentorship_example.mp4';
 import logoImage from '../../assets/images/Propel2excel-Banner-textAsset 2.png';
 import background from '../../assets/images/4x/Logo-P2e-final-v4Asset 2.png';
 import video1 from '../../assets/videos/test_networking_vid.mp4';
@@ -33,7 +33,7 @@ function Home() {
   return (
     <div className="App">
       <div className="banner-container">
-          <img src={background} alt="Banner" className="banner-image" />
+        <img src={background} alt="Banner" className="full-width-banner" />
       </div>
 
       <div className="p2e-description">
@@ -70,52 +70,55 @@ function Home() {
 
       {/* Mentorship Section */}
       <section className="mentors-section">
-        <img src={mentors} alt="Mentors" />
+      <div className="video-container">
+          <video src={mentors} autoPlay muted loop playsInline />
+        </div>
         <div className="mentor-text-box">
-          <div className="button-container">
+          <div className="header-container">
             <h2>Meet Our Mentors</h2>
-            <a href="/speakers" class="arrow-button"></a>
           </div>
           <p>Our mentorship program is the heart of Propel2Excel. Experienced mentors from leading firms offer weekly coaching, guiding students in their career journeys. Beyond group coaching, students can request private 1-on-1 meetings with mentors for personalized advice. Our mentors play a crucial role in bringing students to 80% of speaking engagements and ensuring progress in LinkedIn and resume rebranding.</p>
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="events-services-section">
-        <div className="events-services-content">
-          <h2>Events That Lead and Inspire</h2>
-          <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
-          <ul className="events-services-bullets">
-            <li onMouseOver={() => handleHoverEvent('workshop')} className={activeEvent === 'workshop' ? 'active' : ''}>Interactive Workshops</li>
-            <li onMouseOver={() => handleHoverEvent('networking')} className={activeEvent === 'networking' ? 'active' : ''}>Networking Events</li>
-            <li onMouseOver={() => handleHoverEvent('speaker')} className={activeEvent === 'speaker' ? 'active' : ''}>Speaker Series</li>
-          </ul>
+      {/* Events and Services Section */}
+      <div className="events-services-container">
+        {/* Events Section */}
+        <div className="events-services-section">
+          <div className="events-services-content">
+            <h2>Events That Lead and Inspire</h2>
+            <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
+            <div className="events-buttons">
+              <button onClick={() => handleHoverEvent('workshop')} className={activeEvent === 'workshop' ? 'active-button' : ''}>Interactive Workshops</button>
+              <button onClick={() => handleHoverEvent('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
+              <button onClick={() => handleHoverEvent('speaker')} className={activeEvent === 'speaker' ? 'active-button' : ''}>Speaker Series</button>
+            </div>
+          </div>
+          <div className="events-services-image">
+            {activeEvent === 'workshop' && <img id="events-img" src={workshop} alt="Event" />}
+            {activeEvent === 'networking' && <img id="events-img" src={networking} alt="Event" />}
+            {activeEvent === 'speaker' && <img id="events-img" src={speakerSeriesImage} alt="Event" />}
+          </div>
         </div>
-        <div className="events-services-image">
-          {activeEvent === 'workshop' && <img id="events-img" src={workshop} alt="Event" />}
-          {activeEvent === 'networking' && <img id="events-img" src={networking} alt="Event" />}
-          {activeEvent === 'speaker' && <img id="events-img" src={speakerSeriesImage} alt="Event" />}
-        </div>
-      </section>
 
-      {/* Services Section */}
-      <section className="events-services-section">
-        <div className="events-services-image">
-          {activeService === 'coaching' && <img id="services-img" src={careerCoachingImage} alt="Service" />}
-          {activeService === 'resume' && <img id="services-img" src={resumeWorkshopImage} alt="Service" />}
-          {activeService === 'interview' && <img id="services-img" src={interviewPrepImage} alt="Service" />}
+        {/* Services Section */}
+        <div className="events-services-section">
+          <div className="events-services-image">
+            {activeService === 'coaching' && <img id="services-img" src={careerCoachingImage} alt="Service" />}
+            {activeService === 'resume' && <img id="services-img" src={resumeWorkshopImage} alt="Service" />}
+            {activeService === 'interview' && <img id="services-img" src={interviewPrepImage} alt="Service" />}
+          </div>
+          <div className="events-services-content">
+            <h2>Comprehensive Services for Career Advancement</h2>
+            <p>We offer a range of services designed to equip students with the necessary tools for career success, from LinkedIn rebranding to expert interview preparation.</p>
+            <div className="services-buttons">
+              <button onClick={() => handleHoverService('coaching')} className={activeService === 'coaching' ? 'active-button' : ''}>Career Coaching</button>
+              <button onClick={() => handleHoverService('resume')} className={activeService === 'resume' ? 'active-button' : ''}>Resume Workshops</button>
+              <button onClick={() => handleHoverService('interview')} className={activeService === 'interview' ? 'active-button' : ''}>Interview Preparation</button>
+            </div>
+          </div>
         </div>
-        <div className="events-services-content">
-          <h2>Comprehensive Services for Career Advancement</h2>
-          <p>We offer a range of services designed to equip students with the necessary tools for career success, from LinkedIn rebranding to expert interview preparation.</p>
-          <ul className="events-services-bullets">
-            <li onMouseOver={() => handleHoverService('coaching')} className={activeService === 'coaching' ? 'active' : ''}>Career Coaching</li>
-            <li onMouseOver={() => handleHoverService('resume')} className={activeService === 'resume' ? 'active' : ''}>Resume Workshops</li>
-            <li onMouseOver={() => handleHoverService('interview')} className={activeService === 'interview' ? 'active' : ''}>Interview Preparation</li>
-          </ul>
-        </div>
-      </section>
-
+      </div>
 
     </div>
   );

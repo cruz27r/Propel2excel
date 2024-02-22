@@ -17,6 +17,7 @@ import SpeakerApplication from './pages/Speakers/SpeakersApplication';
 import NavBar from './components/NavBar/navbar';
 import './App.css';
 import MaintenancePage from './pages/Maintenance/MaintenancePage';
+import Students from './pages/MeetOurStudents/students';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/maintenance" element={<MaintenancePage />} />
+          <Route path="/students" element={<Students />} />
         </Routes>
       </div>
     </Router>

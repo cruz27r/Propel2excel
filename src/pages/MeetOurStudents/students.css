@@ -1,0 +1,36 @@
+.students-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.students-page h1 {
+  margin-bottom: 20px;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.student-card {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.student-card img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+.chart-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
