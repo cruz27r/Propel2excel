@@ -18,6 +18,7 @@ import NavBar from './components/NavBar/navbar';
 import './App.css';
 import MaintenancePage from './pages/Maintenance/MaintenancePage';
 import Students from './pages/MeetOurStudents/students';
+import MainApplication from './pages/MainApplication/MainApplication';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/maintenance" element={<MaintenancePage />} />
           <Route path="/students" element={<Students />} />
+          <Route path="/main-application" element={<MainApplication />} />
         </Routes>
       </div>
     </Router>

@@ -9,28 +9,56 @@
 
 .student-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-content: center;
-  margin-bottom: 20px;
 }
 
 .student-card {
-  padding: 10px;
-  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.student-card img {
-  width: 250px;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
+.student-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
 }
 
+.student-card:hover .student-image {
+  transform: scale(1.1);
+}
 
-.chart-container {
-  margin-top: 20px;
+.student-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.student-card:hover .student-details {
+  opacity: 1;
+}
+
+.student-details h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .student-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
