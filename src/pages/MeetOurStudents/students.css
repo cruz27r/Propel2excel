@@ -7,9 +7,37 @@
   margin-bottom: 20px;
 }
 
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #182C63;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #4562a8;
+}
+
+.filter-buttons button.active {
+  background-color: #4562a8;
+}
+
+
 .student-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
@@ -18,17 +46,18 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95); /* Set the initial scale to 0.95 */
+  transition: transform 0.2s;
+}
+
+.student-card:hover {
+  transform: scale(1); /* Scale back to 1 on hover */
 }
 
 .student-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.2s;
-}
-
-.student-card:hover .student-image {
-  transform: scale(1.1);
 }
 
 .student-details {
@@ -52,13 +81,100 @@
   opacity: 1;
 }
 
-.student-details h2 {
+.testimonials-section {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: row;
+  animation: scroll 60s linear infinite;
+  max-width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.testimonials-container {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial {
+  width: 400px; /* Adjust the width as needed */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 20px; /* Adjust the margin as needed */
+  display: inline-block;
+  white-space: normal;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 18px;
+  text-align: center;
   margin-bottom: 10px;
+}
+
+.testimonial:first-child {
+  margin-left: 20px;
+}
+
+.testimonial:hover {
+  transform: scale(1.05);
+}
+
+.chart-section {
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: center; /* Center items horizontally */
+  margin-top: 20px; /* Add some margin at the top */
+}
+
+.chart-container-row {
+  display: flex;
+  justify-content: space-around; /* Align items evenly with space around them */
+  align-items: flex-start; /* Align items to the top of the container */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  margin: -5px; /* Decrease the margin between rows */
+}
+
+.chart-container {
+  width: 200px; /* Set a slightly narrower width for all charts */
+  height: 200px; /* Set a slightly shorter height for all charts */
+  margin: 5px; /* Add some margin between charts */
+}
+
+
+.custom-tooltip {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.label {
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .student-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.intro {
+  margin-top: 5px;
+}
+
+.desc {
+  margin-top: 5px;
+  font-style: italic;
 }

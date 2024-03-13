@@ -8,9 +8,22 @@
   margin: auto;
 }
 
+.main-content-section {
+  width: 50%;
+  float: left;
+}
+
+.statistics-section {
+  width: 50%;
+  height: auto;
+  padding-top: 30px;
+  float: right;
+  /* background-color: #c8c8f0; */
+}
+
 .explanation-section {
-  background-color: #fff; /* This will be overridden by inline style */
-  padding: 40px; /* Increased padding */
+  background-color: #fff;
+  padding: 40px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 30px;
@@ -18,23 +31,55 @@
   background-position: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  min-height: 300px; /* Optional: Adjust this value as needed */
+  min-height: 300px;
 }
 
+.main-image-section {
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-image-section h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.main-image-section p {
+  font-size: 1.2rem;
+}
 
 .tips-section {
+  padding-top: 20px;
+  width: 90%;
+  float: left;
+}
+
+.tips-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: wrap; /* Allow tips to wrap to the next row */
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .tip {
+  flex: 0 1 calc(48% - 50px); /* Calculate width for two tips per row with margin */
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 20px;
-  width: calc(50% - 10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -43,11 +88,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.tips-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
 
 .full-width-banner {
   width: 100%;
@@ -56,58 +96,55 @@
   border-radius: 8px;
 }
 
-.linkedin-form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 30px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #373751;
-  font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="url"] {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.form-group button {
-  width: 100%;
-  padding: 10px;
-  background-color: #1fa1c4;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.form-group button:hover {
-  background-color: #373751;
-}
-
 @media (max-width: 768px) {
-  .tip, .tips-row {
+  .tips-section {
     width: 100%;
-    margin-right: 0;
+    float: none;
   }
 
   .tip {
     width: 100%;
     margin-bottom: 20px;
   }
+
+  .statistics-section {
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+  }
+}
+
+.application-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #1fa1c4;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.application-button:hover {
+  background-color: #373751;
+  transform: translateY(-2px);
+}
+
+.application-button:focus {
+  outline: none;
+}
+
+.application-button:active {
+  transform: translateY(0);
+}
+
+.firstChart {
+  width: 40%;
+  height: auto;
+}
+.secondChart .thirdChart {
+  width: 100%;
+  height: auto;
 }

@@ -11,7 +11,7 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .hamburger-menu {
@@ -43,15 +43,15 @@
   list-style-type: none;
   margin: 0;
   padding: 0 1rem;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .nav-links a, .dropdown .dropbtn {
   color: #101D42;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   transition: color 0.3s, background-color 0.3s;
-  font-size: 1.1rem; /* Larger main section text */
+  font-size: 1.0rem; /* Larger main section text */
 }
 
 .nav-links a:hover, .dropdown .dropbtn:hover {

@@ -4,18 +4,20 @@
     margin-bottom: 40px;
     margin-top: 20px; /* Add padding to the top of the page */
     width: 90%;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 .banner-image {
-    width: 40%;
+    max-width: 40%;
     height: auto;
     border-radius: 8px;
     margin-right: 10px;
 }
 
 .banner-text {
-    width: 50%;
-    padding: 10px;
+    width: 45%;
+    padding: 8px;
     box-sizing: border-box;
     margin: auto;
     font-size: 1.1em;

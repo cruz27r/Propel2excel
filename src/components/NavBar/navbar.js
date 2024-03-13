@@ -50,29 +50,29 @@ const NavBar = () => {
       </div>
 
       <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
-      <Link to="/students">Meet Our Students</Link>
+      <Link to="/students">Our Students</Link>
         <div className="dropdown">
           <button className="dropbtn">Universities</button>
           <div className="dropdown-content">
             <Link to="/university-partners">Universities representing</Link>
             <Link to="/university-partners">Universities anticipated</Link>
-            <Link to="/university-partners/application">Apply Now</Link>
+            {/* <Link to="/university-partners/application">Apply Now</Link> */}
           </div>
         </div>
         <div className="dropdown">
           <button className="dropbtn">Corporate</button>
           <div className="dropdown-content">
             <Link to="/corporate-partners">Partners</Link>
-            <Link to="/corporate-partners">Anticipated Partners</Link>
+            {/* <Link to="/corporate-partners">Anticipated Partners</Link> */}
             <Link to="/corporate-partners">Coaches</Link>
-            <Link to="/corporate-partners/application">Apply Now</Link>
+            {/* <Link to="/corporate-partners/application">Apply Now</Link> */}
           </div>
         </div>
         <div className="dropdown">
           <button className="dropbtn">Mentors</button>
           <div className="dropdown-content">
             <Link to="/speakers">Current Mentors</Link>
-            <Link to="/speakers/application">Apply Now</Link>
+            {/* <Link to="/speakers/application">Apply Now</Link> */}
           </div>
         </div>
         <div className="dropdown">

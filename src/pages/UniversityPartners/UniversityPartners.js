@@ -46,7 +46,7 @@ function UniversityPartners() {
             <div className="banner-container">
                 <img src={universityBanner} alt="University Banner" className="banner-image" />
                 <div className="banner-text">
-                    <h2>Our Reached Universities</h2>
+                    <h2>Universities Represented</h2>
                     <p className="university-description">
                         The universities we partner with are the nurturing grounds for our fellows - the future leaders in tech, banking, and consulting industries. These institutions are more than just educational establishments; they are the pillars that support the aspirations of our students. At Propel, we are dedicated to not only providing resources but also expanding our reach to support more students in their journey to excellence. Below are some of the esteemed universities we've had the privilege of working with, and we're excited about the prospect of partnering with many more as we progress.
                     </p>

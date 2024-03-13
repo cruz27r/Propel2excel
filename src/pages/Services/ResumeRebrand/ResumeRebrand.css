@@ -1,127 +1,160 @@
-.submit-resume-container {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+.resume-rebrand-container {
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  width: 90%;
-  max-width: 1100px;
-  margin: 20px auto;
   padding: 20px;
+  width: 90%;
+  max-width: 90%;
+  margin: auto;
 }
 
-.resume-banner {
+.main-content-section {
+  width: 60%;
+  float: left;
+}
+
+.statistics-section {
+  width: 40%;
+  height: auto;
+  padding-top: 30px;
+  float: right;
+}
+
+.explanation-section {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
   background-size: cover;
   background-position: center;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 8px;
-  margin-bottom: 30px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 300px;
 }
 
-h1 {
-  font-size: 2.5rem;
+.main-image-section {
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
   color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-image-section h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.main-image-section p {
+  font-size: 1.2rem;
 }
 
 .resume-description {
-  background-color: #fff;
-  padding: 25px;
+  background-color: #f9f9f9;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-.resume-tips {
-  display: flex;
-  flex-direction: column;
+.resume-tips-section {
+  padding-top: 20px;
+  width: 90%;
+  float: left;
 }
 
-.tips-row {
+.resume-tips-row {
   display: flex;
+  flex-wrap: wrap; /* Allow tips to wrap to the next row */
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.tip {
-  flex: 1;
-  background-color: #fff;
-  padding: 15px;
+.resume-tip {
+  flex: 0 1 calc(48% - 50px); /* Calculate width for two tips per row with margin */
+  background-color: #f9f9f9;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-right: 10px;
-  text-align: left;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tip:last-child {
-  margin-right: 0;
+.resume-tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.resume-image {
+.full-width-banner {
   width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.resume-form {
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
   display: block;
-  margin-bottom: 5px;
-  color: #373751;
-  font-weight: 600;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 45px;
-}
-
-.form-group button {
-  width: 100%;
-  padding: 12px;
-  background-color: #0056b3;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.form-group button:hover {
-  background-color: #004494;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
-  .tips-row {
-    flex-direction: column;
-  }
-
-  .tip, .resume-image {
-    margin-right: 0;
+  .tips-section {
     width: 100%;
+    float: none;
   }
 
-  .resume-image {
+  .tip {
+    width: 100%;
     margin-bottom: 20px;
   }
+
+  .statistics-section {
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+  }
+}
+
+.application-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #1fa1c4;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.application-button:hover {
+  background-color: #373751;
+  transform: translateY(-2px);
+}
+
+.application-button:focus {
+  outline: none;
+}
+
+.application-button:active {
+  transform: translateY(0);
+}
+
+.firstChart {
+  width: 40%;
+  height: auto;
+}
+
+.secondChart, .thirdChart {
+  width: 100%;
+  height: auto;
 }

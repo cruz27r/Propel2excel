@@ -4,10 +4,11 @@
   color: #333;
   padding: 20px;
   padding-top: 5px;
+  margin: 0 auto;
 }
 
 .service-overview {
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -30,6 +31,11 @@
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.service:hover {
+  transform: scale(1.05);
 }
 
 .service h3 {
@@ -55,38 +61,19 @@
   margin: 20px auto;
 }
 
-.application-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.application-form h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.application-form label {
+.apply-button {
   display: block;
-  margin-bottom: 1rem;
-}
-
-.application-form input, .application-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.application-form button {
-  padding: 0.75rem;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
   background-color: #007bff;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 1rem;
+  transition: background-color 0.3s;
 }
 
-.application-form button:hover {
+.apply-button:hover {
   background-color: #0056b3;
 }

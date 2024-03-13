@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 65%; /* Set the width to 65% */
+  width: 90%; /* Set the width to 65% */
   margin: auto; /* Center the speakers list */
 }
 
