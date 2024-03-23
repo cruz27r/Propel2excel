@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 const MainContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 16px;
 `;
@@ -13,25 +13,32 @@ const StepContainer = styled.div`
   justify-content: space-between;
   margin-top: 70px;
   position: relative;
-  width: 100%;
+  :before {
+    content: '';
+    position: absolute;
+    background: #f3e7f3;
+    height: 4px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
   :after {
     content: '';
     position: absolute;
     background: #4a154b;
     height: 4px;
     width: ${({ width }) => width};
-    top: calc(50% - 2px); /* Adjusted to half of the line height */
+    top: 50%;
     transition: 0.4s ease;
-    transform: translateY(50%);
+    transform: translateY(-50%);
     left: 0;
   }
 `;
 
 const StepWrapper = styled.div`
-  flex: 1;
-  text-align: center;
   position: relative;
-  margin: 0 10px;
+  z-index: 1;
 `;
 
 const StepStyle = styled.div`
@@ -44,7 +51,6 @@ const StepStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 `;
 
 const StepCount = styled.span`
@@ -57,11 +63,10 @@ const StepCount = styled.span`
 
 const StepsLabelContainer = styled.div`
   position: absolute;
-  top: 100px; /* Adjusted to provide space below the progress line */
+  top: 66px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 `;
-
 
 const StepLabel = styled.span`
   font-size: 19px;
@@ -69,12 +74,6 @@ const StepLabel = styled.span`
   @media (max-width: 600px) {
     font-size: 16px;
   }
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  word-wrap: break-word;
 `;
 
 const ButtonsContainer = styled.div`
@@ -106,98 +105,59 @@ const CheckMark = styled.div`
   font-size: 26px;
   font-weight: 600;
   color: #4a154b;
-  -ms-transform: scaleX(-1) rotate(-46deg);
-  -webkit-transform: scaleX(-1) rotate(-46deg);
+  -ms-transform: scaleX(-1) rotate(-46deg); /* IE 9 */
+  -webkit-transform: scaleX(-1) rotate(-46deg); /* Chrome, Safari, Opera */
   transform: scaleX(-1) rotate(-46deg);
 `;
 
-const steps = [
-  {
-    label: 'Application',
-    step: 1,
-    description: 'This is the application step description.',
-  },
-  {
-    label: 'Initial Coaching Session',
-    step: 2,
-    description: 'This is the initial coaching session step description.',
-  },
-  {
-    label: 'Mentor Matching',
-    step: 3,
-    description: 'This is the mentor matching step description.',
-  },
-  {
-    label: 'Resume Rebrand',
-    step: 4,
-    description: 'This is the resume rebrand step description.',
-  },
-  {
-    label: 'LinkedIn Rebrand',
-    step: 5,
-    description: 'This is the LinkedIn rebrand step description.',
-  },
-  {
-    label: 'Corporate Coach Interview Prep',
-    step: 6,
-    description: 'This is the corporate coach interview prep step description.',
-  },
-  {
-    label: 'Corporate Reach Outs',
-    step: 7,
-    description: 'This is the corporate reach outs step description.',
-  },
-  {
-    label: 'Matched With Job',
-    step: 8,
-    description: 'This is the matched with job step description.',
-  },
-];
-
-const ProgressSteps = () => {
+const ProgressSteps = ({ onUpdate }) => {
+  const [userType, setUserType] = React.useState('student');
   const [activeStep, setActiveStep] = React.useState(1);
 
-  const nextStep = () => {
-    setActiveStep(activeStep + 1);
+  useEffect(() => {
+    // Notify the parent component about updates
+    onUpdate(userType, activeStep);
+  }, [userType, activeStep, onUpdate]);
+
+  const nextStep = () => setActiveStep((prev) => prev + 1);
+  const prevStep = () => setActiveStep((prev) => prev - 1);
+  const switchJourney = () => {
+    const nextUserType = userType === 'student' ? 'partner' : userType === 'partner' ? 'company' : 'student';
+    setUserType(nextUserType);
+    setActiveStep(1);
   };
 
-  const prevStep = () => {
-    setActiveStep(activeStep - 1);
+  // Simplified for brevity, but you'd map over your userType specific steps here
+  const steps = {
+    student: ["About P2E", "Corporate Partners", "Application"],
+    partner: ["About P2E", "Buddy System", "Application"],
+    company: ["About P2E", "Talent", "Investment Partnership", "Application"]
   };
 
-  const totalSteps = steps.length;
-
-  const width = `${(100 / (totalSteps - 1)) * (activeStep - 1)}%`;
+  const totalSteps = steps[userType].length;
+  const width = `${(100 / totalSteps) * activeStep}%`;
 
   return (
     <MainContainer>
       <StepContainer width={width}>
-        {steps.map(({ step, label }) => (
-          <StepWrapper key={step}>
-            <StepStyle step={activeStep >= step ? 'completed' : 'incomplete'}>
-              {activeStep > step ? (
-                <CheckMark>L</CheckMark>
-              ) : (
-                <StepCount>{step}</StepCount>
-              )}
+        {steps[userType].map((label, index) => (
+          <StepWrapper key={index}>
+            <StepStyle step={activeStep > index ? 'completed' : 'incomplete'}>
+              <StepCount>{index + 1}</StepCount>
             </StepStyle>
             <StepsLabelContainer>
-              <StepLabel key={step}>{label}</StepLabel>
+              <StepLabel>{label}</StepLabel>
             </StepsLabelContainer>
           </StepWrapper>
         ))}
       </StepContainer>
       <ButtonsContainer>
-        <ButtonStyle onClick={prevStep} disabled={activeStep === 1}>
-          Previous
-        </ButtonStyle>
-        <ButtonStyle onClick={nextStep} disabled={activeStep === totalSteps}>
-          Next
-        </ButtonStyle>
+        <ButtonStyle onClick={prevStep} disabled={activeStep === 1}>Previous</ButtonStyle>
+        {activeStep === totalSteps && (
+          <ButtonStyle onClick={switchJourney}>Switch Journey</ButtonStyle>
+        )}
+        <ButtonStyle onClick={nextStep} disabled={activeStep === totalSteps}>Next</ButtonStyle>
       </ButtonsContainer>
-      {activeStep === steps.length && (
-        <p>{steps[activeStep - 1].description}</p>
-      )}
     </MainContainer>
   );
 };

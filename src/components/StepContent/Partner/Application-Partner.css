@@ -1,0 +1,79 @@
+.student-application-container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .student-application-form {
+    width: 65%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .application-media {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .media-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .media-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input,
+  textarea,
+  button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #4a154b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #5f1d6a;
+  }
+
+  /* CSS for highlighting selected input */
+input:focus,
+textarea:focus {
+  border-color: #4a154b; /* Change border color when selected */
+  background-color: #f3e7f3; /* Change background color when selected */
+}
+
+  
+  @media (max-width: 768px) {
+    .student-application-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .student-application-form,
+    .application-media {
+      width: 100%;
+    }
+  }
+  

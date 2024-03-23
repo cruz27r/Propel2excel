@@ -1,0 +1,197 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Video and Paragraph Container */
+.video-paragraph-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: space-around;
+}
+
+.video-paragraph-container video {
+    flex: 1;
+    max-width: 50%;
+}
+
+.video-paragraph-container p {
+    flex: 1;
+    max-width: 35%;
+    justify-content: center;
+    font-size: 1.85rem;
+    padding: 20px;
+}
+
+/* Key Components Container */
+.key-components-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.key-components-container h3 {
+    font-size: 2rem;
+    font-family: "Georgia", serif;
+    margin-bottom: 20px;
+}
+
+.components-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.components-content ul {
+    width: 45%;
+    list-style-type: none;
+    padding: 0;
+}
+
+.components-content ul li {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.components-content ul li:hover,
+.components-content ul li.active {
+    background-color: #f0f0f0;
+}
+
+.component-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.component-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Program Overview Container */
+.program-statement {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.program-statement h3 {
+    font-size: 2.5rem;
+    font-family: "Verdana", sans-serif;
+}
+
+.program-statement p {
+    font-size: 1.5rem;
+    font-family: "Arial", sans-serif;
+}
+
+/* Component Details */
+.component-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.details-column {
+    flex: 1;
+    padding: 10px;
+    background-color: #182C63; /* Update the background color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.details-column:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #182C63;
+    color: #ffffff;
+}
+
+.details-column.active {
+    background-color: #182C63; /* Updated background color */
+    color: #ffffff; /* Updated text color */
+}
+
+.details-column h4 {
+    font-size: 1.25rem;
+    font-family: "Arial", sans-serif;
+    margin-bottom: 10px;
+}
+
+.details-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details-column ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.details-column p {
+    font-size: 1rem;
+    font-family: "Arial", sans-serif;
+}
+
+/* Highlighted Details */
+.highlighted-details {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.events-services-section {
+    display: inline-block;
+    width: 45%;
+    margin: 0 2.5%;
+    vertical-align: top;
+  }
+  
+  
+  .events-services-section {
+    width: calc(45% - 50px); /* 10px to account for margins and spacing */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  .events-services-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .events-section,
+  .services-section {
+    flex: 1;
+    padding: 0 10px; /* Adjust as needed */
+  }
+  
+  /* Additional styling for individual sections can be added here */

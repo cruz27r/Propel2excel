@@ -34,7 +34,7 @@ import logo4 from '../../assets/images/Northeastern-University-Logo.png';
 import logo5 from '../../assets/images/Wentworth.png';
 import logo6 from '../../assets/images/BU.png';
 
-function CorporatePartners() {
+function CorporatePartnersPage() {
     // Index and carousel logic for current partners
     // State for tracking the active index of the currently reached logos
     const [activeIndexReached, setActiveIndexReached] = useState(2);
@@ -409,4 +409,4 @@ function CorporatePartners() {
 
 }
 
-export default CorporatePartners;
+export default CorporatePartnersPage;

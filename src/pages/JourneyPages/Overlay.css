@@ -1,0 +1,93 @@
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover full viewport width */
+    height: 100vh; /* Cover full viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .overlay {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    width: auto; /* Auto width to wrap content */
+    text-align: center;
+  }
+  
+  .overlay h2 {
+    color: #182C63; /* Assuming this matches the blue header color */
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+  }
+  
+  .overlay p {
+    margin-bottom: 30px;
+    color: #666666; /* Dark grey text */
+    font-size: 1rem;
+  }
+  
+  .overlay label {
+    display: inline-block; /* Make labels inline for side-by-side */
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .overlay input[type="radio"] {
+    display: none; /* Hide radio button */
+  }
+  
+  .overlay label:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    vertical-align: middle;
+  }
+  
+  .overlay input[type="radio"]:checked + label:before {
+    background-color: #007bff; /* Blue background for selected */
+  }
+  
+  .overlay button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .overlay button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* This additional style for when buttons are side by side */
+  .overlay button:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  /* Styles to visually hide but make element accessible */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  

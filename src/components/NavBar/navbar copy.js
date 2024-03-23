@@ -44,10 +44,48 @@ const NavBar = () => {
     <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isMobileMenuOpen ? 'open' : ''}`}>
       <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
       <div className="logo-section">
-        <Link to="/journey" className='logo-link'>
+        <Link to="/" className='logo-link'>
           <img src={logoImage} alt="Company Logo" className="logo" />
         </Link>
       </div>
+
+      <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
+      <Link to="/students">Our Students</Link>
+        <div className="dropdown">
+          <button className="dropbtn">Universities</button>
+          <div className="dropdown-content">
+            <Link to="/university-partners">Universities representing</Link>
+            <Link to="/university-partners">Universities anticipated</Link>
+            {/* <Link to="/university-partners/application">Apply Now</Link> */}
+          </div>
+        </div>
+        <div className="dropdown">
+          <button className="dropbtn">Corporate</button>
+          <div className="dropdown-content">
+            <Link to="/corporate-partners">Partners</Link>
+            {/* <Link to="/corporate-partners">Anticipated Partners</Link> */}
+            <Link to="/corporate-partners">Coaches</Link>
+            {/* <Link to="/corporate-partners/application">Apply Now</Link> */}
+          </div>
+        </div>
+        <div className="dropdown">
+          <button className="dropbtn">Mentors</button>
+          <div className="dropdown-content">
+            <Link to="/speakers">Current Mentors</Link>
+            {/* <Link to="/speakers/application">Apply Now</Link> */}
+          </div>
+        </div>
+        <div className="dropdown">
+          <button className="dropbtn">Services</button>
+          <div className="dropdown-content">
+            <Link to="/linkedin-rebrand">LinkedIn Rebrand</Link>
+            <Link to="/resume-rebrand">Resume Rebrand</Link>
+            <Link to="/interview-prep">Interview Prep</Link>
+          </div>
+        </div>
+        <Link to="/events-for-readiness">Events</Link>
+        <Link to="/faqs">FAQs</Link>
+      </nav>
 
       <div className="apply-section">
         <Link to="/apply-to-cohort">Excel Here</Link>

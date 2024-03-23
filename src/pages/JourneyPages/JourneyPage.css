@@ -1,0 +1,50 @@
+/* JourneyPage.css */
+
+.JourneyPageContainer {
+    /* Add styles for the main container of the JourneyPage */
+    padding: 20px;
+  }
+  
+  .header-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .journey-header {
+    text-align: center;
+    flex-grow: 1; /* Allows the header to take up available space */
+    margin: 0; /* Removes default margin */
+    color: #4a154b; /* Adjust the color as needed */
+    font-size: 75px;
+  }
+  
+  .ChangeButton {
+    text-align: right;
+    flex-shrink: 0; /* Prevents the button container from shrinking */
+  }
+  
+  .ChangeButton button {
+    /* Style the change answers button */
+    background-color: #4a154b;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .ChangeButton button:hover {
+    /* Style for hover state of the change answers button */
+    background-color: #6e217d;
+  }
+  
+  .step-content {
+    /* Style the container for the step content */
+    margin-top: 40px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  

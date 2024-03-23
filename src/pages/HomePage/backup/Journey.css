@@ -1,0 +1,111 @@
+/* Define new images */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General Styling */
+body, .App {
+  max-width: 100%;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding-top: 0px;
+  box-sizing: border-box;
+  background-color: #FCF7FF;
+  scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  max-width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Banner Styling */
+.banner-container {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Banner Text Image */
+.banner-text {
+  width: 200%; /* Increase the width of the text logo */
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: growAndBounce 3s ease-in-out infinite;
+}
+
+@keyframes growAndBounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.full-width-banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Dynamic Font Size */
+@media (min-width: 768px) {
+  .banner-text {
+    font-size: calc(2rem + 2vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-text {
+    font-size: calc(1.5rem + 2vw);
+  }
+}
+
+/* P2E Description Section Adjustments */
+.p2e-description {
+  max-width: 70%;
+  margin: 40px auto;
+  padding: 10px;
+  background-color: transparent;
+  color: #010446;
+  border-radius: 8px;
+  text-align: center;
+  position: relative; /* Add position relative to position the button absolutely within this container */
+}
+
+.p2e-description h2 {
+  font-size: 2.75rem;
+}
+
+.p2e-description .p2e-text {
+  max-width: 60%; /* Narrower width for the mission text */
+  margin: 0 auto; /* Centered horizontally */
+  font-size: 1.8rem; /* Adjusted font size for better readability */
+  padding-bottom: 30px;
+}
+
+.details-button {
+  position: absolute; /* Position the button absolutely within the .p2e-description container */
+  bottom: 20px; /* Align the button to the bottom of the container */
+  right: 20px; /* Align the button to the right of the container */
+  background-color: #010446;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

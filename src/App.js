@@ -2,6 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/homePage';
+import HomePageJourney from './pages/HomePage/backup/Journey';
+import JourneyContent from './pages/JourneyPages/JourneyPage';
 import UniversityPartners from './pages/UniversityPartners/UniversityPartners';
 import CorporatePartners from './pages/CorporatePartners/CorporatePartners';
 import LinkedInRebrand from './pages/Services/LinkedInRebrand/LinkedInRebrand';
@@ -27,6 +29,8 @@ function App() {
       <div className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/journey" element={<HomePageJourney />} />
+          <Route path="/journeyContent" element={<JourneyContent />} />
           <Route path="/university-partners" element={<UniversityPartners />} />
           <Route path="/university-partners/application" element={<UniversityPartnersApplication />} />
           <Route path="/corporate-partners" element={<CorporatePartners />} />

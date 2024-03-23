@@ -103,11 +103,6 @@ function Home() {
         <Link to="/apply-to-cohort" className="details-button">Cohort Application</Link>
       </div>
 
-      <div>
-        <h1>Welcome to the HomePage</h1>
-        <ProgressSteps />
-    </div>
-
       {/* Corporate Logos Section */}
       <section className="corporate-section">
         <img src={photo2} alt="Networking at a large table" />
