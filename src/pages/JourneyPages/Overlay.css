@@ -8,56 +8,85 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-  }
+    z-index: 999999;
+}
   
-  .overlay {
+.overlay {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
-    width: auto; /* Auto width to wrap content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 60%; /* Adjusted width */
+    max-width: 800px; /* Maximum width */
     text-align: center;
-  }
+    display: flex; /* Enable flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align children */
+}
   
-  .overlay h2 {
-    color: #182C63; /* Assuming this matches the blue header color */
+.overlay h2 {
+    color: #182C63; /* Matches the blue header color */
     margin-bottom: 30px;
-    font-size: 1.5rem;
-  }
+    font-size: 2rem; /* Increased font size */
+}
   
-  .overlay p {
+.overlay p {
     margin-bottom: 30px;
     color: #666666; /* Dark grey text */
-    font-size: 1rem;
-  }
+    font-size: 1.25rem; /* Increased font size */
+}
   
-  .overlay label {
-    display: inline-block; /* Make labels inline for side-by-side */
+.overlay label {
+    display: flex; /* Use flexbox for label */
+    flex: 1; /* Flex grow to split width evenly */
     margin: 10px;
     cursor: pointer;
-  }
+}
   
-  .overlay input[type="radio"] {
+.overlay input[type="radio"] {
     display: none; /* Hide radio button */
-  }
+}
   
-  .overlay label:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: #ccc;
-    vertical-align: middle;
-  }
+/* Removed the circle indicators */
+.overlay label:before {
+    content: none;
+}
   
-  .overlay input[type="radio"]:checked + label:before {
-    background-color: #007bff; /* Blue background for selected */
-  }
-  
-  .overlay button {
+/* Style for the container of the option cards */
+.options-container {
+    display: flex; /* Use flexbox for options */
+    justify-content: space-around; /* Distribute space evenly */
+    width: 100%; /* Full width */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.overlay .option-card {
+    background-color: #fff; /* White background */
+    border: 2px solid #182C63; /* Blue border */
+    color: #182C63; /* Blue text */
+    padding: 20px; /* Increased padding for a larger box */
+    flex: 1; /* Flex grow to split width evenly */
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease;
+    text-align: center; /* Center text */
+    min-width: 100px; /* Minimum width */
+}
+
+.option-card:hover {
+    background-color: #182C63; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+    border: 2px solid #182C63; /* Maintain blue border on hover */
+}
+
+.overlay input[type="radio"]:checked + .option-card {
+    background-color: #182C63; /* Blue background for selected */
+    color: white; /* White text for selected */
+    border: 2px solid #182C63; /* Maintain blue border for selected */
+}
+
+.overlay button {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
@@ -68,19 +97,19 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease; /* Transition for hover effect */
-  }
+}
   
-  .overlay button:hover {
+.overlay button:hover {
     background-color: #0056b3;
-  }
+}
   
-  /* This additional style for when buttons are side by side */
-  .overlay button:not(:last-child) {
+/* Additional style for when buttons are side by side */
+.overlay button:not(:last-child) {
     margin-right: 20px;
-  }
+}
   
-  /* Styles to visually hide but make element accessible */
-  .visually-hidden {
+/* Styles to visually hide but make element accessible */
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -89,5 +118,4 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
-  }
-  
+}

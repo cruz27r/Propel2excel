@@ -6,6 +6,7 @@ import './JourneyPage.css';
 import ProgressSteps from '../../components/Individual_Parts/ProgressSteps';
 
 import BannerImage from '../../assets/images/speaker-event.jpg';
+import extraimage from '../../assets/images/speaker-event.jpg';
 
 // Import step components
 import StudentAbout from '../../components/StepContent/Student/AboutP2E-Student';
@@ -60,6 +61,9 @@ function JourneyPage() {
       )}
 
         <div className="header-button-container">
+            <div className="ChangeButton-left">
+                {/* to add extra space for sizing */}
+            </div>
             <h2 className="journey-header">{userTypeDisplay}</h2>
             <div className="ChangeButton">
                 <button onClick={() => setShowOverlay(true)}>Change Answers</button>

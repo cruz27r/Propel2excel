@@ -1,8 +1,10 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
+    color: #333; /* Adjust text color */
 }
 
 /* Container Styles */
@@ -33,87 +35,59 @@ body {
     padding: 20px;
 }
 
-/* Events and Services Container */
-/* Events and Services Container */
-.events-services-container {
-    display: flex;
-    width: 100%;
-}
-
-.events-services-section {
-    flex: 1;
-    width: 50%;
-    box-sizing: border-box; /* Include padding and border in the width calculation */
-    padding: 0 20px; /* Add padding to the sections */
-}
-
-
-.events-services-content,
-.services-content {
-    width: 100%;
-    text-align: center;
-}
-
-.events-services-content h2,
-.services-content h2 {
-    font-size: 2rem;
-    font-family: "Helvetica Neue", sans-serif;
-}
-
-.events-services-content p,
-.services-content p {
-    font-size: 1.5rem;
-    font-family: "Arial", sans-serif;
-}
-
 /* Key Components Container */
 .key-components-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
-    background-color: transparent;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .key-components-container h3 {
     font-size: 2rem;
-    font-family: "Georgia", serif;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
 .components-content {
     display: flex;
-    width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .components-content ul {
-    width: 45%;
+    flex: 0 1 48%; /* Adjust width for smaller screens */
     list-style-type: none;
     padding: 0;
+    margin-bottom: 20px;
 }
 
 .components-content ul li {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
     border-radius: 5px;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-.components-content ul li:hover,
+.components-content ul li:hover {
+    background-color: #182C63; /* Updated blue color */
+    color: #fff; /* White text color */
+}
+
 .components-content ul li.active {
-    background-color: #f0f0f0;
+    background-color: #182C63; /* Updated blue color */
+    color: #fff; /* White text color */
 }
 
 .component-image {
-    width: 40%;
+    flex: 0 1 48%; /* Adjust width for smaller screens */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,53 +102,50 @@ body {
 
 /* Program Overview Container */
 .program-statement {
-    background-color: #f9f9f9;
+    background-color: #fff;
     padding: 20px;
-    width: 65%;
-    margin: 0 auto;
-    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
 }
 
 .program-statement h3 {
     font-size: 2.5rem;
-    font-family: "Verdana", sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .program-statement p {
-    font-size: 1.5rem;
-    font-family: "Arial", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
 }
 
 /* Component Details */
 .component-details {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
 
 .details-column {
-    flex: 1;
-    padding: 10px;
-    background-color: transparent; /* Set background color to transparent by default */
-    border: 1px solid #ddd; /* Add border for better separation */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    transition: all 0.3s; /* Smooth transition for hover effect */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    flex: 0 1 30%; /* Adjust width for smaller screens */
+    padding: 20px;
+    background-color: #182C63;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .details-column:hover {
-    transform: scale(1.02); /* Scale up slightly on hover */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow on hover */
-}
-
-.details-column.active {
-    background-color: #e0f7fa; /* Change the background color for the active component */
-    color: #006064; /* Change the text color for the active component */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .details-column h4 {
-    font-size: 1.25rem; /* Reduce font size */
-    font-family: "Arial", sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -184,18 +155,84 @@ body {
 }
 
 .details-column ul li {
-    font-size: 1rem; /* Reduce font size */
+    font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
 .details-column p {
-    font-size: 1rem; /* Reduce font size */
-    font-family: "Arial", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 10px;
 }
 
 /* Highlighted Details */
-.highlighted-details {
-    background-color: #f9f9f9; /* Change the background color to the desired highlight color */
-    transition: background-color 0.3s; /* Smooth transition for the background color change */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow for emphasis */
+.component-details.highlighted .details-column {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Events and Services Container */
+.events-services-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Events Section */
+.events-section {
+    flex: 1;
+    padding: 0 10px; /* Adjust as needed */
+}
+
+.events-services-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.events-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.events-buttons button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.events-buttons button.active-button {
+    background-color: #182C63;
+    color: #fff;
+}
+
+/* Services Section */
+.services-section {
+    flex: 1;
+    padding: 0 10px; /* Adjust as needed */
+}
+
+.services-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.services-buttons button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.services-buttons button.active-button {
+    background-color: #182C63;
+    color: #fff;
 }

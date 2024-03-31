@@ -229,43 +229,42 @@ const PartnerAbout = () => {
 
       </div>
       
+      {/* Events and Services Container */}
       <div className="events-services-container">
         {/* Events Section */}
-        <div>
-          <div className="events-services-section">
-            <div className="events-services-content">
-              <h2>Events That Lead and Inspire</h2>
-              <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
-            </div>
-            <div className="events-services-image">
-              <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : speakerSeries} alt="Event" />
-            </div>
-            <div className="events-buttons">
-              <button onClick={() => handleEventClick('workshop')} className={activeEvent === 'workshop' ? 'active-button' : ''}>Workshops</button>
-              <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
-              <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
-            </div>
+        <div className="events-section">
+          <div className="events-services-content">
+            <h2>Events That Lead and Inspire</h2>
+            <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
+          </div>
+          <div className="events-services-image">
+            <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : speakerSeries} alt="Event" />
+          </div>
+          <div className="events-buttons">
+            <button onClick={() => handleEventClick('workshop')} className={activeEvent === 'workshop' ? 'active-button' : ''}>Workshops</button>
+            <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
+            <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
           </div>
         </div>
-        
+
         {/* Services Section */}
-        <div>
-          <div className="events-services-section">
-            <div className="events-services-image">
-              <img src={activeService === 'coaching' ? careerCoaching : activeService === 'resume' ? resumeWorkshop : interviewPrep} alt="Service" />
-            </div>
-            <div className="services-content">
-              <h2>Professional Services</h2>
-              <p>Our range of services includes career coaching, resume workshops, and interview preparation, ensuring our fellows are fully prepared for the job market.</p>
-            </div>
-            <div className="services-buttons">
-              <button onClick={() => handleServiceClick('coaching')} className={activeService === 'coaching' ? 'active-button' : ''}>Career Coaching</button>
-              <button onClick={() => handleServiceClick('resume')} className={activeService === 'resume' ? 'active-button' : ''}>Resume Workshops</button>
-              <button onClick={() => handleServiceClick('interview')} className={activeService === 'interview' ? 'active-button' : ''}>Interview Preparation</button>
-            </div>
+        <div className="services-section">
+          <div className="events-services-image">
+            <img src={activeService === 'coaching' ? careerCoaching : activeService === 'resume' ? resumeWorkshop : interviewPrep} alt="Service" />
+          </div>
+          <div className="services-content">
+            <h2>Professional Services</h2>
+            <p>Our range of services includes career coaching, resume workshops, and interview preparation, ensuring our fellows are fully prepared for the job market.</p>
+          </div>
+          <div className="services-buttons">
+            <button onClick={() => handleServiceClick('coaching')} className={activeService === 'coaching' ? 'active-button' : ''}>Career Coaching</button>
+            <button onClick={() => handleServiceClick('resume')} className={activeService === 'resume' ? 'active-button' : ''}>Resume Workshops</button>
+            <button onClick={() => handleServiceClick('interview')} className={activeService === 'interview' ? 'active-button' : ''}>Interview Preparation</button>
           </div>
         </div>
       </div>
+
+
     </div>
   );
 };

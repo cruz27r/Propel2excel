@@ -13,7 +13,8 @@ body, .App {
 }
 
 img, video {
-  max-width: 100%;
+  /* update size */
+  max-width: 180%;
   height: auto;
   display: block;
 }

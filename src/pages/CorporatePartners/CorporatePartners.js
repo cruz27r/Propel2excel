@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import './CorporatePartners.css';
 
+import BannerImage from '../../assets/images/umBoston.jpg';
+
+
 // Import your tech logos
 import techlogo1 from '../../assets/images/CompanyLogos/Tech/Bain_Capital_Logo copy.jpg';
 import techlogo2 from '../../assets/images/CompanyLogos/Tech/aws.png';
@@ -105,7 +108,7 @@ function CorporatePartnersPage() {
 
     // All logos
     const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
-    const techLogos = [techlogo1, techlogo2, techlogo3, techlogo4, techlogo5, techlogo6]; // Use all logos for each section
+    const techLogos = [techlogo1, techlogo2, techlogo3, techlogo4, techlogo5, techlogo6,techlogo1, techlogo2]; // Use all logos for each section
     const consultingLogos = [consultinglogo1, consultinglogo2, consultinglogo3, consultinglogo4, consultinglogo5, consultinglogo6];
     const bankingLogos = [bankinglogo1, bankinglogo2, bankinglogo3, bankinglogo4, bankinglogo5, bankinglogo6];
     const anticipatedLogos = [logo1, logo2, logo3, logo4, logo5, logo6];
@@ -283,17 +286,6 @@ function CorporatePartnersPage() {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="carousel">
-                        <div className="carousel-inner">
-                            {displayedLogos.map((logo, index) => (
-                                <div className={`item ${activeIndexReached === index ? 'active' : ''}`} key={index} onClick={() => handleLogoClick(index)}>
-                                    <img src={logo} alt={`Current partner ${index}`} />
-                                </div>
-                            ))}
-                        </div>
-                        <button className="carousel-control left" onClick={prevSlideReached}>&lt;</button>
-                        <button className="carousel-control right" onClick={nextSlideReached}>&gt;</button>
-                    </div> */}
                     <div className="logos-grid">
                         {displayedLogos.map((logo, index) => (
                             <div className="logo-item" key={index} onClick={() => handleLogoClick(index)}>
@@ -302,7 +294,7 @@ function CorporatePartnersPage() {
                         ))}
                     </div>
                     <div className="description">
-                        <p>
+                        <p className="paragraph-container">
                             Our current corporate partners play a pivotal role in providing strong connections between our fellows and the industry. These companies offer positions and interview opportunities, along with employees who act as coaches for our 1-on-1 sessions. They help prepare resumes, review interviews, and provide practice tailored to their specific companies. These relationships with the top companies build the bridge for our fellows to start their professional journeys.
                         </p>
                     </div>
@@ -390,7 +382,7 @@ function CorporatePartnersPage() {
             </div>
 
             <h2>Our Anticipated Corporate Partners</h2>
-            <p className="corporate-description">
+            <p className="paragraph-container">
                 Our anticipated corporate partners will also play a crucial role in providing connections, interview opportunities, coaching, resume preparation, and interview practice. These partnerships will further enhance the opportunities for our fellows to kickstart their professional journeys.
             </p>
             <div className="carousel">

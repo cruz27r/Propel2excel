@@ -15,7 +15,7 @@
     text-align: center;
     flex-grow: 1; /* Allows the header to take up available space */
     margin: 0; /* Removes default margin */
-    color: #4a154b; /* Adjust the color as needed */
+    color: #182C63; /* Adjust the color as needed */
     font-size: 75px;
   }
   
@@ -26,7 +26,7 @@
   
   .ChangeButton button {
     /* Style the change answers button */
-    background-color: #4a154b;
+    background-color: #182C63;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
