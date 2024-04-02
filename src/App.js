@@ -28,8 +28,8 @@ function App() {
       <NavBar />
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<HomePageJourney/>} />
-          <Route path="/journey" element={<HomePageJourney />} />
+          <Route path="/original" element={<HomePage />} />
+          <Route path="/" element={<HomePageJourney />} />
           <Route path="/journeyContent" element={<JourneyContent />} />
           <Route path="/university-partners" element={<UniversityPartners />} />
           <Route path="/university-partners/application" element={<UniversityPartnersApplication />} />
