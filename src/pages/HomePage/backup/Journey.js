@@ -15,6 +15,7 @@ import speakerSeriesImage from '../../../assets/images/speaker-event.jpg';
 import careerCoachingImage from '../../../assets/images/coaching-example.jpg';
 import resumeWorkshopImage from '../../../assets/images/resume-rebrand-image.jpg';
 import interviewPrepImage from '../../../assets/images/mock-interview.jpg';
+import mainbanner from '../../../assets/images/4x/Logo-P2e-final-v4Asset 2.png';
 import background from '../../../assets/images/Banner/Banner-Main-Example.png';
 import bannerText from '../../../assets/images/4x/Logo_Banner_textAsset 4.png'
 
@@ -22,8 +23,8 @@ function JourneyHome() {
   return (
     <div className="App">
       <div className="banner-container">
-        <img src={background} alt="Banner" className="full-width-banner" />
-        <img src={bannerText} alt="Banner Text" className="banner-text" />
+        <img src={mainbanner} alt="Banner" className="full-width-banner" />
+        {/* <img src={bannerText} alt="Banner Text" className="banner-text" /> */}
       </div>
 
       <div className="p2e-description">
