@@ -47,7 +47,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
       setQuestionIndex(questionIndex + 1);
     } else {
       setShowQuestions(false);
-      onSelectStep(userType);
+      onSelectStep(1);
     }
   };
 
@@ -61,7 +61,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
       setQuestionIndex(questionIndex + 1);
     } else {
       setShowQuestions(false);
-      onSelectStep(userType);
+      onSelectStep(1);
     }
   };
 

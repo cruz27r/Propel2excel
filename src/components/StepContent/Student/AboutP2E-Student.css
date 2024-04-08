@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.program-statement h3,
+.key-components-container h3,
+.events-section h2,
+.services-section h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* General Styling */
 body {
     font-family: 'Roboto', sans-serif;

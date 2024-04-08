@@ -1,50 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap');
+
+.buddy-header {
+    font-size: 32px;
+    text-align: left;
+}
+
 .buddy-system-container {
-    padding: 20px;
-  }
-  
-  .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Adjust the gap between buttons as needed */
-    justify-content: center; /* Center the buttons */
-    margin-bottom: 20px;
-  }
-  
-  .service-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 180px; /* Set a fixed width for all buttons */
-    text-align: center; /* Center the text inside the button */
-  }
-  
-  .service-button.active {
-    background-color: #182C63;
-    color: #ffffff;
-  }
-  
-  .service-details-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .service-detail {
-    width: 60%; /* Adjust width as needed */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .service-image {
-    width: 100%;
-    height: 200px; /* Adjust height as needed */
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: #cccccc; /* Placeholder color for the image */
-  }
-  
+  padding: 20px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.service-card {
+  width: 18%;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: width 0.3s ease-in-out, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2px;
+}
+
+.service-card:last-child {
+  margin-right: 0;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card.active {
+  background-color: #182C63;
+  color: #ffffff;
+  width: 45%;
+}
+
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.service-title {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.service-description {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.service-image-container {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.service-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.impact-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.impact-section:hover {
+  background-color: #e9e9e9;
+  transform: scale(1.02);
+}
+
+.impact-section h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.impact-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.impact-section li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.testimonial-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.testimonial-section:hover {
+  background-color: #e9e9e9;
+  transform: scale(1.02);
+}
+
+.testimonial-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+}
+
+.testimonial {
+  background-color: #182C63;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 40%;
+  height: 200px; /* Set a fixed height */
+  display: inline-block; /* Display testimonials in a row */
+  vertical-align: top; /* Align testimonials to the top */
+}
+
+.testimonial:hover {
+  background-color: #003366;
+  transform: scale(1.05);
+}
+
+.testimonial p {
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.testimonial span {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.separator-image-container {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.separator-image {
+  max-width: 100%;
+  height: 40%;
+  border-radius: 10px;
+}
+
+.buddy-intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buddy-intro {
+  font-size: 25px;
+  line-height: 1.6;
+  color: #555555;
+  width: 65%;
+  margin-right: 20px;
+}
+
+.mentor-video {
+  max-width: 40%;
+  height: auto;
+}

@@ -176,3 +176,51 @@
     padding: 1rem;
   }
 }
+
+/* iPhone-specific adjustments */
+@media (max-width: 375px) {
+  .header {
+    padding: 0.8rem;
+  }
+
+  .hamburger-menu {
+    font-size: 20px;
+    left: 0.8rem;
+    top: 0.8rem;
+  }
+
+  .logo-link {
+    margin-left: 0; /* Center the logo on smaller screens */
+  }
+
+  .logo {
+    max-height: 3em; /* Adjust logo size for smaller screens */
+  }
+
+  .apply-section a {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    width: auto; /* Allow width to adjust based on content */
+  }
+}
+
+@media (max-width: 414px) {
+  .header {
+    padding: 0.9rem;
+  }
+
+  .hamburger-menu {
+    font-size: 22px;
+    left: 0.9rem;
+    top: 0.9rem;
+  }
+
+  .logo {
+    max-height: 3.2em; /* Adjust logo size for slightly larger screens */
+  }
+
+  .apply-section a {
+    font-size: 1rem; /* Adjust font size for slightly larger screens */
+    padding: 9px 18px; /* Adjust padding for slightly larger screens */
+  }
+}

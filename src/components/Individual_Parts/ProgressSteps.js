@@ -139,70 +139,64 @@ const CheckMark = styled.div`
   transform: scaleX(-1) rotate(-46deg);
 `;
 
-const ProgressSteps = ({ onUpdate }) => {
-  const [userType, setUserType] = React.useState('student');
-  const [activeStep, setActiveStep] = React.useState(1);
-
-  useEffect(() => {
-    // Notify the parent component about updates
-    onUpdate(userType, activeStep);
-  }, [userType, activeStep, onUpdate]);
-
-  const nextStep = () => setActiveStep((prev) => prev + 1);
-  const prevStep = () => setActiveStep((prev) => prev - 1);
-  const switchJourney = () => {
-    const nextUserType =
-      userType === 'student' ? 'partner' : userType === 'partner' ? 'company' : 'student';
-    setUserType(nextUserType);
-    setActiveStep(1);
+const ProgressSteps = ({ userType, selectedStep, onSelectStep, onSwitchJourney }) => {
+    const steps = {
+      student: ['About P2E', 'Corporate Partners', 'Application'],
+      partner: ['About P2E', 'Buddy System', 'Application'],
+      company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
+    };
+  
+    const totalSteps = steps[userType].length;
+    const width = `${(100 / totalSteps) * selectedStep}%`;
+    const showLine = selectedStep > 1;
+    const showSecondLine = selectedStep > 2;
+    const showThirdLine = selectedStep > 3 && totalSteps > 3;
+  
+    const handleNextStep = () => {
+      if (selectedStep < totalSteps) {
+        onSelectStep(selectedStep + 1);
+      }
+    };
+  
+    const handlePreviousStep = () => {
+      if (selectedStep > 1) {
+        onSelectStep(selectedStep - 1);
+      }
+    };
+  
+    return (
+      <MainContainer>
+        <StepContainer
+          width={width}
+          showLine={showLine}
+          showSecondLine={showSecondLine}
+          showThirdLine={showThirdLine}
+        >
+          {steps[userType].map((label, index) => (
+            <StepWrapper key={index}>
+              <StepStyle step={selectedStep > index ? 'completed' : 'incomplete'}>
+                {selectedStep > index && <CheckMark>&#10003;</CheckMark>}
+                <StepCount>{index + 1}</StepCount>
+              </StepStyle>
+              <StepsLabelContainer>
+                <StepLabel>{label}</StepLabel>
+              </StepsLabelContainer>
+            </StepWrapper>
+          ))}
+        </StepContainer>
+        <ButtonsContainer>
+          <ButtonStyle onClick={handlePreviousStep} disabled={selectedStep === 1}>
+            Previous
+          </ButtonStyle>
+          {selectedStep === totalSteps && (
+            <ButtonStyle onClick={onSwitchJourney}>Switch Journey</ButtonStyle>
+          )}
+          <ButtonStyle onClick={handleNextStep} disabled={selectedStep === totalSteps}>
+            Next
+          </ButtonStyle>
+        </ButtonsContainer>
+      </MainContainer>
+    );
   };
-
-  // Simplified for brevity, but you'd map over your userType specific steps here
-  const steps = {
-    student: ['About P2E', 'Corporate Partners', 'Application'],
-    partner: ['About P2E', 'Buddy System', 'Application'],
-    company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
-  };
-
-  const totalSteps = steps[userType].length;
-  const width = `${(100 / totalSteps) * activeStep}%`;
-  const showLine = activeStep > 1;
-  const showSecondLine = activeStep > 2;
-  const showThirdLine = activeStep > 3 && totalSteps > 3;
-
-  return (
-    <MainContainer>
-      <StepContainer
-        width={width}
-        showLine={showLine}
-        showSecondLine={showSecondLine}
-        showThirdLine={showThirdLine}
-      >
-        {steps[userType].map((label, index) => (
-          <StepWrapper key={index}>
-            <StepStyle step={activeStep > index ? 'completed' : 'incomplete'}>
-              {activeStep > index && <CheckMark>&#10003;</CheckMark>}
-              <StepCount>{index + 1}</StepCount>
-            </StepStyle>
-            <StepsLabelContainer>
-              <StepLabel>{label}</StepLabel>
-            </StepsLabelContainer>
-          </StepWrapper>
-        ))}
-      </StepContainer>
-      <ButtonsContainer>
-        <ButtonStyle onClick={prevStep} disabled={activeStep === 1}>
-          Previous
-        </ButtonStyle>
-        {activeStep === totalSteps && (
-          <ButtonStyle onClick={switchJourney}>Switch Journey</ButtonStyle>
-        )}
-        <ButtonStyle onClick={nextStep} disabled={activeStep === totalSteps}>
-          Next
-        </ButtonStyle>
-      </ButtonsContainer>
-    </MainContainer>
-  );
-};
-
-export default ProgressSteps;
+  
+  export default ProgressSteps;

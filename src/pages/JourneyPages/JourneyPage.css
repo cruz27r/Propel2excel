@@ -48,3 +48,44 @@
     border-radius: 5px;
   }
   
+  /* General mobile adjustments */
+@media (max-width: 768px) {
+    .JourneyPageContainer {
+      padding: 10px;
+    }
+  
+    .header-button-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .ChangeButton {
+      text-align: center;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .ChangeButton button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .step-content {
+      margin-top: 20px;
+      padding: 10px;
+    }
+  }
+  
+  /* iPhone-specific adjustments */
+  @media (max-width: 375px) {
+    .journey-header {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 414px) {
+    .journey-header {
+      font-size: 2.2rem;
+    }
+  }
+  

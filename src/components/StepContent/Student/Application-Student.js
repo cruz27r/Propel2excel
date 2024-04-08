@@ -68,7 +68,7 @@ const StudentApplication = () => {
 
       <div className="application-media">
         <img src={workshopImage} alt="Workshop" className="media-image" />
-        <video autoPlay loop className="media-video">
+        <video autoPlay loop playsInline xclassName="media-video">
           <source src={mentorshipVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

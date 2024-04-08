@@ -76,7 +76,7 @@ const StudentAbout = () => {
   return (
     <div>
       <div className="video-paragraph-container">
-        <video src={mentorshipVideo} loop autoPlay controls>
+        <video src={mentorshipVideo} loop autoPlay controls playsInline>
           Your browser does not support the video tag.
         </video>
           <p>Propel2Excel is a six-month coaching program led by corporate professionals from Tier 1 companies, for ambitious students at non-target schools to secure competitive internships & careers at top tier tech, consulting, and banking companies.</p>
