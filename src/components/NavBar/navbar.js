@@ -44,7 +44,7 @@ const NavBar = () => {
     <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isMobileMenuOpen ? 'open' : ''}`}>
       <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
       <div className="logo-section">
-        <Link to="/journey" className='logo-link'>
+        <Link to="/" className='logo-link'>
           <img src={logoImage} alt="Company Logo" className="logo" />
         </Link>
       </div>
