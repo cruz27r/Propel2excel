@@ -120,8 +120,10 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
                   name={questions[questionIndex].text}
                   value={answers[questions[questionIndex].text] || ''}
                   onChange={handleInputChange}
+                  required
                 />
-                {questions[questionIndex].input && <button onClick={handleConfirm}>Confirm</button>}
+                {questions[questionIndex].input && <button onClick={handleConfirm}
+                disabled={!answers[questions[questionIndex].text]} >Confirm</button>}
               </div>
             )}
             <button onClick={handleBack}>Back</button>

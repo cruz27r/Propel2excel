@@ -3,9 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem; /* Slightly increased padding for taller navbar */
-  background-color: #FCF7FF; /* Light purple background for the header */
-  color: #101D42; /* Dark blue for the text */
+  padding: 1.5rem 2rem;
+  background-color: #FCF7FF;
+  color: #101D42;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,166 +14,49 @@
   z-index: 10000;
 }
 
-.hamburger-menu {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  font-size: 24px;
-  z-index: 2000;
-}
-
 .logo-link {
   display: flex;
   justify-content: center;
   flex-grow: 1;
-  margin-left: 30px; /* Increased margin to move the logo more to the right */
 }
 
 .logo {
-  height: auto; /* Maintain aspect ratio */
-  width: auto; /* Allow width to adjust based on original max-height */
-  max-height: 4em; /* Reverted to original logo size */
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0 1rem;
-  gap: 1.2rem;
-}
-
-.nav-links a, .dropdown .dropbtn {
-  color: #101D42;
-  text-decoration: none;
-  padding: 0.3rem 1rem;
-  transition: color 0.3s, background-color 0.3s;
-  font-size: 1.0rem; /* Larger main section text */
-}
-
-.nav-links a:hover, .dropdown .dropbtn:hover {
-  color: #FCBA04;
-  background-color: transparent;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background-color: inherit;
-  color: inherit;
-  padding: inherit;
-  margin: inherit;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown .dropbtn::after {
-  content: '▼';
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.dropdown:hover .dropbtn::after {
-  transform: rotate(180deg);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #101D42; /* Dark blue for the dropdown background */
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 5px;
-}
-
-.dropdown-content a {
-  color: #FCF7FF; /* Light purple for the dropdown link text */
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #70A0AF; /* Light blue for the dropdown link hover background */
-  color: #D44D5C; /* Red for the dropdown link hover text */
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+  height: auto;
+  width: 85%;
+  max-height: 4em;
 }
 
 .apply-section a {
   text-decoration: none;
-  background-color: #101D42; /* Button background color */
-  color: #FCF7FF; /* Button text color to match navbar background */
-  padding: 10px 20px; /* Adjusted padding for better spacing around text */
-  border-radius: 25px; /* Smooth rounded corners for the button */
+  background-color: #101D42;
+  color: #FCF7FF;
+  padding: 10px 20px;
+  border-radius: 25px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 1rem; /* Ensuring the font size is not too large to prevent overlap */
-  font-weight: bold; /* Optional: Makes the text bold */
-  white-space: nowrap; /* Prevents text from wrapping */
-  display: inline-block; /* Ensures proper padding and spacing are applied */
-  width: 150px;
-  height: 30px;
-  font-size: x-large;
+  font-weight: bold;
+  white-space: nowrap;
+  display: inline-block;
   text-align: center;
 }
 
 .apply-section a:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: #0056b3;
   color: #FFFFFF;
 }
 
-@media screen and (max-width: 768px) {
+/* Mobile adjustments */
+@media (max-width: 768px) {
   .header {
     padding: 1rem;
   }
 
-  .hamburger-menu {
-    display: block;
-  }
-
-  .logo-link {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-
   .logo {
-    max-height: 3.5em;
+    max-height: 3em;
   }
 
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 65%;
-    flex-direction: column;
-    background-color: #FCF7FF; /* Matching the navbar background */
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    padding: 1rem;
-  }
-
-  .nav-links.open {
-    display: flex;
-    transform: translateX(0);
-  }
-
-  .nav-links.open a, .nav-links.open .dropdown .dropbtn {
-    font-size: 1.5rem;
-    padding: 1rem;
+  .apply-section a {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
 
@@ -183,24 +66,13 @@
     padding: 0.8rem;
   }
 
-  .hamburger-menu {
-    font-size: 20px;
-    left: 0.8rem;
-    top: 0.8rem;
-  }
-
-  .logo-link {
-    margin-left: 0; /* Center the logo on smaller screens */
-  }
-
   .logo {
-    max-height: 3em; /* Adjust logo size for smaller screens */
+    max-height: 2.5em;
   }
 
   .apply-section a {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-    padding: 8px 16px; /* Adjust padding for smaller screens */
-    width: auto; /* Allow width to adjust based on content */
+    padding: 7px 14px;
+    font-size: 0.8rem;
   }
 }
 
@@ -209,18 +81,12 @@
     padding: 0.9rem;
   }
 
-  .hamburger-menu {
-    font-size: 22px;
-    left: 0.9rem;
-    top: 0.9rem;
-  }
-
   .logo {
-    max-height: 3.2em; /* Adjust logo size for slightly larger screens */
+    max-height: 2.8em;
   }
 
   .apply-section a {
-    font-size: 1rem; /* Adjust font size for slightly larger screens */
-    padding: 9px 18px; /* Adjust padding for slightly larger screens */
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

@@ -47,3 +47,49 @@ button:hover, .ticket-button:hover {
 .main-content {
   padding-top: var(--navbar-height); /* Ensures content starts below the NavBar */
 }
+
+/* iPhone X and newer (portrait and landscape) */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+  .app-container, .App {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .button, .ticket-button {
+    padding: 0.5rem; /* Smaller padding for buttons */
+    font-size: 0.8rem; /* Smaller font size for button text */
+  }
+
+  .main-content {
+    padding-top: 70px; /* Reduce padding-top for smaller screens */
+  }
+
+  /* Add more custom styles for iPhone screens here */
+}
+
+/* iPhone 8, 7, 6s, 6 (portrait and landscape) */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .app-container, .App {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .button, .ticket-button {
+    padding: 0.5rem; /* Smaller padding for buttons */
+    font-size: 0.8rem; /* Smaller font size for button text */
+  }
+
+  .main-content {
+    padding-top: 70px; /* Reduce padding-top for smaller screens */
+  }
+
+  /* Add more custom styles for iPhone screens here */
+}
+
+/* Adjustments for other specific iPhone models can be added similarly */

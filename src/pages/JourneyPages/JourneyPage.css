@@ -1,7 +1,7 @@
 /* JourneyPage.css */
 
 .JourneyPageContainer {
-    /* Add styles for the main container of the JourneyPage */
+    max-width: 100%;
     padding: 20px;
   }
   
@@ -13,19 +13,18 @@
   
   .journey-header {
     text-align: center;
-    flex-grow: 1; /* Allows the header to take up available space */
-    margin: 0; /* Removes default margin */
-    color: #182C63; /* Adjust the color as needed */
+    flex-grow: 1;
+    margin: 0;
+    color: #182C63;
     font-size: 75px;
   }
   
   .ChangeButton {
     text-align: right;
-    flex-shrink: 0; /* Prevents the button container from shrinking */
+    flex-shrink: 0;
   }
   
   .ChangeButton button {
-    /* Style the change answers button */
     background-color: #182C63;
     color: #ffffff;
     padding: 10px 20px;
@@ -36,12 +35,10 @@
   }
   
   .ChangeButton button:hover {
-    /* Style for hover state of the change answers button */
     background-color: #6e217d;
   }
   
   .step-content {
-    /* Style the container for the step content */
     margin-top: 40px;
     background-color: #f8f8f8;
     padding: 20px;
@@ -49,7 +46,7 @@
   }
   
   /* General mobile adjustments */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .JourneyPageContainer {
       padding: 10px;
     }
@@ -81,11 +78,31 @@
     .journey-header {
       font-size: 2rem;
     }
+  
+    .ChangeButton button {
+      padding: 7px 14px;
+      font-size: 0.8rem;
+    }
+  
+    .step-content {
+      margin-top: 15px;
+      padding: 8px;
+    }
   }
   
   @media (max-width: 414px) {
     .journey-header {
       font-size: 2.2rem;
+    }
+  
+    .ChangeButton button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .step-content {
+      margin-top: 18px;
+      padding: 10px;
     }
   }
   

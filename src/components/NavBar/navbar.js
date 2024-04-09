@@ -5,7 +5,6 @@ import './navbar.css';
 
 const NavBar = () => {
   const [showNavBar, setShowNavBar] = useState(true);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollY = useRef(window.scrollY);
   const navbarRef = useRef();
   const navBarVisibilityTimeout = useRef();
@@ -36,13 +35,8 @@ const NavBar = () => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
-    <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isMobileMenuOpen ? 'open' : ''}`}>
-      <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
+    <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'}`}>
       <div className="logo-section">
         <Link to="/" className='logo-link'>
           <img src={logoImage} alt="Company Logo" className="logo" />
