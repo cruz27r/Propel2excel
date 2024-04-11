@@ -61,16 +61,16 @@ function JourneyPage() {
           />
 
           <div className="step-content">
-            {userType === 'student' && selectedStep === 1 && <StudentAbout />}
-            {userType === 'student' && selectedStep === 2 && <CorporatePartners />}
-            {userType === 'student' && selectedStep === 3 && <StudentApplication />}
-            {userType === 'partner' && selectedStep === 1 && <PartnerAbout />}
-            {userType === 'partner' && selectedStep === 2 && <BuddySystem />}
-            {userType === 'partner' && selectedStep === 3 && <PartnerApplication />}
-            {userType === 'company' && selectedStep === 1 && <CompanyAbout />}
-            {userType === 'company' && selectedStep === 2 && <Talent />}
-            {userType === 'company' && selectedStep === 3 && <InvestmentPartnership />}
-            {userType === 'company' && selectedStep === 4 && <CompanyApplication />}
+            {userType === 'Student' && selectedStep === 1 && <StudentAbout />}
+            {userType === 'Student' && selectedStep === 2 && <CorporatePartners />}
+            {userType === 'Student' && selectedStep === 3 && <StudentApplication />}
+            {userType === 'Buddy' && selectedStep === 1 && <PartnerAbout />}
+            {userType === 'Buddy' && selectedStep === 2 && <BuddySystem />}
+            {userType === 'Buddy' && selectedStep === 3 && <PartnerApplication />}
+            {userType === 'Company' && selectedStep === 1 && <CompanyAbout />}
+            {userType === 'Company' && selectedStep === 2 && <Talent />}
+            {userType === 'Company' && selectedStep === 3 && <InvestmentPartnership />}
+            {userType === 'Company' && selectedStep === 4 && <CompanyApplication />}
           </div>
         </div>
       )}

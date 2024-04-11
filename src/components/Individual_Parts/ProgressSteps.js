@@ -141,9 +141,9 @@ const CheckMark = styled.div`
 
 const ProgressSteps = ({ userType, selectedStep, onSelectStep, onSwitchJourney }) => {
     const steps = {
-      student: ['About P2E', 'Corporate Partners', 'Application'],
-      partner: ['About P2E', 'Buddy System', 'Application'],
-      company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
+      Student: ['About P2E', 'Corporate Partners', 'Application'],
+      Buddy: ['About P2E', 'Buddy System', 'Application'],
+      Company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
     };
   
     const totalSteps = steps[userType].length;

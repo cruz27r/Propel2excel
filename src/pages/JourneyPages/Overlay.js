@@ -10,21 +10,21 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
 
   const allQuestions = [
     {
-      userType: 'student',
+      userType: 'Student',
       questions: [
         { text: 'Where are you coming from?', options: ['ivey', 'nonTarget'] },
         { text: 'What industry are you interested in?', options: ['tech', 'consulting', 'banking'] },
       ]
     },
     {
-      userType: 'partner',
+      userType: 'Buddy',
       questions: [
         { text: 'What industry are you in?', options: ['tech', 'consulting', 'banking'] },
         { text: 'What company are you part of?', input: true }
       ]
     },
     {
-      userType: 'company',
+      userType: 'Company',
       questions: [
         { text: 'What is your goal with Propel2Excel?', options: ['talent', 'partnership', 'investment'] }
       ]
