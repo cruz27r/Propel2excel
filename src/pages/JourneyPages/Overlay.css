@@ -22,6 +22,7 @@
     display: flex; /* Enable flex container */
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center-align children */
+    position: relative; /* Position relative for absolute positioning of children */
 }
   
 .overlay h2 {
@@ -90,7 +91,7 @@
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #182C63;
     color: white;
     border: none;
     border-radius: 2px;
@@ -100,22 +101,69 @@
 }
   
 .overlay button:hover {
-    background-color: #0056b3;
+    background-color: #ffff;
+    color: #182C63;
+    border: 2px solid #182C63; /* Border color same as background */
+    border-radius: 2px;
 }
   
 /* Additional style for when buttons are side by side */
 .overlay button:not(:last-child) {
     margin-right: 20px;
 }
-  
-/* Styles to visually hide but make element accessible */
-.visually-hidden {
+
+.back-button {
+    width: 15%;
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    top: 10px;
+    left: 10px;
+    width: 15%; /* Set the width of the button to be 15% of its parent's width */
+    padding: 10px 20px;
+    background-color: #182C63; /* Main color */
+    color: white; /* White text */
+    border: 2px solid #182C63; /* Border color same as background */
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+    font-size: 1rem;
+    text-align: center; /* Ensure text is centered */
+}
+
+.back-button:hover {
+    background-color: #2a3f73; /* Lighter shade of the main color for hover */
+    color: white; /* Keep text white */
+}
+
+.back-button:active {
+    background-color: #3a4f83; /* Even lighter shade for active/click */
+    color: white; /* Keep text white */
+    transform: scale(1.05); /* Slightly enlarge the button when pressed */
+}
+
+
+.return-button {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Position it to the top-right corner of the overlay */
+    width: 15%; /* Set the width of the button to be 15% of its parent's width */
+    padding: 10px 20px;
+    background-color: #182C63; /* Main color */
+    color: white; /* White text */
+    border: 2px solid #182C63; /* Border color same as background */
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease, color 0.1s ease;
+    font-size: 1rem;
+    text-align: center; /* Ensure text is centered */
+}
+
+.return-button:hover {
+    background-color: #2a3f73; /* Lighter shade of the main color for hover */
+    color: white; /* Keep text white */
+}
+
+.return-button:active {
+    background-color: #3a4f83; /* Even lighter shade for active/click */
+    color: white; /* Keep text white */
+    transform: scale(1.05); /* Slightly enlarge the button when pressed */
 }

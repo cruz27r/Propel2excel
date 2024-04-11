@@ -6,9 +6,11 @@
   }
   
   .header-button-container {
+    width: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping if needed */
   }
   
   .journey-header {
@@ -20,8 +22,9 @@
   }
   
   .ChangeButton {
-    text-align: right;
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   
   .ChangeButton button {
@@ -37,6 +40,23 @@
   .ChangeButton button:hover {
     background-color: #6e217d;
   }
+  
+  .AnswersDisplay {
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #182C63;
+    width: auto;
+    max-width: 100%;
+    display: inline-block;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: visible; /* Allow overflow to be visible */
+  }
+  
+  
   
   .step-content {
     margin-top: 40px;
@@ -56,8 +76,7 @@
       align-items: flex-start;
     }
   
-    .ChangeButton {
-      text-align: center;
+    .ChangeButton, .AnswersDisplay {
       width: 100%;
       margin-top: 10px;
     }
@@ -65,6 +84,11 @@
     .ChangeButton button {
       padding: 8px 16px;
       font-size: 0.9rem;
+    }
+  
+    .AnswersDisplay {
+      max-width: 100%;
+      overflow: auto;
     }
   
     .step-content {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const MainContainer = styled.div`
@@ -13,56 +13,6 @@ const StepContainer = styled.div`
   justify-content: space-between;
   margin-top: 70px;
   position: relative;
-
-  :before {
-    content: '';
-    position: absolute;
-    background: #f3e7f3;
-    height: 4px;
-    width: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-  }
-
-  :after {
-    content: '';
-    position: absolute;
-    background: #182c63;
-    height: 4px;
-    width: ${({ width }) => width};
-    top: 50%;
-    transition: 0.4s ease;
-    transform: translateY(-50%);
-    left: 0;
-    visibility: ${({ showLine }) => (showLine ? 'visible' : 'hidden')};
-  }
-
-  :nth-child(2)::after {
-    content: '';
-    position: absolute;
-    background: #182c63;
-    height: 4px;
-    width: 33.333%;
-    top: 50%;
-    transition: 0.4s ease;
-    transform: translateY(-50%);
-    left: 33.333%;
-    visibility: ${({ showSecondLine }) => (showSecondLine ? 'visible' : 'hidden')};
-  }
-
-  :nth-child(3)::after {
-    content: '';
-    position: absolute;
-    background: #182c63;
-    height: 4px;
-    width: 33.333%;
-    top: 50%;
-    transition: 0.4s ease;
-    transform: translateY(-50%);
-    left: 66.666%;
-    visibility: ${({ showThirdLine }) => (showThirdLine ? 'visible' : 'hidden')};
-  }
 `;
 
 const StepWrapper = styled.div`
@@ -74,9 +24,9 @@ const StepStyle = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #ffffff;
-  border: 3px solid ${({ step }) => (step === 'completed' ? '#182c63' : '#f3e7f3')};
-  transition: 0.4s ease;
+  background-color: ${({ step, selected }) =>
+    step === 'completed' || selected ? '#182c63' : '#f3e7f3'};
+  transition: background-color 0.4s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,10 +34,7 @@ const StepStyle = styled.div`
 
 const StepCount = styled.span`
   font-size: 28px;
-  color: #182c63;
-  @media (max-width: 600px) {
-    font-size: 16px;
-  }
+  color: #ffffff;
 `;
 
 const StepsLabelContainer = styled.div`
@@ -97,19 +44,22 @@ const StepsLabelContainer = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const StepLabel = styled.span`
-  font-size: 19px;
-  color: #182c63;
-  @media (max-width: 600px) {
-    font-size: 16px;
-  }
-`;
-
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 -15px;
   margin-top: 100px;
+`;
+
+const StepLabel = styled.span`
+  font-size: 22px; /* Increased font size */
+  font-weight: bold; /* Thicker font */
+  color: #182c63;
+  &:hover {
+    background-color: #f3e7f3; /* Highlighting background on hover */
+    border-radius: 5px; /* Optional: add border radius for rounded corners */
+    padding: 5px; /* Optional: add padding for better visual effect */
+  }
 `;
 
 const ButtonStyle = styled.button`
@@ -118,85 +68,76 @@ const ButtonStyle = styled.button`
   background: #182c63;
   color: #ffffff;
   cursor: pointer;
-  padding: 8px;
-  width: 90px;
-  :active {
+  padding: 10px; /* Increased padding for larger button */
+  font-size: 18px; /* Increased font size */
+  font-weight: bold; /* Thicker font */
+  width: 100px; /* Adjusted width for larger button */
+  &:active {
     transform: scale(0.98);
   }
-  :disabled {
+  &:disabled {
     background: #f3e7f3;
     color: #000000;
     cursor: not-allowed;
   }
-`;
-
-const CheckMark = styled.div`
-  font-size: 26px;
-  font-weight: 600;
-  color: #182c63;
-  -ms-transform: scaleX(-1) rotate(-46deg); /* IE 9 */
-  -webkit-transform: scaleX(-1) rotate(-46deg); /* Chrome, Safari, Opera */
-  transform: scaleX(-1) rotate(-46deg);
+  &:hover {
+    background-color: #6e217d; /* Darker background on hover */
+    color: #ffffff; /* Optional: change text color on hover */
+  }
 `;
 
 const ProgressSteps = ({ userType, selectedStep, onSelectStep, onSwitchJourney }) => {
-    const steps = {
-      Student: ['About P2E', 'Corporate Partners', 'Application'],
-      Buddy: ['About P2E', 'Buddy System', 'Application'],
-      Company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
-    };
-  
-    const totalSteps = steps[userType].length;
-    const width = `${(100 / totalSteps) * selectedStep}%`;
-    const showLine = selectedStep > 1;
-    const showSecondLine = selectedStep > 2;
-    const showThirdLine = selectedStep > 3 && totalSteps > 3;
-  
-    const handleNextStep = () => {
-      if (selectedStep < totalSteps) {
-        onSelectStep(selectedStep + 1);
-      }
-    };
-  
-    const handlePreviousStep = () => {
-      if (selectedStep > 1) {
-        onSelectStep(selectedStep - 1);
-      }
-    };
-  
-    return (
-      <MainContainer>
-        <StepContainer
-          width={width}
-          showLine={showLine}
-          showSecondLine={showSecondLine}
-          showThirdLine={showThirdLine}
-        >
-          {steps[userType].map((label, index) => (
-            <StepWrapper key={index}>
-              <StepStyle step={selectedStep > index ? 'completed' : 'incomplete'}>
-                {selectedStep > index && <CheckMark>&#10003;</CheckMark>}
-                <StepCount>{index + 1}</StepCount>
-              </StepStyle>
-              <StepsLabelContainer>
-                <StepLabel>{label}</StepLabel>
-              </StepsLabelContainer>
-            </StepWrapper>
-          ))}
-        </StepContainer>
-        <ButtonsContainer>
-          <ButtonStyle onClick={handlePreviousStep} disabled={selectedStep === 1}>
-            Previous
-          </ButtonStyle>
-          {selectedStep === totalSteps && (
-            <ButtonStyle onClick={onSwitchJourney}>Switch Journey</ButtonStyle>
-          )}
-          <ButtonStyle onClick={handleNextStep} disabled={selectedStep === totalSteps}>
-            Next
-          </ButtonStyle>
-        </ButtonsContainer>
-      </MainContainer>
-    );
+  const steps = {
+    Student: ['About P2E', 'Corporate Partners', 'Application'],
+    Buddy: ['About P2E', 'Buddy System', 'Application'],
+    Company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
   };
-  
-  export default ProgressSteps;
+
+  const handleNextStep = () => {
+    if (selectedStep < steps[userType].length) {
+      onSelectStep(selectedStep + 1);
+    }
+  };
+
+  const handlePreviousStep = () => {
+    if (selectedStep > 1) {
+      onSelectStep(selectedStep - 1);
+    }
+  };
+
+  return (
+    <MainContainer>
+      <StepContainer>
+        {steps[userType].map((label, index) => (
+          <StepWrapper key={index}>
+            <StepStyle
+              step={selectedStep > index ? 'completed' : 'incomplete'}
+              selected={selectedStep === index + 1}
+            >
+              <StepCount>{index + 1}</StepCount>
+            </StepStyle>
+            <StepsLabelContainer>
+              <StepLabel>{label}</StepLabel>
+            </StepsLabelContainer>
+          </StepWrapper>
+        ))}
+      </StepContainer>
+      <ButtonsContainer>
+        <ButtonStyle onClick={handlePreviousStep} disabled={selectedStep === 1}>
+          Previous
+        </ButtonStyle>
+        {selectedStep === steps[userType].length && (
+          <ButtonStyle onClick={onSwitchJourney}>Switch Journey</ButtonStyle>
+        )}
+        <ButtonStyle
+          onClick={handleNextStep}
+          disabled={selectedStep === steps[userType].length}
+        >
+          Next
+        </ButtonStyle>
+      </ButtonsContainer>
+    </MainContainer>
+  );
+};
+
+export default ProgressSteps;

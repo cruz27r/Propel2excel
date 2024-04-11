@@ -15,8 +15,10 @@ import CompanyApplication from '../../components/StepContent/Company/Application
 
 function JourneyPage() {
   const [showOverlay, setShowOverlay] = useState(true);
+  const [isChangingAnswers, setIsChangingAnswers] = useState(false);
   const [selectedStep, setSelectedStep] = useState(0);
   const [userType, setUserType] = useState(null);
+  const [answers, setAnswers] = useState({});
 
   const handleSelectStep = (step) => {
     setShowOverlay(false);
@@ -33,21 +35,43 @@ function JourneyPage() {
     setSelectedStep(1);
   };
 
+  const handleChangeAnswersClick = () => {
+    setShowOverlay(true);
+    setIsChangingAnswers(true);
+  };
+
+  const handleCloseOverlay = () => {
+    setShowOverlay(false);
+    setIsChangingAnswers(false);
+  };
+
+  const formatAnswers = () => {
+    if (Object.keys(answers).length === 0) {
+      return ''; // Return an empty string if no answers are selected
+    }
+    const formattedAnswers = Object.values(answers).join(' / ');
+    return `${userType}'s Journey: ${formattedAnswers}`;
+  };
+
   return (
     <div className="JourneyPageContainer">
       {showOverlay && (
         <GuidingQuestionsOverlay
           onSelectStep={handleSelectStep}
           onSetUserType={handleSetUserType}
-          onClose={() => setShowOverlay(false)}
+          onClose={handleCloseOverlay}
+          isChangingAnswers={isChangingAnswers}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       )}
 
       <div className="header-button-container">
-        <div className="ChangeButton-left">
-        </div>
         <div className="ChangeButton">
-          <button onClick={() => setShowOverlay(true)}>Change Answers</button>
+          <button onClick={handleChangeAnswersClick}>Change Answers</button>
+          <div className="AnswersDisplay">
+            {formatAnswers()}
+          </div>
         </div>
       </div>
 

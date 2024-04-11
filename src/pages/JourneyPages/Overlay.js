@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Overlay.css';
 
-function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
+function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChangingAnswers, setAnswers }) {
   const [userType, setUserType] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswersLocal] = useState({});
   const [questions, setQuestions] = useState([]);
   const [showQuestions, setShowQuestions] = useState(false);
 
@@ -12,21 +12,21 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
     {
       userType: 'Student',
       questions: [
-        { text: 'Where are you coming from?', options: ['ivey', 'nonTarget'] },
-        { text: 'What industry are you interested in?', options: ['tech', 'consulting', 'banking'] },
+        { text: 'Where are you coming from?', options: ['Ivey League University', 'NonTarget University'] },
+        { text: 'What industry are you interested in?', options: ['Tech', 'Consulting', 'Banking'] },
       ]
     },
     {
       userType: 'Buddy',
       questions: [
-        { text: 'What industry are you in?', options: ['tech', 'consulting', 'banking'] },
+        { text: 'What industry are you in?', options: ['Tech', 'Consulting', 'Banking'] },
         { text: 'What company are you part of?', input: true }
       ]
     },
     {
       userType: 'Company',
       questions: [
-        { text: 'What is your goal with Propel2Excel?', options: ['talent', 'partnership', 'investment'] }
+        { text: 'What is your goal with Propel2Excel?', options: ['Talent', 'Partnership', 'Investment'] }
       ]
     }
   ];
@@ -37,12 +37,14 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
     const foundQuestions = allQuestions.find(q => q.userType === type).questions;
     setQuestions(foundQuestions);
     setQuestionIndex(0);
-    setAnswers({});
+    setAnswersLocal({});
     setShowQuestions(true);
   };
 
   const handleAnswerSelection = (answer) => {
-    setAnswers({ ...answers, [questions[questionIndex].text]: answer });
+    const updatedAnswers = { ...answers, [questions[questionIndex].text]: answer };
+    setAnswersLocal(updatedAnswers);
+    setAnswers(updatedAnswers); // Update answers in the parent component
     if (questionIndex < questions.length - 1) {
       setQuestionIndex(questionIndex + 1);
     } else {
@@ -53,7 +55,9 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setAnswers({ ...answers, [name]: value });
+    const updatedAnswers = { ...answers, [name]: value };
+    setAnswersLocal(updatedAnswers);
+    setAnswers(updatedAnswers); // Update answers in the parent component
   };
 
   const handleConfirm = () => {
@@ -70,17 +74,21 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
       setQuestionIndex(questionIndex - 1);
     } else {
       setUserType(null);
-      setQuestions([]);
+      setShowQuestions(false); // Hide questions when going back to userType selection
     }
   };
 
   return (
     <div className="overlay-container">
       <div className="overlay">
+        {/* Conditionally render the "Return" button if changing answers */}
+        {isChangingAnswers && (
+          <button className="return-button" onClick={onClose}>Return</button>
+        )}
         <h2>Welcome to Propel2Excel!</h2>
         {!userType && (
           <div>
-            <p>Please select your user type:</p>
+            <p>Please select your Journey:</p>
             {allQuestions.map((group) => (
               <label key={group.userType}>
                 <input
@@ -94,7 +102,6 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
             ))}
           </div>
         )}
-
         {userType && showQuestions && (
           <>
             <p>{questions[questionIndex].text}</p>
@@ -122,11 +129,12 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose }) {
                   onChange={handleInputChange}
                   required
                 />
-                {questions[questionIndex].input && <button onClick={handleConfirm}
-                disabled={!answers[questions[questionIndex].text]} >Confirm</button>}
+                <button onClick={handleConfirm} disabled={!answers[questions[questionIndex].text]}>
+                  Confirm
+                </button>
               </div>
             )}
-            <button onClick={handleBack}>Back</button>
+            <button className="back-button" onClick={handleBack}>&#8592; Back</button>
           </>
         )}
       </div>
