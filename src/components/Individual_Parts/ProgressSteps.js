@@ -52,13 +52,13 @@ const ButtonsContainer = styled.div`
 `;
 
 const StepLabel = styled.span`
-  font-size: 22px; /* Increased font size */
-  font-weight: bold; /* Thicker font */
+  font-size: 22px;
+  font-weight: bold;
   color: #182c63;
   &:hover {
-    background-color: #f3e7f3; /* Highlighting background on hover */
-    border-radius: 5px; /* Optional: add border radius for rounded corners */
-    padding: 5px; /* Optional: add padding for better visual effect */
+    background-color: #f3e7f3;
+    border-radius: 5px;
+    padding: 5px;
   }
 `;
 
@@ -68,10 +68,10 @@ const ButtonStyle = styled.button`
   background: #182c63;
   color: #ffffff;
   cursor: pointer;
-  padding: 10px; /* Increased padding for larger button */
-  font-size: 18px; /* Increased font size */
-  font-weight: bold; /* Thicker font */
-  width: 100px; /* Adjusted width for larger button */
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
   &:active {
     transform: scale(0.98);
   }
@@ -79,12 +79,17 @@ const ButtonStyle = styled.button`
     background: #f3e7f3;
     color: #000000;
     cursor: not-allowed;
+    &:hover {
+      background: #f3e7f3; /* Keep the same background color on hover */
+      color: #000000; /* Keep the same text color on hover */
+    }
   }
   &:hover {
-    background-color: #6e217d; /* Darker background on hover */
-    color: #ffffff; /* Optional: change text color on hover */
+    background-color: #6e217d;
+    color: #ffffff;
   }
 `;
+
 
 const ProgressSteps = ({ userType, selectedStep, onSelectStep, onSwitchJourney }) => {
   const steps = {

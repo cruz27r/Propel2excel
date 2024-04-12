@@ -13,7 +13,6 @@ body, .App {
 }
 
 img, video {
-  /* update size */
   max-width: 180%;
   height: auto;
   display: block;
@@ -36,9 +35,8 @@ section {
   overflow: hidden;
 }
 
-/* Banner Text Image */
 .banner-text {
-  width: 200%; /* Increase the width of the text logo */
+  width: 200%;
   height: auto;
   position: absolute;
   top: 50%;
@@ -84,7 +82,7 @@ section {
   color: #010446;
   border-radius: 8px;
   text-align: center;
-  position: relative; /* Add position relative to position the button absolutely within this container */
+  position: relative;
 }
 
 .p2e-description h2 {
@@ -92,16 +90,16 @@ section {
 }
 
 .p2e-description .p2e-text {
-  max-width: 60%; /* Narrower width for the mission text */
-  margin: 0 auto; /* Centered horizontally */
-  font-size: 1.8rem; /* Adjusted font size for better readability */
+  max-width: 60%;
+  margin: 0 auto;
+  font-size: 1.8rem;
   padding-bottom: 30px;
 }
 
 .details-button {
-  position: absolute; /* Position the button absolutely within the .p2e-description container */
-  bottom: 20px; /* Align the button to the bottom of the container */
-  right: 20px; /* Align the button to the right of the container */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   background-color: #010446;
   color: #FFFFFF;
   padding: 10px 20px;
@@ -162,5 +160,89 @@ section {
   .banner-text {
     width: 180%;
     font-size: calc(1.3rem + 2vw);
+  }
+}
+
+/* Login Screen Styling */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #010446;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #010446;
+}
+
+.login-container input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-container button {
+  background-color: #010446;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #020669;
+}
+
+.login-container p {
+  margin-top: 20px;
+  color: #010446;
+}
+
+/* Login Header Styling */
+.Login-Header {
+  font-size: 1.5rem;
+  color: #010446;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Login Message Styling */
+.Login-Message {
+  font-size: 1rem;
+  color: #010446;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .login-container input, .login-container button {
+    width: 90%;
   }
 }

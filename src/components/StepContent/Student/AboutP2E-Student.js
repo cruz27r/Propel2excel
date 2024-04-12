@@ -22,31 +22,6 @@ const StudentAbout = () => {
   const [activeService, setActiveService] = useState('coaching');
   const [activeEvent, setActiveEvent] = useState('workshop');
   const [activeComponent, setActiveComponent] = useState('coaching');
-  const [isDetailsVisible, setIsDetailsVisible] = useState(false);
-
-  const detailsRef = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Trigger when 50% of the details section is visible
-    };
-
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsDetailsVisible(entry.isIntersecting);
-    }, options);
-
-    if (detailsRef.current) {
-      observer.observe(detailsRef.current);
-    }
-
-    return () => {
-      if (detailsRef.current) {
-        observer.unobserve(detailsRef.current);
-      }
-    };
-  }, []);
 
   const handleServiceClick = (service) => {
     setActiveService(service);
@@ -104,7 +79,7 @@ const StudentAbout = () => {
           </div>
         </div>
         {/* Component Details */}
-        <div ref={detailsRef} className={`component-details ${isDetailsVisible ? 'highlighted' : ''}`}>
+        <div className='component-details'>
           {activeComponent === 'coaching' && (
             <>
               <div className="details-column">
