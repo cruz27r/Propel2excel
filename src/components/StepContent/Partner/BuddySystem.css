@@ -100,55 +100,62 @@
   font-family: 'Roboto', sans-serif;
 }
 
+/* Testimonial Section Styling */
 .testimonial-section {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.testimonial-section:hover {
-  background-color: #e9e9e9;
-  transform: scale(1.02);
-}
-
-.testimonial-section h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-}
-
-.testimonial {
-  background-color: #182C63;
-  color: #ffffff;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s, transform 0.3s;
-  width: 40%;
-  height: 200px; /* Set a fixed height */
-  display: inline-block; /* Display testimonials in a row */
-  vertical-align: top; /* Align testimonials to the top */
-}
-
-.testimonial:hover {
-  background-color: #003366;
-  transform: scale(1.05);
-}
-
-.testimonial p {
-  font-size: 26px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.testimonial span {
-  display: block;
-  text-align: right;
-  margin-top: 10px;
-  font-style: italic;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-}
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: repeat(3, 30%); /* Allocate 30% of the section's width to each testimonial */
+    justify-content: space-between; /* Distributes spacing evenly between testimonials */
+    gap: 1.666%; /* Splits the remaining space (10% total width - 3*30% = 10%) into 2 gaps */
+  }
+  
+  .testimonial-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #182C63;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    grid-column: 1 / -1; /* Ensures the header spans all columns */
+  }
+  
+  .testimonial {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .testimonial span {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 14px;
+    color: #666;
+  }
+  
 
 .separator-image-container {
   margin: 30px 0;

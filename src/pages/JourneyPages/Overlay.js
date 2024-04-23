@@ -7,6 +7,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
   const [answers, setAnswersLocal] = useState({});
   const [questions, setQuestions] = useState([]);
   const [showQuestions, setShowQuestions] = useState(false);
+  const [focusIndex, setFocusIndex] = useState(null);
 
   const allQuestions = [
     {
@@ -39,18 +40,23 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
     setQuestionIndex(0);
     setAnswersLocal({});
     setShowQuestions(true);
+    setFocusIndex(0); // Focus on the selected user type question
   };
 
   const handleAnswerSelection = (answer) => {
     const updatedAnswers = { ...answers, [questions[questionIndex].text]: answer };
     setAnswersLocal(updatedAnswers);
     setAnswers(updatedAnswers); // Update answers in the parent component
-    if (questionIndex < questions.length - 1) {
-      setQuestionIndex(questionIndex + 1);
-    } else {
-      setShowQuestions(false);
-      onSelectStep(1);
-    }
+    setFocusIndex(questionIndex); // Set the focus index to trigger the effect
+    setTimeout(() => {
+      setFocusIndex(null); // Reset the focus index after a delay
+      if (questionIndex < questions.length - 1) {
+        setQuestionIndex(questionIndex + 1);
+      } else {
+        setShowQuestions(false);
+        onSelectStep(1);
+      }
+    }, 1000); // Delay for 1 second before moving to the next question
   };
 
   const handleInputChange = (event) => {
@@ -97,7 +103,13 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
                   value={group.userType}
                   onChange={() => handleUserTypeSelection(group.userType)}
                 />
-                <div className="option-card">{group.userType}</div>
+                <div className="option-card" style={{
+                  backgroundColor: group.userType === userType && focusIndex === 0 ? '#182C63' : '#fff',
+                  color: group.userType === userType && focusIndex === 0 ? 'white' : '#182C63',
+                  border: `2px solid ${group.userType === userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
+                  transform: group.userType === userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
+                  transition: 'all 0.3s ease'
+                }}>{group.userType}</div>
               </label>
             ))}
           </div>
@@ -113,10 +125,16 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
                       type="radio"
                       name={questions[questionIndex].text}
                       value={option}
-                      checked={answers[questions[questionIndex].text] === option}
-                      onChange={(e) => handleAnswerSelection(e.target.value)}
+                      checked={option === answers[questions[questionIndex].text]}
+                      onChange={() => handleAnswerSelection(option)}
                     />
-                    <div className="option-card">{option}</div>
+                    <div className="option-card" style={{ 
+                      backgroundColor: option === answers[questions[questionIndex].text] && focusIndex === questionIndex ? '#182C63' : '#fff',
+                      color: option === answers[questions[questionIndex].text] && focusIndex === questionIndex ? 'white' : '#182C63',
+                      border: `2px solid ${option === answers[questions[questionIndex].text] && focusIndex === questionIndex ? '#182C63' : '#182C63'}`,
+                      transform: option === answers[questions[questionIndex].text] && focusIndex === questionIndex ? 'scale(1.1)' : 'none',
+                      transition: 'all 0.3s ease'
+                    }}>{option}</div>
                   </label>
                 ))}
               </div>
@@ -127,6 +145,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
                   name={questions[questionIndex].text}
                   value={answers[questions[questionIndex].text] || ''}
                   onChange={handleInputChange}
+                  onKeyDown={(e) => { if (e.key === 'Enter') handleConfirm(); }} // Handle Enter/Return key press
                   required
                 />
                 <button onClick={handleConfirm} disabled={!answers[questions[questionIndex].text]}>

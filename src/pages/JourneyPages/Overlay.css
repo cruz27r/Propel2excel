@@ -4,13 +4,16 @@
     left: 0;
     width: 100vw; /* Cover full viewport width */
     height: 100vh; /* Cover full viewport height */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(24, 44, 99, 0.5); /* Semi-transparent overlay with more blue */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Support Safari 9+ and Safari on iOS 9+ */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999999;
 }
-  
+
+
 .overlay {
     background-color: #ffffff;
     padding: 40px;
@@ -24,36 +27,30 @@
     align-items: center; /* Center-align children */
     position: relative; /* Position relative for absolute positioning of children */
 }
-  
+
 .overlay h2 {
     color: #182C63; /* Matches the blue header color */
     margin-bottom: 30px;
     font-size: 2rem; /* Increased font size */
 }
-  
+
 .overlay p {
     margin-bottom: 30px;
     color: #666666; /* Dark grey text */
     font-size: 1.25rem; /* Increased font size */
 }
-  
+
 .overlay label {
     display: flex; /* Use flexbox for label */
     flex: 1; /* Flex grow to split width evenly */
     margin: 10px;
     cursor: pointer;
 }
-  
+
 .overlay input[type="radio"] {
     display: none; /* Hide radio button */
 }
-  
-/* Removed the circle indicators */
-.overlay label:before {
-    content: none;
-}
-  
-/* Style for the container of the option cards */
+
 .options-container {
     display: flex; /* Use flexbox for options */
     justify-content: space-around; /* Distribute space evenly */
@@ -85,8 +82,11 @@
     background-color: #182C63; /* Blue background for selected */
     color: white; /* White text for selected */
     border: 2px solid #182C63; /* Maintain blue border for selected */
+    transform: scale(1.1); /* Slightly scale up the selected option */
+    z-index: 1; /* Ensure selected option is above other options */
 }
 
+/* Enhance button interactions */
 .overlay button {
     display: inline-block;
     margin: 10px;
@@ -97,23 +97,18 @@
     border-radius: 2px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease; /* Transition for hover effect */
-}
-  
-.overlay button:hover {
-    background-color: #ffff;
-    color: #182C63;
-    border: 2px solid #182C63; /* Border color same as background */
-    border-radius: 2px;
-}
-  
-/* Additional style for when buttons are side by side */
-.overlay button:not(:last-child) {
-    margin-right: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+.overlay button:hover, .overlay button:focus {
+    background-color: #ffffff;
+    color: #182C63;
+    border: 2px solid #182C63;
+    transform: scale(1.05); /* Enlarge on hover/focus for better interactivity */
+}
+
+
 .back-button {
-    width: 15%;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -124,8 +119,8 @@
     border: 2px solid #182C63; /* Border color same as background */
     border-radius: 2px;
     cursor: pointer;
-    transition: transform 0.1s ease, background-color 0.1s ease, color 0.1s ease;
     font-size: 1rem;
+    transition: all 0.1s ease;
     text-align: center; /* Ensure text is centered */
 }
 
@@ -133,13 +128,6 @@
     background-color: #2a3f73; /* Lighter shade of the main color for hover */
     color: white; /* Keep text white */
 }
-
-.back-button:active {
-    background-color: #3a4f83; /* Even lighter shade for active/click */
-    color: white; /* Keep text white */
-    transform: scale(1.05); /* Slightly enlarge the button when pressed */
-}
-
 
 .return-button {
     position: absolute;
@@ -152,8 +140,8 @@
     border: 2px solid #182C63; /* Border color same as background */
     border-radius: 2px;
     cursor: pointer;
-    transition: transform 0.1s ease, background-color 0.1s ease, color 0.1s ease;
     font-size: 1rem;
+    transition: all 0.1s ease;
     text-align: center; /* Ensure text is centered */
 }
 
@@ -162,8 +150,44 @@
     color: white; /* Keep text white */
 }
 
-.return-button:active {
-    background-color: #3a4f83; /* Even lighter shade for active/click */
-    color: white; /* Keep text white */
-    transform: scale(1.05); /* Slightly enlarge the button when pressed */
+.selected-option input[type="text"] {
+    padding: 10px; /* Padding for the input */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Border radius for rounded corners */
+    font-size: 1rem; /* Font size */
+    width: 40%; /* Set the width to be 40% of the container */
+    margin: 10px auto; /* Center the input horizontally and add margin */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    background-color: transparent; /* Transparent background */
+    color: #333; /* Text color */
+}
+
+.selected-option {
+    transition: all 0.5s ease; /* Smooth transition for background and transformation */
+}
+
+.selected-option.collapsed {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.selected-option.selected {
+    background-color: #182C63; /* Deep blue background */
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    margin: 20px auto; /* Center the selected option */
+    transform: scale(1.1); /* Slightly scale up the selected option */
+    width: 90%; /* Ensure it's sufficiently wide to catch attention */
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.option-card.selected {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
 }

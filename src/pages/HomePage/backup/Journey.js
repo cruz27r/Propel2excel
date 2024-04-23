@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Journey.css';
 
-import ProgressSteps from '../../../components/Individual_Parts/ProgressSteps';
-
-import mainbanner from '../../../assets/images/4x/Logo-P2e-final-v4Asset 2.png';
+// Import images
+import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 4.png';
 
 function JourneyHome() {
-  // State to manage login status and input values
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // Function to handle login, checking against specific credentials
   const handleLogin = (e) => {
     e.preventDefault();
     if (username === 'Propel' && password === 'p2eDev') {
@@ -22,16 +19,20 @@ function JourneyHome() {
     }
   };
 
-  // Login form
+  // Generate cubes
+  const cubes = Array.from({ length: 6 }, (_, index) => (
+    <div key={index} className={`cube cube-${index + 1}`}></div>
+  ));
+
   const loginForm = (
     <div className="login-container">
-      <header className='Login-Header'>
+      <header className="Login-Header">
         This is the Future Home of Propel2Excel
       </header>
-      <p className='Login-Message'>
+      <p className="Login-Message">
         For any contact, please email: Propel@propel2excel.com
       </p>
-      <h2>Login to Continue to site</h2>
+      <h2>Login to Continue to the site</h2>
       <form onSubmit={handleLogin}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -58,13 +59,12 @@ function JourneyHome() {
     </div>
   );
 
-  // Main content, shown only when logged in
-  const mainContent = (
+  const mainContent = isLoggedIn && (
     <div className="App">
-      <div className="banner-container">
-        <img src={mainbanner} alt="Banner" className="full-width-banner" />
+      <div className="hero">
+        <img src={textbanner} alt="Propel2Excel" className="hero__title-image" />
+        {cubes} {/* Render the cubes here */}
       </div>
-
       <div className="p2e-description">
         <div className="header-container">
           <h2>Our Mission</h2>
@@ -77,10 +77,9 @@ function JourneyHome() {
     </div>
   );
 
-  // Conditional rendering based on login status
   return (
     <div>
-      {isLoggedIn ? mainContent : loginForm}
+      {mainContent || loginForm}
     </div>
   );
 }

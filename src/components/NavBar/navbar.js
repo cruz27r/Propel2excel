@@ -44,7 +44,7 @@ const NavBar = () => {
       </div>
 
       <div className="apply-section">
-        <Link to="/apply-to-cohort">Excel Here</Link>
+        <Link to="/main-application">Excel Here</Link>
       </div>
     </header>
   );

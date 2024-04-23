@@ -131,9 +131,9 @@ const ProgressSteps = ({ userType, selectedStep, onSelectStep, onSwitchJourney }
         <ButtonStyle onClick={handlePreviousStep} disabled={selectedStep === 1}>
           Previous
         </ButtonStyle>
-        {selectedStep === steps[userType].length && (
+        {/* {selectedStep === steps[userType].length && (
           <ButtonStyle onClick={onSwitchJourney}>Switch Journey</ButtonStyle>
-        )}
+        )} */}
         <ButtonStyle
           onClick={handleNextStep}
           disabled={selectedStep === steps[userType].length}

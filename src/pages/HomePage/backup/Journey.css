@@ -1,19 +1,18 @@
-/* Define new images */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
 
-/* General Styling */
+/* Basic Reset for Main Elements */
 body, .App {
   max-width: 100%;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding-top: 0px;
+  padding: 0;
   box-sizing: border-box;
   background-color: #FCF7FF;
   scroll-behavior: smooth;
 }
 
 img, video {
-  max-width: 180%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -27,62 +26,69 @@ section {
   align-items: center;
 }
 
-/* Banner Styling */
-.banner-container {
+/* Hero Section Styling */
+.hero {
+  background: linear-gradient(to bottom, #0040C1 0%, #b3d4fc 100%);
   position: relative;
-  width: 100vw;
-  margin: 0 auto;
+  height: 150vh;
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.banner-text {
-  width: 200%;
-  height: auto;
+.hero__title-image {
   position: absolute;
-  top: 50%;
+  top: 28%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: growAndBounce 3s ease-in-out infinite;
+  max-width: 70%; /* Slightly larger text */
+  z-index: 1;
 }
 
-@keyframes growAndBounce {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
+/* Styles for animated cubes */
+.cube {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #0033a0;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+
+.cube-1 { animation-delay: 0s; left: 45vw; top: 53vh; }
+.cube-2 { animation-delay: 2s; left: 25vw; top: 27vh; }
+.cube-3 { animation-delay: 4s; left: 75vw; top: 33vh; }
+.cube-4 { animation-delay: 6s; left: 90vw; top: 7vh; }
+.cube-5 { animation-delay: 8s; left: 10vw; top: 57vh; }
+.cube-6 { animation-delay: 10s; left: 50vw; top: 7vh; }
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
   }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
   }
 }
 
-.full-width-banner {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Dynamic Font Size */
-@media (min-width: 768px) {
-  .banner-text {
-    font-size: calc(2rem + 2vw);
-  }
-}
-
-@media (max-width: 768px) {
-  .banner-text {
-    font-size: calc(1.5rem + 2vw);
-  }
-}
-
-/* P2E Description Section Adjustments */
+/* P2E Description Section */
 .p2e-description {
   max-width: 70%;
-  margin: 40px auto;
+  position: absolute;
+  bottom: -55vh; /* Positioned even lower */
+  left: 15%;
   padding: 10px;
-  background-color: transparent;
+  background-color: #ffffff;
   color: #010446;
   border-radius: 8px;
   text-align: center;
-  position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .p2e-description h2 {
@@ -107,60 +113,6 @@ section {
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* General mobile adjustments */
-@media (max-width: 768px) {
-  .p2e-description {
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 10px;
-  }
-
-  .p2e-description .p2e-text {
-    max-width: 80%;
-    font-size: 1.2rem;
-    padding-bottom: 20px;
-  }
-
-  .details-button {
-    bottom: 10px;
-    right: 10px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  section {
-    max-width: 95%;
-    margin: 20px auto;
-  }
-}
-
-/* iPhone-specific adjustments */
-@media (max-width: 375px) {
-  .p2e-description h2 {
-    font-size: 2rem;
-  }
-
-  img, video {
-    max-width: 100%;
-  }
-
-  .banner-text {
-    width: 150%;
-    font-size: calc(1.2rem + 2vw);
-  }
-}
-
-@media (max-width: 414px) {
-  .p2e-description h2 {
-    font-size: 2.2rem;
-  }
-
-  .banner-text {
-    width: 180%;
-    font-size: calc(1.3rem + 2vw);
-  }
 }
 
 /* Login Screen Styling */
@@ -213,36 +165,18 @@ section {
   background-color: #020669;
 }
 
-.login-container p {
-  margin-top: 20px;
-  color: #010446;
-}
-
-/* Login Header Styling */
-.Login-Header {
-  font-size: 1.5rem;
-  color: #010446;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Login Message Styling */
-.Login-Message {
-  font-size: 1rem;
-  color: #010446;
-  text-align: center;
-  margin-top: 10px;
-}
-
-
-/* Adjustments for smaller screens */
 @media (max-width: 768px) {
-  .login-container {
-    max-width: 90%;
-    padding: 15px;
+  /* Responsive adjustments */
+  .login-container, .login-container input, .login-container button, .hero__title-image {
+    width: 90%;
   }
 
-  .login-container input, .login-container button {
-    width: 90%;
+  .p2e-description {
+    position: relative; /* Reset to relative positioning for mobile */
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    width: 90%; /* Adjust width for small screens */
+    max-width: none; /* Override max-width for better control */
   }
 }

@@ -35,9 +35,10 @@ function JourneyPage() {
     setSelectedStep(1);
   };
 
-  const handleChangeAnswersClick = () => {
+  const handleChangeAnswersClick = (question) => {
     setShowOverlay(true);
     setIsChangingAnswers(true);
+    // Logic to handle changing the answer for the clicked question
   };
 
   const handleCloseOverlay = () => {
@@ -49,8 +50,18 @@ function JourneyPage() {
     if (Object.keys(answers).length === 0) {
       return ''; // Return an empty string if no answers are selected
     }
-    const formattedAnswers = Object.values(answers).join(' / ');
-    return `${userType}'s Journey: ${formattedAnswers}`;
+
+    const formattedAnswers = Object.entries(answers).map(([question, answer]) => (
+      <span key={question} onClick={() => handleChangeAnswersClick(question)}>
+        {answer}
+      </span>
+    ));
+
+    return (
+      <>
+        {userType}'s Journey: {formattedAnswers.reduce((prev, curr) => [prev, '/', curr])}
+      </>
+    );
   };
 
   return (
