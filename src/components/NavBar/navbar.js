@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import logoImage from '../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 import './navbar.css';
 
@@ -8,6 +8,10 @@ const NavBar = () => {
   const lastScrollY = useRef(window.scrollY);
   const navbarRef = useRef();
   const navBarVisibilityTimeout = useRef();
+  const location = useLocation(); // Use useLocation hook to access pathname
+
+  // Determine if the current page is the homepage
+  const isHomePage = location.pathname === '/';
 
   const handleScroll = () => {
     clearTimeout(navBarVisibilityTimeout.current);
@@ -36,15 +40,21 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'}`}>
+    <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isHomePage ? 'home-navbar' : ''}`}>
       <div className="logo-section">
         <Link to="/" className='logo-link'>
           <img src={logoImage} alt="Company Logo" className="logo" />
         </Link>
       </div>
 
+      {/* Center group of links */}
+      <div className="center-links">
+        <Link to="/career-tips" className='nav-link'>Career Tips</Link>
+        <Link to="/whos-hiring" className='nav-link'>Who's Hiring</Link>
+      </div>
+
       <div className="apply-section">
-        <Link to="/main-application">Excel Here</Link>
+        <Link to="/main-application" className='apply-link'>Excel Here</Link>
       </div>
     </header>
   );

@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #FCF7FF;
+  background-color: #ffffff; /* Solid white for pages other than the homepage */
   color: #101D42;
   position: fixed;
   top: 0;
@@ -12,12 +12,52 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 10000;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Transparent navbar style when on the homepage */
+.home-navbar {
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
+}
+
+/* Text color for the navbar links */
+.header .nav-link,
+.header .apply-section a {
+  color: #101D42; /* Dark color for contrast on light backgrounds */
+}
+
+.header .nav-link:hover,
+.header .apply-section a:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+  color: #0056b3;
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header.show {
+  transform: translateY(0);
+}
+
+/* Center group of links */
+.center-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Spacing between the links */
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .logo-link {
   display: flex;
-  justify-content: center;
-  flex-grow: 1;
+  align-items: center;
 }
 
 .logo {
@@ -32,16 +72,10 @@
   color: #FCF7FF;
   padding: 10px 20px;
   border-radius: 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: bold;
   white-space: nowrap;
   display: inline-block;
   text-align: center;
-}
-
-.apply-section a:hover {
-  background-color: #0056b3;
-  color: #FFFFFF;
 }
 
 /* Mobile adjustments */
@@ -54,7 +88,8 @@
     max-height: 3em;
   }
 
-  .apply-section a {
+  .apply-section a,
+  .nav-link {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
@@ -70,7 +105,8 @@
     max-height: 2.5em;
   }
 
-  .apply-section a {
+  .apply-section a,
+  .nav-link {
     padding: 7px 14px;
     font-size: 0.8rem;
   }
@@ -85,7 +121,8 @@
     max-height: 2.8em;
   }
 
-  .apply-section a {
+  .apply-section a,
+  .nav-link {
     padding: 8px 16px;
     font-size: 0.9rem;
   }

@@ -1,95 +1,63 @@
-/* App.css - Global styles */
-.app-container, .App {
+/* Resets margins and padding to prevent unwanted spacing */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Sets the default font and background color for the app */
+body {
   font-family: Arial, sans-serif;
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Padding and border are included in the width */
   background-color: #FCF7FF;
 }
 
-main {
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Padding and border are included in the width */
-  background-color: #fcf7ff;
+/* Global styles for the app */
+.App {
+  min-height: 100vh; /* Ensures it takes minimum full viewport height */
+  padding-top: var(--navbar-height); /* Padding to push content below the navbar */
 }
 
+/* Button styles */
 button, .ticket-button {
-  padding: 1rem; /* Fixed padding, consider using em if needed */
+  padding: 1rem;
   background-color: #373751;
   color: #fdca40;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smooth transition for background color */
+  transition: background-color 0.3s;
 }
 
 button:hover, .ticket-button:hover {
   background-color: #1fa1c4;
 }
 
+/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
   button, .main-ticket-button, .ticket-button {
-    padding: 0.75rem; /* Smaller padding for smaller screens */
+    padding: 0.75rem;
   }
 }
 
-:root {
-  --navbar-height: 90px; /* Adjust this to match the height of your NavBar */
-  --navbar-padding: 15px;
-}
-
-.header {
-  height: var(--navbar-height);
-  /* Additional styles for the header if needed */
-}
-
-/* Adjusted class name for main content padding */
-.main-content {
-  padding-top: var(--navbar-height); /* Ensures content starts below the NavBar */
-}
-
-/* iPhone X and newer (portrait and landscape) */
+/* iPhone adjustments */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3) {
-
-  .app-container, .App {
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
-
   .button, .ticket-button {
     padding: 0.5rem; /* Smaller padding for buttons */
     font-size: 0.8rem; /* Smaller font size for button text */
   }
-
-  .main-content {
-    padding-top: 70px; /* Reduce padding-top for smaller screens */
-  }
-
-  /* Add more custom styles for iPhone screens here */
 }
 
-/* iPhone 8, 7, 6s, 6 (portrait and landscape) */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+/* Custom styles for other specific device sizes can go here */
 
-  .app-container, .App {
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
-
-  .button, .ticket-button {
-    padding: 0.5rem; /* Smaller padding for buttons */
-    font-size: 0.8rem; /* Smaller font size for button text */
-  }
-
-  .main-content {
-    padding-top: 70px; /* Reduce padding-top for smaller screens */
-  }
-
-  /* Add more custom styles for iPhone screens here */
+/* CSS variables for consistent spacing and dimensions */
+:root {
+  --navbar-height: 90px; /* Height of the navbar */
 }
 
-/* Adjustments for other specific iPhone models can be added similarly */
+/* Styles for main content area to ensure it does not overlap with the navbar */
+.main-content {
+  transition: padding-top 0.3s ease-in-out; /* Smooth transition for padding changes */
+}
+
+/* Additional global styles can be added below */
