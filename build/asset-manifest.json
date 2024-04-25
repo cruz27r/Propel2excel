@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6d5b3466.css",
-    "main.js": "/static/js/main.241d13dc.js",
+    "main.css": "/static/css/main.1f4c1492.css",
+    "main.js": "/static/js/main.1d324ab8.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
     "static/media/Coaching.jpg": "/static/media/Coaching.b4c256506e843c32c679.jpg",
@@ -9,6 +9,7 @@
     "static/media/zoom_in_on_laptop.jpg": "/static/media/zoom_in_on_laptop.e15964f50022bace62d6.jpg",
     "static/media/speaker-event.jpg": "/static/media/speaker-event.d7cf006e938608789941.jpg",
     "static/media/headshot1.jpg": "/static/media/headshot1.a68d52b31f6404700b74.jpg",
+    "static/media/Logo_Banner_textAsset 4.png": "/static/media/Logo_Banner_textAsset 4.4b5f9701bcff9900cd3a.png",
     "static/media/looking_over_code.jpg": "/static/media/looking_over_code.2b0925895a1ddc321c49.jpg",
     "static/media/networking-event.jpg": "/static/media/networking-event.7e7d7d84d3c7ef1f5650.jpg",
     "static/media/meetmentor.jpg": "/static/media/meetmentor.5108fb2f60555765441a.jpg",
@@ -47,11 +48,11 @@
     "static/media/TD-Bank-logo.png": "/static/media/TD-Bank-logo.28c3d725c4555e293206.png",
     "static/media/Oliver-Wyman.webp": "/static/media/Oliver-Wyman.8757fd15bf0811d8f594.webp",
     "index.html": "/index.html",
-    "main.6d5b3466.css.map": "/static/css/main.6d5b3466.css.map",
-    "main.241d13dc.js.map": "/static/js/main.241d13dc.js.map"
+    "main.1f4c1492.css.map": "/static/css/main.1f4c1492.css.map",
+    "main.1d324ab8.js.map": "/static/js/main.1d324ab8.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d5b3466.css",
-    "static/js/main.241d13dc.js"
+    "static/css/main.1f4c1492.css",
+    "static/js/main.1d324ab8.js"
   ]
 }
