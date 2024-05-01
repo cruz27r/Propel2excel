@@ -1,0 +1,124 @@
+/* General styles for the hiring board */
+.hiring-board {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for category buttons */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.category-buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    background-color: #e4e4e4;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-buttons button.active, .category-buttons button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Section that holds job listings */
+.job-category-section {
+    padding: 1rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Job listing styles using grid */
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Five columns for title, status, rate, location, apply button */
+    gap: 10px;
+}
+
+.job-listing {
+    display: contents; /* Each child takes up a grid cell */
+}
+
+.job-listing:not(.job-listing-header) {
+    border-bottom: 1px solid #ddd; /* Add a bottom border to each listing except the header */
+}
+
+.job-listing.job-listing-header {
+    font-weight: bold;
+    background-color: #ddd;
+}
+
+.job-title, .job-status, .job-rate, .job-location, .job-apply {
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.job-status {
+    font-weight: bold;
+}
+
+.job-status.ongoing {
+    color: green;
+}
+
+.job-status.gathering-applicants {
+    color: #d7b700; /* Yellow color */
+}
+
+.job-status.closed {
+    color: red;
+}
+
+/* Specific style for the apply button */
+.apply-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.apply-button:hover {
+    background-color: #369636;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .category-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-buttons button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .job-listings {
+        grid-template-columns: 1fr; /* Stack on small screens */
+    }
+
+    .job-title, .job-status, .job-rate, .job-location, .job-apply {
+        text-align: left;
+    }
+
+    .apply-button {
+        width: 100%;
+    }
+}

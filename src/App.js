@@ -21,6 +21,8 @@ import './App.css';
 import MaintenancePage from './pages/Maintenance/MaintenancePage';
 import Students from './pages/MeetOurStudents/students';
 import MainApplication from './pages/MainApplication/MainApplication';
+import HiringBoard from './components/HiringBoard/HiringBoard';
+import CareerTips from './components/CareerTips/Tips';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           <Route path="/maintenance" element={<MaintenancePage />} />
           <Route path="/students" element={<Students />} />
           <Route path="/main-application" element={<MainApplication />} />
+          <Route path="/hiring-board" element={<HiringBoard />} /> {/* Route for HiringBoard */}
+          <Route path="/career-tips" element={<CareerTips />} />
         </Routes>
       </div>
     </Router>

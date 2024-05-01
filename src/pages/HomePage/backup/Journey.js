@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Journey.css';
 
@@ -6,7 +6,8 @@ import './Journey.css';
 import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 4.png';
 
 function JourneyHome() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Check if the user is already logged in by reading from localStorage
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -14,10 +15,18 @@ function JourneyHome() {
     e.preventDefault();
     if (username === 'Propel' && password === 'p2eDev') {
       setIsLoggedIn(true);
+      // Store the login state in localStorage
+      localStorage.setItem('isLoggedIn', 'true');
     } else {
       alert('Invalid credentials');
     }
   };
+
+  useEffect(() => {
+    // Check localStorage when the component mounts to see if the user is logged in
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+  }, []);
 
   // Generate cubes
   const cubes = Array.from({ length: 6 }, (_, index) => (

@@ -68,15 +68,24 @@
 
 .apply-section a {
   text-decoration: none;
-  background-color: #101D42;
-  color: #FCF7FF;
+  background-color: #101D42; /* Dark blue background */
+  color: #FCF7FF; /* White text */
   padding: 10px 20px;
   border-radius: 25px;
   font-weight: bold;
   white-space: nowrap;
   display: inline-block;
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
 }
+
+.apply-section a:hover {
+  background-color: #FCF7FF; /* White background on hover */
+  color: #101D42; /* Dark blue text on hover */
+}
+
+
+
 
 /* Mobile adjustments */
 @media (max-width: 768px) {

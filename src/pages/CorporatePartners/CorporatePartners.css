@@ -1,259 +1,128 @@
 /* Corporate Partners Section */
-.corporate-partners-section {
+.corporate-partners-page {
+    position: relative;
     padding: 20px;
     margin: auto;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
     display: flex;
-    flex-wrap: wrap;
-    font-family: Arial, sans-serif; /* Updated font family */
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    width: 100%; /* Ensures full width */
 }
 
-/* Current Partner Section with Two-Column Layout */
-.current-partners-section {
+/* Main Section */
+.main-section {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
+    width: 100%; /* Ensures full width */
 }
 
-/* Left Column: Header, Category Selection, Carousel */
-.current-partners-content {
-    flex: 0 0 65%;
-    margin-right: 20px;
-}
-
-/* Right Column: Stats Section with Pie Charts */
-/* Statistics Section */
-.statistics-section {
-    background-color: #f0f8ff; /* Light blue background color */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-
-/* Headers */
-.corporate-partners-section h2 {
-    color: #101D42;
-    font-size: 24px; /* Updated font size */
-    margin-bottom: 20px; /* Added margin bottom for spacing */
-}
-
-/* Description Text */
-.current-partners-content .description {
-    max-width: 800px;
-    margin: 0 auto 20px; /* Adjusted top margin to 0 */
-    text-align: justify; /* Justified text alignment */
-    line-height: 1.6;
-    font-size: 16px; /* Updated font size */
-    color: #333;
-}
-
-/* Carousel Styling */
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-/* Individual Item Styling */
-.item {
-    flex: 0 0 calc(30% - 30px);
-    margin: 15px;
+/* Outer Container Layout */
+.outer-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    opacity: 0.5;
+    justify-content: space-between; /* Space children evenly */
+    width: 100%; /* Ensures the container uses the full available width */
 }
 
-.item.active {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-/* Item Images - Ensuring uniform height */
-.item img {
-    height: 180px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Carousel Styling */
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 20px; /* Added margin top */
-}
-
-.carousel-inner {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-}
-
-.carousel img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-/* Carousel Control - General */
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: #333;
-    z-index: 100;
-    outline: none;
-    width: 40px; /* Set a fixed width for the controls */
-    height: 40px; /* Set a fixed height for the controls */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-control.left {
-    left: 10px; /* Position on the left */
-}
-
-.carousel-control.right {
-    right: 10px; /* Position on the right */
-}
-
-.carousel-control:hover {
-    color: #666;
-}
-
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .carousel-inner {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-inner {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-/* Slider Section Names */
-.slider-section-names {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-}
-
-.slider-item-name {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s; /* Added transform */
-}
-
-.slider-item-name:hover {
-    background-color: #F0F0F0; /* Change to your desired hover color */
-    transform: scale(1.1); /* Grow on hover */
-}
-
-.slider-item-name.active {
-    background-color: #E8F2FF; /* Change to your desired active color */
-    transform: scale(1.1); /* Grow on click */
-}
-
-.slider-item-name h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #182C63; /* Change to your desired text color */
-}
-
-.slider-item-name.active {
-    background-color: #F28888; /* Background color for the active slider item */
-}
-
-.slider-item-name:hover {
-    color: #0056b3;
-}
-
-/* Pie Charts Container */
-.pie-charts-container {
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* Individual Pie Chart Styling */
-.pie-chart {
-    margin-bottom: 20px;
-    /* Add more styles as needed */
-}
-
-/* Styles for the logos grid */
 .logos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns logos to the start */
+    gap: 10px; /* Uniform gap between logos for a compact layout */
+    width: 100%; /* Ensures full width usage when stats are not visible */
 }
 
-.logo-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    margin-bottom: 10px; /* Updated bottom margin */
+.logos-grid.three-columns {
+    max-width: 95%; /* Adjusts to 95% when stats are not visible */
+}
+
+.single-column .logo-item {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.three-columns .logo-item {
+    flex: 1 0 30%; /* Allows three items per row, adjust as necessary */
+    max-width: 30%; /* Ensures that each item can only be 30% wide */
+    text-align: center; /* Centers the image within the logo item */
 }
 
 .logo-item img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 150%; /* Increases image size */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevents image from exceeding the item container height */
 }
 
-/* Description Styling */
-.description {
-    background-color: #f8f9fa; /* Light gray background color */
+/* Statistics Section */
+.statistics-section {
+    flex: 0 0 45%; /* Takes up 45% of the space */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    font-size: 16px; /* Updated font size */
-    line-height: 1.6; /* Improved readability with line-height */
-    color: #333; /* Updated text color */
+    background: linear-gradient(135deg, #50596b 0%, #424a5d 100%); /* Darker gradient background for contrast */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-left: 2%;
+    max-width: 45%; /* Ensures statistics do not exceed 45% of parent width */
+    border: 1px solid #ccc;
+    color: #fff; /* Light text color for better visibility on dark background */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .logos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Multi-Button Styling */
+.multi-button {
+  display: flex; /* Aligns buttons side by side */
+  justify-content: center; /* Center aligns the buttons horizontally */
+}
 
-    .current-partners-section {
+.multi-button button {
+  font-size: 1rem; /* Adjusted for better scaling on various devices */
+  padding: 0.5em 1em; /* Adjust padding to reduce button size */
+  background: #fff;
+  color: #4A5568;
+  border: none; /* No border */
+  margin: 0.1em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: none; /* No initial box-shadow */
+  transform: translateY(0);
+  flex: 1; /* Flex property to manage width equally */
+}
+
+.multi-button button.active,
+.multi-button button:hover {
+  background: #101D42;
+  color: #fff;
+  box-shadow: 0 0 0.8em 0 rgba(213, 63, 140, 0.8);
+  transform: translateY(-0.2em);
+}
+
+.multi-button button:first-of-type {
+  border-radius: 0.5em 0 0 0.5em; /* Rounded corners on the first button */
+}
+
+.multi-button button:last-of-type {
+  border-radius: 0 0.5em 0.5em 0; /* Rounded corners on the last button */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .outer-container {
         flex-direction: column;
     }
 
-    .current-partners-content,
-    .statistics-section {
-        flex: 0 0 100%;
+    .logos-grid, .statistics-section {
+        flex: 1 0 100%;
+        max-width: 100%;
         margin-right: 0;
-        margin-left: 0;
+        margin-bottom: 20px;
     }
 
-    .corporate-description {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .item {
-        flex: 0 0 100%;
+    .three-columns .logo-item, .single-column .logo-item {
+        flex: 0 0 100%; /* Full width for each logo item on smaller screens */
     }
 }

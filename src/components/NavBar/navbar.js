@@ -50,7 +50,7 @@ const NavBar = () => {
       {/* Center group of links */}
       <div className="center-links">
         <Link to="/career-tips" className='nav-link'>Career Tips</Link>
-        <Link to="/whos-hiring" className='nav-link'>Who's Hiring</Link>
+        <Link to="/hiring-board" className='nav-link'>Who's Hiring</Link>
       </div>
 
       <div className="apply-section">

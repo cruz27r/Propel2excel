@@ -13,7 +13,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
     {
       userType: 'Student',
       questions: [
-        { text: 'Where are you coming from?', options: ['Ivey League University', 'NonTarget University'] },
+        { text: 'Where are you coming from?', options: ['NonTarget University', 'Ivey League University'] },
         { text: 'What industry are you interested in?', options: ['Tech', 'Consulting', 'Banking'] },
       ]
     },
