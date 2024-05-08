@@ -23,6 +23,7 @@ import Students from './pages/MeetOurStudents/students';
 import MainApplication from './pages/MainApplication/MainApplication';
 import HiringBoard from './components/HiringBoard/HiringBoard';
 import CareerTips from './components/CareerTips/Tips';
+import StudentsPage from './pages/MeetOurStudents/students';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="/main-application" element={<MainApplication />} />
           <Route path="/hiring-board" element={<HiringBoard />} /> {/* Route for HiringBoard */}
           <Route path="/career-tips" element={<CareerTips />} />
+          <Route path="/oldStudents" element={<StudentsPage />} />
         </Routes>
       </div>
     </Router>

@@ -1,148 +1,91 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import './ProgressSteps.css';
 
-const MainContainer = styled.div`
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 16px;
-`;
+const ProgressSteps = ({
+    userType,
+    onSelectStep,
+    answers,
+    onAnswerClick,  // Handles individual answer clicks
+    onChangeAnswers, // New prop to handle the request to change answers
+}) => {
+    const [currentStep, setCurrentStep] = useState(0);
 
-const StepContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
-  position: relative;
-`;
+    const stepsByUserType = {
+        Student: ["About P2E", "Corporate Partners", "Application"],
+        Buddy: ["About P2E", "Buddy System", "Application"],
+        Company: ["About P2E", "Talent", "Investment Partnership", "Application"]
+    };
 
-const StepWrapper = styled.div`
-  position: relative;
-  z-index: 1;
-`;
+    const steps = userType ? stepsByUserType[userType] : [];
 
-const StepStyle = styled.div`
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: ${({ step, selected }) =>
-    step === 'completed' || selected ? '#182c63' : '#f3e7f3'};
-  transition: background-color 0.4s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+    useEffect(() => {
+        setCurrentStep(0);
+    }, [userType]);
 
-const StepCount = styled.span`
-  font-size: 28px;
-  color: #ffffff;
-`;
+    const handleStepClick = (index) => {
+        setCurrentStep(index);
+        onSelectStep(index + 1);
+    };
 
-const StepsLabelContainer = styled.div`
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+    const handleNext = () => {
+        if (currentStep < steps.length - 1) {
+            setCurrentStep(currentStep + 1);
+            onSelectStep(currentStep + 2);
+        }
+    };
 
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 -15px;
-  margin-top: 100px;
-`;
+    const handlePrev = () => {
+        if (currentStep > 0) {
+            setCurrentStep(currentStep - 1);
+            onSelectStep(currentStep);
+        }
+    };
 
-const StepLabel = styled.span`
-  font-size: 22px;
-  font-weight: bold;
-  color: #182c63;
-  &:hover {
-    background-color: #f3e7f3;
-    border-radius: 5px;
-    padding: 5px;
-  }
-`;
+    const formatAnswers = () => {
+        if (!answers || Object.keys(answers).length === 0) {
+            return null;
+        }
 
-const ButtonStyle = styled.button`
-  border-radius: 4px;
-  border: 0;
-  background: #182c63;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  &:active {
-    transform: scale(0.98);
-  }
-  &:disabled {
-    background: #f3e7f3;
-    color: #000000;
-    cursor: not-allowed;
-    &:hover {
-      background: #f3e7f3; /* Keep the same background color on hover */
-      color: #000000; /* Keep the same text color on hover */
-    }
-  }
-  &:hover {
-    background-color: #6e217d;
-    color: #ffffff;
-  }
-`;
+        const userTypeDisplay = (
+            <span key="userType" className="user-type-journey" onClick={() => onAnswerClick('userType')}>
+                {userType}'s Journey&nbsp;-&nbsp;
+            </span>
+        );
 
+        const answerElements = Object.entries(answers).map(([question, answer]) => (
+            <span key={question} onClick={() => onAnswerClick(question)}>
+                {answer}
+            </span>
+        ));
 
-const ProgressSteps = ({ userType, selectedStep, onSelectStep, onSwitchJourney }) => {
-  const steps = {
-    Student: ['About P2E', 'Corporate Partners', 'Application'],
-    Buddy: ['About P2E', 'Buddy System', 'Application'],
-    Company: ['About P2E', 'Talent', 'Investment Partnership', 'Application'],
-  };
+        return [userTypeDisplay, ...answerElements];
+    };
 
-  const handleNextStep = () => {
-    if (selectedStep < steps[userType].length) {
-      onSelectStep(selectedStep + 1);
-    }
-  };
-
-  const handlePreviousStep = () => {
-    if (selectedStep > 1) {
-      onSelectStep(selectedStep - 1);
-    }
-  };
-
-  return (
-    <MainContainer>
-      <StepContainer>
-        {steps[userType].map((label, index) => (
-          <StepWrapper key={index}>
-            <StepStyle
-              step={selectedStep > index ? 'completed' : 'incomplete'}
-              selected={selectedStep === index + 1}
-            >
-              <StepCount>{index + 1}</StepCount>
-            </StepStyle>
-            <StepsLabelContainer>
-              <StepLabel>{label}</StepLabel>
-            </StepsLabelContainer>
-          </StepWrapper>
-        ))}
-      </StepContainer>
-      <ButtonsContainer>
-        <ButtonStyle onClick={handlePreviousStep} disabled={selectedStep === 1}>
-          Previous
-        </ButtonStyle>
-        {/* {selectedStep === steps[userType].length && (
-          <ButtonStyle onClick={onSwitchJourney}>Switch Journey</ButtonStyle>
-        )} */}
-        <ButtonStyle
-          onClick={handleNextStep}
-          disabled={selectedStep === steps[userType].length}
-        >
-          Next
-        </ButtonStyle>
-      </ButtonsContainer>
-    </MainContainer>
-  );
+    return (
+        <div className="steps-container">
+            <div className="row">
+                <div className="answers-container">
+                <button className="button" onClick={onChangeAnswers}>Change Answers</button>
+                    {formatAnswers()}
+                </div>
+                <div className="steps-area">
+                    {steps.map((step, index) => (
+                        <div
+                            key={index}
+                            className={`step ${index === currentStep ? 'active-step' : ''}`}
+                            onClick={() => handleStepClick(index)}
+                        >
+                            {step}
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="row">
+                <button className="button" onClick={handlePrev} disabled={currentStep === 0}>Prev</button>
+                <button className="button" onClick={handleNext} disabled={currentStep === steps.length - 1}>Next</button>
+            </div>
+        </div>
+    );
 };
 
 export default ProgressSteps;

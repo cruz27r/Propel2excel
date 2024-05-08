@@ -3,7 +3,7 @@ import './JourneyPage.css';
 import ProgressSteps from '../../components/Individual_Parts/ProgressSteps';
 import GuidingQuestionsOverlay from './Overlay';
 import StudentAbout from '../../components/StepContent/Student/AboutP2E-Student';
-import CorporatePartners from '../../components/StepContent/Student/CorporatePartnerStep';
+import CorporatePartnersPage from '../../pages/CorporatePartners/CorporatePartners';
 import StudentApplication from '../../components/StepContent/Student/Application-Student';
 import PartnerAbout from '../../components/StepContent/Partner/AboutP2E-Partner';
 import BuddySystem from '../../components/StepContent/Partner/BuddySystem';
@@ -19,6 +19,11 @@ function JourneyPage() {
   const [selectedStep, setSelectedStep] = useState(0);
   const [userType, setUserType] = useState(null);
   const [answers, setAnswers] = useState({});
+  const [fromHomePage, setFromHomePage] = useState(true); // Default value is true when loaded from homepage
+  const [questionIndex, setQuestionIndex] = useState(0); // New state to track question index
+
+  const industryInterest = answers['What industry are you interested in?'] || 'Tech'; // Default to 'Tech' if not answered
+
 
   const handleSelectStep = (step) => {
     setShowOverlay(false);
@@ -35,15 +40,26 @@ function JourneyPage() {
     setSelectedStep(1);
   };
 
-  const handleChangeAnswersClick = (question) => {
+  const handleChangeAnswersClick = () => {
     setShowOverlay(true);
     setIsChangingAnswers(true);
-    // Logic to handle changing the answer for the clicked question
+    // When changing answers, set fromHomePage to false
+    setFromHomePage(false);
   };
 
   const handleCloseOverlay = () => {
     setShowOverlay(false);
     setIsChangingAnswers(false);
+    // When closing the overlay, set fromHomePage back to true
+    setFromHomePage(true);
+  };
+
+  const handleAnswerClick = (question) => {
+    setShowOverlay(true);
+    setIsChangingAnswers(true);
+    // Specify the question associated with the clicked answer
+    setFromHomePage(false);
+    // Logic to handle opening the overlay with the specific question
   };
 
   const formatAnswers = () => {
@@ -52,7 +68,7 @@ function JourneyPage() {
     }
 
     const formattedAnswers = Object.entries(answers).map(([question, answer]) => (
-      <span key={question} onClick={() => handleChangeAnswersClick(question)}>
+      <span key={question} onClick={() => handleAnswerClick(question)}>
         {answer}
       </span>
     ));
@@ -74,14 +90,16 @@ function JourneyPage() {
           isChangingAnswers={isChangingAnswers}
           answers={answers}
           setAnswers={setAnswers}
+          fromHomePage={fromHomePage} // Pass the value of fromHomePage to the overlay
+          questionIndex={questionIndex} // Pass the questionIndex state
         />
       )}
 
       <div className="header-button-container">
         <div className="ChangeButton">
-          <button onClick={handleChangeAnswersClick}>Change Answers</button>
+          {/* <button onClick={handleChangeAnswersClick}>Change Answers</button> */}
           <div className="AnswersDisplay">
-            {formatAnswers()}
+            {/* {formatAnswers()} */}
           </div>
         </div>
       </div>
@@ -93,11 +111,19 @@ function JourneyPage() {
             selectedStep={selectedStep}
             onSelectStep={setSelectedStep}
             onSwitchJourney={handleSwitchJourney}
+            answers={answers}
+            onAnswerClick={handleAnswerClick}
+            onChangeAnswers={handleChangeAnswersClick} // Passing the function to handle answer changes
           />
 
           <div className="step-content">
             {userType === 'Student' && selectedStep === 1 && <StudentAbout />}
-            {userType === 'Student' && selectedStep === 2 && <CorporatePartners />}
+            {userType === 'Student' && selectedStep === 2 && (
+              <>
+                {console.log("Passing selectedCategory to CorporatePartnersPage:", industryInterest)}
+                <CorporatePartnersPage selectedCategory={industryInterest} />
+              </>
+            )}
             {userType === 'Student' && selectedStep === 3 && <StudentApplication />}
             {userType === 'Buddy' && selectedStep === 1 && <PartnerAbout />}
             {userType === 'Buddy' && selectedStep === 2 && <BuddySystem />}

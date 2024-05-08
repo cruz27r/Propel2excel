@@ -53,8 +53,8 @@ const NavBar = () => {
         <Link to="/hiring-board" className='nav-link'>Who's Hiring</Link>
       </div>
 
-      <div className="apply-section">
-        <Link to="/main-application" className='apply-link'>Excel Here</Link>
+      <div className="continue-button">
+        <Link to="/main-application" className='continue-link'>Excel Here</Link>
       </div>
     </header>
   );

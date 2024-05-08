@@ -1,0 +1,166 @@
+/* Corporate Partners Section */
+.corporate-partners-page {
+    position: relative;
+    padding: 20px;
+    margin: auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    width: 100%; /* Ensures full width */
+}
+
+/* Main Section */
+.main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%; /* Ensures full width */
+}
+
+/* Outer Container Layout */
+.outer-container {
+    display: flex;
+    justify-content: space-between; /* Space children evenly */
+    width: 100%; /* Ensures the container uses the full available width */
+}
+
+.logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Aligns logos to the start */
+    gap: 10px; /* Uniform gap between logos for a compact layout */
+    width: 100%; /* Ensures full width usage when stats are not visible */
+}
+
+.logos-grid.three-columns {
+    max-width: 95%; /* Adjusts to 95% when stats are not visible */
+}
+
+.single-column .logo-item {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.three-columns .logo-item {
+    flex: 1 0 30%; /* Allows three items per row, adjust as necessary */
+    max-width: 30%; /* Ensures that each item can only be 30% wide */
+    text-align: center; /* Centers the image within the logo item */
+}
+
+.logo-item img {
+    width: 150%; /* Increases image size */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevents image from exceeding the item container height */
+}
+
+/* Statistics Section */
+.statistics-section {
+    flex: 0 0 45%; /* Takes up 45% of the space */
+    padding: 20px;
+    background: linear-gradient(135deg, #50596b 0%, #424a5d 100%); /* Darker gradient background for contrast */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-left: 2%;
+    max-width: 45%; /* Ensures statistics do not exceed 45% of parent width */
+    border: 1px solid #ccc;
+    color: #fff; /* Light text color for better visibility on dark background */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Multi-Button Styling */
+.multi-button {
+  display: flex; /* Aligns buttons side by side */
+  justify-content: center; /* Center aligns the buttons horizontally */
+}
+
+.multi-button button {
+  font-size: 1rem; /* Adjusted for better scaling on various devices */
+  padding: 0.5em 1em; /* Adjust padding to reduce button size */
+  background: #fff;
+  color: #4A5568;
+  border: none; /* No border */
+  margin: 0.1em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: none; /* No initial box-shadow */
+  transform: translateY(0);
+  flex: 1; /* Flex property to manage width equally */
+}
+
+.multi-button button.active,
+.multi-button button:hover {
+  background: #101D42;
+  color: #fff;
+  box-shadow: 0 0 0.8em 0 rgba(213, 63, 140, 0.8);
+  transform: translateY(-0.2em);
+}
+
+.multi-button button:first-of-type {
+  border-radius: 0.5em 0 0 0.5em; /* Rounded corners on the first button */
+}
+
+.multi-button button:last-of-type {
+  border-radius: 0 0.5em 0.5em 0; /* Rounded corners on the last button */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .outer-container {
+        flex-direction: column;
+    }
+
+    .logos-grid, .statistics-section {
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .three-columns .logo-item, .single-column .logo-item {
+        flex: 0 0 100%; /* Full width for each logo item on smaller screens */
+    }
+}
+
+.coaches-represented-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%; /* Ensures full width */
+}
+
+.category-column {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional border */
+    margin: 10px;
+}
+
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Default setting for two columns */
+    gap: 10px;
+}
+
+.companies-grid.hundred {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for 100+ category */
+}
+
+.companies-grid.five-hundred {
+    grid-template-columns: repeat(1, 1fr); /* One column for 500+ category */
+}
+
+.companies-grid.thousand {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for 1000+ category */
+}
+
+.company-item {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}

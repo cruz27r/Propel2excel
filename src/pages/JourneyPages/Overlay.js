@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Overlay.css';
 
-function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChangingAnswers, setAnswers }) {
+function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChangingAnswers, setAnswers, fromHomePage }) {
   const [userType, setUserType] = useState(null);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswersLocal] = useState({});
@@ -83,6 +84,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
       setShowQuestions(false); // Hide questions when going back to userType selection
     }
   };
+  
 
   return (
     <div className="overlay-container">
@@ -91,7 +93,12 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
         {isChangingAnswers && (
           <button className="return-button" onClick={onClose}>Return</button>
         )}
-        <h2>Welcome to Propel2Excel!</h2>
+        {fromHomePage && (
+          <div className="back-to-home-overlay">
+            <Link to="/" className="return-button">Return</Link>
+          </div>
+        )}
+        {/* <h2>Welcome to Propel2Excel!</h2> */}
         {!userType && (
           <div>
             <p>Please select your Journey:</p>

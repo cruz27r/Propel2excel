@@ -22,26 +22,6 @@
   -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
 }
 
-/* Text color for the navbar links */
-.header .nav-link,
-.header .apply-section a {
-  color: #101D42; /* Dark color for contrast on light backgrounds */
-}
-
-.header .nav-link:hover,
-.header .apply-section a:hover {
-  background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
-  color: #0056b3;
-}
-
-.header.hide {
-  transform: translateY(-100%);
-}
-
-.header.show {
-  transform: translateY(0);
-}
-
 /* Center group of links */
 .center-links {
   display: flex;
@@ -49,10 +29,15 @@
   gap: 1rem; /* Spacing between the links */
 }
 
-.nav-link {
+.center-links .nav-link {
   text-decoration: none;
   padding: 0.5rem;
   transition: color 0.3s ease;
+}
+
+.center-links .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+  color: #0056b3;
 }
 
 .logo-link {
@@ -66,7 +51,7 @@
   max-height: 4em;
 }
 
-.apply-section a {
+.continue-button .continue-link {
   text-decoration: none;
   background-color: #101D42; /* Dark blue background */
   color: #FCF7FF; /* White text */
@@ -79,13 +64,18 @@
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
 }
 
-.apply-section a:hover {
+.continue-button .continue-link:hover {
   background-color: #FCF7FF; /* White background on hover */
   color: #101D42; /* Dark blue text on hover */
 }
 
+.header.hide {
+  transform: translateY(-100%);
+}
 
-
+.header.show {
+  transform: translateY(0);
+}
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -97,8 +87,8 @@
     max-height: 3em;
   }
 
-  .apply-section a,
-  .nav-link {
+  .continue-button .continue-link,
+  .center-links .nav-link {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
@@ -114,8 +104,8 @@
     max-height: 2.5em;
   }
 
-  .apply-section a,
-  .nav-link {
+  .continue-button .continue-link,
+  .center-links .nav-link {
     padding: 7px 14px;
     font-size: 0.8rem;
   }
@@ -130,8 +120,8 @@
     max-height: 2.8em;
   }
 
-  .apply-section a,
-  .nav-link {
+  .continue-button .continue-link,
+  .center-links .nav-link {
     padding: 8px 16px;
     font-size: 0.9rem;
   }

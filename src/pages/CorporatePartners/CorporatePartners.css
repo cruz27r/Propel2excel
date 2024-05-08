@@ -6,123 +6,112 @@
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    width: 100%; /* Ensures full width */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Main Section */
-.main-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%; /* Ensures full width */
+/* Header and Subheader styles */
+.header-container {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Outer Container Layout */
-.outer-container {
-    display: flex;
-    justify-content: space-between; /* Space children evenly */
-    width: 100%; /* Ensures the container uses the full available width */
+.industry-header {
+    font-size: 3em; /* Larger size for more impact */
+    font-weight: 900; /* Extra bold */
+    color: #101D42; /* Dark blue for elegance and impact */
+    font-family: 'Montserrat', sans-serif; /* Modern, geometric sans-serif */
+    letter-spacing: -1px; /* Tighter letter spacing for a more solid appearance */
 }
 
+.sub-header {
+    font-size: 1.8em; /* Slightly larger for readability */
+    color: #6c757d; /* Soft grey for subtle contrast */
+    margin-top: -10px; /* Reduce gap between headers */
+    font-family: 'Roboto', sans-serif; /* Consistent with the base style */
+    font-weight: 700; /* Semi-bold to maintain readability and importance */
+}
+
+/* Logos Grid Section */
 .logos-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Aligns logos to the start */
-    gap: 10px; /* Uniform gap between logos for a compact layout */
-    width: 100%; /* Ensures full width usage when stats are not visible */
-}
-
-.logos-grid.three-columns {
-    max-width: 95%; /* Adjusts to 95% when stats are not visible */
-}
-
-.single-column .logo-item {
+    justify-content: center;
+    gap: 10px;
     width: 100%;
-    margin-bottom: 10px;
 }
 
-.three-columns .logo-item {
-    flex: 1 0 30%; /* Allows three items per row, adjust as necessary */
-    max-width: 30%; /* Ensures that each item can only be 30% wide */
-    text-align: center; /* Centers the image within the logo item */
+.logo-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px; /* Increased width */
+    margin: 10px;
+    overflow: visible; /* Ensure overflow is visible */
 }
 
 .logo-item img {
-    width: 150%; /* Increases image size */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Prevents image from exceeding the item container height */
+    width: 100%;
+    height: auto;
+    max-height: 125px; /* Increased maximum height */
 }
 
-/* Statistics Section */
-.statistics-section {
-    flex: 0 0 45%; /* Takes up 45% of the space */
-    padding: 20px;
-    background: linear-gradient(135deg, #50596b 0%, #424a5d 100%); /* Darker gradient background for contrast */
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    margin-left: 2%;
-    max-width: 45%; /* Ensures statistics do not exceed 45% of parent width */
-    border: 1px solid #ccc;
-    color: #fff; /* Light text color for better visibility on dark background */
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+/* Toggle Button Style */
+.toggle-button {
+    position: absolute;
+    right: 5%; /* Positioned to the right */
+    bottom: 20px; /* Positioned at the bottom */
+    width: 15%; /* Maximum width of 15% of the page */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-/* Multi-Button Styling */
-.multi-button {
-  display: flex; /* Aligns buttons side by side */
-  justify-content: center; /* Center aligns the buttons horizontally */
+.toggle-button:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
 
-.multi-button button {
-  font-size: 1rem; /* Adjusted for better scaling on various devices */
-  padding: 0.5em 1em; /* Adjust padding to reduce button size */
-  background: #fff;
-  color: #4A5568;
-  border: none; /* No border */
-  margin: 0.1em;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  box-shadow: none; /* No initial box-shadow */
-  transform: translateY(0);
-  flex: 1; /* Flex property to manage width equally */
-}
-
-.multi-button button.active,
-.multi-button button:hover {
-  background: #101D42;
-  color: #fff;
-  box-shadow: 0 0 0.8em 0 rgba(213, 63, 140, 0.8);
-  transform: translateY(-0.2em);
-}
-
-.multi-button button:first-of-type {
-  border-radius: 0.5em 0 0 0.5em; /* Rounded corners on the first button */
-}
-
-.multi-button button:last-of-type {
-  border-radius: 0 0.5em 0.5em 0; /* Rounded corners on the last button */
+/* Coach Count Style */
+.coach-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #38a169; /* Green color */
+    font-size: 1.2em; /* Larger font size */
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Bubble-like font */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better visibility */
+    z-index: 10;
+    transform: translate(15px, 15px); /* Adjusted to move down and to the right */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .outer-container {
-        flex-direction: column;
+    .coach-count {
+        font-size: 1em; /* Slightly smaller on mobile for better fit */
+        transform: translate(15px, 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .coach-count {
+        font-size: 0.8em; /* Even smaller on very small screens */
+        transform: translate(15px, 15px);
     }
 
-    .logos-grid, .statistics-section {
-        flex: 1 0 100%;
-        max-width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .three-columns .logo-item, .single-column .logo-item {
-        flex: 0 0 100%; /* Full width for each logo item on smaller screens */
+    .toggle-button {
+        bottom: 10px;
+        right: 10px;
+        width: 50%; /* Larger width on smaller screens for better visibility */
     }
 }
