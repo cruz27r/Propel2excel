@@ -396,7 +396,7 @@ function CorporatePartnersPage({ selectedCategory }) {
           </div>
         ))}
       </div>
-      <div className="partnered-companies-container">
+      {/* <div className="partnered-companies-container">
             <h2 className="sub-header">Partnered Companies</h2>
             <div className="logos-grid">
             {filteredCompanies.length > 0 ? (
@@ -422,7 +422,7 @@ function CorporatePartnersPage({ selectedCategory }) {
                 <p>No companies found for the selected category.</p>
             )}
             </div>
-        </div>
+        </div> */}
     </div>
   );
 }

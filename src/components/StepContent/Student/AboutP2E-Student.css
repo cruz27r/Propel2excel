@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-.program-statement h3,
-.key-components-container h3,
-.events-section h2,
-.services-section h2 {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -16,47 +9,37 @@ body {
     color: #333;
 }
 
-/* Container Styles */
-.container {
-    max-width: 100%;
+/* General Styling */
+.student-about-container {
+    max-width: 95%;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Video and Paragraph Container */
-.video-paragraph-container {
+/* Program Overview */
+.program-statement {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 40px;
-    background-color: #f5f5f5; /* Slightly different shade than page background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-.video-paragraph-container video {
-    flex: 1;
-    max-width: 50%;
-}
-
-.video-paragraph-container p {
-    flex: 1;
-    max-width: 35%;
-    font-size: 1.85rem;
-    padding: 20px;
-}
-
-/* Program Overview Container */
-.program-statement {
+    justify-content: space-between;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-paragraph-container video {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.program-statement-text {
+    flex: 1;
+    margin-left: 20px;
 }
 
 .program-statement h3 {
+    font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
@@ -65,6 +48,64 @@ body {
 .program-statement p {
     font-size: 1.4rem;
     line-height: 1.6;
+}
+
+/* Key Components */
+.key-components-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.key-components-container h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.components-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.components-content ul {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.components-content ul li {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.components-content ul li:hover,
+.components-content ul li.active {
+    background-color: #182C63;
+    color: #fff;
+}
+
+.component-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.component-image img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 /* Component Details */
@@ -114,19 +155,13 @@ body {
     margin-top: 10px;
 }
 
-/* Highlighted Details */
-.component-details.highlighted .details-column {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-/* Events and Services Container */
+/* Events and Services */
 .events-services-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-/* Events and Services Section */
 .events-section,
 .services-section {
     flex: 1;
@@ -169,59 +204,6 @@ body {
 }
 
 .ProgramHeader {
-    width: 75%; /* Match the width of the Overview-Text */
-    margin: 0 auto; /* Center the header */
-}
-
-/* Component Content */
-.components-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start; /* Updated alignment */
-}
-
-.components-content ul {
-    flex: 0 1 48%; /* Adjust width for smaller screens */
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 20px;
-    display: flex; /* Added to make label and image align vertically */
-    flex-direction: column; /* Added to make label and image align vertically */
-}
-
-.components-content ul li {
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-    cursor: pointer;
-    margin-bottom: 10px; /* Adjusted margin */
-}
-
-.components-content ul li:hover {
-    background-color: #182C63; /* Updated blue color */
-    color: #fff; /* White text color */
-}
-
-.components-content ul li.active {
-    background-color: #182C63; /* Updated blue color */
-    color: #fff; /* White text color */
-}
-
-.component-image {
-    flex: 0 1 48%; /* Adjust width for smaller screens */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    height: 100%; /* Ensure the image takes up full height */
-}
-
-.component-image img {
-    max-width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    width: 75%;
+    margin: 0 auto;
 }

@@ -1,18 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import './AboutP2E-Student.css';
+import mentorshipVideo from '../../../assets/videos/mentorship_example.mp4';
+import workshopImage from '../../../assets/images/workshop.jpg';
+import networkingImage from '../../../assets/images/networking-event.jpg';
+import coachingImage from '../../../assets/images/Coaching.jpg';
+import mentorshipImage from '../../../assets/images/meetmentor.jpg';
+import resumeImage from '../../../assets/images/resume-rebrand-image.jpg';
+import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg';
+import interviewImage from '../../../assets/images/mock-interview.jpg';
+import networkingEventImage from '../../../assets/images/networking-event.jpg';
 
-import mentorshipVideo from '../../../assets/videos/mentorship_example.mp4'; // Import mentorship video
-import workshopImage from '../../../assets/images/workshop.jpg'; // Import workshop image
-import networkingImage from '../../../assets/images/networking-event.jpg'; // Import networking event image
-import coachingImage from '../../../assets/images/Coaching.jpg'; // Import coaching image
-import mentorshipImage from '../../../assets/images/meetmentor.jpg'; // Import mentorship image
-import resumeImage from '../../../assets/images/resume-rebrand-image.jpg'; // Import resume image
-import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg'; // Import LinkedIn image
-import interviewImage from '../../../assets/images/mock-interview.jpg'; // Import interview image
-import networkingEventImage from '../../../assets/images/networking-event.jpg'; // Import networking event image
-
-// Reuse the same image for testing purposes
 const careerCoaching = coachingImage;
 const resumeWorkshop = resumeImage;
 const interviewPrep = interviewImage;
@@ -49,19 +46,19 @@ const StudentAbout = () => {
   };
 
   return (
-    <div>
-      <div className="video-paragraph-container">
-        <video src={mentorshipVideo} loop autoPlay controls playsInline>
-          Your browser does not support the video tag.
-        </video>
-          <p>Propel2Excel is a six-month coaching program led by corporate professionals from Tier 1 companies, for ambitious students at non-target schools to secure competitive internships & careers at top tier tech, consulting, and banking companies.</p>
-      </div>
-
+    <div className="student-about-container">
       <div className="program-statement">
-        <h3 className='ProgramHeader'>Program Overview</h3>
-        <p className='Overview-Text'>
-          Propel2Excel offers a comprehensive program designed to help students secure competitive internships and careers at top-tier tech, consulting, and banking companies. The program is led by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
-        </p>
+        <div className="video-paragraph-container">
+          <video src={mentorshipVideo} loop autoPlay controls playsInline>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="program-statement-text">
+          <h3 className="ProgramHeader">Program Overview</h3>
+          <p className="Overview-Text">
+            Propel2Excel offers a comprehensive program designed to help students secure competitive internships and careers at top-tier tech, consulting, and banking companies. The program is led by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
+          </p>
+        </div>
       </div>
 
       <div className="key-components-container">
@@ -78,8 +75,7 @@ const StudentAbout = () => {
             {activeComponent && <img src={componentImages[activeComponent]} alt={activeComponent} />}
           </div>
         </div>
-        {/* Component Details */}
-        <div className='component-details'>
+        <div className="component-details">
           {activeComponent === 'coaching' && (
             <>
               <div className="details-column">
@@ -201,12 +197,9 @@ const StudentAbout = () => {
             </>
           )}
         </div>
-
       </div>
-      
-      {/* Events and Services Container */}
+
       <div className="events-services-container">
-        {/* Events Section */}
         <div className="events-section">
           <div className="events-services-content">
             <h2>Events That Lead and Inspire</h2>
@@ -222,7 +215,6 @@ const StudentAbout = () => {
           </div>
         </div>
 
-        {/* Services Section */}
         <div className="services-section">
           <div className="events-services-image">
             <img src={activeService === 'coaching' ? careerCoaching : activeService === 'resume' ? resumeWorkshop : interviewPrep} alt="Service" />
@@ -238,11 +230,8 @@ const StudentAbout = () => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
 
 export default StudentAbout;
-
