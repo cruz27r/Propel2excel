@@ -1,182 +1,198 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
-/* Basic Reset for Main Elements */
-body, .App {
-  max-width: 100%;
-  font-family: 'Roboto', sans-serif;
+/* Specific styling for Journey page */
+.journey-body {
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #FCF7FF;
+  /* background: linear-gradient(to bottom, #182C63, #ffffff); Gradient background */
+  background: linear-gradient(to bottom, #ffffff, #182C63);
   scroll-behavior: smooth;
+  color: #333;
 }
 
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.journey-main-content {
+  padding: 5px 20px;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto; /* Adjusted to remove extra space */
 }
 
-section {
-  max-width: 90%;
-  margin: 40px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Hero Section Styling */
 .hero {
-  background: linear-gradient(to bottom, #0040C1 0%, #b3d4fc 100%);
-  position: relative;
-  height: 150vh;
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 40px;
+  border-bottom: 5px solid #182C63;
+  position: relative;
 }
 
 .hero__title-image {
-  position: absolute;
-  top: 28%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 70%; /* Slightly larger text */
-  z-index: 1;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-/* Styles for animated cubes */
-.cube {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border: solid 1px #0033a0;
-  transform-origin: top left;
-  transform: scale(0) rotate(0deg) translate(-50%, -50%);
-  animation: cube 12s ease-in forwards infinite;
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 10px solid #182C63; /* Added border at the bottom */
+  padding-bottom: 60px; /* Increased padding to make the section taller */
 }
 
-.cube-1 { animation-delay: 0s; left: 45vw; top: 53vh; }
-.cube-2 { animation-delay: 2s; left: 25vw; top: 27vh; }
-.cube-3 { animation-delay: 4s; left: 75vw; top: 33vh; }
-.cube-4 { animation-delay: 6s; left: 90vw; top: 7vh; }
-.cube-5 { animation-delay: 8s; left: 10vw; top: 57vh; }
-.cube-6 { animation-delay: 10s; left: 50vw; top: 7vh; }
-
-@keyframes cube {
-  from {
-    transform: scale(0) rotate(0deg) translate(-50%, -50%);
-    opacity: 1;
-  }
-  to {
-    transform: scale(20) rotate(960deg) translate(-50%, -50%);
-    opacity: 0;
-  }
-}
-
-/* P2E Description Section */
-.p2e-description {
-  max-width: 70%;
-  position: absolute;
-  bottom: -55vh; /* Positioned even lower */
-  left: 15%;
-  padding: 10px;
-  background-color: #ffffff;
-  color: #010446;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.p2e-description h2 {
-  font-size: 2.75rem;
-}
-
-.p2e-description .p2e-text {
+.about-us-text {
+  flex: 1;
   max-width: 60%;
+  padding-right: 20px;
+}
+
+.about-us-text h1 {
+  font-size: 48px;
+  color: #182C63; /* Dark blue color for headings */
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 20px;
+}
+
+.about-us-text p {
+  font-size: 24px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-us-text .highlight {
+  color: #00A1E4; /* Light blue color for highlighted text */
+  font-weight: bold;
+}
+
+.about-us-image {
+  max-width: 35%;
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-bottom: 5px solid #182C63;
+}
+
+.description h2 {
+  font-size: 36px;
+  color: #182C63; /* Dark blue color for headings */
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+.description p {
+  font-size: 18px;
+  color: #333;
+  max-width: 800px;
   margin: 0 auto;
-  font-size: 1.8rem;
-  padding-bottom: 30px;
+  line-height: 1.6;
+}
+
+.description .highlight {
+  color: #00A1E4; /* Light blue color for highlighted text */
+  font-weight: bold;
 }
 
 .details-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: #010446;
-  color: #FFFFFF;
+  display: inline-block;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
+  background-color: #00A1E4; /* Light blue color for buttons */
+  color: white;
   text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-/* Login Screen Styling */
+.details-button:hover {
+  background-color: #007bb5; /* Darker shade for hover effect */
+}
+
 .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight white transparency */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: 50px auto;
-  padding: 20px;
-  background-color: #FFFFFF;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
+.Login-Header, .Login-Message {
+  margin: 10px 0;
+  color: #182C63;
+}
+
 .login-container h2 {
+  font-size: 24px;
   margin-bottom: 20px;
-  color: #010446;
+  color: #182C63;
 }
 
 .login-container form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
+  width: 100%;
 }
 
-.login-container label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #010446;
+.login-container form div {
+  display: flex;
+  flex-direction: column;
 }
 
-.login-container input {
-  width: 80%;
+.login-container form input {
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #CCC;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 1rem;
 }
 
-.login-container button {
-  background-color: #010446;
-  color: #FFFFFF;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
+.login-container form button {
+  padding: 10px;
+  background-color: #182C63; /* Dark blue color for buttons */
+  color: white;
+  border: none;
   cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.login-container button:hover {
-  background-color: #020669;
+.login-container form button:hover {
+  background-color: #00A1E4;
 }
 
 @media (max-width: 768px) {
   /* Responsive adjustments */
-  .login-container, .login-container input, .login-container button, .hero__title-image {
-    width: 90%;
+  .about-us {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .p2e-description {
-    position: relative; /* Reset to relative positioning for mobile */
-    bottom: 0;
-    left: 5%;
-    right: 5%;
-    width: 90%; /* Adjust width for small screens */
-    max-width: none; /* Override max-width for better control */
+  .about-us-text {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .about-us-image {
+    max-width: 70%;
+    margin-top: 20px;
+  }
+
+  .login-container, .description {
+    width: 90%;
   }
 }

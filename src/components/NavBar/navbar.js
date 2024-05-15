@@ -5,12 +5,12 @@ import './navbar.css';
 
 const NavBar = () => {
   const [showNavBar, setShowNavBar] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
   const lastScrollY = useRef(window.scrollY);
   const navbarRef = useRef();
   const navBarVisibilityTimeout = useRef();
-  const location = useLocation(); // Use useLocation hook to access pathname
+  const location = useLocation();
 
-  // Determine if the current page is the homepage
   const isHomePage = location.pathname === '/';
 
   const handleScroll = () => {
@@ -26,9 +26,15 @@ const NavBar = () => {
       if (window.scrollY > (navbarRef.current?.offsetHeight || 0)) {
         setShowNavBar(false);
       }
-    }, 5500); // Hide navbar after 5.5 seconds of inactivity
+    }, 5500);
 
     lastScrollY.current = window.scrollY;
+
+    if (window.scrollY > 0) {
+      setIsScrolled(true); // Navbar is scrolled
+    } else {
+      setIsScrolled(false); // Navbar is at the top
+    }
   };
 
   useEffect(() => {
@@ -39,24 +45,30 @@ const NavBar = () => {
     };
   }, []);
 
+  const isActiveLink = (path) => location.pathname === path ? 'active' : '';
+
   return (
-    <header ref={navbarRef} className={`header ${showNavBar ? 'show' : 'hide'} ${isHomePage ? 'home-navbar' : ''}`}>
-      <div className="logo-section">
-        <Link to="/" className='logo-link'>
-          <img src={logoImage} alt="Company Logo" className="logo" />
-        </Link>
-      </div>
+    <div className="navbar">
+      <header
+        ref={navbarRef}
+        className={`header ${showNavBar ? 'show' : 'hide'} ${isHomePage ? 'home-navbar' : ''} ${isScrolled ? 'scrolled-navbar' : ''}`}
+      >
+        <div className="logo-section">
+          <Link to="/" className="logo-link">
+            <img src={logoImage} alt="Company Logo" className="logo" />
+          </Link>
+        </div>
 
-      {/* Center group of links */}
-      <div className="center-links">
-        <Link to="/career-tips" className='nav-link'>Career Tips</Link>
-        <Link to="/hiring-board" className='nav-link'>Who's Hiring</Link>
-      </div>
+        <div className="center-links">
+          <Link to="/career-tips" className={`nav-link ${isActiveLink('/career-tips')}`}>Career Tips</Link>
+          <Link to="/hiring-board" className={`nav-link ${isActiveLink('/hiring-board')}`}>Who's Hiring</Link>
+        </div>
 
-      <div className="continue-button">
-        <Link to="/main-application" className='continue-link'>Excel Here</Link>
-      </div>
-    </header>
+        <div className="continue-button">
+          <Link to="/main-application" className="continue-link">Excel Here</Link>
+        </div>
+      </header>
+    </div>
   );
 };
 

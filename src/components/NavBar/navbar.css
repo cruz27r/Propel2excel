@@ -1,57 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.navbar * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navbar {
+  font-family: "Montserrat", sans-serif;
+}
+
 /* Navbar Styling */
-.header {
+.navbar .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #ffffff; /* Solid white for pages other than the homepage */
-  color: #101D42;
+  background: #FFFFFF;
+  color: #182C63;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   box-sizing: border-box;
   z-index: 10000;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-/* Transparent navbar style when on the homepage */
-.home-navbar {
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* Frosted glass effect for Safari */
+/* Solid navbar background style when scrolled */
+.navbar .scrolled-navbar {
+  background: rgba(255, 255, 255, 0.9); /* Solid background when scrolled */
 }
 
 /* Center group of links */
-.center-links {
+.navbar .center-links {
   display: flex;
   justify-content: center;
   gap: 1rem; /* Spacing between the links */
+  position: relative;
 }
 
-.center-links .nav-link {
+.navbar .nav-link {
   text-decoration: none;
   padding: 0.5rem;
   transition: color 0.3s ease;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #182C63; /* Light text color */
+  position: relative;
+  z-index: 1; /* Ensure the text is above the background */
 }
 
-.center-links .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
-  color: #0056b3;
+.navbar .nav-link::after {
+  content: "";
+  background: #182C63; /* Dark blue color for background */
+  width: calc(100% + 20px);
+  height: 0;
+  position: absolute;
+  bottom: -4px;
+  left: -10px;
+  z-index: -1; /* Position the background behind the text */
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-.logo-link {
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  height: calc(100% + 8px);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #FFFFFF; /* White text color on hover and active */
+}
+
+.navbar .logo-link {
   display: flex;
   align-items: center;
 }
 
-.logo {
+.navbar .logo {
   height: auto;
   width: 85%;
   max-height: 4em;
 }
 
-.continue-button .continue-link {
+.navbar .continue-button .continue-link {
   text-decoration: none;
   background-color: #101D42; /* Dark blue background */
   color: #FCF7FF; /* White text */
@@ -64,31 +99,31 @@
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
 }
 
-.continue-button .continue-link:hover {
+.navbar .continue-button .continue-link:hover {
   background-color: #FCF7FF; /* White background on hover */
   color: #101D42; /* Dark blue text on hover */
 }
 
-.header.hide {
+.navbar .header.hide {
   transform: translateY(-100%);
 }
 
-.header.show {
+.navbar .header.show {
   transform: translateY(0);
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .header {
+  .navbar .header {
     padding: 1rem;
   }
 
-  .logo {
+  .navbar .logo {
     max-height: 3em;
   }
 
-  .continue-button .continue-link,
-  .center-links .nav-link {
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
@@ -96,32 +131,32 @@
 
 /* iPhone-specific adjustments */
 @media (max-width: 375px) {
-  .header {
+  .navbar .header {
     padding: 0.8rem;
   }
 
-  .logo {
+  .navbar .logo {
     max-height: 2.5em;
   }
 
-  .continue-button .continue-link,
-  .center-links .nav-link {
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
     padding: 7px 14px;
     font-size: 0.8rem;
   }
 }
 
 @media (max-width: 414px) {
-  .header {
+  .navbar .header {
     padding: 0.9rem;
   }
 
-  .logo {
+  .navbar .logo {
     max-height: 2.8em;
   }
 
-  .continue-button .continue-link,
-  .center-links .nav-link {
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
     padding: 8px 16px;
     font-size: 0.9rem;
   }

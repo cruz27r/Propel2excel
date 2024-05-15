@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
+
 /* Corporate Partners Section */
 .corporate-partners-page {
     position: relative;
@@ -6,112 +8,167 @@
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 95%;
 }
 
-/* Header and Subheader styles */
 .header-container {
     text-align: center;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .industry-header {
-    font-size: 3em; /* Larger size for more impact */
-    font-weight: 900; /* Extra bold */
-    color: #101D42; /* Dark blue for elegance and impact */
-    font-family: 'Montserrat', sans-serif; /* Modern, geometric sans-serif */
-    letter-spacing: -1px; /* Tighter letter spacing for a more solid appearance */
+    font-size: 3em;
+    font-weight: 900;
+    color: #101D42;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
 }
 
 .sub-header {
-    font-size: 1.8em; /* Slightly larger for readability */
-    color: #6c757d; /* Soft grey for subtle contrast */
-    margin-top: -10px; /* Reduce gap between headers */
-    font-family: 'Roboto', sans-serif; /* Consistent with the base style */
-    font-weight: 700; /* Semi-bold to maintain readability and importance */
-}
-
-/* Logos Grid Section */
-.logos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.logo-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px; /* Increased width */
-    margin: 10px;
-    overflow: visible; /* Ensure overflow is visible */
-}
-
-.logo-item img {
-    width: 100%;
-    height: auto;
-    max-height: 125px; /* Increased maximum height */
+    font-size: 1.8em;
+    color: #6c757d;
+    margin-top: -10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 /* Toggle Button Style */
 .toggle-button {
-    position: absolute;
-    right: 5%; /* Positioned to the right */
-    bottom: 20px; /* Positioned at the bottom */
-    width: 15%; /* Maximum width of 15% of the page */
+    width: 20%; /* Set width to 20% */
     padding: 10px 20px;
-    background-color: #4CAF50; /* Green background */
-    color: white;
+    background-color: #101D42; /* Dark blue background */
+    color: #FCF7FF; /* White text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    position: absolute;
+    right: 10px;
+    top: 50px; /* Adjust as necessary to align with your layout */
 }
 
 .toggle-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #00A1E4; /* Lighter blue on hover */
 }
 
-/* Coach Count Style */
-.coach-count {
+.logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container {
+    position: relative;
+    width: calc(22% - 10px); /* Adjusted width for 3 items per row */
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures image covers the container */
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
     position: absolute;
     top: 0;
+    left: 0;
     right: 0;
-    color: #38a169; /* Green color */
-    font-size: 1.2em; /* Larger font size */
-    font-weight: bold;
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Bubble-like font */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better visibility */
-    z-index: 10;
-    transform: translate(15px, 15px); /* Adjusted to move down and to the right */
+    bottom: 0;
+    background-color: rgba(24, 44, 99, 0.9); /* Dark blue with transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 20;
+    padding: 20px;
+}  
+
+.container:hover .middle {
+    opacity: 1;
 }
 
-/* Responsive Adjustments */
+.text {
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text p {
+    font-size: 16px;
+    margin: 5px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.coach-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #1ab161; /* Leaf green color */
+    font-size: 2em; /* Larger font size */
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive; /* Bubble-like font */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better visibility */
+    z-index: 10;
+}
+
+/* Responsive Adjustments for better layout control */
+@media (max-width: 1024px) {
+    .container {
+        width: calc(50% - 20px); /* Two items per row on smaller desktops and tablets */
+    }
+
+    .toggle-button {
+        width: 30%; /* Adjust button width for smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
-    .coach-count {
-        font-size: 1em; /* Slightly smaller on mobile for better fit */
-        transform: translate(15px, 15px);
+    .container {
+        width: calc(50% - 20px); /* Two items per row on tablets */
+    }
+
+    .toggle-button {
+        width: 40%; /* Adjust button width for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
-    .coach-count {
-        font-size: 0.8em; /* Even smaller on very small screens */
-        transform: translate(15px, 15px);
+    .container {
+        width: calc(100% - 20px); /* One item per row on mobile screens */
     }
 
     .toggle-button {
-        bottom: 10px;
-        right: 10px;
-        width: 50%; /* Larger width on smaller screens for better visibility */
+        width: 80%; /* Adjust button width for smaller screens */
+        right: 10px; /* Adjust right position for smaller screens */
+        top: 70px; /* Adjust top position for smaller screens */
     }
 }
