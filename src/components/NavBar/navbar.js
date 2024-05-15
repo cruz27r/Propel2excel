@@ -3,9 +3,9 @@ import { useLocation, Link } from 'react-router-dom';
 import logoImage from '../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 import './navbar.css';
 
-const NavBar = () => {
+const NavBar = ({ isLoggedIn, onLogout }) => {
   const [showNavBar, setShowNavBar] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
+  const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(window.scrollY);
   const navbarRef = useRef();
   const navBarVisibilityTimeout = useRef();
@@ -31,9 +31,9 @@ const NavBar = () => {
     lastScrollY.current = window.scrollY;
 
     if (window.scrollY > 0) {
-      setIsScrolled(true); // Navbar is scrolled
+      setIsScrolled(true);
     } else {
-      setIsScrolled(false); // Navbar is at the top
+      setIsScrolled(false);
     }
   };
 
@@ -46,6 +46,10 @@ const NavBar = () => {
   }, []);
 
   const isActiveLink = (path) => location.pathname === path ? 'active' : '';
+
+  if (!isLoggedIn) {
+    return null;
+  }
 
   return (
     <div className="navbar">
@@ -66,6 +70,7 @@ const NavBar = () => {
 
         <div className="continue-button">
           <Link to="/main-application" className="continue-link">Excel Here</Link>
+          <Link onClick={onLogout} className="nav-link">Logout</Link>
         </div>
       </header>
     </div>

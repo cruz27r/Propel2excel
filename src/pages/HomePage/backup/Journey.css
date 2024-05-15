@@ -6,17 +6,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background: linear-gradient(to bottom, #182C63, #ffffff); Gradient background */
   background: linear-gradient(to bottom, #ffffff, #182C63);
   scroll-behavior: smooth;
   color: #333;
+  min-height: 100vh; /* Ensure it takes full screen height */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+.journey-body--login {
+  z-index: 9999999999;
 }
 
 .journey-main-content {
   padding: 5px 20px;
   border-radius: 8px;
   max-width: 1200px;
-  margin: 0 auto; /* Adjusted to remove extra space */
+  margin: 0 auto;
 }
 
 .hero {
@@ -39,8 +46,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 10px solid #182C63; /* Added border at the bottom */
-  padding-bottom: 60px; /* Increased padding to make the section taller */
+  border-bottom: 10px solid #182C63;
+  padding-bottom: 60px;
 }
 
 .about-us-text {
@@ -51,7 +58,7 @@
 
 .about-us-text h1 {
   font-size: 48px;
-  color: #182C63; /* Dark blue color for headings */
+  color: #182C63;
   font-family: 'Montserrat', sans-serif;
   margin: 0 0 20px;
 }
@@ -63,7 +70,7 @@
 }
 
 .about-us-text .highlight {
-  color: #00A1E4; /* Light blue color for highlighted text */
+  color: #00A1E4;
   font-weight: bold;
 }
 
@@ -83,7 +90,7 @@
 
 .description h2 {
   font-size: 36px;
-  color: #182C63; /* Dark blue color for headings */
+  color: #182C63;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
 }
@@ -97,14 +104,14 @@
 }
 
 .description .highlight {
-  color: #00A1E4; /* Light blue color for highlighted text */
+  color: #00A1E4;
   font-weight: bold;
 }
 
 .details-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00A1E4; /* Light blue color for buttons */
+  background-color: #00A1E4;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -114,7 +121,7 @@
 }
 
 .details-button:hover {
-  background-color: #007bb5; /* Darker shade for hover effect */
+  background-color: #007bb5;
 }
 
 .login-container {
@@ -122,13 +129,12 @@
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.9); /* Slight white transparency */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  margin: 50px auto;
   text-align: center;
-  z-index: 99999999999999999999999;
+  z-index: 9999;
 }
 
 .Login-Header, .Login-Message {
@@ -163,7 +169,7 @@
 
 .login-container form button {
   padding: 10px;
-  background-color: #182C63; /* Dark blue color for buttons */
+  background-color: #182C63;
   color: white;
   border: none;
   cursor: pointer;
@@ -176,8 +182,23 @@
   background-color: #00A1E4;
 }
 
+.logout-button {
+  padding: 10px 20px;
+  background-color: #182C63;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #00A1E4;
+}
+
 @media (max-width: 768px) {
-  /* Responsive adjustments */
   .about-us {
     flex-direction: column;
     text-align: center;

@@ -3,29 +3,20 @@ import { Link } from 'react-router-dom';
 import './Journey.css';
 import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 4.png';
 import aboutUsImage from '../../../assets/images/Banner/example_Person_cutout.webp';
+import logoImage from '../../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 
-function JourneyHome() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+function JourneyHome({ isLoggedIn, onLogin, onLogout }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === 'Propel' && password === 'p2eDev') {
-      setIsLoggedIn(true);
-      localStorage.setItem('isLoggedIn', 'true');
-    } else {
-      alert('Invalid credentials');
-    }
+    onLogin(username, password);
   };
-
-  useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    setIsLoggedIn(loggedIn);
-  }, []);
 
   const loginForm = (
     <div className="login-container">
+      <img src={logoImage} alt="Company Logo" className="logo" />
       <header className="Login-Header">This is the Future Home of Propel2Excel</header>
       <p className="Login-Message">For any contact, please email: Propel@propel2excel.com</p>
       <h2>Login to Continue to the site</h2>
@@ -74,8 +65,8 @@ function JourneyHome() {
   );
 
   return (
-    <div className="journey-body">
-      {mainContent || loginForm}
+    <div className={`journey-body ${!isLoggedIn ? 'journey-body--login' : ''}`}>
+      {!isLoggedIn ? loginForm : mainContent}
     </div>
   );
 }
