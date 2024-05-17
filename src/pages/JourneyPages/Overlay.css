@@ -107,26 +107,66 @@
     transform: scale(1.05); /* Enlarge on hover/focus for better interactivity */
 }
 
-
 .back-button {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 15%; /* Set the width of the button to be 15% of its parent's width */
+    width: 14%; /* Set the width of the button to be 15% of its parent's width */
     padding: 10px 20px;
     background-color: #182C63; /* Main color */
     color: white; /* White text */
     border: 2px solid #182C63; /* Border color same as background */
     border-radius: 2px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.5rem;
     transition: all 0.1s ease;
-    text-align: center; /* Ensure text is centered */
+    text-align: center; /* Align text to the left */
+    display: flex; /* Using flexbox to align items properly */
+    align-items: center; /* Vertically center the items */
+    overflow: hidden; /* Hides any overflowing content, crucial for pseudo-element animations */
+}
+
+.back-button::before {
+    content: '←'; /* Left-pointing arrow */
+    transform: scale(1.2);
+    margin-right: 10px; /* Space between the arrow and the text */
+    display: inline-block;
+    transition: transform 0.5s ease; /* Transition for moving and scaling */
+}
+
+.back-button:hover::before {
+    transform: translateX(-10px) scale(1.8); /* Moves the arrow to the left and scales it up */
 }
 
 .back-button:hover {
+    background-color: white;
+    color: #182C63;
+    border: 2px solid #182C63; /* Keep the border color on hover */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Positioned in the top-right corner of the overlay */
+    width: 50px; /* Fixed width to maintain the aspect ratio */
+    height: 50px; /* Set height to match the "Back" button's height */
+    padding: 0;
+    background-color: #182C63; /* Main color */
+    color: white; /* White text */
+    border: none; /* No border for a modern look */
+    border-radius: 50%; /* Circular button */
+    cursor: pointer;
+    font-size: 2rem; /* Increased font size for a larger X */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: translate3d(0, 0, 0); /* Force hardware acceleration */
+}
+
+.close-button:hover {
     background-color: #2a3f73; /* Lighter shade of the main color for hover */
-    color: white; /* Keep text white */
+    transform: rotate(90deg) scale(1.5) translate3d(0, 0, 0); /* Rotate the button 90 degrees, scale up, and force 3D transformation for better performance */
 }
 
 .return-button {

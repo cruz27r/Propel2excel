@@ -91,11 +91,11 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
       <div className="overlay">
         {/* Conditionally render the "Return" button if changing answers */}
         {isChangingAnswers && (
-          <button className="return-button" onClick={onClose}>Return</button>
+          <button className="close-button" onClick={onClose}>X</button>
         )}
         {fromHomePage && (
           <div className="back-to-home-overlay">
-            <Link to="/" className="return-button">Return</Link>
+            <Link to="/" className="return-button">Return Home</Link>
           </div>
         )}
         {/* <h2>Welcome to Propel2Excel!</h2> */}
@@ -160,7 +160,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
                 </button>
               </div>
             )}
-            <button className="back-button" onClick={handleBack}>&#8592; Back</button>
+            <button className="back-button" onClick={handleBack}>Back</button>
           </>
         )}
       </div>

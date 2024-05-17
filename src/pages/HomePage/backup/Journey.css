@@ -64,13 +64,13 @@
 }
 
 .about-us-text p {
-  font-size: 24px;
+  font-size: 30px;
   color: #333;
   line-height: 1.6;
 }
 
 .about-us-text .highlight {
-  color: #00A1E4;
+  color: white;
   font-weight: bold;
 }
 
@@ -104,24 +104,40 @@
 }
 
 .description .highlight {
-  color: #00A1E4;
+  color: white;
   font-weight: bold;
 }
 
 .details-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00A1E4;
+  background-color: #182C63;
   color: white;
   text-decoration: none;
   font-weight: bold;
   margin-top: 20px;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 18%;
+  font-size: x-large;
+  position: relative; /* Required for absolute positioning of the arrow */
+  overflow: hidden; /* Ensures the arrow does not overflow the button boundaries */
+}
+
+.details-button::after {
+  content: '→'; /* Using a simple arrow symbol for demonstration */
+  position: absolute;
+  right: 20px; /* Distance from the right edge of the button */
+  transition: transform 0.5s ease;
+}
+
+.details-button:hover::after {
+  transform: translateX(10px); /* Moves the arrow to the right when hovering */
 }
 
 .details-button:hover {
-  background-color: #007bb5;
+  background-color: white;
+  color: #182C63;
 }
 
 .login-container {

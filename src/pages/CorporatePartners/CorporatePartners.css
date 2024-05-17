@@ -67,7 +67,7 @@
 
 .container {
     position: relative;
-    width: calc(22% - 10px); /* Adjusted width for 3 items per row */
+    width: calc(75% - 10px); /* Adjusted width for 3 items per row */
     margin: 10px;
     border-radius: 8px;
     overflow: hidden;
