@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.61c4c33b.css",
-    "main.js": "/static/js/main.52eed1fb.js",
+    "main.css": "/static/css/main.d54a13a8.css",
+    "main.js": "/static/js/main.65623473.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
+    "static/media/rafael-cutout.png": "/static/media/rafael-cutout.c890a70ad52f3bb2d4cd.png",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
     "static/media/Coaching.jpg": "/static/media/Coaching.b4c256506e843c32c679.jpg",
     "static/media/headshot2.jpg": "/static/media/headshot2.621a5c216ec71385284d.jpg",
@@ -30,7 +31,6 @@
     "static/media/bluecross-blueshield-logo.png": "/static/media/bluecross-blueshield-logo.63c91e9e531c21fbcb9f.png",
     "static/media/amazon.png": "/static/media/amazon.3298cb995d15489f6e7d.png",
     "static/media/USbank.png": "/static/media/USbank.bdb0a4c0d8a682cf6d4d.png",
-    "static/media/example_Person_cutout.webp": "/static/media/example_Person_cutout.2aa795a16761893f4cd4.webp",
     "static/media/Bain_and_Company_Logo.png": "/static/media/Bain_and_Company_Logo.c29fee1bc77d026461c5.png",
     "static/media/Meta-Logo.png": "/static/media/Meta-Logo.322d4ea5d2762a5f6ba1.png",
     "static/media/Raytheon_Technologies.png": "/static/media/Raytheon_Technologies.afd25aa0b71f99ad5fec.png",
@@ -74,11 +74,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.61c4c33b.css.map": "/static/css/main.61c4c33b.css.map",
-    "main.52eed1fb.js.map": "/static/js/main.52eed1fb.js.map"
+    "main.d54a13a8.css.map": "/static/css/main.d54a13a8.css.map",
+    "main.65623473.js.map": "/static/js/main.65623473.js.map"
   },
   "entrypoints": [
-    "static/css/main.61c4c33b.css",
-    "static/js/main.52eed1fb.js"
+    "static/css/main.d54a13a8.css",
+    "static/js/main.65623473.js"
   ]
 }
