@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Journey.css';
 import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 4.png';
-import aboutUsImage from '../../../assets/images/Banner/example_Person_cutout.webp';
+import aboutUsImage from '../../../assets/images/rafael-cutout.png';
 import logoImage from '../../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 
 function JourneyHome({ isLoggedIn, onLogin, onLogout }) {
