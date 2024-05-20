@@ -146,7 +146,7 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
                 ))}
               </div>
             ) : (
-              <div>
+              <div className='text-input-container'>
                 <input
                   type="text"
                   name={questions[questionIndex].text}

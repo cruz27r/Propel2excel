@@ -72,7 +72,6 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +137,7 @@
     color: #4CAF50; /* White text color */
     font-size: 1.95em; /* Larger font size */
     font-weight: bold;
-    padding: 8px 16px;
+    padding: 8px 10px;
     border-radius: 12px;
     font-family: 'Fredoka One', cursive; /* Bubbly, thick font */
     z-index: 25;

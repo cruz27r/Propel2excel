@@ -1,55 +1,71 @@
-/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #333; /* Adjust text color */
+    color: #333;
 }
 
-/* Container Styles */
-.container {
-    max-width: 1200px;
+/* General Styling */
+.student-about-container {
+    max-width: 95%;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Video and Paragraph Container */
-.video-paragraph-container {
+  }
+  
+  /* Program Overview */
+  .program-statement {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
-    justify-content: space-around;
-}
-
-.video-paragraph-container video {
-    flex: 1;
-    max-width: 50%;
-}
-
-.video-paragraph-container p {
-    flex: 1;
-    max-width: 35%;
-    justify-content: center;
-    font-size: 1.85rem;
-    padding: 20px;
-}
-
-/* Key Components Container */
-.key-components-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
+    justify-content: space-between;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .program-statement video {
+    flex-basis: 45%; /* Set the video to 45% width */
+    height: auto; /* Ensure the video maintains its aspect ratio */
+    border-radius: 10px;
+  }
+  
+  .program-statement-text {
+    flex-basis: 45%; /* Set the text container to 45% width */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+  }
+  
+  .program-statement h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .program-statement p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+/* Key Components */
+.key-components-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .key-components-container h3 {
+    font-family: 'Poppins', sans-serif;
     font-size: 2rem;
-    font-weight: bold;
     margin-bottom: 20px;
 }
 
@@ -60,10 +76,10 @@ body {
 }
 
 .components-content ul {
-    flex: 0 1 48%; /* Adjust width for smaller screens */
-    list-style-type: none;
+    flex: 1;
+    list-style: none;
     padding: 0;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .components-content ul li {
@@ -74,49 +90,26 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
-.components-content ul li:hover {
-    background-color: #182C63; /* Updated blue color */
-    color: #fff; /* White text color */
-}
-
+.components-content ul li:hover,
 .components-content ul li.active {
-    background-color: #182C63; /* Updated blue color */
-    color: #fff; /* White text color */
+    background-color: #182C63;
+    color: #fff;
 }
 
 .component-image {
-    flex: 0 1 48%; /* Adjust width for smaller screens */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
+    margin-left: 20px;
 }
 
 .component-image img {
     max-width: 100%;
-    height: auto;
     border-radius: 10px;
-}
-
-/* Program Overview Container */
-.program-statement {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 40px;
-}
-
-.program-statement h3 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.program-statement p {
-    font-size: 1.4rem;
-    line-height: 1.6;
 }
 
 /* Component Details */
@@ -128,9 +121,10 @@ body {
 }
 
 .details-column {
-    flex: 0 1 30%; /* Adjust width for smaller screens */
+    flex: 0 1 30%;
     padding: 20px;
     background-color: #182C63;
+    color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
@@ -165,22 +159,17 @@ body {
     margin-top: 10px;
 }
 
-/* Highlighted Details */
-.component-details.highlighted .details-column {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-/* Events and Services Container */
+/* Events and Services */
 .events-services-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-/* Events Section */
-.events-section {
+.events-section,
+.services-section {
     flex: 1;
-    padding: 0 10px; /* Adjust as needed */
+    padding: 0 10px;
 }
 
 .events-services-image img {
@@ -189,39 +178,14 @@ body {
     border-radius: 10px;
 }
 
-.events-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.events-buttons button {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.events-buttons button.active-button {
-    background-color: #182C63;
-    color: #fff;
-}
-
-/* Services Section */
-.services-section {
-    flex: 1;
-    padding: 0 10px; /* Adjust as needed */
-}
-
+.events-buttons,
 .services-buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
+.events-buttons button,
 .services-buttons button {
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -232,7 +196,18 @@ body {
     transition: background-color 0.3s;
 }
 
+.events-buttons button.active-button,
 .services-buttons button.active-button {
     background-color: #182C63;
     color: #fff;
+}
+
+.Overview-Text {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.ProgramHeader {
+    width: 75%;
+    margin: 0 auto;
 }

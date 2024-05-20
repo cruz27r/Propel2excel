@@ -11,7 +11,7 @@ const ProgressSteps = ({
     const [currentStep, setCurrentStep] = useState(0);
 
     const stepsByUserType = {
-        Student: ["About P2E", "Corporate Partners", "Application"],
+        Student: ["About P2E", "Coaches Represented", "Application"],
         Buddy: ["About P2E", "Buddy System", "Application"],
         Company: ["About P2E", "Talent", "Investment Partnership", "Application"]
     };
@@ -52,11 +52,13 @@ const ProgressSteps = ({
             </span>
         );
 
-        const answerElements = Object.entries(answers).map(([question, answer]) => (
-            <span key={question} onClick={() => onAnswerClick(question)}>
-                {answer}
-            </span>
-        ));
+        const answerElements = Object.entries(answers)
+            .filter(([_, answer]) => answer) // Filter out empty answers
+            .map(([question, answer]) => (
+                <span key={question} onClick={() => onAnswerClick(question)}>
+                    {answer}
+                </span>
+            ));
 
         return [userTypeDisplay, ...answerElements];
     };
@@ -65,8 +67,12 @@ const ProgressSteps = ({
         <div className="steps-container">
             <div className="row">
                 <div className="answers-container">
-                <button className="button" onClick={onChangeAnswers}>Change Answers</button>
-                    {formatAnswers()}
+                    <button className="button" onClick={onChangeAnswers}>Change Answers</button>
+                    {formatAnswers() && (
+                        <div className="formatted-answers">
+                            {formatAnswers()}
+                        </div>
+                    )}
                 </div>
                 <div className="steps-area">
                     {steps.map((step, index) => (

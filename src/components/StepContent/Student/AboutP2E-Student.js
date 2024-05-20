@@ -48,11 +48,9 @@ const StudentAbout = () => {
   return (
     <div className="student-about-container">
       <div className="program-statement">
-        <div className="video-paragraph-container">
-          <video src={mentorshipVideo} loop autoPlay controls playsInline>
+        <video src={mentorshipVideo} loop autoPlay playsInline>
             Your browser does not support the video tag.
           </video>
-        </div>
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Program Overview</h3>
           <p className="Overview-Text">

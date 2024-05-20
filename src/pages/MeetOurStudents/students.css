@@ -1,9 +1,60 @@
-.students-page {
-  text-align: center;
+/* talents.css */
+.talents-page {
+  font-family: Arial, sans-serif;
   padding: 20px;
 }
 
-.students-page h1 {
+.intro-section {
+  background: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.intro-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.chart-section {
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.chart {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.talent-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.talent-section h2 {
+  text-align: center;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
@@ -14,167 +65,107 @@
 }
 
 .filter-buttons button {
-  padding: 10px 20px;
-  margin: 0 5px;
-  font-size: 16px;
-  font-weight: bold;
+  background: #8884d8;
   color: #fff;
-  background-color: #182C63;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
+.filter-buttons button.active,
 .filter-buttons button:hover {
-  background-color: #4562a8;
+  background: #555;
 }
 
-.filter-buttons button.active {
-  background-color: #4562a8;
-}
-
-
-.student-grid {
+.talent-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  justify-items: center;
 }
 
-.student-card {
-  position: relative;
-  overflow: hidden;
+.talent-card {
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transform: scale(0.95); /* Set the initial scale to 0.95 */
-  transition: transform 0.2s;
-}
-
-.student-card:hover {
-  transform: scale(1); /* Scale back to 1 on hover */
-}
-
-.student-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.student-details {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.student-card:hover .student-details {
-  opacity: 1;
-}
-
-.testimonials-section {
-  background-color: #f8f9fa;
-  padding: 50px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-}
-
-.testimonials-container {
-  display: flex;
-  flex-direction: row;
-  animation: scroll 60s linear infinite;
-  max-width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.testimonials-container {
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.testimonial {
-  width: 400px; /* Adjust the width as needed */
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 0 20px; /* Adjust the margin as needed */
-  display: inline-block;
-  white-space: normal;
-}
-
-.testimonial p {
-  font-style: italic;
-  font-size: 18px;
   text-align: center;
+  width: 280px; /* Reduced width for better fit */
+  transition: transform 0.3s ease;
+}
+
+.talent-card:hover {
+  transform: translateY(-5px);
+}
+
+.talent-image {
+  width: 100%;
+  height: auto;
+}
+
+.talent-details {
+  padding: 20px;
+}
+
+.talent-details h3 {
+  font-size: 1.3rem; /* Reduced font size */
   margin-bottom: 10px;
 }
 
-.testimonial:first-child {
-  margin-left: 20px;
+.talent-details p {
+  font-size: 0.9rem; /* Reduced font size */
+  line-height: 1.4;
 }
 
-.testimonial:hover {
-  transform: scale(1.05);
+.testimonials-section {
+  background: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.chart-section {
-  display: flex;
-  flex-direction: column; /* Align items in a column */
-  align-items: center; /* Center items horizontally */
-  margin-top: 20px; /* Add some margin at the top */
+.testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-.chart-container-row {
-  display: flex;
-  justify-content: space-around; /* Align items evenly with space around them */
-  align-items: flex-start; /* Align items to the top of the container */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  margin: -5px; /* Decrease the margin between rows */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
 }
 
-.chart-container {
-  width: 200px; /* Set a slightly narrower width for all charts */
-  height: 200px; /* Set a slightly shorter height for all charts */
-  margin: 5px; /* Add some margin between charts */
+.testimonial {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.testimonial p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  margin-top: 10px;
+}
 
 .custom-tooltip {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
-.label {
+.custom-tooltip .label {
   font-weight: bold;
 }
 
-.intro {
+.custom-tooltip .intro {
   margin-top: 5px;
-}
-
-.desc {
-  margin-top: 5px;
-  font-style: italic;
 }

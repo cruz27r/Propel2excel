@@ -1,79 +1,140 @@
-.student-application-container {
-    display: flex;
-    width: 100%;
-  }
-  
-  .student-application-form {
-    width: 65%;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .application-media {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .media-image {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .media-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input,
-  textarea,
-  button {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #4a154b;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #5f1d6a;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-  /* CSS for highlighting selected input */
-input:focus,
-textarea:focus {
-  border-color: #4a154b; /* Change border color when selected */
-  background-color: #f3e7f3; /* Change background color when selected */
+.Application-Page {
+  font-family: "Montserrat", sans-serif;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-  
-  @media (max-width: 768px) {
-    .student-application-container {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .student-application-form,
-    .application-media {
-      width: 100%;
-    }
+.Application-Page .banner {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 20px;
+}
+
+.Application-Page .banner-video {
+  width: 100%;
+  height: auto;
+}
+
+.Application-Page .header {
+  width: 60%;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+.Application-Page .header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.Application-Page .header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.Application-Page .form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Application-Page .buddy-application-form {
+  width: 100%;
+}
+
+.Application-Page .form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.Application-Page .form-group {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+.Application-Page .form-group-full {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.Application-Page .buddy-application-form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.Application-Page .buddy-application-form input,
+.Application-Page .buddy-application-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.Application-Page .buddy-application-form textarea {
+  height: 100px;
+}
+
+.Application-Page .buddy-application-form button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #182C63;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Application-Page .buddy-application-form button:hover {
+  background-color: #101d42;
+}
+
+.Application-Page .confirmation-view {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.Application-Page .confirmation-view h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #182C63; /* Use your dark blue color */
+  margin-bottom: 20px;
+}
+
+.Application-Page .confirmation-view p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.Application-Page .checkmark-icon {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

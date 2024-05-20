@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* General Styling */
+.student-about-container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Program Overview */
+  .program-statement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .program-statement video {
+    flex-basis: 45%; /* Set the video to 45% width */
+    height: auto; /* Ensure the video maintains its aspect ratio */
+    border-radius: 10px;
+  }
+  
+  .program-statement-text {
+    flex-basis: 45%; /* Set the text container to 45% width */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+  }
+  
+  .program-statement h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .program-statement p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+/* Key Components */
+.key-components-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.key-components-container h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.components-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.components-content ul {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.components-content ul li {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.components-content ul li:hover,
+.components-content ul li.active {
+    background-color: #182C63;
+    color: #fff;
+}
+
+.component-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.component-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Component Details */
+.component-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.details-column {
+    flex: 0 1 30%;
+    padding: 20px;
+    background-color: #182C63;
+    color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.details-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.details-column h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details-column ul li {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.details-column p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Events and Services */
+.events-services-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.events-section,
+.services-section {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.events-services-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.events-buttons,
+.services-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.events-buttons button,
+.services-buttons button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.events-buttons button.active-button,
+.services-buttons button.active-button {
+    background-color: #182C63;
+    color: #fff;
+}
+
+.Overview-Text {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.ProgramHeader {
+    width: 75%;
+    margin: 0 auto;
+}

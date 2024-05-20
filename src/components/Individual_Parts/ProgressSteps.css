@@ -16,25 +16,38 @@
     margin-top: 10px;
 }
 
+.answers-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.formatted-answers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .user-type-journey, .answers-container span {
-    background-color: #f4f4f4;
-    border-radius: 20px;
-    padding: 8px 16px;
+    background-color: #e6e6e6;
+    border-radius: 30px;
+    padding: 12px 24px;
     margin-right: 10px;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
-    color: #333;
-    margin: 5px 5px; /* Added vertical margin for better spacing */
+    color: #666;
+    margin: 5px; /* Added vertical margin for better spacing */
     white-space: nowrap; /* Ensures text does not wrap */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.answer-separator {
-    color: #666; /* Color for separators */
-    padding: 0 5px; /* Padding around separators */
-    font-size: 14px; /* Match font size of answers */
+.user-type-journey:hover, .answers-container span:hover {
+    background-color: #182C63;
+    color: #fff;
 }
-
 
 .steps-area {
     display: flex;
@@ -59,7 +72,7 @@
 }
 
 .button {
-    width: 15%;
+    width: 120px; /* Set a consistent width for buttons */
     padding: 10px 20px;
     cursor: pointer;
     background-color: #182C63;

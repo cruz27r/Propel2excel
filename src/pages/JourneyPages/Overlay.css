@@ -195,8 +195,8 @@
     border: 1px solid #ccc; /* Border for the input */
     border-radius: 4px; /* Border radius for rounded corners */
     font-size: 1rem; /* Font size */
-    width: 40%; /* Set the width to be 40% of the container */
-    margin: 10px auto; /* Center the input horizontally and add margin */
+    width: 90%; /* Set the width to be 90% of the container */
+    margin: 5px auto; /* Center the input horizontally and add margin */
     box-sizing: border-box; /* Include padding and border in the width calculation */
     background-color: transparent; /* Transparent background */
     color: #333; /* Text color */
@@ -230,4 +230,39 @@
     padding: 0;
     opacity: 0;
     transition: all 0.5s ease;
+}
+
+/* Text input container styling */
+.text-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.text-input-container input[type="text"] {
+    width: 40%; /* Make the input take full width of its container */
+    height: auto;
+    padding: 20px; /* Increase padding for a larger input field */
+    margin: 10px 0; /* Add some margin for spacing */
+    font-size: 1.5rem; /* Increase font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.text-input-container button {
+    width: 15%; /* Make the button take full width of its container */
+    padding: 15px; /* Increase padding */
+    font-size: 1.2rem; /* Increase font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #182C63; /* Background color */
+    color: #fff; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.text-input-container button:hover {
+    background-color: white; /* Darker background on hover */
+    color: #182C63;
 }

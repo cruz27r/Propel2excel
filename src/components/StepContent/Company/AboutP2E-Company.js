@@ -74,19 +74,17 @@ const CompanyAbout = () => {
   };
 
   return (
-    <div>
-      <div className="video-paragraph-container">
-        <video src={mentorshipVideo} loop autoPlay controls playsInline>
-          Your browser does not support the video tag.
-        </video>
-          <p>Propel2Excel is a six-month coaching program led by corporate professionals from Tier 1 companies, for ambitious students at non-target schools to secure competitive internships & careers at top tier tech, consulting, and banking companies.</p>
-      </div>
-
+    <div className="student-about-container">
       <div className="program-statement">
-        <h3 className='ProgramHeader'>Program Overview</h3>
-        <p className='Overview-Text'>
-          Propel2Excel offers a comprehensive program designed to help students secure competitive internships and careers at top-tier tech, consulting, and banking companies. The program is led by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
-        </p>
+        <video src={mentorshipVideo} loop autoPlay playsInline>
+            Your browser does not support the video tag.
+          </video>
+        <div className="program-statement-text">
+          <h3 className="ProgramHeader">Program Overview</h3>
+          <p className="Overview-Text">
+            Propel2Excel offers a comprehensive program designed to help students secure competitive internships and careers at top-tier tech, consulting, and banking companies. The program is led by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
+          </p>
+        </div>
       </div>
 
       <div className="key-components-container">
@@ -103,8 +101,7 @@ const CompanyAbout = () => {
             {activeComponent && <img src={componentImages[activeComponent]} alt={activeComponent} />}
           </div>
         </div>
-        {/* Component Details */}
-        <div ref={detailsRef} className={`component-details ${isDetailsVisible ? 'highlighted' : ''}`}>
+        <div className="component-details">
           {activeComponent === 'coaching' && (
             <>
               <div className="details-column">
@@ -226,12 +223,9 @@ const CompanyAbout = () => {
             </>
           )}
         </div>
-
       </div>
-      
-      {/* Events and Services Container */}
+
       <div className="events-services-container">
-        {/* Events Section */}
         <div className="events-section">
           <div className="events-services-content">
             <h2>Events That Lead and Inspire</h2>
@@ -247,7 +241,6 @@ const CompanyAbout = () => {
           </div>
         </div>
 
-        {/* Services Section */}
         <div className="services-section">
           <div className="events-services-image">
             <img src={activeService === 'coaching' ? careerCoaching : activeService === 'resume' ? resumeWorkshop : interviewPrep} alt="Service" />
@@ -263,8 +256,6 @@ const CompanyAbout = () => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
