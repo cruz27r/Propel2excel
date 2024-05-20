@@ -24,7 +24,6 @@ function JourneyPage() {
 
   const industryInterest = answers['What industry are you interested in?'] || 'Tech'; // Default to 'Tech' if not answered
 
-
   const handleSelectStep = (step) => {
     setShowOverlay(false);
     setSelectedStep(step);
@@ -80,6 +79,20 @@ function JourneyPage() {
     );
   };
 
+  const handlePreviousStep = () => {
+    if (selectedStep > 0) {
+      setSelectedStep((prevStep) => prevStep - 1);
+    }
+  };
+
+  const handleNextStep = () => {
+    // Check the max step based on userType
+    const maxStep = (userType === 'Student' || userType === 'Buddy') ? 3 : 4;
+    if (selectedStep < maxStep) {
+      setSelectedStep((prevStep) => prevStep + 1);
+    }
+  };
+
   return (
     <div className="JourneyPageContainer">
       {showOverlay && (
@@ -109,7 +122,7 @@ function JourneyPage() {
           <ProgressSteps
             userType={userType}
             selectedStep={selectedStep}
-            onSelectStep={setSelectedStep}
+            onSelectStep={handleSelectStep}
             onSwitchJourney={handleSwitchJourney}
             answers={answers}
             onAnswerClick={handleAnswerClick}
@@ -132,6 +145,22 @@ function JourneyPage() {
             {userType === 'Company' && selectedStep === 2 && <Talent />}
             {userType === 'Company' && selectedStep === 3 && <InvestmentPartnership />}
             {userType === 'Company' && selectedStep === 4 && <CompanyApplication />}
+          </div>
+
+          <div className="navigation-buttons">
+            <button className="button" onClick={handlePreviousStep} disabled={selectedStep === 0}>
+              Previous
+            </button>
+            <button className='button'
+              onClick={handleNextStep}
+              disabled={
+                (userType === 'Student' && selectedStep === 3) ||
+                (userType === 'Buddy' && selectedStep === 3) ||
+                (userType === 'Company' && selectedStep === 4)
+              }
+            >
+              Next
+            </button>
           </div>
         </div>
       )}

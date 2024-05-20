@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw; /* Cover full viewport width */
     height: 100vh; /* Cover full viewport height */
-    background-color: rgba(24, 44, 99, 0.5); /* Semi-transparent overlay with more blue */
+    background-color: rgba(24, 44, 99, 0.9); /* Semi-transparent overlay with more blue */
     backdrop-filter: blur(8px); /* Apply blur effect */
     -webkit-backdrop-filter: blur(8px); /* Support Safari 9+ and Safari on iOS 9+ */
     display: flex;
@@ -222,7 +222,7 @@
     transform: scale(1.1); /* Slightly scale up the selected option */
     width: 90%; /* Ensure it's sufficiently wide to catch attention */
     text-align: center;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8); /* Subtle shadow for depth */
 }
 
 .option-card.selected {

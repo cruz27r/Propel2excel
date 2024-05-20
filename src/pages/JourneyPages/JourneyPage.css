@@ -63,6 +63,38 @@
     padding: 20px;
     border-radius: 5px;
   }
+
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 190px; /* Set a consistent width for buttons */
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #182C63;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+    background-color: #182C63;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
   
   /* General mobile adjustments */
   @media (max-width: 768px) {

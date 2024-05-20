@@ -3,13 +3,12 @@ import './ProgressSteps.css';
 
 const ProgressSteps = ({
     userType,
+    selectedStep, // Add selectedStep as a prop
     onSelectStep,
     answers,
     onAnswerClick,  // Handles individual answer clicks
     onChangeAnswers, // New prop to handle the request to change answers
 }) => {
-    const [currentStep, setCurrentStep] = useState(0);
-
     const stepsByUserType = {
         Student: ["About P2E", "Coaches Represented", "Application"],
         Buddy: ["About P2E", "Buddy System", "Application"],
@@ -18,26 +17,26 @@ const ProgressSteps = ({
 
     const steps = userType ? stepsByUserType[userType] : [];
 
+    const [currentStep, setCurrentStep] = useState(selectedStep - 1);
+
     useEffect(() => {
-        setCurrentStep(0);
-    }, [userType]);
+        // Set the currentStep based on the selectedStep prop
+        setCurrentStep(selectedStep - 1);
+    }, [selectedStep]);
 
     const handleStepClick = (index) => {
-        setCurrentStep(index);
         onSelectStep(index + 1);
     };
 
     const handleNext = () => {
-        if (currentStep < steps.length - 1) {
-            setCurrentStep(currentStep + 1);
-            onSelectStep(currentStep + 2);
+        if (selectedStep < steps.length) {
+            onSelectStep(selectedStep + 1);
         }
     };
 
     const handlePrev = () => {
-        if (currentStep > 0) {
-            setCurrentStep(currentStep - 1);
-            onSelectStep(currentStep);
+        if (selectedStep > 1) {
+            onSelectStep(selectedStep - 1);
         }
     };
 
@@ -78,7 +77,7 @@ const ProgressSteps = ({
                     {steps.map((step, index) => (
                         <div
                             key={index}
-                            className={`step ${index === currentStep ? 'active-step' : ''}`}
+                            className={`step ${index === selectedStep - 1 ? 'active-step' : ''}`}
                             onClick={() => handleStepClick(index)}
                         >
                             {step}
@@ -87,8 +86,8 @@ const ProgressSteps = ({
                 </div>
             </div>
             <div className="row">
-                <button className="button" onClick={handlePrev} disabled={currentStep === 0}>Prev</button>
-                <button className="button" onClick={handleNext} disabled={currentStep === steps.length - 1}>Next</button>
+                <button className="button" onClick={handlePrev} disabled={selectedStep === 1}>Prev</button>
+                <button className="button" onClick={handleNext} disabled={selectedStep === steps.length}>Next</button>
             </div>
         </div>
     );
