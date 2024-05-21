@@ -1,3 +1,5 @@
+/* Journey.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
 /* Specific styling for Journey page */
@@ -38,32 +40,41 @@
 .hero__title-image {
   max-width: 80%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .about-us {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 0px 0;
   border-bottom: 10px solid #182C63;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 .about-us-text {
   flex: 1;
   max-width: 80%;
   height: auto;
-  padding-right: 10px;
+  padding-right: 0px;
   align-items: center;
 }
 
 .about-us-text h1 {
-  font-size: 78px;
+  font-size: 85px;
   color: #182C63;
   /* color: #ffffff; */
   font-family: 'Montserrat', sans-serif;
   margin: 0 0 px;
+  overflow: visible;
+}
+
+.highlight-box {
+  background-color: #d8eeff; /* Highlight box color */
+  padding: 5px 25px;
+  margin: 5px 15px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .about-us-text p {
@@ -121,7 +132,7 @@
   margin-top: 0px;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 28%;
+  width: 32%;
   font-size: x-large;
   position: relative; /* Required for absolute positioning of the arrow */
   overflow: hidden; /* Ensures the arrow does not overflow the button boundaries */
