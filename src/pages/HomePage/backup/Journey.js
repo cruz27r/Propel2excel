@@ -53,10 +53,7 @@ function JourneyHome({ isLoggedIn, onLogin, onLogout }) {
       </div>
       <div className="about-us">
         <div className="about-us-text">
-          <h1>About Us</h1>
-          <p>
-            Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
-          </p>
+          <h1>Coach, Place, and Retain Diverse Talent.</h1>
           <Link to="/journeyContent" className="details-button">Continue</Link>
         </div>
         <img src={aboutUsImage} alt="About Us" className="about-us-image" />

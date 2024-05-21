@@ -52,17 +52,18 @@
 
 .about-us-text {
   flex: 1;
-  max-width: 60%;
+  max-width: 80%;
   height: auto;
   padding-right: 15px;
   align-items: center;
 }
 
 .about-us-text h1 {
-  font-size: 48px;
+  font-size: 67px;
   color: #182C63;
+  /* color: #ffffff; */
   font-family: 'Montserrat', sans-serif;
-  margin: 0 0 20px;
+  margin: 0 0 px;
 }
 
 .about-us-text p {
