@@ -19,6 +19,7 @@
 /* Program Overview */
 .program-statement {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
@@ -29,17 +30,19 @@
 }
 
 .program-statement img {
-    flex-basis: 45%; /* Set the video to 45% width */
-    height: auto; /* Ensure the video maintains its aspect ratio */
+    flex: 1 1 45%; /* Set the image to 45% width */
+    max-width: 45%;
+    height: auto; /* Ensure the image maintains its aspect ratio */
     border-radius: 10px;
+    margin-right: 20px; /* Add some space between image and text */
 }
 
 .program-statement-text {
-    flex-basis: 45%; /* Set the text container to 45% width */
-    margin-left: 20px;
+    flex: 1 1 45%; /* Set the text container to 45% width */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center text vertically */
+    max-width: 45%;
 }
 
 .program-statement h3 {
@@ -241,4 +244,37 @@
 .events-buttons button.active-button {
     background-color: #182C63;
     color: #fff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .program-statement {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .program-statement img,
+    .program-statement-text {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .components-content ul,
+    .component-image {
+        width: 100%;
+    }
+
+    .details-column {
+        width: 100%;
+    }
+
+    .events-buttons {
+        flex-direction: column;
+    }
+
+    .events-buttons button {
+        margin-bottom: 10px;
+    }
 }

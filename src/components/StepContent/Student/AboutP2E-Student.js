@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './AboutP2E-Student.css';
-import mentorshipVideo from '../../../assets/videos/mentorship_example.mp4';
+import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
+import CollageExample from '../../../assets/images/collage-students/collage-example.png';
 import workshopImage from '../../../assets/images/workshop.jpg';
-import networkingImage from '../../../assets/images/networking-event.jpg';
-import coachingImage from '../../../assets/images/Coaching.jpg';
-import mentorshipImage from '../../../assets/images/meetmentor.jpg';
-import resumeImage from '../../../assets/images/resume-rebrand-image.jpg';
+import networkingImage from '../../../assets/images/conference-examples.jpg';
+import candidate from '../../../assets/images/shaking hands.jpg';
 import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg';
-import interviewImage from '../../../assets/images/mock-interview.jpg';
+import interviewImage from '../../../assets/images/interview-example.jpg';
+import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg'; // Add this import for the speaker series image
 
 const StudentAbout = () => {
   const [activeEvent, setActiveEvent] = useState('workshop');
@@ -22,18 +22,16 @@ const StudentAbout = () => {
   };
 
   const componentImages = {
-    speaking: networkingImage,
+    speaking: mentorshipImage,
     linkedin: LinkedInImage,
     interview: interviewImage,
-    candidate: mentorshipImage,
+    candidate: candidate,
   };
 
   return (
     <div className="student-about-container">
       <div className="program-statement">
-        <video src={mentorshipVideo} loop autoPlay playsInline muted>
-          Your browser does not support the video tag.
-        </video>
+        <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Program Overview</h3>
           <p>
@@ -184,7 +182,7 @@ const StudentAbout = () => {
             <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
           </div>
           <div className="events-services-image">
-            <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : workshopImage} alt="Event" />
+            <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
           </div>
           <div className="events-buttons">
             <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>

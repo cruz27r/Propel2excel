@@ -55,7 +55,7 @@ function JourneyHome({ isLoggedIn: initialIsLoggedIn = true, onLogin, onLogout }
       </div>
       <div className="about-us">
         <div className="about-us-text">
-          <h1>Coach, Place, and Retain Diverse Talent.</h1>
+          <h1>Coach, Place, Retain Diverse Talent.</h1>
           <Link to="/journeyContent" className="details-button">Continue</Link>
         </div>
         <img src={aboutUsImage} alt="About Us" className="about-us-image" />

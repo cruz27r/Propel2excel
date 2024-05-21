@@ -54,12 +54,12 @@
   flex: 1;
   max-width: 80%;
   height: auto;
-  padding-right: 15px;
+  padding-right: 10px;
   align-items: center;
 }
 
 .about-us-text h1 {
-  font-size: 67px;
+  font-size: 78px;
   color: #182C63;
   /* color: #ffffff; */
   font-family: 'Montserrat', sans-serif;
@@ -78,7 +78,7 @@
 }
 
 .about-us-image {
-  max-width: 60%;
+  max-width: 65%;
   width: 100%;
   height: auto;
 }
@@ -118,7 +118,7 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 0px;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   width: 28%;

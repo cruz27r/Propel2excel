@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.80a91186.css",
-    "main.js": "/static/js/main.43189b61.js",
+    "main.css": "/static/css/main.9e8daac0.css",
+    "main.js": "/static/js/main.ccced5cf.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
     "static/media/Coaching.jpg": "/static/media/Coaching.b4c256506e843c32c679.jpg",
+    "static/media/interview-example.jpg": "/static/media/interview-example.9cc6d8b99a23d9a3924f.jpg",
     "static/media/headshot2.jpg": "/static/media/headshot2.621a5c216ec71385284d.jpg",
+    "static/media/shaking hands.jpg": "/static/media/shaking hands.6bff4144657a40aced3d.jpg",
     "static/media/zoom_in_on_laptop.jpg": "/static/media/zoom_in_on_laptop.e15964f50022bace62d6.jpg",
     "static/media/speaker-event.jpg": "/static/media/speaker-event.d7cf006e938608789941.jpg",
     "static/media/headshot1.jpg": "/static/media/headshot1.a68d52b31f6404700b74.jpg",
@@ -13,14 +15,17 @@
     "static/media/looking_over_code.jpg": "/static/media/looking_over_code.2b0925895a1ddc321c49.jpg",
     "static/media/networking-event.jpg": "/static/media/networking-event.7e7d7d84d3c7ef1f5650.jpg",
     "static/media/meetmentor.jpg": "/static/media/meetmentor.5108fb2f60555765441a.jpg",
+    "static/media/conference-examples.jpg": "/static/media/conference-examples.fa3b5e7e603703c080db.jpg",
     "static/media/mock-interview.jpg": "/static/media/mock-interview.31573678dd3aa4fbbbe8.jpg",
     "static/media/networking_table.jpg": "/static/media/networking_table.e019f656837b493abebc.jpg",
     "static/media/headshot3.jpg": "/static/media/headshot3.1de39dd4637577a6a1ba.jpg",
     "static/media/looking_into_laptop.jpg": "/static/media/looking_into_laptop.6f3dc600137d08c4a75f.jpg",
     "static/media/coaching-example.jpg": "/static/media/coaching-example.3bffe5972687ad622ba0.jpg",
     "static/media/resume-rebrand-image.jpg": "/static/media/resume-rebrand-image.b935fb60b2e3e66acea7.jpg",
+    "static/media/remotemeeting.jpg": "/static/media/remotemeeting.b7fdea9dfaf8c569f04a.jpg",
     "static/media/Logo-P2e-final-v4Asset 2.png": "/static/media/Logo-P2e-final-v4Asset 2.17a20faec0d276b91522.png",
     "static/media/workshop.jpg": "/static/media/workshop.fcfdd0a14583ea632ff9.jpg",
+    "static/media/collage-example.png": "/static/media/collage-example.5c153cf4638f1dda6af7.png",
     "static/media/mentorship_example.mp4": "/static/media/mentorship_example.dd7255b0a83f6bb93587.mp4",
     "static/media/cutout-group.png": "/static/media/cutout-group.52c9f8d1de09619899e7.png",
     "static/media/nike.png": "/static/media/nike.8bf2bf2e85c6dae16bde.png",
@@ -74,11 +79,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.80a91186.css.map": "/static/css/main.80a91186.css.map",
-    "main.43189b61.js.map": "/static/js/main.43189b61.js.map"
+    "main.9e8daac0.css.map": "/static/css/main.9e8daac0.css.map",
+    "main.ccced5cf.js.map": "/static/js/main.ccced5cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.80a91186.css",
-    "static/js/main.43189b61.js"
+    "static/css/main.9e8daac0.css",
+    "static/js/main.ccced5cf.js"
   ]
 }
