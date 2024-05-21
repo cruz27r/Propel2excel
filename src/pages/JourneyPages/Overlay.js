@@ -100,26 +100,29 @@ function GuidingQuestionsOverlay({ onSelectStep, onSetUserType, onClose, isChang
         )}
         {/* <h2>Welcome to Propel2Excel!</h2> */}
         {!userType && (
-          <div>
-            <p>Please select your Journey:</p>
-            {allQuestions.map((group) => (
-              <label key={group.userType}>
-                <input
-                  type="radio"
-                  name="userType"
-                  value={group.userType}
-                  onChange={() => handleUserTypeSelection(group.userType)}
-                />
-                <div className="option-card" style={{
-                  backgroundColor: group.userType === userType && focusIndex === 0 ? '#182C63' : '#fff',
-                  color: group.userType === userType && focusIndex === 0 ? 'white' : '#182C63',
-                  border: `2px solid ${group.userType === userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
-                  transform: group.userType === userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
-                  transition: 'all 0.3s ease'
-                }}>{group.userType}</div>
-              </label>
-            ))}
+          <div className="question-container">
+          <p>Please select your Journey:</p>
+          <div className="options-container">
+              {allQuestions.map((group) => (
+                  <label key={group.userType}>
+                      <input
+                          type="radio"
+                          name="userType"
+                          value={group.userType}
+                          onChange={() => handleUserTypeSelection(group.userType)}
+                      />
+                      <div className="option-card" style={{
+                          backgroundColor: group.userType === userType && focusIndex === 0 ? '#182C63' : '#fff',
+                          color: group.userType === userType && focusIndex === 0 ? 'white' : '#182C63',
+                          border: `2px solid ${group.userType === userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
+                          transform: group.userType === userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
+                          transition: 'all 0.3s ease'
+                      }}>{group.userType}</div>
+                  </label>
+              ))}
           </div>
+      </div>
+      
         )}
         {userType && showQuestions && (
           <>

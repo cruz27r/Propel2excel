@@ -70,7 +70,7 @@ const NavBar = ({ isLoggedIn, onLogout }) => {
 
         <div className="continue-button">
           <Link to="/main-application" className="continue-link">Excel Here</Link>
-          <Link onClick={onLogout} className="nav-link">Logout</Link>
+          {/* <Link onClick={onLogout} className="nav-link">Logout</Link> */}
         </div>
       </header>
     </div>

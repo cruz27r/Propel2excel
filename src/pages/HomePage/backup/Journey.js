@@ -55,7 +55,7 @@ function JourneyHome({ isLoggedIn, onLogin, onLogout }) {
         <div className="about-us-text">
           <h1>About Us</h1>
           <p>
-            Propel2Excel is a six-month coaching program led by corporate professionals from Tier 1 companies, for ambitious students at non-target schools to secure <span className="highlight">competitive internships & careers at top tier tech, consulting, and banking companies</span>.
+            Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
           </p>
           <Link to="/journeyContent" className="details-button">Continue</Link>
         </div>

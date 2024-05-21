@@ -1,163 +1,176 @@
 /* JourneyPage.css */
 
 .JourneyPageContainer {
-    max-width: 100%;
-  }
-  
-  .header-button-container {
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping if needed */
-  }
-  
-  .journey-header {
-    text-align: center;
-    flex-grow: 1;
-    margin: 0;
-    color: #182C63;
-    font-size: 75px;
-  }
-  
-  .ChangeButton {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .ChangeButton button {
-    background-color: #182C63;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .ChangeButton button:hover {
-    background-color: #6e217d;
-  }
-  
-  .AnswersDisplay {
-    background-color: #f8f8f8;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #182C63;
-    width: auto;
-    max-width: 100%;
-    display: inline-block;
-    margin-left: 10px;
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: visible; /* Allow overflow to be visible */
-  }
-  
-  
-  
-  .step-content {
-    margin-top: 40px;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-  }
+  max-width: 100%;
+  padding: 20px;
+}
 
-  .navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+.header-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping if needed */
+}
 
-  .button {
-    width: 190px; /* Set a consistent width for buttons */
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #182C63;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.2s, box-shadow 0.2s;
+.journey-header {
+  text-align: center;
+  flex-grow: 1;
+  margin: 0;
+  color: #182C63;
+  font-size: 2.5rem;
+}
+
+.ChangeButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ChangeButton button {
+  background-color: #182C63;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ChangeButton button:hover {
+  background-color: #6e217d;
+}
+
+.AnswersDisplay {
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #182C63;
+  width: auto;
+  max-width: 100%;
+  display: inline-block;
+  margin-left: 10px;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: visible; /* Allow overflow to be visible */
+}
+
+.step-content {
+  margin-top: 40px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 190px; /* Set a consistent width for buttons */
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #182C63;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 .button:hover {
-    background-color: #182C63;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  background-color: #182C63;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .button:disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
 }
-  
-  /* General mobile adjustments */
-  @media (max-width: 768px) {
-    .JourneyPageContainer {
+
+/* General mobile adjustments */
+@media (max-width: 768px) {
+  .JourneyPageContainer {
       padding: 10px;
-    }
-  
-    .header-button-container {
+  }
+
+  .header-button-container {
       flex-direction: column;
       align-items: flex-start;
-    }
-  
-    .ChangeButton, .AnswersDisplay {
+  }
+
+  .journey-header {
+      font-size: 2rem;
+  }
+
+  .ChangeButton, .AnswersDisplay {
       width: 100%;
       margin-top: 10px;
-    }
-  
-    .ChangeButton button {
+      text-align: center; /* Center-align the text on mobile */
+  }
+
+  .ChangeButton button {
       padding: 8px 16px;
       font-size: 0.9rem;
-    }
-  
-    .AnswersDisplay {
+  }
+
+  .AnswersDisplay {
       max-width: 100%;
       overflow: auto;
-    }
-  
-    .step-content {
+  }
+
+  .step-content {
       margin-top: 20px;
       padding: 10px;
-    }
   }
-  
-  /* iPhone-specific adjustments */
-  @media (max-width: 375px) {
-    .journey-header {
-      font-size: 2rem;
-    }
-  
-    .ChangeButton button {
+}
+
+/* iPhone-specific adjustments */
+@media (max-width: 375px) {
+  .journey-header {
+      font-size: 1.5rem;
+  }
+
+  .ChangeButton button {
       padding: 7px 14px;
       font-size: 0.8rem;
-    }
-  
-    .step-content {
+  }
+
+  .step-content {
       margin-top: 15px;
       padding: 8px;
-    }
   }
-  
-  @media (max-width: 414px) {
-    .journey-header {
-      font-size: 2.2rem;
-    }
-  
-    .ChangeButton button {
+
+  .button {
+      width: 150px; /* Reduce button width for smaller screens */
+      padding: 8px 16px;
+  }
+}
+
+@media (max-width: 414px) {
+  .journey-header {
+      font-size: 1.8rem;
+  }
+
+  .ChangeButton button {
       padding: 8px 16px;
       font-size: 0.9rem;
-    }
-  
-    .step-content {
+  }
+
+  .step-content {
       margin-top: 18px;
       padding: 10px;
-    }
   }
-  
+
+  .button {
+      width: 160px; /* Adjust button width for smaller screens */
+      padding: 8px 16px;
+  }
+}

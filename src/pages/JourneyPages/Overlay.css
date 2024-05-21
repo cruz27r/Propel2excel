@@ -13,18 +13,19 @@
     z-index: 999999;
 }
 
-
 .overlay {
     background-color: #ffffff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 4px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 60%; /* Adjusted width */
-    max-width: 800px; /* Maximum width */
+    width: 70%; /* Adjusted width */
+    max-width: 600px; /* Maximum width */
+    height: auto; /* Auto height */
     text-align: center;
     display: flex; /* Enable flex container */
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center-align children */
+    justify-content: center; /* Center content vertically */
     position: relative; /* Position relative for absolute positioning of children */
 }
 
@@ -35,7 +36,7 @@
 }
 
 .overlay p {
-    margin-bottom: 30px;
+    margin-top: 30px; /* Add margin top to move text below buttons */
     color: #666666; /* Dark grey text */
     font-size: 1.25rem; /* Increased font size */
 }
@@ -265,4 +266,51 @@
 .text-input-container button:hover {
     background-color: white; /* Darker background on hover */
     color: #182C63;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile support changes */
+@media (max-width: 600px) {
+    .overlay {
+        width: 90%; /* Full width on mobile */
+        padding: 20px; /* Reduced padding */
+        height: 70%; /* Adjust height on mobile */
+    }
+
+    .overlay-container {
+        justify-content: center; /* Keep items centered vertically */
+        align-items: center; /* Keep items centered horizontally */
+    }
+
+    .overlay button, .return-button, .close-button, .back-button {
+        font-size: 1rem; /* Reduce font size */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    .back-button, .close-button {
+        width: auto; /* Auto width */
+        height: auto; /* Auto height */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .text-input-container input[type="text"] {
+        width: 80%; /* Full width on mobile */
+    }
+
+    .text-input-container button {
+        width: 50%; /* Full width on mobile */
+    }
+
+    .overlay .option-card {
+        padding: 10px; /* Reduced padding */
+        font-size: 1rem; /* Smaller font size */
+    }
 }
