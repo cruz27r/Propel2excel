@@ -161,6 +161,9 @@
 
     .toggle-button {
         width: 40%; /* Adjust button width for smaller screens */
+        position: static; /* Remove absolute positioning */
+        margin-top: 10px; /* Add margin on top */
+        align-self: center; /* Center the button */
     }
 }
 
@@ -171,7 +174,8 @@
 
     .toggle-button {
         width: 80%; /* Adjust button width for smaller screens */
-        right: 10px; /* Adjust right position for smaller screens */
-        top: 70px; /* Adjust top position for smaller screens */
+        position: static; /* Remove absolute positioning */
+        margin-top: 10px; /* Add margin on top */
+        align-self: center; /* Center the button */
     }
 }

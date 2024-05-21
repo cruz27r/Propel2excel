@@ -396,33 +396,6 @@ function CorporatePartnersPage({ selectedCategory }) {
           </div>
         ))}
       </div>
-      {/* <div className="partnered-companies-container">
-            <h2 className="sub-header">Partnered Companies</h2>
-            <div className="logos-grid">
-            {filteredCompanies.length > 0 ? (
-                filteredCompanies.map((company, index) => (
-                <div
-                    key={index}
-                    className="container"
-                    onMouseEnter={() => setSelectedLogoIndex(index)}
-                    onMouseLeave={() => setSelectedLogoIndex(null)}
-                >
-                    <img src={company.logo} alt={`${company.name} logo`} className="image" />
-                    <div className="middle">
-                    <div className="text">
-                        <h3>{company.name}</h3>
-                        <p>Location: {company.location}</p>
-                        <p>Employees: {company.numberOfEmployees}</p>
-                        <p>Categories: {company.categories.join(', ')}</p>
-                    </div>
-                    </div>
-                </div>
-                ))
-            ) : (
-                <p>No companies found for the selected category.</p>
-            )}
-            </div>
-        </div> */}
     </div>
   );
 }

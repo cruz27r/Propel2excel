@@ -25,7 +25,7 @@
 }
 
 .Application-Page .header {
-  width: 60%;
+  width: 100%;
   margin: 0 auto 20px auto;
   text-align: center;
 }
@@ -47,11 +47,13 @@
 
 .Application-Page .student-application-form {
   width: 100%;
+  margin-top: 20px; /* Add margin-top for better spacing below headers */
 }
 
 .Application-Page .form-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the form rows */
+  flex-wrap: wrap; /* Ensure rows wrap on smaller screens */
   margin-bottom: 20px;
 }
 
@@ -136,5 +138,108 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* General mobile adjustments */
+@media (max-width: 768px) {
+  .Application-Page {
+    padding: 10px;
+  }
+
+  .Application-Page .header {
+    width: 100%;
+  }
+
+  .Application-Page .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .Application-Page .header p {
+    font-size: 1rem;
+  }
+
+  .Application-Page .form-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center align the form rows */
+  }
+
+  .Application-Page .form-group,
+  .Application-Page .form-group-full {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .Application-Page .student-application-form {
+    margin-top: 180px; /* Add more margin-top on mobile */
+  }
+
+  .Application-Page .student-application-form button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .Application-Page .confirmation-view h3 {
+    font-size: 1.5rem;
+  }
+
+  .Application-Page .confirmation-view p {
+    font-size: 1rem;
+  }
+}
+
+/* iPhone-specific adjustments */
+@media (max-width: 375px) {
+  .Application-Page .header h2 {
+    font-size: 1.3rem;
+  }
+
+  .Application-Page .header p {
+    font-size: 0.9rem;
+  }
+
+  .Application-Page .student-application-form {
+    margin-top: 100px; /* Add even more margin-top on smaller screens */
+  }
+
+  .Application-Page .student-application-form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .Application-Page .confirmation-view h3 {
+    font-size: 1.3rem;
+  }
+
+  .Application-Page .confirmation-view p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .Application-Page .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .Application-Page .header p {
+    font-size: 1rem;
+  }
+
+  .Application-Page .student-application-form {
+    margin-top: 100px; /* Add even more margin-top on smaller screens */
+  }
+
+  .Application-Page .student-application-form button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .Application-Page .confirmation-view h3 {
+    font-size: 1.4rem;
+  }
+
+  .Application-Page .confirmation-view p {
+    font-size: 1rem;
   }
 }

@@ -98,79 +98,105 @@
 /* General mobile adjustments */
 @media (max-width: 768px) {
   .JourneyPageContainer {
-      padding: 10px;
+    padding: 10px;
   }
 
   .header-button-container {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .journey-header {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .ChangeButton, .AnswersDisplay {
-      width: 100%;
-      margin-top: 10px;
-      text-align: center; /* Center-align the text on mobile */
+    width: 100%;
+    margin-top: 10px;
+    text-align: center; /* Center-align the text on mobile */
   }
 
   .ChangeButton button {
-      padding: 8px 16px;
-      font-size: 0.9rem;
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 
   .AnswersDisplay {
-      max-width: 100%;
-      overflow: auto;
+    max-width: 100%;
+    overflow: auto;
   }
 
   .step-content {
-      margin-top: 20px;
-      padding: 10px;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px; /* Ensure buttons don't get too wide on mobile */
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
 
 /* iPhone-specific adjustments */
 @media (max-width: 375px) {
   .journey-header {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .ChangeButton button {
-      padding: 7px 14px;
-      font-size: 0.8rem;
+    padding: 7px 14px;
+    font-size: 0.8rem;
   }
 
   .step-content {
-      margin-top: 15px;
-      padding: 8px;
+    margin-top: 15px;
+    padding: 8px;
   }
 
   .button {
-      width: 150px; /* Reduce button width for smaller screens */
-      padding: 8px 16px;
+    width: 100%;
+    max-width: 250px; /* Reduce button width for smaller screens */
+    padding: 8px 16px;
+  }
+
+  .navigation-buttons {
+    margin: 10px 0;
+    gap: 10px;
   }
 }
 
 @media (max-width: 414px) {
   .journey-header {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   .ChangeButton button {
-      padding: 8px 16px;
-      font-size: 0.9rem;
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 
   .step-content {
-      margin-top: 18px;
-      padding: 10px;
+    margin-top: 18px;
+    padding: 10px;
   }
 
   .button {
-      width: 160px; /* Adjust button width for smaller screens */
-      padding: 8px 16px;
+    width: 100%;
+    max-width: 280px; /* Adjust button width for slightly larger screens */
+    padding: 8px 16px;
+  }
+
+  .navigation-buttons {
+    margin: 10px 0;
+    gap: 10px;
   }
 }

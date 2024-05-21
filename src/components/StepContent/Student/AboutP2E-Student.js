@@ -37,7 +37,7 @@ const StudentAbout = () => {
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Program Overview</h3>
           <p className="Overview-Text">
-            Propel2Excel offers a comprehensive program designed to help students secure competitive internships and careers at top-tier tech, consulting, and banking companies. The program is led by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
+            Propel2Excel offers a comprehensive program designed to provide students the ivey-league recruiting experience at top-tier tech, consulting, and banking companies. The program is supported by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
           </p>
         </div>
       </div>
