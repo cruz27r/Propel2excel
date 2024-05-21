@@ -28,7 +28,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.program-statement video {
+.program-statement img {
     flex-basis: 45%; /* Set the video to 45% width */
     height: auto; /* Ensure the video maintains its aspect ratio */
     border-radius: 10px;

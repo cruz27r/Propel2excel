@@ -5,13 +5,15 @@ import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 4.png';
 import aboutUsImage from '../../../assets/images/cutout-group.png';
 import logoImage from '../../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 
-function JourneyHome({ isLoggedIn, onLogin, onLogout }) {
+function JourneyHome({ isLoggedIn: initialIsLoggedIn = true, onLogin, onLogout }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(initialIsLoggedIn);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
     onLogin(username, password);
+    setIsLoggedIn(true); // Set login state to true upon login
   };
 
   const loginForm = (

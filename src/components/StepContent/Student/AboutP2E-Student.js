@@ -187,7 +187,6 @@ const StudentAbout = () => {
             <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : workshopImage} alt="Event" />
           </div>
           <div className="events-buttons">
-            <button onClick={() => handleEventClick('workshop')} className={activeEvent === 'workshop' ? 'active-button' : ''}>Workshops</button>
             <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
             <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
           </div>
