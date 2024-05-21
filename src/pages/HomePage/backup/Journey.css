@@ -53,7 +53,9 @@
 .about-us-text {
   flex: 1;
   max-width: 60%;
-  padding-right: 20px;
+  height: auto;
+  padding-right: 15px;
+  align-items: center;
 }
 
 .about-us-text h1 {
@@ -75,7 +77,7 @@
 }
 
 .about-us-image {
-  max-width: 35%;
+  max-width: 60%;
   width: 100%;
   height: auto;
 }
@@ -118,7 +120,7 @@
   margin-top: 20px;
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 18%;
+  width: 28%;
   font-size: x-large;
   position: relative; /* Required for absolute positioning of the arrow */
   overflow: hidden; /* Ensures the arrow does not overflow the button boundaries */
@@ -232,5 +234,10 @@
 
   .login-container, .description {
     width: 90%;
+  }
+
+  .details-button {
+    width: 85%;
+    font-size: large;
   }
 }
