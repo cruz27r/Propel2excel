@@ -24,7 +24,7 @@ import fidelity from '../../assets/images/CompanyLogos/CoachesCompanies/Fidelity
 import alpineInvestors from '../../assets/images/CompanyLogos/CoachesCompanies/alpine-investors.webp';
 import easternBankCoaches from '../../assets/images/CompanyLogos/CoachesCompanies/eastern-bank.png';
 import google from '../../assets/images/CompanyLogos/CoachesCompanies/google-logo.png';
-import microsoft from '../../assets/images/CompanyLogos/CoachesCompanies/microsoft.png';
+import microsoft from '../../assets/images/CompanyLogos/Tech/microsoft.webp';
 import amazon from '../../assets/images/CompanyLogos/CoachesCompanies/amazon.png';
 import morganStanley from '../../assets/images/CompanyLogos/CoachesCompanies/Morgan_Stanley_Logo.webp';
 import citibank from '../../assets/images/CompanyLogos/CoachesCompanies/Citibank-Logo.png';
@@ -374,27 +374,27 @@ function CorporatePartnersPage({ selectedCategory }) {
         <FontAwesomeIcon icon={faExchangeAlt} /> {showAllCategories ? 'Show Selected' : 'Show All Categories'}
       </button>
       <div className="logos-grid">
-        {filteredCoaches.map((coach, index) => (
-          <div
-            key={index}
-            className="container"
-            onMouseEnter={() => setSelectedLogoIndex(index)}
-            onMouseLeave={() => setSelectedLogoIndex(null)}
-          >
-            <img src={coach.logo} alt={`${coach.name} logo`} className="image" />
-            <div className="coach-count">{coach.coaches}</div>
-            {selectedLogoIndex === index && (
-              <div className="middle">
-                <div className="text">
-                  <h3>{coach.name}</h3>
-                  <p>Headquarters: {coach.headquarters}</p>
-                  <p>Coaches: {coach.coaches}</p>
-                  <p>Categories: {coach.categories.join(', ')}</p>
-                </div>
-              </div>
-            )}
+      {filteredCoaches.map((coach, index) => (
+      <div
+        key={index}
+        className={`container ${coach.name === 'PwC' ? 'pwc-container' : ''} ${coach.name === 'GE' ? 'ge-container' : ''} ${coach.name === 'Apple' ? 'apple-container' : ''}`}
+        onMouseEnter={() => setSelectedLogoIndex(index)}
+        onMouseLeave={() => setSelectedLogoIndex(null)}
+      >
+        <img src={coach.logo} alt={`${coach.name} logo`} className={`image ${coach.name === 'PwC' ? 'pwc-image' : ''} ${coach.name === 'GE' ? 'ge-image' : ''} ${coach.name === 'Apple' ? 'apple-image' : ''}`} />
+        <div className="coach-count">{coach.coaches}</div>
+        {selectedLogoIndex === index && (
+          <div className="middle">
+            <div className="text">
+              <h3>{coach.name}</h3>
+              <p>Headquarters: {coach.headquarters}</p>
+              <p>Coaches: {coach.coaches}</p>
+              <p>Categories: {coach.categories.join(', ')}</p>
+            </div>
           </div>
-        ))}
+        )}
+  </div>
+))}
       </div>
     </div>
   );

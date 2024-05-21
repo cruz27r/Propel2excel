@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import logoImage from '../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 import './navbar.css';
 
-const NavBar = ({ isLoggedIn, onLogout }) => {
+const NavBar = ({ onLogout }) => {
   const [showNavBar, setShowNavBar] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(window.scrollY);
@@ -46,10 +46,6 @@ const NavBar = ({ isLoggedIn, onLogout }) => {
   }, []);
 
   const isActiveLink = (path) => location.pathname === path ? 'active' : '';
-
-  if (!isLoggedIn) {
-    return null;
-  }
 
   return (
     <div className="navbar">

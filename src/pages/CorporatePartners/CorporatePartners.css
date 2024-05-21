@@ -67,7 +67,10 @@
 
 .container {
     position: relative;
-    width: calc(75% - 10px); /* Adjusted width for 3 items per row */
+    width: 20vw; /* Use viewport width for responsive sizing */
+    height: 20vw; /* Ensure height matches width */
+    max-width: 276.39px; /* Max width to maintain minimum size */
+    max-height: 276.39px; /* Max height to maintain minimum size */
     margin: 10px;
     border-radius: 8px;
     overflow: hidden;
@@ -84,8 +87,24 @@
 .image {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 100%; /* Ensure the image does not exceed the container height */
+    height: 100%; /* Ensure image covers the entire container */
+    object-fit: contain; /* Maintain aspect ratio while ensuring image fits within the container */
+}
+
+/* Specific image size adjustments */
+.pwc-image {
+    width: 75%;
+    height: 80%;
+}
+
+.ge-image {
+    width: 75%;
+    height: 80%;
+}
+
+.apple-image {
+    width: 72%;
+    height: 80%;
 }
 
 .middle {
@@ -146,7 +165,10 @@
 /* Responsive Adjustments for better layout control */
 @media (max-width: 1024px) {
     .container {
-        width: calc(50% - 20px); /* Two items per row on smaller desktops and tablets */
+        width: 45vw; /* Two items per row on smaller desktops and tablets */
+        height: 45vw; /* Ensure height matches width */
+        max-width: 276.39px; /* Max width to maintain minimum size */
+        max-height: 276.39px; /* Max height to maintain minimum size */
     }
 
     .toggle-button {
@@ -156,7 +178,10 @@
 
 @media (max-width: 768px) {
     .container {
-        width: calc(50% - 20px); /* Two items per row on tablets */
+        width: 45vw; /* Two items per row on tablets */
+        height: 45vw; /* Ensure height matches width */
+        max-width: 276.39px; /* Max width to maintain minimum size */
+        max-height: 276.39px; /* Max height to maintain minimum size */
     }
 
     .toggle-button {
@@ -170,6 +195,7 @@
 @media (max-width: 480px) {
     .container {
         width: calc(100% - 20px); /* One item per row on mobile screens */
+        height: calc(100% - 20px); /* Ensure height matches width */
     }
 
     .toggle-button {
