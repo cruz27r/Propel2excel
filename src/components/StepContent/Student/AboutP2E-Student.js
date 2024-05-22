@@ -152,7 +152,7 @@ const StudentAbout = () => {
               </div>
               <div className="details-column">
                 <h4>Importance</h4>
-                <p>Proper candidate readiness ensures that students are fully prepared and matched with suitable job opportunities, increasing their chances of success.</p>
+                <p>Eliminate the gap in recruiting ambitious students at non-target university. </p>
               </div>
             </>
           )}
