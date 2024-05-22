@@ -45,11 +45,18 @@
 
 .about-us {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 0px 0;
   border-bottom: 10px solid #182C63;
   padding-bottom: 80px;
+}
+
+.about-us-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .about-us-text {
@@ -58,12 +65,13 @@
   height: auto;
   padding-right: 0px;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-us-text h1 {
   font-size: 85px;
   color: #182C63;
-  /* color: #ffffff; */
   font-family: 'Montserrat', sans-serif;
   margin: 0 0px;
   overflow: visible;
@@ -89,7 +97,8 @@
 }
 
 .about-us-image {
-  max-width: 65%;
+  margin-top: 90px;
+  max-width: 70%;
   width: 100%;
   height: auto;
 }
@@ -129,13 +138,15 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 0px;
+  margin-top: 20px; /* Provides space from the image */
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 32%;
+  width: 28%; /* Adjust the width as needed */
   font-size: x-large;
-  position: relative; /* Required for absolute positioning of the arrow */
+  text-align: center; /* Ensure the text is centered */
   overflow: hidden; /* Ensures the arrow does not overflow the button boundaries */
+  align-self: flex-end; /* Aligns the button to the right */
+  position: relative; /* Ensure the button is positioned correctly within its container */
 }
 
 .details-button::after {
@@ -232,6 +243,10 @@
   .about-us {
     flex-direction: column;
     text-align: center;
+  }
+
+  .about-us-content {
+    flex-direction: column;
   }
 
   .about-us-text {

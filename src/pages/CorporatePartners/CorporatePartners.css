@@ -67,8 +67,8 @@
 
 .container {
     position: relative;
-    width: 22vw; /* Use viewport width for responsive sizing */
-    height: 22vw; /* Ensure height matches width */
+    width: 19vw; /* Use viewport width for responsive sizing */
+    height: 19vw; /* Ensure height matches width */
     max-width: 300px; /* Max width to maintain minimum size */
     max-height: 300px; /* Max height to maintain minimum size */
     margin: 10px;

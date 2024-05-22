@@ -3,7 +3,7 @@ import './AboutP2E-Student.css';
 import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
 import CollageExample from '../../../assets/images/collage-students/collage-example.png';
 import workshopImage from '../../../assets/images/workshop.jpg';
-import networkingImage from '../../../assets/images/conference-examples.jpg';
+import networkingImage from '../../../assets/images/conference-event.jpg';
 import candidate from '../../../assets/images/shaking hands.jpg';
 import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg';
 import interviewImage from '../../../assets/images/interview-example.jpg';
@@ -147,9 +147,7 @@ const StudentAbout = () => {
               <div className="details-column">
                 <h4>Our Focus</h4>
                 <ul>
-                  <li>Vetting students thoroughly for job readiness.</li>
-                  <li>Presenting students to partner companies for internships or jobs.</li>
-                  <li>Ensuring students have the skills and preparation needed to succeed.</li>
+                  <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking</li>
                 </ul>
               </div>
               <div className="details-column">

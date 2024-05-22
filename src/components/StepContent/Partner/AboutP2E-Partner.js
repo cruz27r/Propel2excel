@@ -1,56 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-
+import React, { useState } from 'react';
 import './AboutP2E-Partner.css';
-
-import mentorshipVideo from '../../../assets/videos/mentorship_example.mp4'; // Import mentorship video
-import workshopImage from '../../../assets/images/workshop.jpg'; // Import workshop image
-import networkingImage from '../../../assets/images/networking-event.jpg'; // Import networking event image
-import coachingImage from '../../../assets/images/Coaching.jpg'; // Import coaching image
-import mentorshipImage from '../../../assets/images/meetmentor.jpg'; // Import mentorship image
-import resumeImage from '../../../assets/images/resume-rebrand-image.jpg'; // Import resume image
-import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg'; // Import LinkedIn image
-import interviewImage from '../../../assets/images/mock-interview.jpg'; // Import interview image
-import networkingEventImage from '../../../assets/images/networking-event.jpg'; // Import networking event image
-
-// Reuse the same image for testing purposes
-const careerCoaching = coachingImage;
-const resumeWorkshop = resumeImage;
-const interviewPrep = interviewImage;
-const speakerSeries = networkingEventImage;
+import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
+import CollageExample from '../../../assets/images/collage-students/collage-example.png';
+import workshopImage from '../../../assets/images/workshop.jpg';
+import networkingImage from '../../../assets/images/conference-event.jpg';
+import candidate from '../../../assets/images/shaking hands.jpg';
+import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg';
+import interviewImage from '../../../assets/images/interview-example.jpg';
+import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg'; // Add this import for the speaker series image
 
 const PartnerAbout = () => {
-  const [activeService, setActiveService] = useState('coaching');
   const [activeEvent, setActiveEvent] = useState('workshop');
-  const [activeComponent, setActiveComponent] = useState('coaching');
-  const [isDetailsVisible, setIsDetailsVisible] = useState(false);
-
-  const detailsRef = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Trigger when 50% of the details section is visible
-    };
-
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsDetailsVisible(entry.isIntersecting);
-    }, options);
-
-    if (detailsRef.current) {
-      observer.observe(detailsRef.current);
-    }
-
-    return () => {
-      if (detailsRef.current) {
-        observer.unobserve(detailsRef.current);
-      }
-    };
-  }, []);
-
-  const handleServiceClick = (service) => {
-    setActiveService(service);
-  };
+  const [activeComponent, setActiveComponent] = useState('speaking');
 
   const handleEventClick = (event) => {
     setActiveEvent(event);
@@ -61,28 +22,20 @@ const PartnerAbout = () => {
   };
 
   const componentImages = {
-    coaching: coachingImage,
-    mentorship: mentorshipImage,
-    resume: resumeImage,
-    interview: interviewImage,
-    networking: networkingEventImage,
-    careerCoaching: careerCoaching,
-    resumeWorkshop: resumeWorkshop,
-    interviewPrep: interviewPrep,
-    speakerSeries: speakerSeries,
+    speaking: mentorshipImage,
     linkedin: LinkedInImage,
+    interview: interviewImage,
+    candidate: candidate,
   };
 
   return (
     <div className="student-about-container">
       <div className="program-statement">
-        <video src={mentorshipVideo} loop autoPlay playsInline>
-            Your browser does not support the video tag.
-          </video>
+        <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Program Overview</h3>
-          <p className="Overview-Text">
-            Propel2Excel offers a comprehensive program designed to help students secure competitive internships and careers at top-tier tech, consulting, and banking companies. The program is led by corporate professionals from Tier 1 companies and is tailored for ambitious students at non-target schools.
+          <p>
+            Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
           </p>
         </div>
       </div>
@@ -91,62 +44,45 @@ const PartnerAbout = () => {
         <h3>Key Components of the Program</h3>
         <div className="components-content">
           <ul>
-            <li onClick={() => handleComponentClick('coaching')} className={activeComponent === 'coaching' ? 'active' : ''}><strong>Coaching Sessions:</strong> Weekly coaching sessions with industry professionals provide personalized guidance and support.</li>
-            <li onClick={() => handleComponentClick('resume')} className={activeComponent === 'resume' ? 'active' : ''}><strong>Resume Workshops:</strong> Tailored assistance to enhance students' online presence and attract potential employers.</li>
-            <li onClick={() => handleComponentClick('linkedin')} className={activeComponent === 'linkedin' ? 'active' : ''}><strong>LinkedIn Rebranding:</strong> Customized support to optimize students' LinkedIn profiles for job opportunities.</li>
-            <li onClick={() => handleComponentClick('mentorship')} className={activeComponent === 'mentorship' ? 'active' : ''}><strong>Mentorship Program:</strong> Access to experienced mentors who offer career guidance and networking opportunities.</li>
-            <li onClick={() => handleComponentClick('interview')} className={activeComponent === 'interview' ? 'active' : ''}><strong>Interview Preparation:</strong> Mock interviews and personalized feedback to help students excel in job interviews.</li>
+            <li onClick={() => handleComponentClick('speaking')} className={activeComponent === 'speaking' ? 'active' : ''}>
+              <strong>Speaking Engagements:</strong> Professional speaking engagements foster partnerships with non-target universities and provide industry insights.
+            </li>
+            <li onClick={() => handleComponentClick('linkedin')} className={activeComponent === 'linkedin' ? 'active' : ''}>
+              <strong>LinkedIn & Resume Rebrand:</strong> Experts with over 10 years of experience optimize students' LinkedIn profiles and resumes.
+            </li>
+            <li onClick={() => handleComponentClick('interview')} className={activeComponent === 'interview' ? 'active' : ''}>
+              <strong>Interview Preparation:</strong> Students receive mock interviews and feedback from current professionals to enhance their readiness.
+            </li>
+            <li onClick={() => handleComponentClick('candidate')} className={activeComponent === 'candidate' ? 'active' : ''}>
+              <strong>Candidate Readiness:</strong> Vetted students are introduced to partner companies for internship or full-time opportunities.
+            </li>
           </ul>
           <div className="component-image">
             {activeComponent && <img src={componentImages[activeComponent]} alt={activeComponent} />}
           </div>
         </div>
         <div className="component-details">
-          {activeComponent === 'coaching' && (
+          {activeComponent === 'speaking' && (
             <>
               <div className="details-column">
                 <h4>Common Mistakes</h4>
                 <ul>
-                  <li>Lack of clear career goals.</li>
-                  <li>Poor time management and prioritization skills.</li>
-                  <li>Ineffective networking strategies.</li>
+                  <li>Lack of industry exposure.</li>
+                  <li>Insufficient networking opportunities.</li>
+                  <li>Limited access to professional insights.</li>
                 </ul>
               </div>
               <div className="details-column">
                 <h4>Our Focus</h4>
                 <ul>
-                  <li>Setting clear, achievable career goals with actionable plans.</li>
-                  <li>Time management workshops and personalized strategies.</li>
-                  <li>Networking events and guidance on effective networking techniques.</li>
+                  <li>Hosting speaking engagements with industry leaders.</li>
+                  <li>Fostering professional partnerships.</li>
+                  <li>Providing valuable industry insights.</li>
                 </ul>
               </div>
               <div className="details-column">
                 <h4>Importance</h4>
-                <p>Effective coaching sessions provide students with personalized guidance and support, helping them navigate their career paths with clarity and confidence.</p>
-              </div>
-            </>
-          )}
-          {activeComponent === 'resume' && (
-            <>
-              <div className="details-column">
-                <h4>Common Mistakes</h4>
-                <ul>
-                  <li>Unprofessional formatting and layout.</li>
-                  <li>Generic, unfocused content.</li>
-                  <li>Lack of keyword optimization for ATS.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Our Focus</h4>
-                <ul>
-                  <li>Resume workshops to create visually appealing, ATS-friendly resumes.</li>
-                  <li>Personalized feedback on content and structure.</li>
-                  <li>Optimization for relevant keywords and industry-specific language.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Importance</h4>
-                <p>A well-crafted resume is crucial for making a positive first impression on recruiters and showcasing relevant skills and experiences.</p>
+                <p>Engaging with industry professionals helps students gain valuable insights, build networks, and better understand their chosen fields.</p>
               </div>
             </>
           )}
@@ -170,31 +106,7 @@ const PartnerAbout = () => {
               </div>
               <div className="details-column">
                 <h4>Importance</h4>
-                <p>A well-crafted LinkedIn profile can significantly enhance a student's online presence, attract potential employers, and lead to valuable networking opportunities.</p>
-              </div>
-            </>
-          )}
-          {activeComponent === 'mentorship' && (
-            <>
-              <div className="details-column">
-                <h4>Common Mistakes</h4>
-                <ul>
-                  <li>Lack of mentorship or guidance.</li>
-                  <li>Difficulty networking or making industry connections.</li>
-                  <li>Uncertainty about career direction or goals.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Our Focus</h4>
-                <ul>
-                  <li>Pairing students with experienced mentors in their field.</li>
-                  <li>Providing networking opportunities and industry insights.</li>
-                  <li>Offering guidance and support for career development.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Importance</h4>
-                <p>Mentorship offers students valuable insights, guidance, and networking opportunities that can significantly impact their career trajectory and success.</p>
+                <p>Optimized LinkedIn profiles and resumes increase students' visibility to potential employers and improve their chances of securing job opportunities.</p>
               </div>
             </>
           )}
@@ -222,37 +134,57 @@ const PartnerAbout = () => {
               </div>
             </>
           )}
+          {activeComponent === 'candidate' && (
+            <>
+              <div className="details-column">
+                <h4>Common Mistakes</h4>
+                <ul>
+                  <li>Unclear career goals and paths.</li>
+                  <li>Not being adequately prepared for job applications.</li>
+                  <li>Missing out on suitable job opportunities.</li>
+                </ul>
+              </div>
+              <div className="details-column">
+                <h4>Our Focus</h4>
+                <ul>
+                <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking</li>
+                </ul>
+              </div>
+              <div className="details-column">
+                <h4>Importance</h4>
+                <p>Proper candidate readiness ensures that students are fully prepared and matched with suitable job opportunities, increasing their chances of success.</p>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
-      <div className="events-services-container">
+      <div className="events-requirements-container">
+        <div className="requirements-section">
+          <h2>Requirements for Fellows</h2>
+          <div className="requirements-content">
+            <ul>
+              <li><strong>Good Academic Standing:</strong> A GPA of 3.3 and above.</li>
+              <li><strong>Leadership Positions:</strong> Preferred positions in clubs, sports, or projects that demonstrate leadership skills.</li>
+              <li><strong>Internship Experience:</strong> Experience in top tech, consulting, or banking companies is a plus.</li>
+              <li><strong>Business Certifications:</strong> Certifications such as CFA, CPA, or other relevant qualifications are advantageous.</li>
+              <li><strong>Special Projects:</strong> Participation in significant academic or extracurricular projects.</li>
+              <li><strong>Awards and Achievements:</strong> Recognition such as the Dr. Martin Luther King Jr. Award or other prestigious awards.</li>
+            </ul>
+          </div>
+        </div>
+
         <div className="events-section">
           <div className="events-services-content">
             <h2>Events That Lead and Inspire</h2>
             <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
           </div>
           <div className="events-services-image">
-            <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : speakerSeries} alt="Event" />
+            <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
           </div>
           <div className="events-buttons">
-            <button onClick={() => handleEventClick('workshop')} className={activeEvent === 'workshop' ? 'active-button' : ''}>Workshops</button>
             <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
             <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
-          </div>
-        </div>
-
-        <div className="services-section">
-          <div className="events-services-image">
-            <img src={activeService === 'coaching' ? careerCoaching : activeService === 'resume' ? resumeWorkshop : interviewPrep} alt="Service" />
-          </div>
-          <div className="services-content">
-            <h2>Professional Services</h2>
-            <p>Our range of services includes career coaching, resume workshops, and interview preparation, ensuring our fellows are fully prepared for the job market.</p>
-          </div>
-          <div className="services-buttons">
-            <button onClick={() => handleServiceClick('coaching')} className={activeService === 'coaching' ? 'active-button' : ''}>Career Coaching</button>
-            <button onClick={() => handleServiceClick('resume')} className={activeService === 'resume' ? 'active-button' : ''}>Resume Workshops</button>
-            <button onClick={() => handleServiceClick('interview')} className={activeService === 'interview' ? 'active-button' : ''}>Interview Preparation</button>
           </div>
         </div>
       </div>

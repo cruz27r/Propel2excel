@@ -17,56 +17,25 @@ function JourneyHome({ isLoggedIn: initialIsLoggedIn = true, onLogin, onLogout }
     setIsLoggedIn(true); // Set login state to true upon login
   };
 
-  // Comment out the loginForm as it's not needed anymore
-  // const loginForm = (
-  //   <div className="login-container">
-  //     <img src={logoImage} alt="Company Logo" className="logo" />
-  //     <header className="Login-Header">This is the Future Home of Propel2Excel</header>
-  //     <p className="Login-Message">For any contact, please email: Propel@propel2excel.com</p>
-  //     <h2>Login to Continue to the site</h2>
-  //     <form onSubmit={handleLogin}>
-  //       <div>
-  //         <label htmlFor="username">Username:</label>
-  //         <input
-  //           type="text"
-  //           id="username"
-  //           value={username}
-  //           onChange={(e) => setUsername(e.target.value)}
-  //           required
-  //         />
-  //       </div>
-  //       <div>
-  //         <label htmlFor="password">Password:</label>
-  //         <input
-  //           type="password"
-  //           id="password"
-  //           value={password}
-  //           onChange={(e) => setPassword(e.target.value)}
-  //           required
-  //         />
-  //       </div>
-  //       <button type="submit">Login</button>
-  //     </form>
-  //   </div>
-  // );
-
   const mainContent = (
     <div className="journey-main-content">
       <div className="hero">
         <img src={textbanner} alt="Propel2Excel" className="hero__title-image" />
       </div>
       <div className="about-us">
-        <div className="about-us-text">
-          <h1>
-            <span className="highlight-box">Coach</span> 
-            <span className="highlight-box">Place</span> 
-            <span className="highlight-box">Retain</span> 
-            <span className="highlight-box">Diverse</span> 
-            <span className="highlight-box">Talent</span>
-          </h1>
-          <Link to="/journeyContent" className="details-button">Continue</Link>
+        <div className="about-us-content">
+          <div className="about-us-text">
+            <h1>
+              <span className="highlight-box">Coach</span> 
+              <span className="highlight-box">Place</span> 
+              <span className="highlight-box">Retain</span> 
+              <span className="highlight-box">Diverse</span> 
+              <span className="highlight-box">Talent</span>
+            </h1>
+          </div>
+          <img src={aboutUsImage} alt="About Us" className="about-us-image" />
         </div>
-        <img src={aboutUsImage} alt="About Us" className="about-us-image" />
+        <Link to="/journeyContent" className="details-button">Continue</Link>
       </div>
     </div>
   );
