@@ -67,10 +67,10 @@
 
 .container {
     position: relative;
-    width: 20vw; /* Use viewport width for responsive sizing */
-    height: 20vw; /* Ensure height matches width */
-    max-width: 276.39px; /* Max width to maintain minimum size */
-    max-height: 276.39px; /* Max height to maintain minimum size */
+    width: 22vw; /* Use viewport width for responsive sizing */
+    height: 22vw; /* Ensure height matches width */
+    max-width: 300px; /* Max width to maintain minimum size */
+    max-height: 300px; /* Max height to maintain minimum size */
     margin: 10px;
     border-radius: 8px;
     overflow: hidden;
@@ -94,17 +94,17 @@
 /* Specific image size adjustments */
 .pwc-image {
     width: 75%;
-    height: 80%;
+    height: 75%;
 }
 
 .ge-image {
     width: 75%;
-    height: 80%;
+    height: 75%;
 }
 
 .apple-image {
     width: 72%;
-    height: 80%;
+    height: 75%;
 }
 
 .middle {
@@ -165,10 +165,10 @@
 /* Responsive Adjustments for better layout control */
 @media (max-width: 1024px) {
     .container {
-        width: 45vw; /* Two items per row on smaller desktops and tablets */
-        height: 45vw; /* Ensure height matches width */
-        max-width: 276.39px; /* Max width to maintain minimum size */
-        max-height: 276.39px; /* Max height to maintain minimum size */
+        width: 40vw; /* Adjust width for smaller desktops and tablets */
+        height: 40vw; /* Ensure height matches width */
+        max-width: 300px; /* Max width to maintain minimum size */
+        max-height: 300px; /* Max height to maintain minimum size */
     }
 
     .toggle-button {
@@ -178,10 +178,10 @@
 
 @media (max-width: 768px) {
     .container {
-        width: 45vw; /* Two items per row on tablets */
+        width: 45vw; /* Adjust width for tablets */
         height: 45vw; /* Ensure height matches width */
-        max-width: 276.39px; /* Max width to maintain minimum size */
-        max-height: 276.39px; /* Max height to maintain minimum size */
+        max-width: 300px; /* Max width to maintain minimum size */
+        max-height: 300px; /* Max height to maintain minimum size */
     }
 
     .toggle-button {
@@ -194,8 +194,10 @@
 
 @media (max-width: 480px) {
     .container {
-        width: calc(100% - 20px); /* One item per row on mobile screens */
-        height: calc(100% - 20px); /* Ensure height matches width */
+        width: 90vw; /* One item per row on mobile screens */
+        height: 90vw; /* Ensure height matches width */
+        max-width: 300px; /* Max width to maintain minimum size */
+        max-height: 300px; /* Max height to maintain minimum size */
     }
 
     .toggle-button {

@@ -1,20 +1,32 @@
 const express = require('express');
-const cors = require('cors'); // Ensure cors is installed with npm install cors
-const mongoose = require('mongoose');
-require('dotenv').config();
+const bodyParser = require('body-parser');
+const mysql = require('mysql2');
+const formRoutes = require('./routes/formRoutes');
+const app = express();
+const port = process.env.PORT || 3000;
 
-const app = express(); // Initialize your express app
+// MySQL database connection
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+});
 
-app.use(cors()); // Use cors middleware for handling Cross-Origin Resource Sharing
-app.use(express.json()); // Middleware for parsing JSON bodies
+db.connect((err) => {
+  if (err) {
+    console.error('Database connection failed:', err.stack);
+    return;
+  }
+  console.log('Connected to MySQL database.');
+});
 
-// Route definitions
-app.use('/api', require('./routes/routes'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Connect to MongoDB without deprecated options
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log('MongoDB connection error:', err));
+// Use form routes
+app.use('/api/forms', formRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});

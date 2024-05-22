@@ -21,7 +21,9 @@
 
 .Application-Page .banner-video {
   width: 100%;
-  height: auto;
+  height: 400px; /* Adjust this value to your desired height */
+  object-fit: cover; /* Ensures the video covers the area while maintaining aspect ratio */
+  object-position: center; /* Centers the visible part of the video */
 }
 
 .Application-Page .header {
@@ -45,7 +47,7 @@
   margin: 0 auto;
 }
 
-.Application-Page .buddy-application-form {
+.Application-Page .student-application-form {
   width: 100%;
 }
 
@@ -67,24 +69,24 @@
   margin-bottom: 20px;
 }
 
-.Application-Page .buddy-application-form label {
+.Application-Page .student-application-form label {
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-.Application-Page .buddy-application-form input,
-.Application-Page .buddy-application-form textarea {
+.Application-Page .student-application-form input,
+.Application-Page .student-application-form textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
 }
 
-.Application-Page .buddy-application-form textarea {
+.Application-Page .student-application-form textarea {
   height: 100px;
 }
 
-.Application-Page .buddy-application-form button {
+.Application-Page .student-application-form button {
   width: 100%;
   padding: 15px;
   border: none;
@@ -97,7 +99,7 @@
   transition: background-color 0.3s ease;
 }
 
-.Application-Page .buddy-application-form button:hover {
+.Application-Page .student-application-form button:hover {
   background-color: #101d42;
 }
 
