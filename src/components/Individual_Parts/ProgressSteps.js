@@ -3,11 +3,11 @@ import './ProgressSteps.css';
 
 const ProgressSteps = ({
     userType,
-    selectedStep, // Add selectedStep as a prop
+    selectedStep,
     onSelectStep,
     answers,
-    onAnswerClick,  // Handles individual answer clicks
-    onChangeAnswers, // New prop to handle the request to change answers
+    onAnswerClick,
+    onChangeAnswers,
 }) => {
     const stepsByUserType = {
         Student: ["About P2E", "Coaches Represented", "Application"],
@@ -20,7 +20,6 @@ const ProgressSteps = ({
     const [currentStep, setCurrentStep] = useState(selectedStep - 1);
 
     useEffect(() => {
-        // Set the currentStep based on the selectedStep prop
         setCurrentStep(selectedStep - 1);
     }, [selectedStep]);
 
@@ -53,8 +52,8 @@ const ProgressSteps = ({
 
         const answerElements = Object.entries(answers)
             .filter(([_, answer]) => answer) // Filter out empty answers
-            .map(([question, answer]) => (
-                <span key={question} onClick={() => onAnswerClick(question)}>
+            .map(([question, answer], index) => (
+                <span key={question} onClick={() => onAnswerClick(question, index)} data-index={index}>
                     {answer}
                 </span>
             ));

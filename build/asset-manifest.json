@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2bd913e7.css",
-    "main.js": "/static/js/main.3eaea104.js",
+    "main.css": "/static/css/main.8027cb63.css",
+    "main.js": "/static/js/main.7d0e265a.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
@@ -27,8 +27,8 @@
     "static/media/Logo-P2e-final-v4Asset 2.png": "/static/media/Logo-P2e-final-v4Asset 2.17a20faec0d276b91522.png",
     "static/media/workshop.jpg": "/static/media/workshop.fcfdd0a14583ea632ff9.jpg",
     "static/media/collage-example.png": "/static/media/collage-example.5c153cf4638f1dda6af7.png",
+    "static/media/cutout-group-2.png": "/static/media/cutout-group-2.a953286984dd0b49849a.png",
     "static/media/mentorship_example.mp4": "/static/media/mentorship_example.dd7255b0a83f6bb93587.mp4",
-    "static/media/cutout-group.png": "/static/media/cutout-group.52c9f8d1de09619899e7.png",
     "static/media/nike.png": "/static/media/nike.8bf2bf2e85c6dae16bde.png",
     "static/media/walmart.webp": "/static/media/walmart.212fed78498ea9167afa.webp",
     "static/media/UMB-ISC-NightPic.jpg": "/static/media/UMB-ISC-NightPic.62001d865a253111d097.jpg",
@@ -81,11 +81,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.2bd913e7.css.map": "/static/css/main.2bd913e7.css.map",
-    "main.3eaea104.js.map": "/static/js/main.3eaea104.js.map"
+    "main.8027cb63.css.map": "/static/css/main.8027cb63.css.map",
+    "main.7d0e265a.js.map": "/static/js/main.7d0e265a.js.map"
   },
   "entrypoints": [
-    "static/css/main.2bd913e7.css",
-    "static/js/main.3eaea104.js"
+    "static/css/main.8027cb63.css",
+    "static/js/main.7d0e265a.js"
   ]
 }

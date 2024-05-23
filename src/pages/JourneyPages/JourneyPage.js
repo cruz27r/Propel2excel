@@ -22,7 +22,28 @@ function JourneyPage() {
   const [fromHomePage, setFromHomePage] = useState(true); // Default value is true when loaded from homepage
   const [questionIndex, setQuestionIndex] = useState(0); // New state to track question index
 
-  const industryInterest = answers['What industry are you interested in?'] || 'Tech'; // Default to 'Tech' if not answered
+  const allQuestions = [
+    {
+      userType: 'Student',
+      questions: [
+        { text: 'Where are you coming from?', options: ['NonTarget University', 'Ivy League University'] },
+        { text: 'What industry are you interested in?', options: ['Tech', 'Consulting', 'Banking'] },
+      ]
+    },
+    {
+      userType: 'Buddy',
+      questions: [
+        { text: 'What industry are you in?', options: ['Tech', 'Consulting', 'Banking'] },
+        { text: 'What company are you part of?', input: true }
+      ]
+    },
+    {
+      userType: 'Company',
+      questions: [
+        { text: 'What is your goal with Propel2Excel?', options: ['Talent', 'Partnership', 'Investment'] }
+      ]
+    }
+  ];
 
   const handleSelectStep = (step) => {
     setShowOverlay(false);
@@ -42,41 +63,25 @@ function JourneyPage() {
   const handleChangeAnswersClick = () => {
     setShowOverlay(true);
     setIsChangingAnswers(true);
-    // When changing answers, set fromHomePage to false
     setFromHomePage(false);
   };
 
   const handleCloseOverlay = () => {
     setShowOverlay(false);
     setIsChangingAnswers(false);
-    // When closing the overlay, set fromHomePage back to true
     setFromHomePage(true);
   };
 
   const handleAnswerClick = (question) => {
     setShowOverlay(true);
     setIsChangingAnswers(true);
-    // Specify the question associated with the clicked answer
     setFromHomePage(false);
-    // Logic to handle opening the overlay with the specific question
-  };
 
-  const formatAnswers = () => {
-    if (Object.keys(answers).length === 0) {
-      return ''; // Return an empty string if no answers are selected
-    }
+    const questionIndex = allQuestions
+      .find(group => group.userType === userType)
+      .questions.findIndex(q => q.text === question);
 
-    const formattedAnswers = Object.entries(answers).map(([question, answer]) => (
-      <span key={question} onClick={() => handleAnswerClick(question)}>
-        {answer}
-      </span>
-    ));
-
-    return (
-      <>
-        {userType}'s Journey: {formattedAnswers.reduce((prev, curr) => [prev, '/', curr])}
-      </>
-    );
+    setQuestionIndex(questionIndex);
   };
 
   const handlePreviousStep = () => {
@@ -86,7 +91,6 @@ function JourneyPage() {
   };
 
   const handleNextStep = () => {
-    // Check the max step based on userType
     const maxStep = (userType === 'Student' || userType === 'Buddy') ? 3 : 4;
     if (selectedStep < maxStep) {
       setSelectedStep((prevStep) => prevStep + 1);
@@ -103,19 +107,10 @@ function JourneyPage() {
           isChangingAnswers={isChangingAnswers}
           answers={answers}
           setAnswers={setAnswers}
-          fromHomePage={fromHomePage} // Pass the value of fromHomePage to the overlay
-          questionIndex={questionIndex} // Pass the questionIndex state
+          fromHomePage={fromHomePage}
+          questionIndex={questionIndex}
         />
       )}
-
-      <div className="header-button-container">
-        <div className="ChangeButton">
-          {/* <button onClick={handleChangeAnswersClick}>Change Answers</button> */}
-          <div className="AnswersDisplay">
-            {/* {formatAnswers()} */}
-          </div>
-        </div>
-      </div>
 
       {userType !== null && (
         <div>
@@ -126,17 +121,12 @@ function JourneyPage() {
             onSwitchJourney={handleSwitchJourney}
             answers={answers}
             onAnswerClick={handleAnswerClick}
-            onChangeAnswers={handleChangeAnswersClick} // Passing the function to handle answer changes
+            onChangeAnswers={handleChangeAnswersClick}
           />
 
           <div className="step-content">
             {userType === 'Student' && selectedStep === 1 && <StudentAbout />}
-            {userType === 'Student' && selectedStep === 2 && (
-              <>
-                {console.log("Passing selectedCategory to CorporatePartnersPage:", industryInterest)}
-                <CorporatePartnersPage selectedCategory={industryInterest} />
-              </>
-            )}
+            {userType === 'Student' && selectedStep === 2 && <CorporatePartnersPage selectedCategory={answers['What industry are you interested in?'] || 'Tech'} />}
             {userType === 'Student' && selectedStep === 3 && <StudentApplication />}
             {userType === 'Buddy' && selectedStep === 1 && <PartnerAbout />}
             {userType === 'Buddy' && selectedStep === 2 && <BuddySystem />}
@@ -151,7 +141,7 @@ function JourneyPage() {
             <button className="button" onClick={handlePreviousStep} disabled={selectedStep === 0}>
               Previous
             </button>
-            <button className='button'
+            <button className="button"
               onClick={handleNextStep}
               disabled={
                 (userType === 'Student' && selectedStep === 3) ||
