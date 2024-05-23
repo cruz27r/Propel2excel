@@ -18,8 +18,8 @@
     padding: 30px;
     border-radius: 4px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 70%; /* Adjusted width */
-    max-width: 600px; /* Maximum width */
+    width: 90%; /* Adjusted width */
+    max-width: 800px; /* Maximum width */
     height: auto; /* Auto height */
     text-align: center;
     display: flex; /* Enable flex container */
@@ -112,14 +112,15 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 14%; /* Set the width of the button to be 15% of its parent's width */
+    width: 12%; /* Match the width of the return button */
+    height: auto;
     padding: 10px 20px;
     background-color: #182C63; /* Main color */
     color: white; /* White text */
     border: 2px solid #182C63; /* Border color same as background */
     border-radius: 2px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1rem; /* Match the font size of the return button */
     transition: all 0.1s ease;
     text-align: center; /* Align text to the left */
     display: flex; /* Using flexbox to align items properly */
@@ -173,15 +174,16 @@
 .return-button {
     position: absolute;
     top: 10px;
-    right: 10px; /* Position it to the top-right corner of the overlay */
-    width: 15%; /* Set the width of the button to be 15% of its parent's width */
+    right: 15px; /* Positioned slightly left of the close button */
+    width: 12%; /* Match the width of the back button */
+    height: auto;
     padding: 10px 20px;
     background-color: #182C63; /* Main color */
     color: white; /* White text */
     border: 2px solid #182C63; /* Border color same as background */
     border-radius: 2px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1rem; /* Match the font size of the back button */
     transition: all 0.1s ease;
     text-align: center; /* Ensure text is centered */
 }

@@ -28,7 +28,6 @@ function JourneyHome({ isLoggedIn: initialIsLoggedIn = true, onLogin, onLogout }
             <h1>
               <span className="highlight-box">Coach</span> 
               <span className="highlight-box">Place</span> 
-              <span className="highlight-box">Retain</span> 
               <span className="highlight-box">Diverse</span> 
               <span className="highlight-box">Talent</span>
             </h1>
