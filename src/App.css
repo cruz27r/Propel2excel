@@ -1,4 +1,5 @@
-/* App.css - Global styles */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 .app-container, .App {
   font-family: Arial, sans-serif;
   margin: 0; /* Removes default margin */
@@ -11,35 +12,32 @@
 main {
   width: 100%; /* Full width */
   box-sizing: border-box; /* Padding and border are included in the width */
-  background-color: #fcf7ff;
+  background-color: #FCF7FF;
 }
 
 button, .ticket-button {
   padding: 1rem; /* Fixed padding, consider using em if needed */
   background-color: #373751;
-  color: #fdca40;
+  color: #FDCA40;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
 button:hover, .ticket-button:hover {
-  background-color: #1fa1c4;
-}
-
-@media screen and (max-width: 768px) {
-  button, .main-ticket-button, .ticket-button {
-    padding: 0.75rem; /* Smaller padding for smaller screens */
-  }
+  background-color: #1FA1C4;
 }
 
 :root {
-  --navbar-height: 90px; /* Adjust this to match the height of your NavBar */
-  --navbar-padding: 15px;
+  --navbar-height: 100px; /* Adjust this to match the height of your NavBar */
+  --navbar-padding: 10px;
 }
 
 .header {
   height: var(--navbar-height);
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+  overflow: hidden; /* Prevent overflow */
   /* Additional styles for the header if needed */
 }
 
@@ -48,17 +46,24 @@ button:hover, .ticket-button:hover {
   padding-top: var(--navbar-height); /* Ensures content starts below the NavBar */
 }
 
+/* General mobile adjustments */
+@media screen and (max-width: 768px) {
+  button, .main-ticket-button, .ticket-button {
+    padding: 0.75rem; /* Smaller padding for smaller screens */
+  }
+
+}
+
 /* iPhone X and newer (portrait and landscape) */
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 3) {
-
   .app-container, .App {
     font-size: 14px; /* Adjust font size for smaller screens */
   }
 
-  .button, .ticket-button {
+  button, .ticket-button {
     padding: 0.5rem; /* Smaller padding for buttons */
     font-size: 0.8rem; /* Smaller font size for button text */
   }
@@ -75,12 +80,11 @@ button:hover, .ticket-button:hover {
   and (min-device-width: 375px) 
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
-
   .app-container, .App {
     font-size: 14px; /* Adjust font size for smaller screens */
   }
 
-  .button, .ticket-button {
+  button, .ticket-button {
     padding: 0.5rem; /* Smaller padding for buttons */
     font-size: 0.8rem; /* Smaller font size for button text */
   }
@@ -92,4 +96,35 @@ button:hover, .ticket-button:hover {
   /* Add more custom styles for iPhone screens here */
 }
 
-/* Adjustments for other specific iPhone models can be added similarly */
+/* General tablet adjustments */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .app-container, .App {
+    font-size: 16px; /* Adjust font size for tablets */
+  }
+
+  button, .ticket-button {
+    padding: 0.75rem; /* Adjust padding for buttons */
+    font-size: 0.9rem; /* Adjust font size for button text */
+  }
+
+  .main-content {
+    padding-top: 80px; /* Adjust padding-top for tablets */
+  }
+}
+
+/* Desktop adjustments */
+@media screen and (min-width: 1024px) {
+  .app-container, .App {
+    font-size: 18px; /* Adjust font size for desktops */
+  }
+
+  button, .ticket-button {
+    padding: 1rem; /* Adjust padding for buttons */
+    font-size: 1rem; /* Adjust font size for button text */
+  }
+
+  .main-content {
+    padding-top: 100px; /* Adjust padding-top for desktops */
+  }
+}
+

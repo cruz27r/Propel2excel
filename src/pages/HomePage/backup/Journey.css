@@ -141,7 +141,7 @@
   margin-top: 20px; /* Provides space from the image */
   border-radius: 4px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 28%; /* Adjust the width as needed */
+  width: 15%; /* Adjust the width as needed */
   font-size: x-large;
   text-align: center; /* Ensure the text is centered */
   overflow: hidden; /* Ensures the arrow does not overflow the button boundaries */
