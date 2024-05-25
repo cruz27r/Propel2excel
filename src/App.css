@@ -30,15 +30,7 @@ button:hover, .ticket-button:hover {
 
 :root {
   --navbar-height: 100px; /* Adjust this to match the height of your NavBar */
-  --navbar-padding: 10px;
-}
-
-.header {
-  height: var(--navbar-height);
-  width: 100%;
-  box-sizing: border-box; /* Ensure padding and borders are included in width */
-  overflow: hidden; /* Prevent overflow */
-  /* Additional styles for the header if needed */
+  --navbar-padding: 8px;
 }
 
 /* Adjusted class name for main content padding */
@@ -51,7 +43,6 @@ button:hover, .ticket-button:hover {
   button, .main-ticket-button, .ticket-button {
     padding: 0.75rem; /* Smaller padding for smaller screens */
   }
-
 }
 
 /* iPhone X and newer (portrait and landscape) */
@@ -127,4 +118,3 @@ button:hover, .ticket-button:hover {
     padding-top: 100px; /* Adjust padding-top for desktops */
   }
 }
-

@@ -49,10 +49,7 @@ const NavBar = ({ onLogout }) => {
 
   return (
     <div className="navbar">
-      <header
-        ref={navbarRef}
-        className={`header ${showNavBar ? 'show' : 'hide'} ${isHomePage ? 'home-navbar' : ''} ${isScrolled ? 'scrolled-navbar' : ''}`}
-      >
+      <header className='header'>
         <div className="logo-section">
           <Link to="/" className="logo-link">
             <img src={logoImage} alt="Company Logo" className="logo" />

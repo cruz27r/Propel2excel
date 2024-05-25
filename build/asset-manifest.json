@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b4e2c84e.css",
-    "main.js": "/static/js/main.72e516ed.js",
+    "main.css": "/static/css/main.44af1bfa.css",
+    "main.js": "/static/js/main.4ed1dc2d.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/networking_large_table.jpg": "/static/media/networking_large_table.c59f342cc0349fb3a4a6.jpg",
@@ -12,7 +12,7 @@
     "static/media/zoom_in_on_laptop.jpg": "/static/media/zoom_in_on_laptop.e15964f50022bace62d6.jpg",
     "static/media/speaker-event.jpg": "/static/media/speaker-event.d7cf006e938608789941.jpg",
     "static/media/headshot1.jpg": "/static/media/headshot1.a68d52b31f6404700b74.jpg",
-    "static/media/Logo_Banner_textAsset 4.png": "/static/media/Logo_Banner_textAsset 4.4b5f9701bcff9900cd3a.png",
+    "static/media/Logo_Banner_textAsset 6.png": "/static/media/Logo_Banner_textAsset 6.41a8b86bf425aad589bb.png",
     "static/media/looking_over_code.jpg": "/static/media/looking_over_code.2b0925895a1ddc321c49.jpg",
     "static/media/networking-event.jpg": "/static/media/networking-event.7e7d7d84d3c7ef1f5650.jpg",
     "static/media/meetmentor.jpg": "/static/media/meetmentor.5108fb2f60555765441a.jpg",
@@ -81,11 +81,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.b4e2c84e.css.map": "/static/css/main.b4e2c84e.css.map",
-    "main.72e516ed.js.map": "/static/js/main.72e516ed.js.map"
+    "main.44af1bfa.css.map": "/static/css/main.44af1bfa.css.map",
+    "main.4ed1dc2d.js.map": "/static/js/main.4ed1dc2d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4e2c84e.css",
-    "static/js/main.72e516ed.js"
+    "static/css/main.44af1bfa.css",
+    "static/js/main.4ed1dc2d.js"
   ]
 }

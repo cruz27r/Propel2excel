@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Journey.css';
-import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 4.png';
+import textbanner from '../../../assets/images/4x/Logo_Banner_textAsset 6.png';
 import aboutUsImage from '../../../assets/images/collage-students/cutout-group-2.png';
 import logoImage from '../../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
 

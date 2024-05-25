@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/homePage';
 import HomePageJourney from './pages/HomePage/backup/Journey';
@@ -24,7 +24,8 @@ import CareerTips from './components/CareerTips/Tips';
 import StudentsPage from './pages/MeetOurStudents/students';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const [isLoggedIn=true, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const navBarRef = useRef(null);
 
   const handleLogin = (username, password) => {
     if (username === 'Propel' && password === 'p2eDev') {
@@ -45,9 +46,23 @@ function App() {
     setIsLoggedIn(loggedIn);
   }, []);
 
+  useEffect(() => {
+    const adjustMainContentPadding = () => {
+      const navBarHeight = navBarRef.current ? navBarRef.current.offsetHeight : 0;
+      document.documentElement.style.setProperty('--navbar-height', `${navBarHeight}px`);
+    };
+
+    adjustMainContentPadding();
+    window.addEventListener('resize', adjustMainContentPadding);
+
+    return () => {
+      window.removeEventListener('resize', adjustMainContentPadding);
+    };
+  }, []);
+
   return (
-    <Router>
-      <NavBar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+    <Router className="app-container">
+      <NavBar ref={navBarRef} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
       <div className="main-content">
         <Routes>
           <Route path="/original" element={<HomePage />} />

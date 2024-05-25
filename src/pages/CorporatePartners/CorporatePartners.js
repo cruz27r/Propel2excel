@@ -276,6 +276,7 @@ const coachesRepresented = [
   { name: 'BlackRock', headquarters: 'New York, New York, United States', coaches: '100+', categories: ['Banking'], logo: blackRock },
   { name: 'Citibank', headquarters: 'New York, New York, United States', coaches: '100+', categories: ['Banking'], logo: citibank },
   { name: 'UBS', headquarters: 'Zurich, Switzerland', coaches: '100+', categories: ['Banking'], logo: ubs },
+  { name: 'BCG', headquarters: 'Boston, Massachusetts, United States', coaches: '100+', categories: ['Consulting'], logo: bcg },
   { name: 'PwC', headquarters: 'London, United Kingdom', coaches: '100+', categories: ['Tech', 'Banking', 'Consulting'], logo: pwcCoaches },
   { name: 'IBM', headquarters: 'Armonk, New York, United States', coaches: '100+', categories: ['Tech'], logo: ibm },
   { name: 'Salesforce', headquarters: 'San Francisco, California, United States', coaches: '100+', categories: ['Tech'], logo: salesforce },
@@ -295,7 +296,6 @@ const coachesRepresented = [
   { name: 'Capital One', headquarters: 'McLean, Virginia, United States', coaches: '100+', categories: ['Banking'], logo: capitalOne },
   { name: 'US Bank', headquarters: 'Minneapolis, Minnesota, United States', coaches: '100+', categories: ['Banking'], logo: usBank },
   { name: 'Wells Fargo', headquarters: 'San Francisco, California, United States', coaches: '100+', categories: ['Banking'], logo: wellsFargo },
-  { name: 'BCG', headquarters: 'Boston, Massachusetts, United States', coaches: '100+', categories: ['Consulting'], logo: bcg },
 ];
 
 
