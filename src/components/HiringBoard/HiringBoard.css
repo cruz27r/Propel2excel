@@ -45,7 +45,7 @@
 /* Job listing styles using grid */
 .job-listings {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Five columns for title, status, rate, location, apply button */
+    grid-template-columns: repeat(6, 1fr); /* Six columns for company, title, status, rate, location, apply button */
     gap: 10px;
 }
 
@@ -62,7 +62,7 @@
     background-color: #ddd;
 }
 
-.job-title, .job-status, .job-rate, .job-location, .job-apply {
+.job-company, .job-title, .job-status, .job-rate, .job-location, .job-apply {
     padding: 10px;
     text-align: center;
     background-color: #f9f9f9;
@@ -114,7 +114,7 @@
         grid-template-columns: 1fr; /* Stack on small screens */
     }
 
-    .job-title, .job-status, .job-rate, .job-location, .job-apply {
+    .job-company, .job-title, .job-status, .job-rate, .job-location, .job-apply {
         text-align: left;
     }
 
