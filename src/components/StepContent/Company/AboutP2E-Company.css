@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-body {
+.student-about-container {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -14,11 +14,12 @@ body {
     max-width: 95%;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* Program Overview */
-  .program-statement {
+}
+
+/* Program Overview */
+.program-statement {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
@@ -26,33 +27,35 @@ body {
     border-radius: 10px;
     margin-bottom: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .program-statement video {
-    flex-basis: 45%; /* Set the video to 45% width */
-    height: auto; /* Ensure the video maintains its aspect ratio */
+}
+
+.program-statement img {
+    flex: 1 1 45%; /* Set the image to 45% width */
+    max-width: 45%;
+    height: auto; /* Ensure the image maintains its aspect ratio */
     border-radius: 10px;
-  }
-  
-  .program-statement-text {
-    flex-basis: 45%; /* Set the text container to 45% width */
-    margin-left: 20px;
+    margin-right: 20px; /* Add some space between image and text */
+}
+
+.program-statement-text {
+    flex: 1 1 45%; /* Set the text container to 45% width */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center text vertically */
-  }
-  
-  .program-statement h3 {
+    max-width: 45%;
+}
+
+.program-statement h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
-  .program-statement p {
-    font-size: 1.4rem;
+}
+
+.program-statement p {
+    font-size: 1.8rem;
     line-height: 1.6;
-  }
+}
 
 /* Key Components */
 .key-components-container {
@@ -84,11 +87,11 @@ body {
 
 .components-content ul li {
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 20px 10px; /* Increased padding to make the elements larger */
     border-radius: 5px;
     background-color: #f0f0f0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, padding 0.3s;
     cursor: pointer;
     margin-bottom: 10px;
 }
@@ -97,6 +100,7 @@ body {
 .components-content ul li.active {
     background-color: #182C63;
     color: #fff;
+    padding: 25px 10px; /* Increased padding on hover and active state */
 }
 
 .component-image {
@@ -159,17 +163,60 @@ body {
     margin-top: 10px;
 }
 
-/* Events and Services */
-.events-services-container {
+/* Events and Requirements */
+.events-requirements-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+    gap: 20px; /* Added gap between sections */
 }
 
-.events-section,
-.services-section {
+.requirements-section {
+    flex: 0 1 38%; /* Adjusted width to be slightly smaller */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.requirements-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.requirements-content {
     flex: 1;
-    padding: 0 10px;
+}
+
+.requirements-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements-content ul li {
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+
+.events-section {
+    flex: 0 1 48%; /* Adjusted width to be slightly smaller */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.events-services-content {
+    width: 100%;
+}
+
+.events-services-image {
+    width: 100%;
 }
 
 .events-services-image img {
@@ -178,15 +225,13 @@ body {
     border-radius: 10px;
 }
 
-.events-buttons,
-.services-buttons {
+.events-buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.events-buttons button,
-.services-buttons button {
+.events-buttons button {
     font-size: 1.2rem;
     padding: 10px 20px;
     margin-right: 10px;
@@ -196,18 +241,40 @@ body {
     transition: background-color 0.3s;
 }
 
-.events-buttons button.active-button,
-.services-buttons button.active-button {
+.events-buttons button.active-button {
     background-color: #182C63;
     color: #fff;
 }
 
-.Overview-Text {
-    width: 75%;
-    margin: 0 auto;
-}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .program-statement {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.ProgramHeader {
-    width: 75%;
-    margin: 0 auto;
+    .program-statement img,
+    .program-statement-text {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .components-content ul,
+    .component-image {
+        width: 100%;
+    }
+
+    .details-column {
+        width: 100%;
+    }
+
+    .events-buttons {
+        flex-direction: column;
+    }
+
+    .events-buttons button {
+        margin-bottom: 10px;
+    }
 }

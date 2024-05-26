@@ -147,7 +147,7 @@ const CompanyAbout = () => {
               <div className="details-column">
                 <h4>Our Focus</h4>
                 <ul>
-                <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking</li>
+                  <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking</li>
                 </ul>
               </div>
               <div className="details-column">

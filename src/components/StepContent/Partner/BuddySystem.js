@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BuddySystem.css';
-import mentorshipVideo from '../../../assets/videos/mentorship_example.mp4';
+import mentorshipVideo from '../../../assets/videos/job-interview.mp4';
 import workshopImage from '../../../assets/images/workshop.jpg';
 import networkingImage from '../../../assets/images/networking-event.jpg';
 import coachingImage from '../../../assets/images/Coaching.jpg';
@@ -15,41 +15,33 @@ const BuddySystem = () => {
 
   const services = [
     {
-      id: 'resume',
-      title: 'Resume Assistance',
-      description: 'Partners help fellows craft standout resumes by providing feedback and sharing best practices.',
-      icon: '📄',
+      id: 'linkedin-resume',
+      title: 'LinkedIn & Resume Rebrand',
+      description: 'LinkedIn and resume rebrand completed by professionals with over 10 years of experience rebranding both works with P2E team and from current and ex-professionals at top tier companies.',
+      icon: '📄💼',
       image: resumeImage,
-    },
-    {
-      id: 'linkedin',
-      title: 'LinkedIn Optimization',
-      description: 'Guidance in building a professional LinkedIn profile to showcase skills and experience.',
-      icon: '💼',
-      image: LinkedInImage,
     },
     {
       id: 'interview',
       title: 'Interview Preparation',
-      description: 'Conducting mock interviews to build confidence and refine interviewing skills.',
+      description: 'Students are paired with current and professional alum at top tier companies, who have experience in the role students are applying for. This is done with a student as a buddy. In other words, the student would have a lot of 1:1 help before being introduced to a professional to ensure good use of time. Pairing students with professionals during the interview prep helps students feel adequately prepared, and not surprised by any questions that may come forward during the real interview.',
       icon: '🗣️',
       image: interviewImage,
     },
     {
-      id: 'mentorship',
-      title: 'Mentorship Program',
-      description: 'Offering career guidance and networking opportunities through experienced mentors.',
-      icon: '👥',
-      image: mentorshipImage,
-    },
-    {
       id: 'speaking',
       title: 'Speaking Series',
-      description: 'Hosting speaking events to share insights and inspire fellow participants.',
+      description: 'Hosting monthly and weekly speaking events to share insights and inspire fellow participants. Speaking engagements with professionals from top tier tech, consulting, and banking companies, fostering partnerships with the non-target university environment.',
       icon: '🎤',
       image: networkingEventImage,
     },
-    // Add more services as needed
+    {
+      id: 'candidate-readiness',
+      title: 'Candidate Readiness',
+      description: 'Once a student completes steps 1-3, they are officially coached and vetted. Students\' profiles are presented in a tie to patience, pilot, and interest companies like Microsoft, McKinsey & Co., Amazon, and more. Each company will have the opportunity to choose at least 5 students to interview for their most competitive internships or full-time positions.',
+      icon: '🏆',
+      image: coachingImage,
+    },
   ];
 
   const toggleActiveService = (serviceId) => {
@@ -58,7 +50,6 @@ const BuddySystem = () => {
 
   return (
     <div className="buddy-system-container">
-      <h2 className='buddy-header'>Buddy Program</h2>
       <div className="buddy-intro-container">
         <p className="buddy-intro">
           The Buddy System is a core component of the Propel2Excel program, designed to provide personalized support and guidance to our fellows. Partners are matched with fellows based on their expertise and the fellows' needs, creating a collaborative environment for growth and development.
@@ -68,7 +59,7 @@ const BuddySystem = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className={`services-container ${activeService ? 'with-active' : ''}`}>
+      <div className="services-container">
         {services.map((service) => (
           <div
             key={service.id}
@@ -86,48 +77,40 @@ const BuddySystem = () => {
           </div>
         ))}
       </div>
-      <div className="impact-section">
-        <h3>The Impact of Mentorship</h3>
-        <p className='impact-explanation'>
-          Mentorship plays a pivotal role in the professional development of our fellows. Here are some key statistics combined with explanations:
-        </p>
-        <ul className='impact-stats'>
-          <li><strong>80% Increased Job Opportunities:</strong> Mentees are more likely to receive job offers and promotions.</li>
-          <li><strong>70% Enhanced Skill Development:</strong> Mentorship provides personalized guidance for skill improvement and career advancement.</li>
-          <li><strong>90% Better Networking:</strong> Access to a mentor's professional network opens up new opportunities and connections.</li>
+      <div className="requirements">
+        <h3>Time Commitment</h3>
+        <ul>
+          <li className="buddy-requirement">Buddies are committed to doing 3 hours a year for the program.</li>
         </ul>
-        <p className='impact-outro'>
-          Our Buddy System ensures that each fellow receives the support and guidance necessary to navigate their career path with confidence and achieve their professional goals.
-        </p>
       </div>
-      <div className="separator-image-container">
-        <img src={workshopImage} alt="Workshop" className="separator-image" />
+      <div className="impact-and-image">
+        <div className="separator-image-container">
+          <img src={workshopImage} alt="Workshop" className="separator-image" />
+        </div>
+        <div className="impact-section">
+          <h3>The Impact of Mentorship</h3>
+          <p>Mentorship plays a pivotal role in the professional development of our fellows. Here are some key statistics combined with explanations:</p>
+          <ul>
+            <li><strong>80% Increased Job Opportunities:</strong> Mentees are more likely to receive job offers and promotions.</li>
+            <li><strong>70% Enhanced Skill Development:</strong> Mentorship provides personalized guidance for skill improvement and career advancement.</li>
+            <li><strong>90% Better Networking:</strong> Access to a mentor's professional network opens up new opportunities and connections.</li>
+          </ul>
+          <p>Our Buddy System ensures that each fellow receives the support and guidance necessary to navigate their career path with confidence and achieve their professional goals.</p>
+        </div>
       </div>
       <div className="testimonial-section">
         <h3>Testimonials</h3>
         <div className="testimonial">
-          <p>"The Buddy System transformed my career journey. My mentor's insights and support were invaluable in landing my dream job."</p>
-          <span>- Jane Doe, Program Fellow</span>
+          <p>"I am incredibly grateful for this program and I know if other students had this opportunity they'd feel the same way. I wish Propel2Excel existed sooner, I have already gotten so much value from it in my first financial state of the program like P2E extends to all. It has raised my competencies as well."</p>
+          <span>- IB Associate @ BOA</span>
         </div>
         <div className="testimonial">
-          <p>"Being a mentor in the Buddy System has been a rewarding experience. It's fulfilling to see the positive impact on the fellows' careers."</p>
-          <span>- John Smith, Industry Partner</span>
+          <p>"Propel2Excel's Buddy System provided me with the guidance and support I needed to secure a role at Capital One. The mentorship was invaluable."</p>
+          <span>- Analyst @ Capital One</span>
         </div>
         <div className="testimonial">
-          <p>"The guidance I received through the Buddy System was instrumental in helping me secure a competitive internship."</p>
-          <span>- Emily Johnson, Program Fellow</span>
-        </div>
-        <div className="testimonial">
-          <p>"As a mentor, I've had the opportunity to make a real difference in the lives of ambitious students, and it's been an incredibly gratifying experience."</p>
-          <span>- Michael Brown, Industry Partner</span>
-        </div>
-        <div className="testimonial">
-          <p>"The networking opportunities provided by the Buddy System have opened doors for me that I never thought possible."</p>
-          <span>- Sarah Lee, Program Fellow</span>
-        </div>
-        <div className="testimonial">
-          <p>"The networking opportunities provided by the Buddy System have opened doors for me that I never thought possible."</p>
-          <span>- Sarah Lee, Program Fellow</span>
+          <p>"I am incredibly grateful for this program and I know if other students had this opportunity they'd feel the same way. I wish Propel2Excel existed sooner, I have already gotten so much value from it in my first financial state of the program like P2E extends to all. It has raised my competencies as well."</p>
+          <span>- IB Associate @ BOA</span>
         </div>
       </div>
     </div>

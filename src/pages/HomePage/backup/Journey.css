@@ -1,5 +1,3 @@
-/* Journey.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
 /* Specific styling for Journey page */
@@ -11,6 +9,7 @@
   background: linear-gradient(to bottom, #ffffff, #182C63);
   scroll-behavior: smooth;
   color: #333;
+  max-width: 100%;
   min-height: 100vh; /* Ensure it takes full screen height */
   display: flex;
   align-items: center; /* Center items vertically */
@@ -239,7 +238,29 @@
   background-color: #00A1E4;
 }
 
-@media (max-width: 768px) {
+/* Tablet adjustments */
+@media (min-width: 601px) and (max-width: 1280px) {
+  .about-us-text h1 {
+    font-size: 60px;
+  }
+
+  .details-button {
+    width: 25%;
+    font-size: large;
+  }
+
+  .about-us-image {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .login-container, .description {
+    width: 80%;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
   .about-us {
     flex-direction: column;
     text-align: center;
@@ -255,7 +276,7 @@
   }
 
   .about-us-image {
-    max-width: 70%;
+    max-width: 100%;
     margin-top: 20px;
   }
 
@@ -266,5 +287,37 @@
   .details-button {
     width: 85%;
     font-size: large;
+  }
+
+  .about-us-text h1 {
+    font-size: 36px;
+  }
+
+  .hero__title-image {
+    max-width: 100%;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 360px) {
+  .about-us-text h1 {
+    font-size: 28px;
+  }
+
+  .details-button {
+    width: 90%;
+    font-size: medium;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .about-us-text h1 {
+    font-size: 85px;
+  }
+
+  .details-button {
+    width: 15%;
+    font-size: x-large;
   }
 }
