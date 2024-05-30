@@ -82,6 +82,14 @@
   margin: 5px 15px;
   border-radius: 10px;
   display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.highlight-box:hover {
+  background-color: #00A1E4;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .about-us-text p {
