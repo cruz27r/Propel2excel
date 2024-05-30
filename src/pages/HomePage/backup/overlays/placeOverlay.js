@@ -33,8 +33,8 @@ const PlaceOverlay = ({ onClose }) => {
             </ul>
           </div>
         </div>
-        <p>Our number of students placed at internships/jobs: <span className="place-values">1500+</span></p>
-        <p>Number of interviews provided so far to fellows: <span className="place-values">5000+</span></p>
+        <p>Our number of students placed at internships/jobs: <span className="place-values">70+</span></p>
+        <p>Number of interviews provided so far to fellows: <span className="place-values">250+</span></p>
       </div>
     </div>
   );
