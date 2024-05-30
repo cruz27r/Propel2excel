@@ -15,6 +15,7 @@ import FAQs from './pages/FAQs/faqs';
 import UniversityPartnersApplication from './pages/UniversityPartners/UniversityPartnersApplication';
 import CorporatePartnersApplication from './pages/CorporatePartners/CorporatePartnersApplication';
 import NavBar from './components/NavBar/navbar';
+import MaintenanceCover from './MaintenanceCover';
 import './App.css';
 import MaintenancePage from './pages/Maintenance/MaintenancePage';
 import Students from './pages/MeetOurStudents/students';
@@ -24,7 +25,7 @@ import CareerTips from './components/CareerTips/Tips';
 import StudentsPage from './pages/MeetOurStudents/students';
 
 function App() {
-  const [isLoggedIn=true, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
   const navBarRef = useRef(null);
 
   const handleLogin = (username, password) => {
@@ -60,33 +61,41 @@ function App() {
     };
   }, []);
 
+  const isMaintenanceMode = true; // Toggle this variable to enable/disable maintenance mode
+
   return (
     <Router className="app-container">
-      <NavBar ref={navBarRef} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-      <div className="main-content">
-        <Routes>
-          <Route path="/original" element={<HomePage />} />
-          <Route path="/" element={<HomePageJourney isLoggedIn={isLoggedIn} onLogin={handleLogin} />} />
-          <Route path="/journeyContent" element={<JourneyContent />} />
-          <Route path="/university-partners" element={<UniversityPartners />} />
-          <Route path="/university-partners/application" element={<UniversityPartnersApplication />} />
-          <Route path="/corporate-partners" element={<CorporatePartners />} />
-          <Route path="/corporate-partners/application" element={<CorporatePartnersApplication />} />
-          <Route path="/linkedin-rebrand" element={<LinkedInRebrand />} />
-          <Route path="/resume-rebrand" element={<ResumeRebrand />} />
-          <Route path="/interview-prep" element={<InterviewPrep />} />
-          <Route path="/events-for-readiness" element={<EventsForReadiness />} />
-          <Route path="/apply-to-cohort" element={<ApplyToCohort />} />
-          <Route path="/speakers" element={<Speakers />} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="/maintenance" element={<MaintenancePage />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/main-application" element={<MainApplication />} />
-          <Route path="/hiring-board" element={<HiringBoard />} />
-          <Route path="/career-tips" element={<CareerTips />} />
-          <Route path="/oldStudents" element={<StudentsPage />} />
-        </Routes>
-      </div>
+      {isMaintenanceMode ? (
+        <MaintenanceCover />
+      ) : (
+        <>
+          <NavBar ref={navBarRef} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+          <div className="main-content">
+            <Routes>
+              <Route path="/original" element={<HomePage />} />
+              <Route path="/" element={<HomePageJourney isLoggedIn={isLoggedIn} onLogin={handleLogin} />} />
+              <Route path="/journeyContent" element={<JourneyContent />} />
+              <Route path="/university-partners" element={<UniversityPartners />} />
+              <Route path="/university-partners/application" element={<UniversityPartnersApplication />} />
+              <Route path="/corporate-partners" element={<CorporatePartners />} />
+              <Route path="/corporate-partners/application" element={<CorporatePartnersApplication />} />
+              <Route path="/linkedin-rebrand" element={<LinkedInRebrand />} />
+              <Route path="/resume-rebrand" element={<ResumeRebrand />} />
+              <Route path="/interview-prep" element={<InterviewPrep />} />
+              <Route path="/events-for-readiness" element={<EventsForReadiness />} />
+              <Route path="/apply-to-cohort" element={<ApplyToCohort />} />
+              <Route path="/speakers" element={<Speakers />} />
+              <Route path="/faqs" element={<FAQs />} />
+              <Route path="/maintenance" element={<MaintenancePage />} />
+              <Route path="/students" element={<Students />} />
+              <Route path="/main-application" element={<MainApplication />} />
+              <Route path="/hiring-board" element={<HiringBoard />} />
+              <Route path="/career-tips" element={<CareerTips />} />
+              <Route path="/oldStudents" element={<StudentsPage />} />
+            </Routes>
+          </div>
+        </>
+      )}
     </Router>
   );
 }
