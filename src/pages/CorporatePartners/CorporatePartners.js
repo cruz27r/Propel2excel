@@ -51,6 +51,7 @@ import blackRock from '../../assets/images/CompanyLogos/CoachesCompanies/BlackRo
 import raytheon from '../../assets/images/CompanyLogos/CoachesCompanies/Raytheon_Technologies.png';
 import ups from '../../assets/images/CompanyLogos/CoachesCompanies/UPS-logo.png';
 import bcg from '../../assets/images/CompanyLogos/CoachesCompanies/Boston_Consulting_Group.png';
+import deloitte from '../../assets/images/CompanyLogos/Consulting/Deloitte.png';
 
 const companyStats = [
   {
@@ -296,7 +297,9 @@ const coachesRepresented = [
   { name: 'Capital One', headquarters: 'McLean, Virginia, United States', coaches: '100+', categories: ['Banking'], logo: capitalOne },
   { name: 'US Bank', headquarters: 'Minneapolis, Minnesota, United States', coaches: '100+', categories: ['Banking'], logo: usBank },
   { name: 'Wells Fargo', headquarters: 'San Francisco, California, United States', coaches: '100+', categories: ['Banking'], logo: wellsFargo },
+  { name: 'Deloitte', headquarters: 'New York, New York, United States', coaches: '100+', categories: ['Consulting'], logo: deloitte }
 ];
+
 
 
 function assignLogosToCategories(companyStats, activeSection) {

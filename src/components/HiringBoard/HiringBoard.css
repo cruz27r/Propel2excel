@@ -37,9 +37,11 @@
 }
 
 .category-title {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Increase font size */
     margin-bottom: 1rem;
     color: #333;
+    text-align: center; /* Center the title */
+    font-weight: 700; /* Make the font thicker */
 }
 
 /* Job listing styles using grid */

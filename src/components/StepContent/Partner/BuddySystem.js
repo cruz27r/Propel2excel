@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BuddySystem.css';
-import mentorshipVideo from '../../../assets/videos/job-interview.mp4';
+import mentorshipVideo from '../../../assets/videos/buddy-series.mp4';
 import workshopImage from '../../../assets/images/workshop.jpg';
 import networkingImage from '../../../assets/images/networking-event.jpg';
 import coachingImage from '../../../assets/images/Coaching.jpg';

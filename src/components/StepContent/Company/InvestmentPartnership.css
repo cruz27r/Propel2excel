@@ -1,0 +1,230 @@
+/* General styles */
+.investment-page {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .hero-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #00A1E0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    background-color: #007B9E;
+  }
+  
+  .content-container {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .introduction-section {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .introduction-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .introduction-section p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .benefits-section {
+    background: white;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
+  
+  .benefits-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .benefits-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .benefit {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px); /* Three benefits per row */
+    box-sizing: border-box;
+  }
+  
+  .benefit h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #182C63;
+  }
+  
+  .benefit p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .key-stats-section {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .key-stats-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .chart-wrapper {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+  }
+  
+  .chart-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #182C63;
+  }
+  
+  .impact-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .impact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .impact-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .testimonials-section {
+    background: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .testimonials-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial {
+    width: 30%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    box-sizing: border-box;
+  }
+  
+  .testimonial p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  .testimonial-author {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #182C63;
+  }
+  
+  .cta-section {
+    background: #182C63;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .custom-tooltip {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .custom-tooltip .label {
+    font-weight: bold;
+  }
+  
+  .custom-tooltip .intro {
+    margin-top: 5px;
+  }
+  

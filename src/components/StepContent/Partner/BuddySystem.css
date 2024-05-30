@@ -9,6 +9,10 @@
   padding: 20px;
 }
 
+.buddy-intro-container{
+  padding-bottom: 35px;
+}
+
 .services-container {
   display: flex;
   justify-content: space-between;

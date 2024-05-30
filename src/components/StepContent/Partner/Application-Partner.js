@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Application-Partner.css';
-import mentorshipVideo from '../../../assets/videos/mentorship_example.mp4';
+import mentorshipVideo from '../../../assets/videos/job-interview.mp4';
 import checkmarkIcon from '../../../assets/images/check.png'; // Ensure this path is correct
 
 const BuddyApplication = () => {
