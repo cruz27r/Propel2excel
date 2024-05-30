@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8ce48c6f.css",
-    "main.js": "/static/js/main.af272dda.js",
+    "main.js": "/static/js/main.a0fd07c7.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
@@ -85,10 +85,10 @@
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
     "main.8ce48c6f.css.map": "/static/css/main.8ce48c6f.css.map",
-    "main.af272dda.js.map": "/static/js/main.af272dda.js.map"
+    "main.a0fd07c7.js.map": "/static/js/main.a0fd07c7.js.map"
   },
   "entrypoints": [
     "static/css/main.8ce48c6f.css",
-    "static/js/main.af272dda.js"
+    "static/js/main.a0fd07c7.js"
   ]
 }
