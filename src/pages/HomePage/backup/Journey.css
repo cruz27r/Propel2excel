@@ -56,43 +56,45 @@
 
 .about-us-text {
   flex: 1;
-  max-width: 80%;
+  max-width: 30%; /* Set max-width to 30% */
   height: auto;
   padding-right: 0px;
-  align-items: center;
+  align-items: flex-start; /* Align items to the left */
   display: flex;
   flex-direction: column;
+  text-align: left; /* Align text to the left */
 }
 
 .about-us-text h1 {
   font-size: 85px;
   color: #182C63;
   font-family: 'Montserrat', sans-serif;
-  margin: 0 0px;
+  margin: 0;
   overflow: visible;
 }
 
 .highlight-box {
   background-color: #d8eeff; /* Highlight box color */
   padding: 5px 25px;
-  margin: 5px 15px;
+  margin: 5px 0; /* Adjust margin */
   border-radius: 10px;
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  width: auto; /* Adjust the width as needed */
+  font-size: 75px;
 }
 
-.highlight-box:hover {
-  background-color: #00A1E4;
-  color: white;
-  transform: translateY(-2px);
-}
-
+.highlight-box:hover,
 .highlight-container:hover .highlight-box {
   background-color: #00A1E4;
   color: white;
   transform: translateY(-2px);
+}
+
+.highlight-container {
+  display: inline-block;
+  cursor: pointer; /* Add cursor pointer to indicate it is clickable */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Same transition as highlight-box */
 }
 
 .about-us-text p {
@@ -175,12 +177,6 @@
   color: #182C63;
 }
 
-.highlight-container:hover .highlight-box {
-  background-color: #00A1E4;
-  color: white;
-  transform: translateY(-2px);
-}
-
 .coach:hover .highlight-box,
 .place:hover .highlight-box,
 .diverse-talent:hover .highlight-box {
@@ -189,8 +185,21 @@
   transform: translateY(-2px);
 }
 
+/* Desktop adjustments for stacked layout */
+@media (min-width: 1024px) {
+  .highlight-container {
+    display: block;
+    width: auto; /* Ensure the width fits the content */
+  }
+
+  .highlight-container .highlight-box {
+    display: block;
+    margin: 5px 0; /* Margin to stack vertically */
+  }
+}
+
 /* Tablet adjustments */
-@media (min-width: 601px) and (max-width: 1280px) {
+@media (min-width: 601px) and (max-width: 1023px) {
   .about-us-text h1 {
     font-size: 60px;
   }
@@ -207,6 +216,16 @@
 
   .description {
     width: 80%;
+  }
+
+  .highlight-container {
+    display: inline-block;
+    white-space: nowrap; /* Prevent line breaks within the container */
+    width: auto; /* Ensure the width fits the content */
+  }
+
+  .highlight-container .highlight-box {
+    margin: 5px 5px; /* Reduce margin between 'Diverse' and 'Talent' */
   }
 }
 
@@ -247,6 +266,16 @@
   .hero__title-image {
     max-width: 100%;
   }
+
+  .highlight-container {
+    display: inline-block;
+    white-space: nowrap; /* Prevent line breaks within the container */
+    width: auto; /* Ensure the width fits the content */
+  }
+
+  .highlight-container .highlight-box {
+    margin: 5px 5px; /* Reduce margin between 'Diverse' and 'Talent' */
+  }
 }
 
 /* Small mobile adjustments */
@@ -259,16 +288,14 @@
     width: 90%;
     font-size: medium;
   }
-}
 
-/* Desktop adjustments */
-@media (min-width: 1024px) and (max-width: 1920px) {
-  .about-us-text h1 {
-    font-size: 85px;
+  .highlight-container {
+    display: inline-block;
+    white-space: nowrap; /* Prevent line breaks within the container */
+    width: auto; /* Ensure the width fits the content */
   }
 
-  .details-button {
-    width: 15%;
-    font-size: x-large;
+  .highlight-container .highlight-box {
+    margin: 5px 5px; /* Reduce margin between 'Diverse' and 'Talent' */
   }
 }

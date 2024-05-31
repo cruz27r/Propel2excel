@@ -33,7 +33,7 @@ const StudentAbout = () => {
       <div className="program-statement">
         <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
-          <h3 className="ProgramHeader">Program Overview</h3>
+          <h3 className="ProgramHeader">Who We Are</h3>
           <p>
             Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
           </p>

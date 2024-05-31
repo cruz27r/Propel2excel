@@ -152,6 +152,7 @@
 
 /* Testimonial Section Styling */
 .testimonial-section {
+  width: 100%;
   margin-top: 30px;
   padding: 20px;
   background-color: #f9f9f9;
@@ -165,7 +166,7 @@
 
 .testimonial-section h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
+  font-size: 45px;
   color: #182C63;
   margin-bottom: 15px;
   text-align: center;
@@ -174,6 +175,8 @@
 }
 
 .testimonial {
+  max-width: 30%;
+  width: 100%;
   background-color: #ffffff;
   color: #333;
   border: 1px solid #ccc;
@@ -182,7 +185,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

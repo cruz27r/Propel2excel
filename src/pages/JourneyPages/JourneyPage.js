@@ -31,7 +31,7 @@ function JourneyPage() {
       ]
     },
     {
-      userType: 'Buddy',
+      userType: 'Coach',
       questions: [
         { text: 'What industry are you in?', options: ['Tech', 'Consulting', 'Banking'] },
         { text: 'What company are you part of?', input: true }
@@ -72,16 +72,11 @@ function JourneyPage() {
     setFromHomePage(true);
   };
 
-  const handleAnswerClick = (question) => {
+  const handleAnswerClick = (question, index) => {
     setShowOverlay(true);
     setIsChangingAnswers(true);
     setFromHomePage(false);
-
-    const questionIndex = allQuestions
-      .find(group => group.userType === userType)
-      .questions.findIndex(q => q.text === question);
-
-    setQuestionIndex(questionIndex);
+    setQuestionIndex(index);
   };
 
   const handlePreviousStep = () => {
@@ -91,7 +86,7 @@ function JourneyPage() {
   };
 
   const handleNextStep = () => {
-    const maxStep = (userType === 'Student' || userType === 'Buddy') ? 3 : 4;
+    const maxStep = (userType === 'Student' || userType === 'Coach') ? 3 : 4;
     if (selectedStep < maxStep) {
       setSelectedStep((prevStep) => prevStep + 1);
     }
@@ -128,9 +123,9 @@ function JourneyPage() {
             {userType === 'Student' && selectedStep === 1 && <StudentAbout />}
             {userType === 'Student' && selectedStep === 2 && <CorporatePartnersPage selectedCategory={answers['What industry are you interested in?'] || 'Tech'} />}
             {userType === 'Student' && selectedStep === 3 && <StudentApplication />}
-            {userType === 'Buddy' && selectedStep === 1 && <PartnerAbout />}
-            {userType === 'Buddy' && selectedStep === 2 && <BuddySystem />}
-            {userType === 'Buddy' && selectedStep === 3 && <PartnerApplication />}
+            {userType === 'Coach' && selectedStep === 1 && <PartnerAbout />}
+            {userType === 'Coach' && selectedStep === 2 && <BuddySystem />}
+            {userType === 'Coach' && selectedStep === 3 && <PartnerApplication />}
             {userType === 'Company' && selectedStep === 1 && <CompanyAbout />}
             {userType === 'Company' && selectedStep === 2 && <Talent />}
             {userType === 'Company' && selectedStep === 3 && <InvestmentPartnership />}
@@ -145,7 +140,7 @@ function JourneyPage() {
               onClick={handleNextStep}
               disabled={
                 (userType === 'Student' && selectedStep === 3) ||
-                (userType === 'Buddy' && selectedStep === 3) ||
+                (userType === 'Coach' && selectedStep === 3) ||
                 (userType === 'Company' && selectedStep === 4)
               }
             >
