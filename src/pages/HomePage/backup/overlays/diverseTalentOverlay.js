@@ -3,14 +3,14 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 import './diverseTalentOverlay.css';
 
 const studentsData = [
-  { name: 'Evelyn Maliza', university: 'Harvard', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/evelyn-maliza-aa126b289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Evelyn Maliza', university: 'University at Albany', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/evelyn-maliza-aa126b289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
   { name: 'Uzoamaka Ozo Udeze', university: 'Case Western Reserve University', industry: 'Consulting', linkedin: 'https://www.linkedin.com/in/uzoamakaozo-udeze?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Kaden Liu', university: 'Yale', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Ethan Weily', university: 'Columbia', industry: 'Consulting', linkedin: 'https://www.linkedin.com/in/ethan-weily-wvu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Rafael Cruz Lagos', university: 'Princeton', industry: 'Banking', linkedin: 'https://www.linkedin.com/in/rafaelcruzlagos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Glenys Yevi', university: 'Dartmouth', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/glenysyevi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Zachary Shi', university: 'Stanford', industry: 'Banking', linkedin: 'https://www.linkedin.com/in/zacharyshi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Jose Manuel Cruz', university: 'MIT', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/josemanuel-cruz1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Kaden Liu', university: 'Cornell University', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Ethan Weily', university: 'West Virginia University', industry: 'Consulting', linkedin: 'https://www.linkedin.com/in/ethan-weily-wvu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Rafael Cruz Lagos', university: 'University of Massachusetts Boston', industry: 'Banking', linkedin: 'https://www.linkedin.com/in/rafaelcruzlagos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Glenys Yevi', university: 'University of Houston', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/glenysyevi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Zachary Shi', university: 'Undergraduate at Binghamton University', industry: 'Banking', linkedin: 'https://www.linkedin.com/in/zacharyshi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Jose Manuel Cruz', university: 'University of Massachusetts Boston', industry: 'Tech', linkedin: 'https://www.linkedin.com/in/josemanuel-cruz1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
 ];
 
 const placementData = [

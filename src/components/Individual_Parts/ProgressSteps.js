@@ -11,7 +11,7 @@ const ProgressSteps = ({
 }) => {
     const stepsByUserType = {
         Student: ["About P2E", "Coaches Represented", "Application"],
-        Coach: ["About P2E", "Buddy System", "Application"],
+        Coach: ["About P2E", "Coaching System", "Application"],
         Company: ["About P2E", "Talent", "Investment Partnership", "Application"]
     };
 

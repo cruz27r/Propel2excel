@@ -48,16 +48,6 @@ function GuidingQuestionsOverlay({
         }
     }, [questionIndex]);
 
-    useEffect(() => {
-        if (userType) {
-            const foundQuestions = allQuestions.find(q => q.userType === userType).questions;
-            setQuestions(foundQuestions);
-            setAnswersLocal(answers);
-            setCurrentQuestionIndex(questionIndex);
-            setShowQuestions(true);
-        }
-    }, [userType, questionIndex]);
-
     const handleUserTypeSelection = (type) => {
         setUserType(type);
         onSetUserType(type);
