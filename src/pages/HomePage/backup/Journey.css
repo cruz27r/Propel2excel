@@ -243,6 +243,17 @@
   .about-us-text {
     max-width: 100%;
     padding-right: 0;
+    align-items: center; /* Center items horizontally */
+  }
+
+  .about-us-text h1 {
+    font-size: 36px;
+  }
+
+  .highlight-box {
+    font-size: 50px;
+    padding: 5px 15px;
+    margin: 5px 0; /* Adjust margin */
   }
 
   .about-us-image {
@@ -254,13 +265,17 @@
     width: 90%;
   }
 
+  .description h2 {
+    font-size: 24px;
+  }
+
+  .description p {
+    font-size: 16px;
+  }
+
   .details-button {
     width: 85%;
     font-size: large;
-  }
-
-  .about-us-text h1 {
-    font-size: 36px;
   }
 
   .hero__title-image {
@@ -287,6 +302,12 @@
   .details-button {
     width: 90%;
     font-size: medium;
+  }
+
+  .highlight-box {
+    font-size: 40px;
+    padding: 5px 10px;
+    margin: 5px 0; /* Adjust margin */
   }
 
   .highlight-container {
