@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.63338492.css",
-    "main.js": "/static/js/main.9b2ae7aa.js",
+    "main.css": "/static/css/main.8514b72c.css",
+    "main.js": "/static/js/main.2f355157.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
@@ -29,7 +29,7 @@
     "static/media/Logo-P2e-final-v4Asset 2.png": "/static/media/Logo-P2e-final-v4Asset 2.17a20faec0d276b91522.png",
     "static/media/workshop.jpg": "/static/media/workshop.fcfdd0a14583ea632ff9.jpg",
     "static/media/collage-example.png": "/static/media/collage-example.5c153cf4638f1dda6af7.png",
-    "static/media/cutout-group-3.png": "/static/media/cutout-group-3.8d168c040d14fea60d90.png",
+    "static/media/cutout-group-4.png": "/static/media/cutout-group-4.cb53b692dabbdecda897.png",
     "static/media/mentorship_example.mp4": "/static/media/mentorship_example.dd7255b0a83f6bb93587.mp4",
     "static/media/nike.png": "/static/media/nike.8bf2bf2e85c6dae16bde.png",
     "static/media/walmart.webp": "/static/media/walmart.212fed78498ea9167afa.webp",
@@ -84,11 +84,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.63338492.css.map": "/static/css/main.63338492.css.map",
-    "main.9b2ae7aa.js.map": "/static/js/main.9b2ae7aa.js.map"
+    "main.8514b72c.css.map": "/static/css/main.8514b72c.css.map",
+    "main.2f355157.js.map": "/static/js/main.2f355157.js.map"
   },
   "entrypoints": [
-    "static/css/main.63338492.css",
-    "static/js/main.9b2ae7aa.js"
+    "static/css/main.8514b72c.css",
+    "static/js/main.2f355157.js"
   ]
 }
