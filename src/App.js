@@ -17,7 +17,6 @@ import CorporatePartnersApplication from './pages/CorporatePartners/CorporatePar
 import NavBar from './components/NavBar/navbar';
 import MaintenanceCover from './MaintenanceCover';
 import './App.css';
-import MaintenancePage from './pages/Maintenance/MaintenancePage';
 import Students from './pages/MeetOurStudents/students';
 import MainApplication from './pages/MainApplication/MainApplication';
 import HiringBoard from './components/HiringBoard/HiringBoard';
@@ -26,12 +25,16 @@ import StudentsPage from './pages/MeetOurStudents/students';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true); // Toggle this variable to enable/disable maintenance mode
   const navBarRef = useRef(null);
 
   const handleLogin = (username, password) => {
     if (username === 'Propel' && password === 'p2eDev') {
       setIsLoggedIn(true);
       localStorage.setItem('isLoggedIn', 'true');
+      if (isMaintenanceMode) {
+        setIsMaintenanceMode(false);
+      }
     } else {
       alert('Invalid credentials');
     }
@@ -61,12 +64,10 @@ function App() {
     };
   }, []);
 
-  const isMaintenanceMode = true; // Toggle this variable to enable/disable maintenance mode
-
   return (
     <Router className="app-container">
       {isMaintenanceMode ? (
-        <MaintenanceCover />
+        <MaintenanceCover onLogin={handleLogin} />
       ) : (
         <>
           <NavBar ref={navBarRef} isLoggedIn={isLoggedIn} onLogout={handleLogout} />
@@ -86,7 +87,6 @@ function App() {
               <Route path="/apply-to-cohort" element={<ApplyToCohort />} />
               <Route path="/speakers" element={<Speakers />} />
               <Route path="/faqs" element={<FAQs />} />
-              <Route path="/maintenance" element={<MaintenancePage />} />
               <Route path="/students" element={<Students />} />
               <Route path="/main-application" element={<MainApplication />} />
               <Route path="/hiring-board" element={<HiringBoard />} />
