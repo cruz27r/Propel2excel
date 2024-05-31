@@ -11,7 +11,7 @@ const ProgressSteps = ({
 }) => {
     const stepsByUserType = {
         Student: ["About P2E", "Coaches Represented", "Application"],
-        Buddy: ["About P2E", "Buddy System", "Application"],
+        Coach: ["About P2E", "Buddy System", "Application"],
         Company: ["About P2E", "Talent", "Investment Partnership", "Application"]
     };
 
@@ -39,13 +39,17 @@ const ProgressSteps = ({
         }
     };
 
+    const handleAnswerClick = (question, index) => {
+        onAnswerClick(question, index);
+    };
+
     const formatAnswers = () => {
         if (!answers || Object.keys(answers).length === 0) {
             return null;
         }
 
         const userTypeDisplay = (
-            <span key="userType" className="user-type-journey" onClick={() => onAnswerClick('userType')}>
+            <span key="userType" className="user-type-journey" onClick={() => onAnswerClick('userType', 0)}>
                 {userType}'s Journey&nbsp;-&nbsp;
             </span>
         );
@@ -53,7 +57,7 @@ const ProgressSteps = ({
         const answerElements = Object.entries(answers)
             .filter(([_, answer]) => answer) // Filter out empty answers
             .map(([question, answer], index) => (
-                <span key={question} onClick={() => onAnswerClick(question, index)} data-index={index}>
+                <span key={question} onClick={() => handleAnswerClick(question, index)} data-index={index}>
                     {answer}
                 </span>
             ));

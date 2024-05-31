@@ -186,11 +186,13 @@
     font-size: 1rem; /* Match the font size of the back button */
     transition: all 0.1s ease;
     text-align: center; /* Ensure text is centered */
+    text-decoration: none; /* Remove underline */
 }
 
 .return-button:hover {
     background-color: #2a3f73; /* Lighter shade of the main color for hover */
     color: white; /* Keep text white */
+    text-decoration: none; /* Ensure no underline on hover */
 }
 
 .selected-option input[type="text"] {

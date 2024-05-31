@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
@@ -30,14 +30,14 @@
 }
 
 .user-type-journey, .answers-container span {
-    background-color: #e6e6e6;
+    background-color: #4B9CD3; /* Vibrant blue */
     border-radius: 30px;
     padding: 12px 24px;
     margin-right: 10px;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
-    color: #666;
+    color: #ffffff; /* White text */
     margin: 5px; /* Added vertical margin for better spacing */
     white-space: nowrap; /* Ensures text does not wrap */
     font-weight: bold;
@@ -45,8 +45,8 @@
 }
 
 .user-type-journey:hover, .answers-container span:hover {
-    background-color: #182C63;
-    color: #fff;
+    background-color: #182C63; /* Dark blue on hover */
+    color: #ffffff;
 }
 
 .steps-area {
@@ -59,24 +59,24 @@
 .step {
     padding: 12px 24px;
     cursor: pointer;
-    background-color: #e6e6e6;
-    color: #666;
+    background-color: #4B9CD3; /* Vibrant blue */
+    color: #ffffff; /* White text */
     border-radius: 30px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .active-step {
-    background-color: #182C63;
-    color: #ffffff;
+    background-color: #182C63; /* Dark blue for active step */
+    color: #ffffff; /* White text */
 }
 
 .button {
     width: 120px; /* Set a consistent width for buttons */
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #182C63;
-    color: #ffffff;
+    background-color: #182C63; /* Dark blue */
+    color: #ffffff; /* White text */
     border: none;
     border-radius: 5px;
     font-weight: bold;
@@ -84,7 +84,7 @@
 }
 
 .button:hover {
-    background-color: #182C63;
+    background-color: #4B9CD3; /* Vibrant blue on hover */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 

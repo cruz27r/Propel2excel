@@ -37,11 +37,10 @@ function JourneyHome({ isLoggedIn: initialIsLoggedIn = true, onLogin, onLogout }
           <div className="about-us-content">
             <div className="about-us-text">
               <h1>
-                <span className="highlight-box" onClick={() => openOverlay('coach')}>Coach</span>
-                <span className="highlight-box" onClick={() => openOverlay('place')}>Place</span>
-                <span className="highlight-container">
-                  <span className="highlight-box" onClick={() => openOverlay('diverse-talent')}>Diverse</span>
-                  <span className="highlight-box" onClick={() => openOverlay('diverse-talent')}>Talent</span>
+                <span className="highlight-box" onClick={() => openOverlay('coach')}>Coach</span><br />
+                <span className="highlight-box" onClick={() => openOverlay('place')}>Place</span><br />
+                <span className="highlight-container" onClick={() => openOverlay('diverse-talent')}>
+                  <span className="highlight-box">Diverse Talent</span>
                 </span>
               </h1>
             </div>
