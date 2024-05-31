@@ -10,14 +10,10 @@
   scroll-behavior: smooth;
   color: #333;
   max-width: 100%;
-  min-height: 100vh; /* Ensure it takes full screen height */
+  min-height: 100%; /* Ensure it takes full screen height */
   display: flex;
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
-}
-
-.journey-body--login {
-  z-index: 9999999999;
 }
 
 .journey-main-content {
@@ -37,9 +33,9 @@
 }
 
 .hero__title-image {
-  max-width: 80%;
+  max-width: 75%;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .about-us {
@@ -84,9 +80,16 @@
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  width: auto; /* Adjust the width as needed */
 }
 
 .highlight-box:hover {
+  background-color: #00A1E4;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.highlight-container:hover .highlight-box {
   background-color: #00A1E4;
   color: white;
   transform: translateY(-2px);
@@ -104,8 +107,8 @@
 }
 
 .about-us-image {
-  margin-top: 90px;
-  max-width: 70%;
+  margin-top: 0px;
+  max-width: 55%; /* Reduced width */
   width: 100%;
   height: auto;
 }
@@ -172,78 +175,18 @@
   color: #182C63;
 }
 
-.login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  text-align: center;
-  z-index: 9999;
-}
-
-.Login-Header, .Login-Message {
-  margin: 10px 0;
-  color: #182C63;
-}
-
-.login-container h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #182C63;
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.login-container form div {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-container form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.login-container form button {
-  padding: 10px;
-  background-color: #182C63;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.login-container form button:hover {
+.highlight-container:hover .highlight-box {
   background-color: #00A1E4;
-}
-
-.logout-button {
-  padding: 10px 20px;
-  background-color: #182C63;
   color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
+  transform: translateY(-2px);
 }
 
-.logout-button:hover {
+.coach:hover .highlight-box,
+.place:hover .highlight-box,
+.diverse-talent:hover .highlight-box {
   background-color: #00A1E4;
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* Tablet adjustments */
@@ -258,11 +201,11 @@
   }
 
   .about-us-image {
-    max-width: 80%;
+    max-width: 70%;
     margin-top: 20px;
   }
 
-  .login-container, .description {
+  .description {
     width: 80%;
   }
 }
@@ -288,7 +231,7 @@
     margin-top: 20px;
   }
 
-  .login-container, .description {
+  .description {
     width: 90%;
   }
 
