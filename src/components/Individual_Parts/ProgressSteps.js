@@ -8,6 +8,7 @@ const ProgressSteps = ({
     answers,
     onAnswerClick,
     onChangeAnswers,
+    openOverlayWithQuestion, // new prop
 }) => {
     const stepsByUserType = {
         Student: ["About P2E", "Coaches Represented", "Application"],
@@ -41,6 +42,7 @@ const ProgressSteps = ({
 
     const handleAnswerClick = (question, index) => {
         onAnswerClick(question, index);
+        openOverlayWithQuestion(index); // Call the function to open the overlay with the associated question
     };
 
     const formatAnswers = () => {
@@ -49,18 +51,18 @@ const ProgressSteps = ({
         }
 
         const userTypeDisplay = (
-            <span key="userType" className="user-type-journey" onClick={() => onAnswerClick('userType', 0)}>
+            <span key="userType" className="user-type-journey" onClick={() => handleAnswerClick('userType', 0)}>
                 {userType}'s Journey&nbsp;-&nbsp;
             </span>
         );
 
-        const answerElements = Object.entries(answers)
-            .filter(([_, answer]) => answer) // Filter out empty answers
-            .map(([question, answer], index) => (
-                <span key={question} onClick={() => handleAnswerClick(question, index)} data-index={index}>
-                    {answer}
-                </span>
-            ));
+        const filteredAnswers = Object.entries(answers).filter(([question]) => question !== 'userType');
+
+        const answerElements = filteredAnswers.map(([question, answer], index) => (
+            <span key={question} onClick={() => handleAnswerClick(question, index + 1)} data-index={index + 1}>
+                {answer}
+            </span>
+        ));
 
         return [userTypeDisplay, ...answerElements];
     };
