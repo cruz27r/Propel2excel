@@ -130,13 +130,14 @@ function GuidingQuestionsOverlay({
                                         type="radio"
                                         name="userType"
                                         value={option}
+                                        checked={option === answersLocal.userType}
                                         onChange={() => handleUserTypeSelection(option)}
                                     />
                                     <div className="option-card" style={{
-                                        backgroundColor: option === answersLocal.userType && focusIndex === 0 ? '#182C63' : '#fff',
-                                        color: option === answersLocal.userType && focusIndex === 0 ? 'white' : '#182C63',
-                                        border: `2px solid ${option === answersLocal.userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
-                                        transform: option === answersLocal.userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
+                                        backgroundColor: option === answersLocal.userType ? '#182C63' : '#fff',
+                                        color: option === answersLocal.userType ? 'white' : '#182C63',
+                                        border: `2px solid ${option === answersLocal.userType ? '#182C63' : '#182C63'}`,
+                                        transform: option === answersLocal.userType ? 'scale(1.1)' : 'none',
                                         transition: 'all 0.3s ease'
                                     }}>{option}</div>
                                 </label>
@@ -158,10 +159,10 @@ function GuidingQuestionsOverlay({
                                             onChange={() => handleAnswerSelection(option)}
                                         />
                                         <div className="option-card" style={{
-                                            backgroundColor: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? '#182C63' : '#fff',
-                                            color: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? 'white' : '#182C63',
-                                            border: `2px solid ${option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? '#182C63' : '#182C63'}`,
-                                            transform: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? 'scale(1.1)' : 'none',
+                                            backgroundColor: option === answersLocal[currentQuestion.text] ? '#182C63' : '#fff',
+                                            color: option === answersLocal[currentQuestion.text] ? 'white' : '#182C63',
+                                            border: `2px solid ${option === answersLocal[currentQuestion.text] ? '#182C63' : '#182C63'}`,
+                                            transform: option === answersLocal[currentQuestion.text] ? 'scale(1.1)' : 'none',
                                             transition: 'all 0.3s ease'
                                         }}>{option}</div>
                                     </label>
