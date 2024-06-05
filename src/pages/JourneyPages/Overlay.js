@@ -10,16 +10,16 @@ function GuidingQuestionsOverlay({
     answers,
     setAnswers,
     fromHomePage,
-    questionIndex,
+    initialQuestionIndex,
 }) {
-    const [userType, setUserType] = useState(null);
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(questionIndex || 0);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(initialQuestionIndex);
     const [answersLocal, setAnswersLocal] = useState({});
     const [questions, setQuestions] = useState([]);
     const [showQuestions, setShowQuestions] = useState(false);
     const [focusIndex, setFocusIndex] = useState(null);
 
     const allQuestions = [
+        { text: 'Please select your Journey:', options: ['Student', 'Coach', 'Company'], userTypeQuestion: true },
         {
             userType: 'Student',
             questions: [
@@ -42,21 +42,33 @@ function GuidingQuestionsOverlay({
         }
     ];
 
-    useEffect(() => {
-        if (questionIndex !== null) {
-            setCurrentQuestionIndex(questionIndex);
+    const getQuestionsForUserType = (userType) => {
+        const userTypeQuestions = allQuestions.find(q => q.userType === userType);
+        if (userTypeQuestions) {
+            return [allQuestions[0], ...userTypeQuestions.questions];
         }
-    }, [questionIndex]);
+        return [allQuestions[0]];
+    };
+
+    useEffect(() => {
+        setCurrentQuestionIndex(initialQuestionIndex);
+    }, [initialQuestionIndex]);
+
+    useEffect(() => {
+        if (!answers.userType) {
+            setQuestions(getQuestionsForUserType(null));
+        } else {
+            setQuestions(getQuestionsForUserType(answers.userType));
+        }
+    }, [answers.userType]);
 
     const handleUserTypeSelection = (type) => {
-        setUserType(type);
+        setAnswersLocal(prev => ({ ...prev, userType: type }));
         onSetUserType(type);
-        const foundQuestions = allQuestions.find(q => q.userType === type).questions;
-        setQuestions(foundQuestions);
-        setCurrentQuestionIndex(0);
-        setAnswersLocal({});
+        setQuestions(getQuestionsForUserType(type));
+        setCurrentQuestionIndex(1); // Move to the first question specific to the user type
         setShowQuestions(true);
-        setFocusIndex(0);
+        setFocusIndex(1);
     };
 
     const handleAnswerSelection = (answer) => {
@@ -95,10 +107,11 @@ function GuidingQuestionsOverlay({
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
         } else {
-            setUserType(null);
             setShowQuestions(false);
         }
     };
+
+    const currentQuestion = questions[currentQuestionIndex];
 
     return (
         <div className="overlay-container">
@@ -111,49 +124,48 @@ function GuidingQuestionsOverlay({
                         <Link to="/" className="return-button">Return Home</Link>
                     </div>
                 )}
-                {!userType && (
+                {currentQuestion && currentQuestion.userTypeQuestion ? (
                     <div className="question-container">
-                        <p>Please select your Journey:</p>
+                        <p>{currentQuestion.text}</p>
                         <div className="options-container">
-                            {allQuestions.map((group) => (
-                                <label key={group.userType}>
+                            {currentQuestion.options.map((option) => (
+                                <label key={option}>
                                     <input
                                         type="radio"
                                         name="userType"
-                                        value={group.userType}
-                                        onChange={() => handleUserTypeSelection(group.userType)}
+                                        value={option}
+                                        onChange={() => handleUserTypeSelection(option)}
                                     />
                                     <div className="option-card" style={{
-                                        backgroundColor: group.userType === userType && focusIndex === 0 ? '#182C63' : '#fff',
-                                        color: group.userType === userType && focusIndex === 0 ? 'white' : '#182C63',
-                                        border: `2px solid ${group.userType === userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
-                                        transform: group.userType === userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
+                                        backgroundColor: option === answersLocal.userType && focusIndex === 0 ? '#182C63' : '#fff',
+                                        color: option === answersLocal.userType && focusIndex === 0 ? 'white' : '#182C63',
+                                        border: `2px solid ${option === answersLocal.userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
+                                        transform: option === answersLocal.userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
                                         transition: 'all 0.3s ease'
-                                    }}>{group.userType}</div>
+                                    }}>{option}</div>
                                 </label>
                             ))}
                         </div>
                     </div>
-                )}
-                {userType && showQuestions && (
+                ) : currentQuestion ? (
                     <>
-                        <p>{questions[currentQuestionIndex].text}</p>
-                        {questions[currentQuestionIndex].hasOwnProperty('options') ? (
+                        <p>{currentQuestion.text}</p>
+                        {currentQuestion.options ? (
                             <div className="options-container">
-                                {questions[currentQuestionIndex].options.map((option, index) => (
+                                {currentQuestion.options.map((option, index) => (
                                     <label key={index}>
                                         <input
                                             type="radio"
-                                            name={questions[currentQuestionIndex].text}
+                                            name={currentQuestion.text}
                                             value={option}
-                                            checked={option === answersLocal[questions[currentQuestionIndex].text]}
+                                            checked={option === answersLocal[currentQuestion.text]}
                                             onChange={() => handleAnswerSelection(option)}
                                         />
                                         <div className="option-card" style={{
-                                            backgroundColor: option === answersLocal[questions[currentQuestionIndex].text] && focusIndex === currentQuestionIndex ? '#182C63' : '#fff',
-                                            color: option === answersLocal[questions[currentQuestionIndex].text] && focusIndex === currentQuestionIndex ? 'white' : '#182C63',
-                                            border: `2px solid ${option === answersLocal[questions[currentQuestionIndex].text] && focusIndex === currentQuestionIndex ? '#182C63' : '#182C63'}`,
-                                            transform: option === answersLocal[questions[currentQuestionIndex].text] && focusIndex === currentQuestionIndex ? 'scale(1.1)' : 'none',
+                                            backgroundColor: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? '#182C63' : '#fff',
+                                            color: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? 'white' : '#182C63',
+                                            border: `2px solid ${option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? '#182C63' : '#182C63'}`,
+                                            transform: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? 'scale(1.1)' : 'none',
                                             transition: 'all 0.3s ease'
                                         }}>{option}</div>
                                     </label>
@@ -163,20 +175,20 @@ function GuidingQuestionsOverlay({
                             <div className='text-input-container'>
                                 <input
                                     type="text"
-                                    name={questions[currentQuestionIndex].text}
-                                    value={answersLocal[questions[currentQuestionIndex].text] || ''}
+                                    name={currentQuestion.text}
+                                    value={answersLocal[currentQuestion.text] || ''}
                                     onChange={handleInputChange}
                                     onKeyDown={(e) => { if (e.key === 'Enter') handleConfirm(); }}
                                     required
                                 />
-                                <button onClick={handleConfirm} disabled={!answersLocal[questions[currentQuestionIndex].text]}>
+                                <button onClick={handleConfirm} disabled={!answersLocal[currentQuestion.text]}>
                                     Confirm
                                 </button>
                             </div>
                         )}
                         <button className="back-button" onClick={handleBack}>Back</button>
                     </>
-                )}
+                ) : null}
             </div>
         </div>
     );
