@@ -62,7 +62,7 @@ function GuidingQuestionsOverlay({
     }, [initialQuestionIndex]);
 
     const handleUserTypeSelection = (type) => {
-        const updatedAnswers = { ...answersLocal, userType: type };
+        const updatedAnswers = { userType: type }; // Reset answers for new user type
         setAnswersLocal(updatedAnswers);
         setAnswers(updatedAnswers);
         onSetUserType(type);
