@@ -13,9 +13,8 @@ function GuidingQuestionsOverlay({
     initialQuestionIndex,
 }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(initialQuestionIndex);
-    const [answersLocal, setAnswersLocal] = useState({});
+    const [answersLocal, setAnswersLocal] = useState(answers || {});
     const [questions, setQuestions] = useState([]);
-    const [showQuestions, setShowQuestions] = useState(false);
     const [focusIndex, setFocusIndex] = useState(null);
 
     const allQuestions = [
@@ -51,23 +50,24 @@ function GuidingQuestionsOverlay({
     };
 
     useEffect(() => {
-        setCurrentQuestionIndex(initialQuestionIndex);
-    }, [initialQuestionIndex]);
-
-    useEffect(() => {
-        if (!answers.userType) {
-            setQuestions(getQuestionsForUserType(null));
-        } else {
+        if (answers.userType) {
             setQuestions(getQuestionsForUserType(answers.userType));
+        } else {
+            setQuestions(getQuestionsForUserType(null));
         }
     }, [answers.userType]);
 
+    useEffect(() => {
+        setCurrentQuestionIndex(initialQuestionIndex);
+    }, [initialQuestionIndex]);
+
     const handleUserTypeSelection = (type) => {
-        setAnswersLocal(prev => ({ ...prev, userType: type }));
+        const updatedAnswers = { ...answersLocal, userType: type };
+        setAnswersLocal(updatedAnswers);
+        setAnswers(updatedAnswers);
         onSetUserType(type);
         setQuestions(getQuestionsForUserType(type));
-        setCurrentQuestionIndex(1); // Move to the first question specific to the user type
-        setShowQuestions(true);
+        setCurrentQuestionIndex(1);
         setFocusIndex(1);
     };
 
@@ -81,8 +81,7 @@ function GuidingQuestionsOverlay({
             if (currentQuestionIndex < questions.length - 1) {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
             } else {
-                setShowQuestions(false);
-                onSelectStep(1);
+                onClose();
             }
         }, 1000);
     };
@@ -98,16 +97,13 @@ function GuidingQuestionsOverlay({
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
-            setShowQuestions(false);
-            onSelectStep(1);
+            onClose();
         }
     };
 
     const handleBack = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
-        } else {
-            setShowQuestions(false);
         }
     };
 
