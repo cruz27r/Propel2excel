@@ -19,10 +19,15 @@ const ProgressSteps = ({
     const steps = userType ? stepsByUserType[userType] : [];
 
     const [currentStep, setCurrentStep] = useState(selectedStep - 1);
+    const [displayedAnswers, setDisplayedAnswers] = useState([]);
 
     useEffect(() => {
         setCurrentStep(selectedStep - 1);
     }, [selectedStep]);
+
+    useEffect(() => {
+        setDisplayedAnswers(formatAnswers());
+    }, [answers, userType]);
 
     const handleStepClick = (index) => {
         onSelectStep(index + 1);
@@ -72,9 +77,9 @@ const ProgressSteps = ({
             <div className="row">
                 <div className="answers-container">
                     <button className="button" onClick={onChangeAnswers}>Change Answers</button>
-                    {formatAnswers() && (
+                    {displayedAnswers && (
                         <div className="formatted-answers">
-                            {formatAnswers()}
+                            {displayedAnswers}
                         </div>
                     )}
                 </div>

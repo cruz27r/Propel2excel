@@ -7,11 +7,11 @@
     padding: 20px;
     background-color: #f9f9f9;
     color: #333;
+    max-width: 100%;
 }
 
 /* General Styling */
 .student-about-container {
-    max-width: 95%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -21,7 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -30,31 +30,36 @@
 }
 
 .program-statement img {
-    flex: 1 1 45%; /* Set the image to 45% width */
-    max-width: 45%;
+    flex: 1 1 50%; /* Set the image to 50% width */
+    max-width: 50%;
     height: auto; /* Ensure the image maintains its aspect ratio */
     border-radius: 10px;
     margin-right: 20px; /* Add some space between image and text */
 }
 
 .program-statement-text {
-    flex: 1 1 45%; /* Set the text container to 45% width */
+    flex: 1 1 50%; /* Set the text container to 50% width */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center text vertically */
-    max-width: 45%;
+    max-width: 50%;
 }
 
 .program-statement h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
+    text-align: center; /* Center align title */
 }
 
 .program-statement p {
-    font-size: 1.8rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-align: justify; /* Justify align paragraph text */
+    margin: 0 auto; /* Center the paragraph */
+    width: 95%; /* Set width to 95% */
+    max-width: 100%; /* Ensure text doesn't touch edges */
 }
 
 /* Key Components */
@@ -68,7 +73,7 @@
 
 .key-components-container h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
 }
 
@@ -86,8 +91,8 @@
 }
 
 .components-content ul li {
-    font-size: 1.2rem;
-    padding: 20px 10px; /* Increased padding to make the elements larger */
+    font-size: 1rem;
+    padding: 15px 10px; /* Reduced padding */
     border-radius: 5px;
     background-color: #f0f0f0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -100,7 +105,7 @@
 .components-content ul li.active {
     background-color: #182C63;
     color: #fff;
-    padding: 25px 10px; /* Increased padding on hover and active state */
+    padding: 20px 10px; /* Increased padding on hover and active state */
 }
 
 .component-image {
@@ -142,7 +147,7 @@
 }
 
 .details-column h4 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -153,13 +158,13 @@
 }
 
 .details-column ul li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 5px;
 }
 
 .details-column p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.4;
     margin-top: 10px;
 }
 
@@ -184,7 +189,7 @@
 
 .requirements-section h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
 }
 
@@ -199,7 +204,7 @@
 }
 
 .requirements-content ul li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 10px 0;
 }
 
@@ -232,7 +237,7 @@
 }
 
 .events-buttons button {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 10px 20px;
     margin-right: 10px;
     border: none;
@@ -246,19 +251,65 @@
     color: #fff;
 }
 
-/* Mobile adjustments */
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .program-statement h3 {
+        font-size: 1.8rem; /* Smaller font size for large screens */
+    }
+
+    .program-statement p {
+        font-size: 1.4rem; /* Smaller font size for large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .program-statement h3 {
+        font-size: 1.6rem; /* Smaller font size for medium screens */
+    }
+
+    .program-statement p {
+        font-size: 1.2rem; /* Smaller font size for medium screens */
+    }
+}
+
 @media (max-width: 768px) {
     .program-statement {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px; /* Reduced padding */
     }
 
-    .program-statement img,
+    .program-statement img {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 10px 0; /* Reduced margin */
+    }
+
     .program-statement-text {
         width: 100%;
+        max-width: 100%;
         margin: 0;
-        margin-bottom: 20px;
+        text-align: center; /* Center align text */
+    }
+
+    .program-statement h3 {
+        font-size: 1.4rem; /* Smaller font size for mobile */
+        margin-bottom: 10px; /* Added margin-bottom for spacing */
+    }
+
+    .program-statement p {
+        font-size: 1rem; /* Smaller font size for mobile */
+        line-height: 1.4; /* Adjusted line height for readability */
+        text-align: justify; /* Justify align text */
+        margin: 0 auto; /* Center align text */
+        width: 95%; /* Set width to 95% */
+        max-width: 100%; /* Ensure text doesn't touch edges */
+        margin-bottom: 10px; /* Added margin-bottom for spacing */
+    }
+
+    .components-content {
+        flex-direction: column;
     }
 
     .components-content ul,
@@ -266,7 +317,24 @@
         width: 100%;
     }
 
+    .component-image {
+        margin: 0;
+    }
+
+    .component-details {
+        flex-direction: column;
+    }
+
     .details-column {
+        width: 100%;
+    }
+
+    .events-requirements-container {
+        flex-direction: column;
+    }
+
+    .requirements-section,
+    .events-section {
         width: 100%;
     }
 
@@ -276,5 +344,41 @@
 
     .events-buttons button {
         margin-bottom: 10px;
+    }
+
+    .events-buttons button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .program-statement {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px; /* Reduced padding */
+    }
+
+    .program-statement img {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 10px 0; /* Reduced margin */
+    }
+
+    .program-statement-text {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        text-align: center; /* Center align text */
+    }
+
+    .program-statement h3 {
+        font-size: 1.2rem; /* Smaller font size for small screens */
+    }
+
+    .program-statement p {
+        font-size: 0.9rem; /* Smaller font size for small screens */
+        width: 100%; /* Set width to 100% */
+        max-width: 100%; /* Ensure text doesn't touch edges */
     }
 }

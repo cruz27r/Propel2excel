@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Journey.css';
 import textbanner from '../../../assets/images/4x/4x/banner-p2eAsset 9.png';
-import aboutUsImage from '../../../assets/images/collage-students/cutout-group-4.png';
+import aboutUsImage from '../../../assets/images/collage-students/cutout-group-3.png';
 import CoachOverlay from './overlays/coachOverlay';
 import PlaceOverlay from './overlays/placeOverlay';
 import DiverseTalentOverlay from './overlays/diverseTalentOverlay';

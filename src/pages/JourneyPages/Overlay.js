@@ -13,9 +13,8 @@ function GuidingQuestionsOverlay({
     initialQuestionIndex,
 }) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(initialQuestionIndex);
-    const [answersLocal, setAnswersLocal] = useState({});
+    const [answersLocal, setAnswersLocal] = useState(answers || {});
     const [questions, setQuestions] = useState([]);
-    const [showQuestions, setShowQuestions] = useState(false);
     const [focusIndex, setFocusIndex] = useState(null);
 
     const allQuestions = [
@@ -51,23 +50,24 @@ function GuidingQuestionsOverlay({
     };
 
     useEffect(() => {
-        setCurrentQuestionIndex(initialQuestionIndex);
-    }, [initialQuestionIndex]);
-
-    useEffect(() => {
-        if (!answers.userType) {
-            setQuestions(getQuestionsForUserType(null));
-        } else {
+        if (answers.userType) {
             setQuestions(getQuestionsForUserType(answers.userType));
+        } else {
+            setQuestions(getQuestionsForUserType(null));
         }
     }, [answers.userType]);
 
+    useEffect(() => {
+        setCurrentQuestionIndex(initialQuestionIndex);
+    }, [initialQuestionIndex]);
+
     const handleUserTypeSelection = (type) => {
-        setAnswersLocal(prev => ({ ...prev, userType: type }));
+        const updatedAnswers = { userType: type }; // Reset answers for new user type
+        setAnswersLocal(updatedAnswers);
+        setAnswers(updatedAnswers);
         onSetUserType(type);
         setQuestions(getQuestionsForUserType(type));
-        setCurrentQuestionIndex(1); // Move to the first question specific to the user type
-        setShowQuestions(true);
+        setCurrentQuestionIndex(1);
         setFocusIndex(1);
     };
 
@@ -81,8 +81,7 @@ function GuidingQuestionsOverlay({
             if (currentQuestionIndex < questions.length - 1) {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
             } else {
-                setShowQuestions(false);
-                onSelectStep(1);
+                onClose();
             }
         }, 1000);
     };
@@ -98,16 +97,13 @@ function GuidingQuestionsOverlay({
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
-            setShowQuestions(false);
-            onSelectStep(1);
+            onClose();
         }
     };
 
     const handleBack = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
-        } else {
-            setShowQuestions(false);
         }
     };
 
@@ -134,13 +130,14 @@ function GuidingQuestionsOverlay({
                                         type="radio"
                                         name="userType"
                                         value={option}
+                                        checked={option === answersLocal.userType}
                                         onChange={() => handleUserTypeSelection(option)}
                                     />
                                     <div className="option-card" style={{
-                                        backgroundColor: option === answersLocal.userType && focusIndex === 0 ? '#182C63' : '#fff',
-                                        color: option === answersLocal.userType && focusIndex === 0 ? 'white' : '#182C63',
-                                        border: `2px solid ${option === answersLocal.userType && focusIndex === 0 ? '#182C63' : '#182C63'}`,
-                                        transform: option === answersLocal.userType && focusIndex === 0 ? 'scale(1.1)' : 'none',
+                                        backgroundColor: option === answersLocal.userType ? '#182C63' : '#fff',
+                                        color: option === answersLocal.userType ? 'white' : '#182C63',
+                                        border: `2px solid ${option === answersLocal.userType ? '#182C63' : '#182C63'}`,
+                                        transform: option === answersLocal.userType ? 'scale(1.1)' : 'none',
                                         transition: 'all 0.3s ease'
                                     }}>{option}</div>
                                 </label>
@@ -162,10 +159,10 @@ function GuidingQuestionsOverlay({
                                             onChange={() => handleAnswerSelection(option)}
                                         />
                                         <div className="option-card" style={{
-                                            backgroundColor: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? '#182C63' : '#fff',
-                                            color: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? 'white' : '#182C63',
-                                            border: `2px solid ${option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? '#182C63' : '#182C63'}`,
-                                            transform: option === answersLocal[currentQuestion.text] && focusIndex === currentQuestionIndex ? 'scale(1.1)' : 'none',
+                                            backgroundColor: option === answersLocal[currentQuestion.text] ? '#182C63' : '#fff',
+                                            color: option === answersLocal[currentQuestion.text] ? 'white' : '#182C63',
+                                            border: `2px solid ${option === answersLocal[currentQuestion.text] ? '#182C63' : '#182C63'}`,
+                                            transform: option === answersLocal[currentQuestion.text] ? 'scale(1.1)' : 'none',
                                             transition: 'all 0.3s ease'
                                         }}>{option}</div>
                                     </label>
