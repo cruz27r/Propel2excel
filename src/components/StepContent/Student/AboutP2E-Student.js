@@ -7,7 +7,7 @@ import networkingImage from '../../../assets/images/conference-event.jpg';
 import candidate from '../../../assets/images/shaking hands.jpg';
 import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg';
 import interviewImage from '../../../assets/images/interview-example.jpg';
-import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg'; // Add this import for the speaker series image
+import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg';
 
 const StudentAbout = () => {
   const [activeEvent, setActiveEvent] = useState('workshop');
@@ -30,7 +30,7 @@ const StudentAbout = () => {
 
   return (
     <div className="student-about-container">
-      <div className="program-statement">
+      <div className="program-wwa">
         <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Who We Are</h3>

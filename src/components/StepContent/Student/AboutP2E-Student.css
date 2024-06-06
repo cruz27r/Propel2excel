@@ -17,11 +17,9 @@
 }
 
 /* Program Overview */
-.program-statement {
+.program-wwa {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -29,37 +27,36 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.program-statement img {
-    flex: 1 1 50%; /* Set the image to 50% width */
-    max-width: 50%;
-    height: auto; /* Ensure the image maintains its aspect ratio */
+.program-wwa img {
+    width: 60%;
+    flex: 1;
+    height: auto;
     border-radius: 10px;
-    margin-right: 20px; /* Add some space between image and text */
 }
 
-.program-statement-text {
-    flex: 1 1 50%; /* Set the text container to 50% width */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center text vertically */
-    max-width: 50%;
+.program-wwa .program-statement-text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
 }
 
-.program-statement h3 {
+.program-wwa h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 10px;
-    text-align: center; /* Center align title */
+    color: #182C63;
 }
 
-.program-statement p {
-    font-size: 1.2rem;
+.program-wwa p {
+    font-size: 1.4rem;
     line-height: 1.4;
-    text-align: justify; /* Justify align paragraph text */
-    margin: 0 auto; /* Center the paragraph */
-    width: 95%; /* Set width to 95% */
-    max-width: 100%; /* Ensure text doesn't touch edges */
+    margin: 0;
+}
+
+.program-wwa .highlight {
+    color: #182C63;
+    font-weight: bold;
 }
 
 /* Key Components */
@@ -251,61 +248,41 @@
     color: #fff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .program-statement h3 {
-        font-size: 1.8rem; /* Smaller font size for large screens */
-    }
-
-    .program-statement p {
-        font-size: 1.4rem; /* Smaller font size for large screens */
-    }
-}
-
-@media (max-width: 992px) {
-    .program-statement h3 {
-        font-size: 1.6rem; /* Smaller font size for medium screens */
-    }
-
-    .program-statement p {
-        font-size: 1.2rem; /* Smaller font size for medium screens */
-    }
-}
-
+/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
-    .program-statement {
+    .program-wwa {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px; /* Reduced padding */
+        padding: 10px;
     }
 
-    .program-statement img {
+    .program-wwa img {
         width: 100%;
         max-width: 100%;
-        margin: 0 0 10px 0; /* Reduced margin */
+        margin: 0 0 10px 0;
     }
 
-    .program-statement-text {
+    .program-wwa .program-statement-text {
         width: 100%;
         max-width: 100%;
         margin: 0;
-        text-align: center; /* Center align text */
+        text-align: center;
     }
 
-    .program-statement h3 {
+    .program-wwa h3 {
         font-size: 1.4rem; /* Smaller font size for mobile */
-        margin-bottom: 10px; /* Added margin-bottom for spacing */
+        margin-bottom: 10px;
     }
 
-    .program-statement p {
+    .program-wwa p {
         font-size: 1rem; /* Smaller font size for mobile */
-        line-height: 1.4; /* Adjusted line height for readability */
-        text-align: justify; /* Justify align text */
-        margin: 0 auto; /* Center align text */
-        width: 95%; /* Set width to 95% */
-        max-width: 100%; /* Ensure text doesn't touch edges */
-        margin-bottom: 10px; /* Added margin-bottom for spacing */
+        line-height: 1.4;
+        text-align: justify;
+        margin: 0 auto;
+        width: 95%;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
 
     .components-content {
@@ -348,37 +325,5 @@
 
     .events-buttons button:last-child {
         margin-bottom: 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .program-statement {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 10px; /* Reduced padding */
-    }
-
-    .program-statement img {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 0 10px 0; /* Reduced margin */
-    }
-
-    .program-statement-text {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        text-align: center; /* Center align text */
-    }
-
-    .program-statement h3 {
-        font-size: 1.2rem; /* Smaller font size for small screens */
-    }
-
-    .program-statement p {
-        font-size: 0.9rem; /* Smaller font size for small screens */
-        width: 100%; /* Set width to 100% */
-        max-width: 100%; /* Ensure text doesn't touch edges */
     }
 }

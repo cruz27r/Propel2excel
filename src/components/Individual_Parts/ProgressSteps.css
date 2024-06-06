@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .steps-container {
     display: flex;
     flex-direction: column;
@@ -59,7 +62,7 @@
 .steps-area {
     display: flex;
     flex-wrap: wrap;
-    justify-content: right; /* Center the steps */
+    justify-content: flex-end; /* Align steps to the right */
     align-items: center; /* Center vertically */
     gap: 10px;
     flex-basis: 50%;
@@ -76,6 +79,8 @@
     text-align: center;
     display: inline-flex; /* Adjust to the width of the text */
     white-space: nowrap;
+    min-width: auto; /* Ensure minimum width for better spacing */
+    max-width: 100%;
 }
 
 .active-step {
@@ -162,7 +167,7 @@
         display: flex;
         justify-content: center;
         min-width: 20%; /* Ensure minimum width for better spacing */
-        max-width: 30%;
+        max-width: 35%;
     }
 
     .button-container {
