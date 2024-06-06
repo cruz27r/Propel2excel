@@ -30,7 +30,7 @@ const PartnerAbout = () => {
 
   return (
     <div className="student-about-container">
-      <div className="program-statement">
+      <div className="program-wwa">
         <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Who We Are</h3>
