@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AboutP2E-Company.css';
 import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
-import CollageExample from '../../../assets/images/collage-students/collage-example.png';
+import CollageExample from '../../../assets/images/collage-students/full-collage-2.png';
 import workshopImage from '../../../assets/images/workshop.jpg';
 import networkingImage from '../../../assets/images/conference-event.jpg';
 import candidate from '../../../assets/images/shaking hands.jpg';

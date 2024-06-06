@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f273fd8b.css",
-    "main.js": "/static/js/main.9ec9bdae.js",
+    "main.css": "/static/css/main.3d9e0637.css",
+    "main.js": "/static/js/main.0111ecf6.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
@@ -13,8 +13,8 @@
     "static/media/table-computers.jpg": "/static/media/table-computers.72106d2a5edd2351e75c.jpg",
     "static/media/zoom_in_on_laptop.jpg": "/static/media/zoom_in_on_laptop.e15964f50022bace62d6.jpg",
     "static/media/speaker-event.jpg": "/static/media/speaker-event.d7cf006e938608789941.jpg",
+    "static/media/banner-p2eAsset 9.png": "/static/media/banner-p2eAsset 9.cb928de4f253595c6279.png",
     "static/media/headshot1.jpg": "/static/media/headshot1.a68d52b31f6404700b74.jpg",
-    "static/media/Logo_Banner_textAsset 6.png": "/static/media/Logo_Banner_textAsset 6.41a8b86bf425aad589bb.png",
     "static/media/looking_over_code.jpg": "/static/media/looking_over_code.2b0925895a1ddc321c49.jpg",
     "static/media/networking-event.jpg": "/static/media/networking-event.7e7d7d84d3c7ef1f5650.jpg",
     "static/media/meetmentor.jpg": "/static/media/meetmentor.5108fb2f60555765441a.jpg",
@@ -29,7 +29,7 @@
     "static/media/Logo-P2e-final-v4Asset 2.png": "/static/media/Logo-P2e-final-v4Asset 2.17a20faec0d276b91522.png",
     "static/media/cutout-group-3.png": "/static/media/cutout-group-3.b991aed7a14efac31b28.png",
     "static/media/workshop.jpg": "/static/media/workshop.fcfdd0a14583ea632ff9.jpg",
-    "static/media/collage-example.png": "/static/media/collage-example.5c153cf4638f1dda6af7.png",
+    "static/media/full-collage-2.png": "/static/media/full-collage-2.d3caa5365d16bec677e5.png",
     "static/media/mentorship_example.mp4": "/static/media/mentorship_example.dd7255b0a83f6bb93587.mp4",
     "static/media/nike.png": "/static/media/nike.8bf2bf2e85c6dae16bde.png",
     "static/media/walmart.webp": "/static/media/walmart.212fed78498ea9167afa.webp",
@@ -84,11 +84,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.f273fd8b.css.map": "/static/css/main.f273fd8b.css.map",
-    "main.9ec9bdae.js.map": "/static/js/main.9ec9bdae.js.map"
+    "main.3d9e0637.css.map": "/static/css/main.3d9e0637.css.map",
+    "main.0111ecf6.js.map": "/static/js/main.0111ecf6.js.map"
   },
   "entrypoints": [
-    "static/css/main.f273fd8b.css",
-    "static/js/main.9ec9bdae.js"
+    "static/css/main.3d9e0637.css",
+    "static/js/main.0111ecf6.js"
   ]
 }

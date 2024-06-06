@@ -7,7 +7,6 @@ const ProgressSteps = ({
     onSelectStep,
     answers,
     onAnswerClick,
-    onChangeAnswers,
     openOverlayWithQuestion, // new prop
 }) => {
     const stepsByUserType = {
@@ -20,6 +19,7 @@ const ProgressSteps = ({
 
     const [currentStep, setCurrentStep] = useState(selectedStep - 1);
     const [displayedAnswers, setDisplayedAnswers] = useState([]);
+    const [showAnswers, setShowAnswers] = useState(false); // State for toggling formatted answers
 
     useEffect(() => {
         setCurrentStep(selectedStep - 1);
@@ -72,16 +72,20 @@ const ProgressSteps = ({
         return [userTypeDisplay, ...answerElements];
     };
 
+    const toggleAnswers = () => {
+        setShowAnswers(!showAnswers);
+    };
+
     return (
         <div className="steps-container">
             <div className="row">
                 <div className="answers-container">
-                    <button className="button" onClick={onChangeAnswers}>Change Answers</button>
-                    {displayedAnswers && (
-                        <div className="formatted-answers">
-                            {displayedAnswers}
-                        </div>
-                    )}
+                    <button className="show-answers-button" onClick={toggleAnswers}>
+                        {showAnswers ? 'Hide Answers' : 'Show Answers'}
+                    </button>
+                    <div className={`formatted-answers ${showAnswers ? 'show' : 'hide'}`}>
+                        {displayedAnswers}
+                    </div>
                 </div>
                 <div className="steps-area">
                     {steps.map((step, index) => (
@@ -95,7 +99,7 @@ const ProgressSteps = ({
                     ))}
                 </div>
             </div>
-            <div className="row">
+            <div className="button-container">
                 <button className="button" onClick={handlePrev} disabled={selectedStep === 1}>Prev</button>
                 <button className="button" onClick={handleNext} disabled={selectedStep === steps.length}>Next</button>
             </div>
