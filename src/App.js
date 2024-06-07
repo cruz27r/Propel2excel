@@ -25,16 +25,15 @@ import StudentsPage from './pages/MeetOurStudents/students';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
-  const [isMaintenanceMode, setIsMaintenanceMode] = useState(true); // Toggle this variable to enable/disable maintenance mode
+  const [isMaintenanceMode, setIsMaintenanceMode] = useState(localStorage.getItem('isMaintenanceMode') === 'true');
   const navBarRef = useRef(null);
 
   const handleLogin = (username, password) => {
     if (username === 'Propel' && password === 'p2eDev') {
       setIsLoggedIn(true);
       localStorage.setItem('isLoggedIn', 'true');
-      if (isMaintenanceMode) {
-        setIsMaintenanceMode(false);
-      }
+      setIsMaintenanceMode(false);
+      localStorage.setItem('isMaintenanceMode', 'false');
     } else {
       alert('Invalid credentials');
     }
@@ -44,11 +43,6 @@ function App() {
     setIsLoggedIn(false);
     localStorage.removeItem('isLoggedIn');
   };
-
-  useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    setIsLoggedIn(loggedIn);
-  }, []);
 
   useEffect(() => {
     const adjustMainContentPadding = () => {
