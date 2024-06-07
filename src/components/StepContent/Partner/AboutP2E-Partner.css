@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap'); /* New font for statistics */
 
 .student-about-container {
     font-family: 'Roboto', sans-serif;
@@ -127,7 +128,7 @@
 }
 
 .details-column {
-    flex: 0 1 30%;
+    flex: 0 1 45%; /* Adjusted width to take up more space */
     padding: 20px;
     background-color: #182C63;
     color: #f0f0f0;
@@ -157,9 +158,65 @@
 .details-column ul li {
     font-size: 1rem;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.details-column ul li img.check-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .details-column p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.details-column-requirements {
+    width: auto;
+    flex: 0 1 45%; /* Adjusted width to take up more space */
+    padding: 20px;
+    background-color: #182C63;
+    color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.details-column-requirements:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.details-column-requirements h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details-column-requirements ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details-column-requirements ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.details-column-requirements ul li img.check-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.details-column-requirements p {
     font-size: 1rem;
     line-height: 1.4;
     margin-top: 10px;
@@ -174,14 +231,18 @@
 }
 
 .requirements-section {
-    flex: 0 1 38%; /* Adjusted width to be slightly smaller */
+    flex: 0 1 100%; /* Adjusted width to take full space */
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+}
+
+.requirements-section img.requirements-image {
+    max-width: 50%; /* Adjust the width to make the image smaller */
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 .requirements-section h2 {
@@ -203,10 +264,18 @@
 .requirements-content ul li {
     font-size: 1rem;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.requirements-content ul li img.check-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .events-section {
-    flex: 0 1 48%; /* Adjusted width to be slightly smaller */
+    flex: 0 1 100%; /* Adjusted width to take full space */
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -246,6 +315,54 @@
 .events-buttons button.active-button {
     background-color: #182C63;
     color: #fff;
+}
+
+/* Statistics Content */
+.statistics-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.statistics-content .stat-item {
+    flex: 0 1 48%;
+    margin-bottom: 20px;
+}
+
+.statistics-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #182C63;
+}
+
+.statistics-content p,
+.statistics-content ul {
+    font-family: 'Open Sans', sans-serif; /* New font for statistics */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 10px;
+}
+
+.statistics-content ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Add spacing between columns */
+}
+
+.statistics-content ul li {
+    font-size: 1.2rem;
+    width: 45%; /* Adjust the width to create two columns */
+}
+
+.statistics-content p .highlight {
+    font-weight: bold;
+    color: #182C63;
 }
 
 /* Responsive adjustments for mobile */
@@ -306,6 +423,10 @@
         width: 100%;
     }
 
+    .details-column-requirements {
+        width: 100%;
+    }
+
     .events-requirements-container {
         flex-direction: column;
     }
@@ -325,5 +446,22 @@
 
     .events-buttons button:last-child {
         margin-bottom: 0;
+    }
+
+    .statistics-content {
+        display: block;
+    }
+
+    .statistics-content .stat-item {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+
+    .statistics-content ul {
+        flex-direction: column;
+    }
+
+    .statistics-content ul li {
+        width: 100%;
     }
 }

@@ -7,7 +7,9 @@ import networkingImage from '../../../assets/images/conference-event.jpg';
 import candidate from '../../../assets/images/shaking hands.jpg';
 import LinkedInImage from '../../../assets/images/resume-rebrand-image.jpg';
 import interviewImage from '../../../assets/images/interview-example.jpg';
-import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg'; // Add this import for the speaker series image
+import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg';
+import check from '../../../assets/images/check.png';
+import meeting from '../../../assets/images/group-meeting.jpg';
 
 const PartnerAbout = () => {
   const [activeEvent, setActiveEvent] = useState('workshop');
@@ -44,6 +46,9 @@ const PartnerAbout = () => {
         <h3>Key Components of the Program</h3>
         <div className="components-content">
           <ul>
+            <li onClick={() => handleComponentClick('studentRequirements')} className={activeComponent === 'studentRequirements' ? 'active' : ''}>
+              <strong>Student Requirements:</strong> The necessary criteria for students to join the program.
+            </li>
             <li onClick={() => handleComponentClick('speaking')} className={activeComponent === 'speaking' ? 'active' : ''}>
               <strong>Speaking Engagements:</strong> Professional speaking engagements foster partnerships with non-target universities and provide industry insights.
             </li>
@@ -62,6 +67,26 @@ const PartnerAbout = () => {
           </div>
         </div>
         <div className="component-details">
+          {activeComponent === 'studentRequirements' && (
+            <>
+              <div className="details-column-requirements">
+                <h4>Academic Requirements</h4>
+                <ul>
+                  <li><img src={check} alt="check" className="check-icon" /> Good Academic Standing: A GPA of 3.3 and above.</li>
+                  <li><img src={check} alt="check" className="check-icon" /> Special Projects: Participation in significant academic projects.</li>
+                  <li><img src={check} alt="check" className="check-icon" /> Awards and Achievements: Recognition such as the Dr. Martin Luther King Jr. Award.</li>
+                </ul>
+              </div>
+              <div className="details-column-requirements">
+                <h4>Professional Requirements</h4>
+                <ul>
+                  <li><img src={check} alt="check" className="check-icon" /> Leadership Positions: Preferred positions in clubs, sports, or projects.</li>
+                  <li><img src={check} alt="check" className="check-icon" /> Internship Experience: Experience in top tech, consulting, or banking companies.</li>
+                  <li><img src={check} alt="check" className="check-icon" /> Business Certifications: Certifications such as CFA, CPA, or other relevant qualifications.</li>
+                </ul>
+              </div>
+            </>
+          )}
           {activeComponent === 'speaking' && (
             <>
               <div className="details-column">
@@ -147,12 +172,12 @@ const PartnerAbout = () => {
               <div className="details-column">
                 <h4>Our Focus</h4>
                 <ul>
-                  <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking</li>
+                  <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking.</li>
                 </ul>
               </div>
               <div className="details-column">
                 <h4>Importance</h4>
-                <p>Eliminate the gap in recruiting ambitious students at non-target university. </p>
+                <p>Eliminate the gap in recruiting ambitious students at non-target universities.</p>
               </div>
             </>
           )}
@@ -160,17 +185,44 @@ const PartnerAbout = () => {
       </div>
 
       <div className="events-requirements-container">
-        <div className="requirements-section">
-          <h2>Requirements for Fellows</h2>
-          <div className="requirements-content">
+        <div className="statistics-content">
+          <div className="stat-item">
+            <h3>Student Profile</h3>
+            <p>
+              Average GPA: 3.7<br />
+              Freshmen: 25%<br />
+              Sophomore: 25%<br />
+              Junior: 25%<br />
+              Senior: 25%
+            </p>
+          </div>
+          <div className="stat-item">
+            <h3>P2E Placements</h3>
             <ul>
-              <li><strong>Good Academic Standing:</strong> A GPA of 3.3 and above.</li>
-              <li><strong>Leadership Positions:</strong> Preferred positions in clubs, sports, or projects that demonstrate leadership skills.</li>
-              <li><strong>Internship Experience:</strong> Experience in top tech, consulting, or banking companies is a plus.</li>
-              <li><strong>Business Certifications:</strong> Certifications such as CFA, CPA, or other relevant qualifications are advantageous.</li>
-              <li><strong>Special Projects:</strong> Participation in significant academic or extracurricular projects.</li>
-              <li><strong>Awards and Achievements:</strong> Recognition such as the Dr. Martin Luther King Jr. Award or other prestigious awards.</li>
+              <li>Microsoft: 20.6%</li>
+              <li>Google: 12.7%</li>
+              <li>Amazon: 10.3%</li>
+              <li>McKinsey & Co.: 7.9%</li>
+              <li>Mass General Hospital: 18.6%</li>
+              <li>Goldman Sachs: 6.2%</li>
+              <li>Others: 7.9%</li>
+              <li>Bank of America: 5%</li>
+              <li>Citi: 3.3%</li>
             </ul>
+          </div>
+          <div className="stat-item">
+            <h3>Live Cohort</h3>
+            <p>
+              250 Students across 60 Universities (US)<br />
+              8,000 Coaches
+            </p>
+          </div>
+          <div className="stat-item">
+            <h3>October Applications</h3>
+            <p>
+              1,200 within 2 months<br />
+              Projected October Applications: 5,000
+            </p>
           </div>
         </div>
 

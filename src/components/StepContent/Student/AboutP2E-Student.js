@@ -70,7 +70,7 @@ const StudentAbout = () => {
         <div className="component-details">
           {activeComponent === 'studentRequirements' && (
             <>
-              <div className="details-column">
+              <div className="details-column-requirements">
                 <h4>Academic Requirements</h4>
                 <ul>
                   <li><img src={check} alt="check" className="check-icon" /> Good Academic Standing: A GPA of 3.3 and above.</li>
@@ -78,7 +78,7 @@ const StudentAbout = () => {
                   <li><img src={check} alt="check" className="check-icon" /> Awards and Achievements: Recognition such as the Dr. Martin Luther King Jr. Award.</li>
                 </ul>
               </div>
-              <div className="details-column">
+              <div className="details-column-requirements">
                 <h4>Professional Requirements</h4>
                 <ul>
                   <li><img src={check} alt="check" className="check-icon" /> Leadership Positions: Preferred positions in clubs, sports, or projects.</li>
@@ -186,8 +186,18 @@ const StudentAbout = () => {
       </div>
 
       <div className="events-requirements-container">
-        <div className="requirements-section">
-          <div className="statistics-content">
+        <div className="statistics-content">
+          <div className="stat-item">
+            <h3>Student Profile</h3>
+            <p>
+              Average GPA: 3.7<br />
+              Freshmen: 25%<br />
+              Sophomore: 25%<br />
+              Junior: 25%<br />
+              Senior: 25%
+            </p>
+          </div>
+          <div className="stat-item">
             <h3>P2E Placements</h3>
             <ul>
               <li>Microsoft: 20.6%</li>
@@ -200,19 +210,15 @@ const StudentAbout = () => {
               <li>Bank of America: 5%</li>
               <li>Citi: 3.3%</li>
             </ul>
-            <h3>Student Profile</h3>
-            <p>
-              Average GPA: 3.7<br />
-              Freshmen: 25%<br />
-              Sophomore: 25%<br />
-              Junior: 25%<br />
-              Senior: 25%
-            </p>
+          </div>
+          <div className="stat-item">
             <h3>Live Cohort</h3>
             <p>
               250 Students across 60 Universities (US)<br />
               8,000 Coaches
             </p>
+          </div>
+          <div className="stat-item">
             <h3>October Applications</h3>
             <p>
               1,200 within 2 months<br />
