@@ -14,6 +14,8 @@
   display: flex;
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
+  width: auto;
+  height: auto;
 }
 
 .journey-main-content {
@@ -78,10 +80,11 @@
   padding: 5px 25px;
   margin: 5px 0; /* Adjust margin */
   border-radius: 10px;
-  display: inline-block;
+  display: inline-block; /* Ensure the width fits the content */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-size: 75px;
+  text-align: left; /* Align text to the left */
 }
 
 .highlight-box:hover,
@@ -92,9 +95,10 @@
 }
 
 .highlight-container {
-  display: inline-block;
+  display: inline-block; /* Ensure the width fits the content */
   cursor: pointer; /* Add cursor pointer to indicate it is clickable */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Same transition as highlight-box */
+  text-align: left; /* Ensure text is aligned to the left */
 }
 
 .about-us-text p {
@@ -254,6 +258,8 @@
     font-size: 50px;
     padding: 5px 15px;
     margin: 5px 0; /* Adjust margin */
+    text-align: left; /* Align text to the left */
+    display: inline-block; /* Ensure the width fits the content */
   }
 
   .about-us-image {
@@ -283,13 +289,14 @@
   }
 
   .highlight-container {
-    display: inline-block;
+    display: inline-block; /* Ensure the width fits the content */
     white-space: nowrap; /* Prevent line breaks within the container */
-    width: auto; /* Ensure the width fits the content */
+    text-align: left; /* Align text to the left */
   }
 
   .highlight-container .highlight-box {
-    margin: 5px 5px; /* Reduce margin between 'Diverse' and 'Talent' */
+    display: inline-block; /* Ensure the width fits the content */
+    margin: 5px 5px; /* Adjust margin to reduce space between boxes */
   }
 }
 
@@ -308,15 +315,18 @@
     font-size: 40px;
     padding: 5px 10px;
     margin: 5px 0; /* Adjust margin */
+    text-align: left; /* Align text to the left */
+    display: inline-block; /* Ensure the width fits the content */
   }
 
   .highlight-container {
-    display: inline-block;
+    display: inline-block; /* Ensure the width fits the content */
     white-space: nowrap; /* Prevent line breaks within the container */
-    width: auto; /* Ensure the width fits the content */
+    text-align: left; /* Align text to the left */
   }
 
   .highlight-container .highlight-box {
-    margin: 5px 5px; /* Reduce margin between 'Diverse' and 'Talent' */
+    display: inline-block; /* Ensure the width fits the content */
+    margin: 5px 5px; /* Adjust margin to reduce space between boxes */
   }
 }

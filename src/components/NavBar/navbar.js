@@ -57,6 +57,7 @@ const NavBar = ({ onLogout }) => {
         </div>
 
         <div className="center-links">
+        <Link to="/" className={`nav-link ${isActiveLink('/career-tips')}`}>Home</Link>
           <Link to="/career-tips" className={`nav-link ${isActiveLink('/career-tips')}`}>Career Tips</Link>
           <Link to="/hiring-board" className={`nav-link ${isActiveLink('/hiring-board')}`}>Who's Hiring</Link>
         </div>

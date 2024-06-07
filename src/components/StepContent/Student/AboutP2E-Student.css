@@ -127,7 +127,7 @@
 }
 
 .details-column {
-    flex: 0 1 30%;
+    flex: 0 1 45%; /* Adjusted width to take up more space */
     padding: 20px;
     background-color: #182C63;
     color: #f0f0f0;
@@ -157,6 +157,14 @@
 .details-column ul li {
     font-size: 1rem;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.details-column ul li img.check-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .details-column p {
@@ -174,7 +182,7 @@
 }
 
 .requirements-section {
-    flex: 0 1 38%; /* Adjusted width to be slightly smaller */
+    flex: 0 1 48%; /* Adjusted width to be slightly larger */
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -182,6 +190,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.requirements-section img.requirements-image {
+    max-width: 50%; /* Adjust the width to make the image smaller */
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 .requirements-section h2 {
@@ -203,10 +218,18 @@
 .requirements-content ul li {
     font-size: 1rem;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.requirements-content ul li img.check-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 .events-section {
-    flex: 0 1 48%; /* Adjusted width to be slightly smaller */
+    flex: 0 1 48%; /* Adjusted width to be slightly larger */
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -246,6 +269,38 @@
 .events-buttons button.active-button {
     background-color: #182C63;
     color: #fff;
+}
+
+/* Statistics Content */
+.statistics-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #182C63;
+}
+
+.statistics-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.statistics-content ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.statistics-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: 10px;
 }
 
 /* Responsive adjustments for mobile */

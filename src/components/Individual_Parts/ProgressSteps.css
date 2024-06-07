@@ -166,8 +166,8 @@
         flex: 1 1 auto; /* Adjust for multiple rows if necessary */
         display: flex;
         justify-content: center;
-        min-width: 20%; /* Ensure minimum width for better spacing */
-        max-width: 35%;
+        min-width: 15%; /* Ensure minimum width for better spacing */
+        max-width: 30%;
     }
 
     .button-container {
@@ -178,8 +178,8 @@
 
     .button, .show-answers-button {
         font-size: large;
-        max-width: 35%;
-        min-width: 30%;
+        max-width: 33%;
+        min-width: 15%;
         width: 100%; /* Ensure buttons take up full width */
     }
 }
