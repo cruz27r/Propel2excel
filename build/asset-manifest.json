@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f3467ec2.css",
-    "main.js": "/static/js/main.50d2c99c.js",
+    "main.css": "/static/css/main.fb4f1d60.css",
+    "main.js": "/static/js/main.21577fa7.js",
     "static/media/test_networking_vid.mp4": "/static/media/test_networking_vid.66e40ed3cb6624bbd869.mp4",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
@@ -85,11 +85,11 @@
     "static/media/Alpine_Logo.webp": "/static/media/Alpine_Logo.e42da7a3917ee973f92c.webp",
     "static/media/alpine-investors.webp": "/static/media/alpine-investors.e42da7a3917ee973f92c.webp",
     "index.html": "/index.html",
-    "main.f3467ec2.css.map": "/static/css/main.f3467ec2.css.map",
-    "main.50d2c99c.js.map": "/static/js/main.50d2c99c.js.map"
+    "main.fb4f1d60.css.map": "/static/css/main.fb4f1d60.css.map",
+    "main.21577fa7.js.map": "/static/js/main.21577fa7.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3467ec2.css",
-    "static/js/main.50d2c99c.js"
+    "static/css/main.fb4f1d60.css",
+    "static/js/main.21577fa7.js"
   ]
 }

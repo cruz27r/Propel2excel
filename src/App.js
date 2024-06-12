@@ -24,7 +24,8 @@ import CareerTips from './components/CareerTips/Tips';
 import StudentsPage from './pages/MeetOurStudents/students';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  // Initialize login state based on localStorage and sessionStorage
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true' && sessionStorage.getItem('isSessionActive') === 'true');
   const [isMaintenanceMode, setIsMaintenanceMode] = useState(localStorage.getItem('isMaintenanceMode') === 'true');
   const navBarRef = useRef(null);
 
@@ -32,6 +33,7 @@ function App() {
     if (username === 'Propel' && password === 'p2eDev') {
       setIsLoggedIn(true);
       localStorage.setItem('isLoggedIn', 'true');
+      sessionStorage.setItem('isSessionActive', 'true');
       setIsMaintenanceMode(false);
       localStorage.setItem('isMaintenanceMode', 'false');
     } else {
@@ -42,6 +44,7 @@ function App() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('isSessionActive');
   };
 
   useEffect(() => {
@@ -58,9 +61,21 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    // Clear sessionStorage when the window is closed
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem('isSessionActive');
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
   return (
     <Router className="app-container">
-      {isMaintenanceMode ? (
+      {isMaintenanceMode || !isLoggedIn ? (
         <MaintenanceCover onLogin={handleLogin} />
       ) : (
         <>

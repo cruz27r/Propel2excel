@@ -78,7 +78,7 @@
 .highlight-box {
   background-color: #d8eeff; /* Highlight box color */
   padding: 5px 25px;
-  margin: 5px 0; /* Adjust margin */
+  margin: 0; /* Adjust margin */
   border-radius: 10px;
   display: inline-block; /* Ensure the width fits the content */
   cursor: pointer;
@@ -193,7 +193,7 @@
 @media (min-width: 1024px) {
   .highlight-container {
     display: block;
-    width: auto; /* Ensure the width fits the content */
+    width: 100%; /* Ensure the width fits the content */
   }
 
   .highlight-container .highlight-box {
@@ -247,7 +247,7 @@
   .about-us-text {
     max-width: 100%;
     padding-right: 0;
-    align-items: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items to the left */
   }
 
   .about-us-text h1 {
@@ -260,6 +260,18 @@
     margin: 5px 0; /* Adjust margin */
     text-align: left; /* Align text to the left */
     display: inline-block; /* Ensure the width fits the content */
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .highlight-container {
+    display: inline-block; /* Ensure the width fits the content */
+    text-align: left; /* Ensure text is aligned to the left */
+    margin: 5px 0; /* Reduce margin between boxes */
+  }
+
+  .highlight-container .highlight-box {
+    display: inline-block; /* Ensure the width fits the content */
+    margin: 5px 0; /* Adjust margin to reduce space between boxes */
   }
 
   .about-us-image {
@@ -287,17 +299,6 @@
   .hero__title-image {
     max-width: 100%;
   }
-
-  .highlight-container {
-    display: inline-block; /* Ensure the width fits the content */
-    white-space: nowrap; /* Prevent line breaks within the container */
-    text-align: left; /* Align text to the left */
-  }
-
-  .highlight-container .highlight-box {
-    display: inline-block; /* Ensure the width fits the content */
-    margin: 5px 5px; /* Adjust margin to reduce space between boxes */
-  }
 }
 
 /* Small mobile adjustments */
@@ -317,16 +318,18 @@
     margin: 5px 0; /* Adjust margin */
     text-align: left; /* Align text to the left */
     display: inline-block; /* Ensure the width fits the content */
+    white-space: nowrap; /* Prevent wrapping */
   }
 
   .highlight-container {
     display: inline-block; /* Ensure the width fits the content */
     white-space: nowrap; /* Prevent line breaks within the container */
     text-align: left; /* Align text to the left */
+    margin: 5px 0; /* Reduce margin between boxes */
   }
 
   .highlight-container .highlight-box {
     display: inline-block; /* Ensure the width fits the content */
-    margin: 5px 5px; /* Adjust margin to reduce space between boxes */
+    margin: 5px 0; /* Adjust margin to reduce space between boxes */
   }
 }
