@@ -11,9 +11,29 @@ import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg';
 import check from '../../../assets/images/check.png';
 import meeting from '../../../assets/images/group-meeting.jpg';
 
+const studentsData = [
+  { name: 'Fabiola Flores', linkedin: 'https://www.linkedin.com/in/fabiola-flores-esperanza58/' },
+  { name: 'Ahsan Khan', linkedin: 'https://www.linkedin.com/in/ahsan-khan01/' },
+  { name: 'Ivana Huges', linkedin: 'https://www.linkedin.com/in/ivana-hughes/' },
+  { name: 'Glenys Yevi', linkedin: 'https://www.linkedin.com/in/glenysyevi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'JoseManuel Cruz', linkedin: 'https://www.linkedin.com/in/josemanuel-cruz1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Rafael Cruz', linkedin: 'https://www.linkedin.com/in/rafaelcruzlagos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Nourien Fouad', linkedin: 'https://www.linkedin.com/in/nourine-fouad/' },
+  { name: 'Marvendy Brutus', linkedin: 'https://www.linkedin.com/in/marvendy-brutus/' },
+  { name: 'Zion Witsell', linkedin: 'https://www.linkedin.com/in/zionwitsell/' },
+  { name: 'Ebuka Ogbuefi', linkedin: 'https://www.linkedin.com/in/ebuka-ogbuefi/' },
+  { name: 'Sparkle Lawson', linkedin: 'https://www.linkedin.com/in/sparkle-lawson/' },
+  { name: 'Ethan Weily', linkedin: 'https://www.linkedin.com/in/ethan-weily-wvu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Delia Whitehill', linkedin: 'https://www.linkedin.com/in/deliawhitehill/' },
+  { name: 'David Fang', linkedin: 'https://www.linkedin.com/in/davidffang/' },
+  { name: 'Kaden Liu', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+];
+
+
 const CompanyAbout = () => {
   const [activeEvent, setActiveEvent] = useState('workshop');
-  const [activeComponent, setActiveComponent] = useState('speaking');
+  const [activeComponent, setActiveComponent] = useState('studentRequirements');
+  const [overlayVisible, setOverlayVisible] = useState(false);
 
   const handleEventClick = (event) => {
     setActiveEvent(event);
@@ -23,7 +43,12 @@ const CompanyAbout = () => {
     setActiveComponent(component);
   };
 
+  const toggleOverlay = () => {
+    setOverlayVisible(!overlayVisible);
+  };
+
   const componentImages = {
+    studentRequirements: meeting,
     speaking: mentorshipImage,
     linkedin: LinkedInImage,
     interview: interviewImage,
@@ -32,7 +57,7 @@ const CompanyAbout = () => {
 
   return (
     <div className="student-about-container">
-      <div className="program-wwa">
+      <div className="program-wwa" onClick={toggleOverlay}>
         <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Who We Are</h3>
@@ -40,189 +65,203 @@ const CompanyAbout = () => {
             Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
           </p>
         </div>
+        {overlayVisible && (
+          <div className="students-overlay">
+            <button className="close-overlay" onClick={toggleOverlay}>X</button>
+            <div className="students-grid">
+              {studentsData.map((student, index) => (
+                <div className="student-box" key={index}>
+                  <a href={student.linkedin} target="_blank" rel="noopener noreferrer">{student.name}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="key-components-container">
         <h3>Key Components of the Program</h3>
-        <div className="components-content">
-          <ul>
+        <div className="key-components-content">
+          <ul className="key-components">
             <li onClick={() => handleComponentClick('studentRequirements')} className={activeComponent === 'studentRequirements' ? 'active' : ''}>
               <strong>Student Requirements:</strong> The necessary criteria for students to join the program.
+              {activeComponent === 'studentRequirements' && <img src={componentImages['studentRequirements']} alt="Student Requirements" className="component-image" />}
             </li>
             <li onClick={() => handleComponentClick('speaking')} className={activeComponent === 'speaking' ? 'active' : ''}>
               <strong>Speaking Engagements:</strong> Professional speaking engagements foster partnerships with non-target universities and provide industry insights.
+              {activeComponent === 'speaking' && <img src={componentImages['speaking']} alt="Speaking Engagements" className="component-image" />}
             </li>
             <li onClick={() => handleComponentClick('linkedin')} className={activeComponent === 'linkedin' ? 'active' : ''}>
               <strong>LinkedIn & Resume Rebrand:</strong> Experts with over 10 years of experience optimize students' LinkedIn profiles and resumes.
+              {activeComponent === 'linkedin' && <img src={componentImages['linkedin']} alt="LinkedIn & Resume Rebrand" className="component-image" />}
             </li>
             <li onClick={() => handleComponentClick('interview')} className={activeComponent === 'interview' ? 'active' : ''}>
               <strong>Interview Preparation:</strong> Students receive mock interviews and feedback from current professionals to enhance their readiness.
+              {activeComponent === 'interview' && <img src={componentImages['interview']} alt="Interview Preparation" className="component-image" />}
             </li>
             <li onClick={() => handleComponentClick('candidate')} className={activeComponent === 'candidate' ? 'active' : ''}>
               <strong>Candidate Readiness:</strong> Vetted students are introduced to partner companies for internship or full-time opportunities.
+              {activeComponent === 'candidate' && <img src={componentImages['candidate']} alt="Candidate Readiness" className="component-image" />}
             </li>
           </ul>
-          <div className="component-image">
-            {activeComponent && <img src={componentImages[activeComponent]} alt={activeComponent} />}
+          <div className="component-details">
+            {activeComponent === 'studentRequirements' && (
+              <div className="details">
+                <div className="details-column-requirements">
+                  <h4>Academic Requirements</h4>
+                  <ul>
+                    <li><img src={check} alt="check" className="check-icon" /> Good Academic Standing: A GPA of 3.3 and above.</li>
+                    <li><img src={check} alt="check" className="check-icon" /> Special Projects: Participation in significant academic projects.</li>
+                    <li><img src={check} alt="check" className="check-icon" /> Awards and Achievements: Recognition such as the Dr. Martin Luther King Jr. Award.</li>
+                  </ul>
+                </div>
+                <div className="details-column-requirements">
+                  <h4>Professional Requirements</h4>
+                  <ul>
+                    <li><img src={check} alt="check" className="check-icon" /> Leadership Positions: Preferred positions in clubs, sports, or projects.</li>
+                    <li><img src={check} alt="check" className="check-icon" /> Internship Experience: Experience in top tech, consulting, or banking companies.</li>
+                    <li><img src={check} alt="check" className="check-icon" /> Business Certifications: Certifications such as CFA, CPA, or other relevant qualifications.</li>
+                  </ul>
+                </div>
+              </div>
+            )}
+            {activeComponent === 'speaking' && (
+              <div className="details">
+                <div className="details-column">
+                  <h4>Common Mistakes</h4>
+                  <ul>
+                    <li>Lack of industry exposure.</li>
+                    <li>Insufficient networking opportunities.</li>
+                    <li>Limited access to professional insights.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Our Focus</h4>
+                  <ul>
+                    <li>Hosting speaking engagements with industry leaders.</li>
+                    <li>Fostering professional partnerships.</li>
+                    <li>Providing valuable industry insights.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Importance</h4>
+                  <p>Engaging with industry professionals helps students gain valuable insights, build networks, and better understand their chosen fields.</p>
+                </div>
+              </div>
+            )}
+            {activeComponent === 'linkedin' && (
+              <div className="details">
+                <div className="details-column">
+                  <h4>Common Mistakes</h4>
+                  <ul>
+                    <li>Incomplete or outdated profiles.</li>
+                    <li>Unprofessional profile photos.</li>
+                    <li>Failure to showcase skills and accomplishments.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Our Focus</h4>
+                  <ul>
+                    <li>LinkedIn profile optimization for professional appearance and completeness.</li>
+                    <li>Highlighting skills, accomplishments, and experiences relevant to target industries.</li>
+                    <li>Building a strong professional network through strategic connections.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Importance</h4>
+                  <p>Optimized LinkedIn profiles and resumes increase students' visibility to potential employers and improve their chances of securing job opportunities.</p>
+                </div>
+              </div>
+            )}
+            {activeComponent === 'interview' && (
+              <div className="details">
+                <div className="details-column">
+                  <h4>Common Mistakes</h4>
+                  <ul>
+                    <li>Lack of preparation and research.</li>
+                    <li>Inability to effectively communicate skills and experiences.</li>
+                    <li>Failure to ask insightful questions or engage with the interviewer.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Our Focus</h4>
+                  <ul>
+                    <li>Mock interviews and personalized feedback.</li>
+                    <li>Training on effective communication and storytelling.</li>
+                    <li>Guidance on asking questions and engaging with interviewers.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Importance</h4>
+                  <p>Interview preparation is essential for showcasing one's skills and experiences, demonstrating fit for the role, and ultimately securing the job or internship.</p>
+                </div>
+              </div>
+            )}
+            {activeComponent === 'candidate' && (
+              <div className="details">
+                <div className="details-column">
+                  <h4>Common Mistakes</h4>
+                  <ul>
+                    <li>Unclear career goals and paths.</li>
+                    <li>Not being adequately prepared for job applications.</li>
+                    <li>Missing out on suitable job opportunities.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Our Focus</h4>
+                  <ul>
+                    <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking.</li>
+                  </ul>
+                </div>
+                <div className="details-column">
+                  <h4>Importance</h4>
+                  <p>Eliminate the gap in recruiting ambitious students at non-target universities.</p>
+                </div>
+              </div>
+            )}
           </div>
-        </div>
-        <div className="component-details">
-          {activeComponent === 'studentRequirements' && (
-            <>
-              <div className="details-column-requirements">
-                <h4>Academic Requirements</h4>
-                <ul>
-                  <li><img src={check} alt="check" className="check-icon" /> Good Academic Standing: A GPA of 3.3 and above.</li>
-                  <li><img src={check} alt="check" className="check-icon" /> Special Projects: Participation in significant academic projects.</li>
-                  <li><img src={check} alt="check" className="check-icon" /> Awards and Achievements: Recognition such as the Dr. Martin Luther King Jr. Award.</li>
-                </ul>
-              </div>
-              <div className="details-column-requirements">
-                <h4>Professional Requirements</h4>
-                <ul>
-                  <li><img src={check} alt="check" className="check-icon" /> Leadership Positions: Preferred positions in clubs, sports, or projects.</li>
-                  <li><img src={check} alt="check" className="check-icon" /> Internship Experience: Experience in top tech, consulting, or banking companies.</li>
-                  <li><img src={check} alt="check" className="check-icon" /> Business Certifications: Certifications such as CFA, CPA, or other relevant qualifications.</li>
-                </ul>
-              </div>
-            </>
-          )}
-          {activeComponent === 'speaking' && (
-            <>
-              <div className="details-column">
-                <h4>Common Mistakes</h4>
-                <ul>
-                  <li>Lack of industry exposure.</li>
-                  <li>Insufficient networking opportunities.</li>
-                  <li>Limited access to professional insights.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Our Focus</h4>
-                <ul>
-                  <li>Hosting speaking engagements with industry leaders.</li>
-                  <li>Fostering professional partnerships.</li>
-                  <li>Providing valuable industry insights.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Importance</h4>
-                <p>Engaging with industry professionals helps students gain valuable insights, build networks, and better understand their chosen fields.</p>
-              </div>
-            </>
-          )}
-          {activeComponent === 'linkedin' && (
-            <>
-              <div className="details-column">
-                <h4>Common Mistakes</h4>
-                <ul>
-                  <li>Incomplete or outdated profiles.</li>
-                  <li>Unprofessional profile photos.</li>
-                  <li>Failure to showcase skills and accomplishments.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Our Focus</h4>
-                <ul>
-                  <li>LinkedIn profile optimization for professional appearance and completeness.</li>
-                  <li>Highlighting skills, accomplishments, and experiences relevant to target industries.</li>
-                  <li>Building a strong professional network through strategic connections.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Importance</h4>
-                <p>Optimized LinkedIn profiles and resumes increase students' visibility to potential employers and improve their chances of securing job opportunities.</p>
-              </div>
-            </>
-          )}
-          {activeComponent === 'interview' && (
-            <>
-              <div className="details-column">
-                <h4>Common Mistakes</h4>
-                <ul>
-                  <li>Lack of preparation and research.</li>
-                  <li>Inability to effectively communicate skills and experiences.</li>
-                  <li>Failure to ask insightful questions or engage with the interviewer.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Our Focus</h4>
-                <ul>
-                  <li>Mock interviews and personalized feedback.</li>
-                  <li>Training on effective communication and storytelling.</li>
-                  <li>Guidance on asking questions and engaging with interviewers.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Importance</h4>
-                <p>Interview preparation is essential for showcasing one's skills and experiences, demonstrating fit for the role, and ultimately securing the job or internship.</p>
-              </div>
-            </>
-          )}
-          {activeComponent === 'candidate' && (
-            <>
-              <div className="details-column">
-                <h4>Common Mistakes</h4>
-                <ul>
-                  <li>Unclear career goals and paths.</li>
-                  <li>Not being adequately prepared for job applications.</li>
-                  <li>Missing out on suitable job opportunities.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Our Focus</h4>
-                <ul>
-                  <li>Create the most attractive candidates for the most superior opportunities in tech, consulting, and banking.</li>
-                </ul>
-              </div>
-              <div className="details-column">
-                <h4>Importance</h4>
-                <p>Eliminate the gap in recruiting ambitious students at non-target universities.</p>
-              </div>
-            </>
-          )}
         </div>
       </div>
 
       <div className="events-requirements-container">
         <div className="statistics-content">
           <div className="stat-item">
-            <h3>Student Profile</h3>
-            <p>
-              Average GPA: 3.7<br />
-              Freshmen: 25%<br />
-              Sophomore: 25%<br />
-              Junior: 25%<br />
-              Senior: 25%
-            </p>
-          </div>
-          <div className="stat-item">
-            <h3>P2E Placements</h3>
-            <ul>
-              <li>Microsoft: 20.6%</li>
-              <li>Google: 12.7%</li>
-              <li>Amazon: 10.3%</li>
-              <li>McKinsey & Co.: 7.9%</li>
-              <li>Mass General Hospital: 18.6%</li>
-              <li>Goldman Sachs: 6.2%</li>
-              <li>Others: 7.9%</li>
-              <li>Bank of America: 5%</li>
-              <li>Citi: 3.3%</li>
-            </ul>
-          </div>
-          <div className="stat-item">
             <h3>Live Cohort</h3>
             <p>
-              250 Students across 60 Universities (US)<br />
-              8,000 Coaches
+              <span className="highlight-stat">250 Students</span> across <span className="highlight-stat">60 Universities (US)</span><br />
+              <span className="highlight-stat">8,000 Coaches</span>
             </p>
           </div>
           <div className="stat-item">
             <h3>October Applications</h3>
             <p>
-              1,200 within 2 months<br />
-              Projected October Applications: 5,000
+              <span className="highlight-stat">1,200</span> within 2 months<br />
+              Projected October Applications: <span className="highlight-stat">5,000</span>
             </p>
+          </div>
+          <div className="stat-item">
+            <h3>Student Profile</h3>
+            <p>
+              Average GPA: <span className="highlight-stat">3.7</span><br />
+              Freshmen: <span className="highlight-stat">25%</span><br />
+              Sophomore: <span className="highlight-stat">25%</span><br />
+              Junior: <span className="highlight-stat">25%</span><br />
+              Senior: <span className="highlight-stat">25%</span>
+            </p>
+          </div>
+          <div className="stat-item">
+            <h3>P2E Placements</h3>
+            <ul>
+              <li>Microsoft: <span className="highlight-stat">20.6%</span></li>
+              <li>Google: <span className="highlight-stat">12.7%</span></li>
+              <li>Amazon: <span className="highlight-stat">10.3%</span></li>
+              <li>McKinsey & Co.: <span className="highlight-stat">7.9%</span></li>
+              <li>Mass General Hospital: <span className="highlight-stat">18.6%</span></li>
+              <li>Goldman Sachs: <span className="highlight-stat">6.2%</span></li>
+              <li>Others: <span className="highlight-stat">7.9%</span></li>
+              <li>Bank of America: <span className="highlight-stat">5%</span></li>
+              <li>Citi: <span className="highlight-stat">3.3%</span></li>
+            </ul>
           </div>
         </div>
 
