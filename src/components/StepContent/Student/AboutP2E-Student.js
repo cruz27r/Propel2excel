@@ -11,9 +11,28 @@ import speakerSeriesImage from '../../../assets/images/remotemeeting.jpg';
 import check from '../../../assets/images/check.png';
 import meeting from '../../../assets/images/group-meeting.jpg';
 
+const studentsData = [
+  { name: 'Fabiola Flores', linkedin: 'https://www.linkedin.com/in/fabiola-flores-esperanza58/' },
+  { name: 'Ahsan Khan', linkedin: 'https://www.linkedin.com/in/ahsan-khan01/' },
+  { name: 'Ivana Huges', linkedin: 'https://www.linkedin.com/in/ivana-hughes/' },
+  { name: 'Glenys Yevi', linkedin: 'https://www.linkedin.com/in/glenysyevi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'JoseManuel Cruz', linkedin: 'https://www.linkedin.com/in/josemanuel-cruz1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Rafael Cruz', linkedin: 'https://www.linkedin.com/in/rafaelcruzlagos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Nourien Fouad', linkedin: 'https://www.linkedin.com/in/nourine-fouad/' },
+  { name: 'Marvendy Brutus', linkedin: 'https://www.linkedin.com/in/marvendy-brutus/' },
+  { name: 'Zion Witsell', linkedin: 'https://www.linkedin.com/in/zionwitsell/' },
+  { name: 'Ebuka Ogbuefi', linkedin: 'https://www.linkedin.com/in/ebuka-ogbuefi/' },
+  { name: 'Sparkle Lawson', linkedin: 'https://www.linkedin.com/in/sparkle-lawson/' },
+  { name: 'Ethan Weily', linkedin: 'https://www.linkedin.com/in/ethan-weily-wvu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Delia Whitehill', linkedin: 'https://www.linkedin.com/in/deliawhitehill/' },
+  { name: 'David Fang', linkedin: 'https://www.linkedin.com/in/davidffang/' },
+  { name: 'Kaden Liu', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+];
+
 const StudentAbout = () => {
   const [activeEvent, setActiveEvent] = useState('workshop');
   const [activeComponent, setActiveComponent] = useState('studentRequirements');
+  const [overlayVisible, setOverlayVisible] = useState(false);
 
   const handleEventClick = (event) => {
     setActiveEvent(event);
@@ -21,6 +40,10 @@ const StudentAbout = () => {
 
   const handleComponentClick = (component) => {
     setActiveComponent(component);
+  };
+
+  const toggleOverlay = () => {
+    setOverlayVisible(!overlayVisible);
   };
 
   const componentImages = {
@@ -33,7 +56,7 @@ const StudentAbout = () => {
 
   return (
     <div className="student-about-container">
-      <div className="program-wwa">
+      <div className="program-wwa" onClick={toggleOverlay}>
         <img src={CollageExample} alt="Mentorship Program" className="program-statement-image" />
         <div className="program-statement-text">
           <h3 className="ProgramHeader">Who We Are</h3>
@@ -41,6 +64,18 @@ const StudentAbout = () => {
             Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
           </p>
         </div>
+        {overlayVisible && (
+          <div className="students-overlay">
+            <button className="close-overlay" onClick={toggleOverlay}>X</button>
+            <div className="students-grid">
+              {studentsData.map((student, index) => (
+                <div className="student-box" key={index}>
+                  <a href={student.linkedin} target="_blank" rel="noopener noreferrer">{student.name}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="key-components-container">
@@ -228,7 +263,6 @@ const StudentAbout = () => {
             </ul>
           </div>
         </div>
-
 
         <div className="events-section">
           <div className="events-services-content">
