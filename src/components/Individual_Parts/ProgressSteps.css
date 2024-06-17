@@ -126,7 +126,7 @@
     transition: background-color 0.2s, box-shadow 0.2s;
     text-align: center;
     white-space: nowrap; /* Ensure text does not wrap */
-    width: auto; /* Auto width for better fit */
+    width: max-content; /* Auto width for better fit */
 }
 
 .button:hover, .show-answers-button:hover {
@@ -185,7 +185,7 @@
     .button, .show-answers-button {
         font-size: 14px; /* Larger font size for readability */
         padding: 8px 12px; /* Adjusted padding for better fit */
-        max-width: 33%;
+        max-width: 39%;
         min-width: 20%;
         width: 100%; /* Ensure buttons take up full width */
     }

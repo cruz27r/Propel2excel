@@ -31,7 +31,7 @@ const studentsData = [
 
 
 const PartnerAbout = () => {
-  const [activeEvent, setActiveEvent] = useState('workshop');
+  const [activeEvent, setActiveEvent] = useState('networking');
   const [activeComponent, setActiveComponent] = useState('studentRequirements');
   const [overlayVisible, setOverlayVisible] = useState(false);
 
@@ -66,7 +66,7 @@ const PartnerAbout = () => {
           </p>
         </div>
         {overlayVisible && (
-          <div className="students-overlay">
+          <div className="overlay-student">
             <button className="close-overlay" onClick={toggleOverlay}>X</button>
             <div className="students-grid">
               {studentsData.map((student, index) => (
@@ -271,7 +271,7 @@ const PartnerAbout = () => {
             <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
           </div>
           <div className="events-services-image">
-            <img src={activeEvent === 'workshop' ? workshopImage : activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
+            <img src={activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
           </div>
           <div className="events-buttons">
             <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
