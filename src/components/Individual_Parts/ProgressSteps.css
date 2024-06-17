@@ -29,8 +29,8 @@
 
 .formatted-answers {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap; /* Ensure the answers fit on one line */
+    gap: 10px; /* Adjust gap as needed */
     transition: max-height 0.5s ease-in-out;
     max-height: 0;
     overflow: hidden;
@@ -42,13 +42,13 @@
 }
 
 .user-type-journey, .formatted-answers span {
-    background-color: #4B9CD3; /* Vibrant blue */
-    border-radius: 30px;
-    padding: 6px 12px; /* Reduced padding */
+    background-color: #D1E8FF; /* Light blue for distinction */
+    border-radius: 20px; /* Reduced border radius */
+    padding: 8px 12px; /* Adjusted padding for larger font */
     cursor: pointer;
     display: inline-block;
-    font-size: 14px;
-    color: #ffffff; /* White text */
+    font-size: 14px; /* Increased font size */
+    color: #003366; /* Dark blue text */
     white-space: nowrap; /* Ensures text does not wrap */
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
@@ -56,7 +56,7 @@
 
 .user-type-journey:hover, .formatted-answers span:hover {
     background-color: #182C63; /* Dark blue on hover */
-    color: #ffffff;
+    color: #ffffff; /* White text on hover */
 }
 
 .steps-area {
@@ -66,12 +66,13 @@
     align-items: center; /* Center vertically */
     gap: 10px;
     flex-basis: 50%;
+    margin-top: 20px; /* Added margin to create space between formatted answers and steps */
 }
 
 .step {
-    padding: 6px 12px; /* Reduced padding */
+    padding: 10px 16px; /* Increased padding */
     cursor: pointer;
-    background-color: #4B9CD3; /* Vibrant blue */
+    background-color: #4B9CD3; /* Darker blue */
     color: #ffffff; /* White text */
     border-radius: 30px;
     font-weight: bold;
@@ -81,6 +82,7 @@
     white-space: nowrap;
     min-width: auto; /* Ensure minimum width for better spacing */
     max-width: 100%;
+    font-size: 16px; /* Increased font size */
 }
 
 .active-step {
@@ -98,8 +100,8 @@
 
 .button {
     flex: 0 0 20%;
-    padding: 6px 10px; /* Reduced padding for smaller button */
-    font-size: 12px; /* Reduced font size */
+    padding: 10px 14px; /* Increased padding */
+    font-size: 14px; /* Increased font size */
     cursor: pointer;
     background-color: #182C63; /* Dark blue */
     color: #ffffff; /* White text */
@@ -113,8 +115,8 @@
 
 .show-answers-button {
     flex: 0 0 auto;
-    padding: 6px 10px; /* Reduced padding */
-    font-size: 12px; /* Reduced font size */
+    padding: 6px 10px; /* Increased padding */
+    font-size: 14px; /* Increased font size */
     cursor: pointer;
     background-color: #182C63; /* Dark blue */
     color: #ffffff; /* White text */
@@ -123,6 +125,8 @@
     font-weight: bold;
     transition: background-color 0.2s, box-shadow 0.2s;
     text-align: center;
+    white-space: nowrap; /* Ensure text does not wrap */
+    width: auto; /* Auto width for better fit */
 }
 
 .button:hover, .show-answers-button:hover {
@@ -160,14 +164,16 @@
         gap: 10px;
         justify-content: center;
         width: 100%;
+        margin-top: 20px; /* Ensure margin is applied on mobile as well */
     }
 
     .step {
         flex: 1 1 auto; /* Adjust for multiple rows if necessary */
         display: flex;
         justify-content: center;
-        min-width: 15%; /* Ensure minimum width for better spacing */
-        max-width: 30%;
+        min-width: 20%; /* Ensure minimum width for better spacing */
+        max-width: 33%;
+        font-size: 14px; /* Slightly larger font size for readability */
     }
 
     .button-container {
@@ -177,9 +183,10 @@
     }
 
     .button, .show-answers-button {
-        font-size: large;
+        font-size: 14px; /* Larger font size for readability */
+        padding: 8px 12px; /* Adjusted padding for better fit */
         max-width: 33%;
-        min-width: 15%;
+        min-width: 20%;
         width: 100%; /* Ensure buttons take up full width */
     }
 }

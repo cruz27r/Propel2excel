@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './ProgressSteps.css';
 
 const ProgressSteps = ({
@@ -7,7 +8,7 @@ const ProgressSteps = ({
     onSelectStep,
     answers,
     onAnswerClick,
-    openOverlayWithQuestion, // new prop
+    openOverlayWithQuestion,
 }) => {
     const stepsByUserType = {
         Student: ["About P2E", "Coaches Represented", "Application"],
@@ -19,7 +20,7 @@ const ProgressSteps = ({
 
     const [currentStep, setCurrentStep] = useState(selectedStep - 1);
     const [displayedAnswers, setDisplayedAnswers] = useState([]);
-    const [showAnswers, setShowAnswers] = useState(false); // State for toggling formatted answers
+    const [showAnswers, setShowAnswers] = useState(false);
 
     useEffect(() => {
         setCurrentStep(selectedStep - 1);
@@ -29,7 +30,7 @@ const ProgressSteps = ({
         setDisplayedAnswers(formatAnswers());
     }, [answers, userType]);
 
-    const handleStepClick = (index) => {
+    const handleStepSelection = (index) => {
         onSelectStep(index + 1);
     };
 
@@ -47,7 +48,7 @@ const ProgressSteps = ({
 
     const handleAnswerClick = (question, index) => {
         onAnswerClick(question, index);
-        openOverlayWithQuestion(index); // Call the function to open the overlay with the associated question
+        openOverlayWithQuestion(index);
     };
 
     const formatAnswers = () => {
@@ -92,7 +93,7 @@ const ProgressSteps = ({
                         <div
                             key={index}
                             className={`step ${index === selectedStep - 1 ? 'active-step' : ''}`}
-                            onClick={() => handleStepClick(index)}
+                            onClick={() => handleStepSelection(index)}
                         >
                             {step}
                         </div>
@@ -105,6 +106,15 @@ const ProgressSteps = ({
             </div>
         </div>
     );
+};
+
+ProgressSteps.propTypes = {
+    userType: PropTypes.string.isRequired,
+    selectedStep: PropTypes.number.isRequired,
+    onSelectStep: PropTypes.func.isRequired,
+    answers: PropTypes.object.isRequired,
+    onAnswerClick: PropTypes.func.isRequired,
+    openOverlayWithQuestion: PropTypes.func.isRequired,
 };
 
 export default ProgressSteps;
