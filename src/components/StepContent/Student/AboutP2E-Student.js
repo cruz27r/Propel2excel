@@ -65,7 +65,7 @@ const StudentAbout = () => {
           </p>
         </div>
         {overlayVisible && (
-          <div className="students-overlay">
+          <div className="overlay-student">
             <button className="close-overlay" onClick={toggleOverlay}>X</button>
             <div className="students-grid">
               {studentsData.map((student, index) => (
