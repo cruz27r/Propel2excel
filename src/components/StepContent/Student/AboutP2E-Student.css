@@ -247,15 +247,18 @@
     justify-content: space-between;
     margin-bottom: 4vh;
     gap: 2vh;
+    height: 100%;
 }
 
 .statistics-content {
-    width: 100%;
-    flex: 0 1 48%;
+    width: 60%;
     padding: 2vh;
     background-color: #fff;
     border-radius: 1vh;
     box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2vh;
 }
 
 .statistics-content .stat-item {
@@ -284,11 +287,14 @@
 }
 
 .events-section {
-    flex: 0 1 48%;
+    width: 40%;
     padding: 2vh;
     background-color: #fff;
     border-radius: 1vh;
     box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .events-services-content {
@@ -386,6 +392,7 @@
     .statistics-content,
     .events-section {
         width: 100%;
+        height: auto;
     }
 
     .events-buttons {
