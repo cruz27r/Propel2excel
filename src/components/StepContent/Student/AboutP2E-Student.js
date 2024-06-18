@@ -217,7 +217,7 @@ const StudentAbout = () => {
         <div className="program-image-container">
           <img src={CollageExample} alt="Mentorship Program" className="program-image" />
           {overlayVisible && (
-            <div className="overlay">
+            <div className="overlay-student">
               <button className="close-button" onClick={toggleOverlay}>X</button>
               <div className="students-grid">
                 {studentsData.map((student, index) => (
