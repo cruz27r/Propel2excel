@@ -3,7 +3,7 @@
 
 .student-about-container {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
     color: #333;
@@ -12,12 +12,11 @@
 
 /* General Styling */
 .student-about-container {
-    margin: 0 auto;
     padding: 20px;
 }
 
 /* Program Overview */
-.program-wwa {
+.program-overview {
     position: relative;
     display: flex;
     align-items: center;
@@ -30,20 +29,20 @@
     width: 100%;
 }
 
-.program-wwa img {
+.program-overview img {
     width: 60%;
     flex: 1;
     height: auto;
     border-radius: 1vh;
 }
 
-.program-wwa .program-statement-text {
+.program-text {
     flex: 1;
     padding: 2vh;
     text-align: left;
 }
 
-.program-wwa h3 {
+.program-header {
     font-family: 'Poppins', sans-serif;
     font-size: 2.8rem;
     font-weight: bold;
@@ -51,13 +50,13 @@
     color: #182C63;
 }
 
-.program-wwa p {
+.program-text p {
     font-size: 1.4rem;
     line-height: 1.4;
     margin: 0;
 }
 
-.program-wwa .highlight {
+.highlight {
     color: #182C63;
     font-weight: bold;
 }
@@ -172,6 +171,7 @@
     margin-top: 1vh;
     align-self: center;
     border-radius: 0.5vh;
+    margin-bottom: 1VH;
 }
 
 .key-components li.active {
@@ -194,86 +194,75 @@
     width: 100%;
 }
 
-.details-column-requirements,
 .details-column {
     width: 100%;
     padding: 2vh;
-    background-color: #182C63;
-    color: #f0f0f0;
-    border-radius: 1vh;
-    box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
+    color: white;
     margin-bottom: 2vh;
+    background-color: #182C63;
+    border-radius: 1vh;
 }
 
-.details-column h4,
-.details-column-requirements h4 {
+.details-column h4 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 1vh;
 }
 
-.details-column ul,
-.details-column-requirements ul {
+.details-column ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.details-column ul li,
-.details-column-requirements ul li {
-    font-size: 1rem;
-    margin-bottom: 0.5vh;
+.details-column ul li {
+    font-size: 1.15rem;
     display: flex;
-    align-items: center;
+    align-items: center; /* Align items vertically */
+    padding: 1vh; /* Adjust padding */
 }
 
-.details-column ul li img.check-icon,
-.details-column-requirements ul li img.check-icon {
+.details-column ul li img.check-icon {
     width: 2vh;
     height: 2vh;
-    margin-right: 1vh;
+    margin-right: 1vh; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
-.details-column p,
-.details-column-requirements p {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-top: 1vh;
+.details-column ul li p {
+    margin: 0; /* Remove default margin */
 }
+
 
 /* Events and Requirements */
-.events-requirements-container {
+.events-statistics-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 4vh;
     gap: 2vh;
-    height: 100%;
 }
 
-.statistics-content {
+.statistics-section {
     width: 60%;
     padding: 2vh;
     background-color: #fff;
     border-radius: 1vh;
     box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2vh;
 }
 
-.statistics-content .stat-item {
+.statistics-section .stat-item {
     margin-bottom: 2vh;
 }
 
-.statistics-content .stat-item h3 {
+.statistics-section .stat-item h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1vh;
     color: #182C63;
 }
 
-.statistics-content .stat-item p,
-.statistics-content .stat-item ul {
+.statistics-section .stat-item p,
+.statistics-section .stat-item ul {
     font-size: 1rem;
     line-height: 1.4;
     margin: 0;
@@ -281,7 +270,7 @@
     list-style-type: none;
 }
 
-.statistics-content .highlight-stat {
+.statistics-section .highlight-stat {
     font-weight: bold;
     color: #182C63;
 }
@@ -292,20 +281,17 @@
     background-color: #fff;
     border-radius: 1vh;
     box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.events-services-content {
+.events-content {
     width: 100%;
 }
 
-.events-services-image {
+.events-image {
     width: 100%;
 }
 
-.events-services-image img {
+.events-image img {
     max-width: 100%;
     height: auto;
     border-radius: 1vh;
@@ -334,7 +320,7 @@
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
-    .program-wwa {
+    .program-overview {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -342,13 +328,13 @@
         margin: 0; /* Remove margins */
     }
 
-    .program-wwa img {
+    .program-overview img {
         width: 100%;
         max-width: 100%;
         margin: 0 0 1vh 0;
     }
 
-    .program-wwa .program-statement-text {
+    .program-text {
         width: 100%;
         max-width: 100%;
         margin: 0;
@@ -356,12 +342,12 @@
         padding: 0;
     }
 
-    .program-wwa h3 {
+    .program-header {
         font-size: 1.4rem;
         margin-bottom: 1vh;
     }
 
-    .program-wwa p {
+    .program-text p {
         font-size: 1rem;
         line-height: 1.4;
         text-align: justify;
@@ -371,89 +357,74 @@
         margin-bottom: 1vh;
     }
 
-    .key-components-content {
-        flex-direction: column;
-    }
-
-    .key-components,
-    .component-details {
-        width: 100%;
-    }
-
-    .details-column-requirements,
-    .details-column {
-        width: 100%;
-    }
-
-    .events-requirements-container {
-        flex-direction: column;
-    }
-
-    .statistics-content,
-    .events-section {
-        width: 100%;
-        height: auto;
-    }
-
-    .events-buttons {
-        flex-direction: column;
-    }
-
-    .events-buttons button {
-        margin-bottom: 1vh;
-    }
-
-    .events-buttons button:last-child {
-        margin-bottom: 0;
-    }
-
-    .overlay-student {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.1); /* More transparent */
-    }
-
     .students-grid {
-        width: 100%;
-        max-height: 200px; /* Limit height for mobile */
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-gap: 1px; /* Reduced gap */
+        grid-template-columns: repeat(3, 1fr); /* Adjust for smaller screens */
     }
 
     .student-box {
-        font-size: 0.6rem; /* Smaller font size */
-        width: 60%; /* Ensure student boxes fit within the grid */
-        transition: transform 0.2s, background-color 0.2s; /* Smooth transition */
+        font-size: 0.7rem; /* Adjust font size */
     }
 
-    .student-box:hover {
-        background-color: rgba(24, 44, 99, 0.8); /* Darker on hover */
-        transform: scale(1.05); /* Slightly larger on hover */
+    .key-components-container {
+        padding: 1.5vh;
     }
 
-    .student-box:active {
-        transform: scale(0.95); /* Slightly smaller on click */
+    .key-components-content {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .close-overlay {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: #182C63;
+    .key-components {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .component-details {
+        flex: 1;
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .details-column {
+        width: 100%;
+        background-color: #182C63;
+        padding: 1.5vh;
+        margin-bottom: 1.5vh;
+    }
+
+    .details-column h4 {
         color: #fff;
-        border: none;
-        border-radius: 0.5vh;
-        padding: 0.5vh 1vh;
-        cursor: pointer;
         font-size: 1rem;
-        z-index: 1;
+        margin-bottom: 0.5vh;
+    }
+
+    .details-column ul li {
+        background-color: #fff;
+        color: #182C63;
+        font-size: 1.15rem;
+    }
+
+    .statistics-section,
+    .events-section {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .events-image {
+        width: 100%;
+    }
+
+    .events-buttons {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 1vh;
+    }
+
+    .events-buttons button {
+        margin-right: 0;
+        margin-bottom: 1vh;
     }
 }
