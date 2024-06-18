@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Pie } from 'react-chartjs-2';
+import 'chart.js/auto';
 import './AboutP2E-Student.css';
 import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
 import CollageExample from '../../../assets/images/collage-students/full-collage-2.png';
@@ -100,7 +102,9 @@ const StudentAbout = () => {
             </div>
             <div className="details-column">
               <h4>Importance</h4>
-              <p>Engaging with industry professionals helps students gain valuable insights, build networks, and better understand their chosen fields.</p>
+              <ul>
+                <li>Engaging with industry professionals helps students gain valuable insights, build networks, and better understand their chosen fields.</li>
+              </ul>
             </div>
           </div>
         );
@@ -125,7 +129,9 @@ const StudentAbout = () => {
             </div>
             <div className="details-column">
               <h4>Importance</h4>
-              <p>Optimized LinkedIn profiles and resumes increase students' visibility to potential employers and improve their chances of securing job opportunities.</p>
+              <ul>
+                <li>Optimized LinkedIn profiles and resumes increase students' visibility to potential employers and improve their chances of securing job opportunities.</li>
+              </ul>
             </div>
           </div>
         );
@@ -150,7 +156,9 @@ const StudentAbout = () => {
             </div>
             <div className="details-column">
               <h4>Importance</h4>
-              <p>Interview preparation is essential for showcasing one's skills and experiences, demonstrating fit for the role, and ultimately securing the job or internship.</p>
+              <ul>
+                <li>Interview preparation is essential for showcasing one's skills and experiences, demonstrating fit for the role, and ultimately securing the job or internship.</li>
+              </ul>
             </div>
           </div>
         );
@@ -182,29 +190,50 @@ const StudentAbout = () => {
     }
   };
 
+  const studentProfileData = {
+    labels: ["Asian", "Hispanic", "Caucasian", "African American", "International", "Multi-Ethnic"],
+    datasets: [{
+      data: [12, 13, 12, 26, 9, 5],
+      backgroundColor: ["#36A2EB", "#FFCE56", "#FF6384", "#FF9F40", "#4BC0C0", "#9966FF"],
+      hoverBackgroundColor: ["#36A2EB", "#FFCE56", "#FF6384", "#FF9F40", "#4BC0C0", "#9966FF"]
+    }]
+  };
+
+  const p2ePlacementsData = {
+    labels: ["Microsoft", "Capital One", "Google", "Morgan Stanley", "McKinsey & Co.", "Mass General Hospital", "JP Morgan Chase", "Goldman Sachs", "Bank of America", "Others", "Citi", "Amazon"],
+    datasets: [{
+      data: [13, 1, 8, 1, 5, 12, 2, 4, 3, 5, 2, 7],
+      backgroundColor: ["#36A2EB", "#FFCE56", "#FF6384", "#FF9F40", "#4BC0C0", "#9966FF", "#FF5733", "#C70039", "#900C3F", "#581845", "#DAF7A6", "#FFC300"],
+      hoverBackgroundColor: ["#36A2EB", "#FFCE56", "#FF6384", "#FF9F40", "#4BC0C0", "#9966FF", "#FF5733", "#C70039", "#900C3F", "#581845", "#DAF7A6", "#FFC300"]
+    }]
+  };
+
   return (
     <div className="student-about-container">
       <div className="program-overview" onClick={toggleOverlay}>
-        <img src={CollageExample} alt="Mentorship Program" className="program-image" />
+        <div className="program-image-wrapper">
+          <img src={CollageExample} alt="Mentorship Program" className="program-image" />
+          {overlayVisible && (
+            <div className="overlay-student">
+              <button className="close-overlay" onClick={toggleOverlay}>X</button>
+              <div className="students-grid">
+                {studentsData.map((student, index) => (
+                  <div className="student-box" key={index}>
+                    <a href={student.linkedin} target="_blank" rel="noopener noreferrer">{student.name}</a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
         <div className="program-text">
           <h3 className="program-header">Who We Are</h3>
           <p>
             Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities to professionals in top tier <span className='highlight'>tech, consulting, and banking companies</span> — through the "Ivy League recruiting experience".
           </p>
         </div>
-        {overlayVisible && (
-          <div className="overlay-student">
-            <button className="close-overlay" onClick={toggleOverlay}>X</button>
-            <div className="students-grid">
-              {studentsData.map((student, index) => (
-                <div className="student-box" key={index}>
-                  <a href={student.linkedin} target="_blank" rel="noopener noreferrer">{student.name}</a>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
 
       <div className="key-components-container">
         <h3>Key Components of the Program</h3>
@@ -244,8 +273,24 @@ const StudentAbout = () => {
         </div>
       </div>
 
-      <div className="events-statistics-container">
-        <div className="statistics-section">
+
+      <div className="charts-section">
+        <div className="stat-chart">
+          <h3>Student Profile</h3>
+          <div className="chart-container">
+            <Pie data={studentProfileData} options={{ maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom' } } }} />
+          </div>
+        </div>
+        <div className="stat-chart">
+          <h3>P2E Placements</h3>
+          <div className="chart-container">
+            <Pie data={p2ePlacementsData} options={{ maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom' } } }} />
+          </div>
+        </div>
+      </div>
+
+      <div className="event-stat-section">
+        <div className="left-column">
           <div className="stat-item">
             <h3>Live Cohort</h3>
             <p>
@@ -260,43 +305,20 @@ const StudentAbout = () => {
               Projected October Applications: <span className="highlight-stat">5,000</span>
             </p>
           </div>
-          <div className="stat-item">
-            <h3>Student Profile</h3>
-            <p>
-              Average GPA: <span className="highlight-stat">3.7</span><br />
-              Freshmen: <span className="highlight-stat">25%</span><br />
-              Sophomore: <span className="highlight-stat">25%</span><br />
-              Junior: <span className="highlight-stat">25%</span><br />
-              Senior: <span className="highlight-stat">25%</span>
-            </p>
-          </div>
-          <div className="stat-item">
-            <h3>P2E Placements</h3>
-            <ul>
-              <li>Microsoft: <span className="highlight-stat">20.6%</span></li>
-              <li>Google: <span className="highlight-stat">12.7%</span></li>
-              <li>Amazon: <span className="highlight-stat">10.3%</span></li>
-              <li>McKinsey & Co.: <span className="highlight-stat">7.9%</span></li>
-              <li>Mass General Hospital: <span className="highlight-stat">18.6%</span></li>
-              <li>Goldman Sachs: <span className="highlight-stat">6.2%</span></li>
-              <li>Others: <span className="highlight-stat">7.9%</span></li>
-              <li>Bank of America: <span className="highlight-stat">5%</span></li>
-              <li>Citi: <span className="highlight-stat">3.3%</span></li>
-            </ul>
-          </div>
         </div>
-
-        <div className="events-section">
-          <div className="events-content">
-            <h2>Events That Lead and Inspire</h2>
-            <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
-          </div>
-          <div className="events-image">
-            <img src={activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
-          </div>
-          <div className="events-buttons">
-            <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
-            <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
+        <div className="right-column">
+          <div className="events">
+            <div className="events-content">
+              <h2>Events That Lead and Inspire</h2>
+              <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
+            </div>
+            <div className="events-image">
+              <img src={activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
+            </div>
+            <div className="events-buttons">
+              <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
+              <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
+            </div>
           </div>
         </div>
       </div>
