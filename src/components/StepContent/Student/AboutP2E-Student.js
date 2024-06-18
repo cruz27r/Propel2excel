@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './AboutP2E-Student.css';
 import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
 import CollageExample from '../../../assets/images/collage-students/full-collage-2.png';
@@ -15,22 +17,23 @@ import meeting from '../../../assets/images/group-meeting.jpg';
 import useScreenSize from '../../../hooks/userScreenSize'; // import the custom hook
 
 const studentsData = [
-  { name: 'Fabiola Flores', linkedin: 'https://www.linkedin.com/in/fabiola-flores-esperanza58/' },
-  { name: 'Ahsan Khan', linkedin: 'https://www.linkedin.com/in/ahsan-khan01/' },
-  { name: 'Ivana Huges', linkedin: 'https://www.linkedin.com/in/ivana-hughes/' },
-  { name: 'Glenys Yevi', linkedin: 'https://www.linkedin.com/in/glenysyevi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'JoseManuel Cruz', linkedin: 'https://www.linkedin.com/in/josemanuel-cruz1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Rafael Cruz', linkedin: 'https://www.linkedin.com/in/rafaelcruzlagos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Nourien Fouad', linkedin: 'https://www.linkedin.com/in/nourine-fouad/' },
-  { name: 'Marvendy Brutus', linkedin: 'https://www.linkedin.com/in/marvendy-brutus/' },
-  { name: 'Zion Witsell', linkedin: 'https://www.linkedin.com/in/zionwitsell/' },
-  { name: 'Ebuka Ogbuefi', linkedin: 'https://www.linkedin.com/in/ebuka-ogbuefi/' },
-  { name: 'Sparkle Lawson', linkedin: 'https://www.linkedin.com/in/sparkle-lawson/' },
-  { name: 'Ethan Weily', linkedin: 'https://www.linkedin.com/in/ethan-weily-wvu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-  { name: 'Delia Whitehill', linkedin: 'https://www.linkedin.com/in/deliawhitehill/' },
-  { name: 'David Fang', linkedin: 'https://www.linkedin.com/in/davidffang/' },
-  { name: 'Kaden Liu', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Fabiola Flores', school: 'University A', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/fabiola-flores-esperanza58/' },
+  { name: 'Ahsan Khan', school: 'University B', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/ahsan-khan01/' },
+  { name: 'Ivana Huges', school: 'University C', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/ivana-hughes/' },
+  { name: 'Glenys Yevi', school: 'University D', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/glenysyevi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'JoseManuel Cruz', school: 'University E', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/josemanuel-cruz1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Rafael Cruz', school: 'University F', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/rafaelcruzlagos?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Nourien Fouad', school: 'University G', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/nourine-fouad/' },
+  { name: 'Marvendy Brutus', school: 'University H', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/marvendy-brutus/' },
+  { name: 'Zion Witsell', school: 'University I', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/zionwitsell/' },
+  { name: 'Ebuka Ogbuefi', school: 'University J', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/ebuka-ogbuefi/' },
+  { name: 'Sparkle Lawson', school: 'University K', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/sparkle-lawson/' },
+  { name: 'Ethan Weily', school: 'University L', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/ethan-weily-wvu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+  { name: 'Delia Whitehill', school: 'University M', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/deliawhitehill/' },
+  { name: 'David Fang', school: 'University N', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/davidffang/' },
+  { name: 'Kaden Liu', school: 'University O', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
 ];
+
 
 const StudentAbout = () => {
   const [activeEvent, setActiveEvent] = useState('networking');
@@ -211,16 +214,23 @@ const StudentAbout = () => {
   return (
     <div className="student-about-container">
       <div className="program-overview" onClick={toggleOverlay}>
-        <div className="program-image-wrapper">
+        <div className="program-image-container">
           <img src={CollageExample} alt="Mentorship Program" className="program-image" />
           {overlayVisible && (
-            <div className="overlay-student">
-              <button className="close-overlay" onClick={toggleOverlay}>X</button>
+            <div className="overlay">
+              <button className="close-button" onClick={toggleOverlay}>X</button>
               <div className="students-grid">
                 {studentsData.map((student, index) => (
                   <div className="student-box" key={index}>
-                    <a href={student.linkedin} target="_blank" rel="noopener noreferrer">{student.name}</a>
-                  </div>
+                  <a href={student.linkedin} target="_blank" rel="noopener noreferrer">
+                    <div className="student-info">
+                      <p className="student-name">{student.name}</p>
+                      <p className="student-school">{student.school}</p>
+                      <p className="student-major">{student.major}</p>
+                    </div>
+                    <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
+                  </a>
+                </div>
                 ))}
               </div>
             </div>
@@ -233,8 +243,7 @@ const StudentAbout = () => {
           </p>
         </div>
       </div>
-
-
+      
       <div className="key-components-container">
         <h3>Key Components of the Program</h3>
         <div className="key-components-content">
