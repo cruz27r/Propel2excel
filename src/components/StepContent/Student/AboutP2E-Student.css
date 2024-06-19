@@ -34,25 +34,27 @@
     border-radius: 1vh;
 }
 
-.overlay-student {
+.overlay-2 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.25);
-    pointer-events: none; /* Prevent interaction with the overlay */
+    background-color: rgba(255, 255, 255, 0.8);
+    pointer-events: auto; /* Allow interaction within the overlay */
+    border-radius: 1vh; /* Match the border radius of the image */
 }
 
 .students-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
-    gap: 5px;
-    width: 100%; /* Match the width of the program image */
-    height: 100%; /* Match the height of the program image */
+    grid-template-rows: repeat(3, 1fr); /* Ensure 3 rows */
+    gap: 0; /* Remove gaps between rows */
+    width: 100%; /* Match the width of the overlay */
+    height: 100%; /* Match the height of the overlay */
     pointer-events: auto; /* Allow interaction within the grid */
 }
 
@@ -63,12 +65,12 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 0.5vh;
-    text-align: center;
-    padding: 0.5vh;
-    font-size: 0.6rem;
+    text-align: left;
+    padding: 0.5vh; /* Reduce padding */
+    font-size: 0.8rem;
     transition: transform 0.2s, background-color 0.2s;
     cursor: pointer;
-    height: 100%;
+    height: 100%; /* Make the box fill the available space */
 }
 
 .student-box:hover {
@@ -80,41 +82,47 @@
     transform: scale(0.95);
 }
 
-.student-box a p {
+.student-box a {
     color: #fff;
     text-decoration: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    font-size: 15px;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.student-info {
-    color: #fff;
+.student-info p {
     margin: 0;
     padding: 0;
 }
 
 .student-name {
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .student-school, .student-major {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .linkedin-icon {
     font-size: 1.2rem;
-    margin-left: 0.5vh;
+    margin-left: 1vh;
 }
 
-
-.close-button {
+.close-button-2 {
     position: absolute;
-    top: -40px; /* Adjust this value as needed */
-    right: -40px; /* Adjust this value as needed */
+    top: -10px; /* Adjust this value as needed */
+    right: -30px; /* Adjust this value as needed */
     background: #182C63;
     color: #fff;
     border: none;
@@ -125,7 +133,31 @@
     z-index: 1;
 }
 
+.program-text {
+    width: 40%;
+    padding: 2vh;
+    text-align: left;
+}
 
+.program-header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1vh;
+    color: #182C63;
+    text-align: left;
+}
+
+.program-text p {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.highlight {
+    color: #182C63;
+    font-weight: bold;
+}
 
 /* Key Components */
 .key-components-container {
@@ -261,17 +293,76 @@
 
 .stat-item h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1vh;
     color: #182C63;
 }
 
 .stat-item p, .stat-item ul {
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 1.2rem;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+.stat-icon-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1vh;
+    margin-bottom: 2vh;
+}
+
+.stat-icon {
+    font-size: 3.5rem;
+    color: #182C63;
+}
+
+.highlight-stat {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #182C63;
+}
+
+.countdown-timer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+    color: #E63946; /* You can adjust the color as needed */
+    margin-bottom: 1vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.5rem;
+    animation: fadeIn 1s;
+}
+
+.time-value {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.time-label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .events-section {
@@ -356,37 +447,44 @@
         border-radius: 1vh;
     }
 
-    .program-text {
+    .overlay-2 {
         width: 100%;
-        padding: 2vh;
-        text-align: center;
-    }
-
-    .program-header {
-        font-size: 1.4rem;
-        margin-bottom: 1vh;
-    }
-
-    .program-text p {
-        font-size: 1rem;
-        line-height: 1.4;
-        margin: 0 auto;
-        width: 95%;
-        max-width: 100%;
-        margin-bottom: 1vh;
+        height: auto; /* Adjust height to match the image height */
+        top: 0;
+        left: 0;
+        border-radius: 1vh;
     }
 
     .students-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows */
+        gap: 0; /* Remove gap between the boxes */
+        width: 100%;
+        height: 100%;
     }
 
     .student-box {
-        font-size: 0.7rem;
+        font-size: 0.5rem; /* Make the text smaller */
+        padding: 0.3vh; /* Reduce padding */
+        height: 100%; /* Make the box fill the available space */
     }
 
-    .close-button {
-        top: -20px;
-        right: -20px;
+    .student-name {
+        font-size: 0.6rem; /* Adjust name font size */
+    }
+
+    .student-school, .student-major {
+        font-size: 0.5rem; /* Adjust school and major font size */
+    }
+
+    .linkedin-icon {
+        font-size: 0.6rem; /* Adjust LinkedIn icon size */
+        margin-left: 0.2vh; /* Adjust margin */
+    }
+
+    .close-button-2 {
+        top: -10px;
+        right: -15px;
     }
 
     .key-components-container {
@@ -461,6 +559,26 @@
 
     .events-buttons button {
         margin-right: 0;
+        margin-bottom: 1vh;
+    }
+
+    .program-text {
+        width: 100%;
+        padding: 2vh;
+        text-align: center;
+    }
+
+    .program-header {
+        font-size: 1.4rem;
+        margin-bottom: 1vh;
+    }
+
+    .program-text p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin: 0 auto;
+        width: 95%;
+        max-width: 100%;
         margin-bottom: 1vh;
     }
 }

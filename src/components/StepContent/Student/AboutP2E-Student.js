@@ -3,6 +3,8 @@ import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FaUserGraduate, FaUniversity, FaUserTie } from 'react-icons/fa';
+import Countdown from 'react-countdown';
 import './AboutP2E-Student.css';
 import mentorshipImage from '../../../assets/images/remotemeeting.jpg';
 import CollageExample from '../../../assets/images/collage-students/full-collage-2.png';
@@ -34,6 +36,28 @@ const studentsData = [
   { name: 'Kaden Liu', school: 'University O', major: 'Example Major', linkedin: 'https://www.linkedin.com/in/liukaden?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
 ];
 
+const renderer = ({ months, days, hours, minutes, seconds }) => {
+  return (
+    <div className="countdown-timer">
+      <div className="time-unit">
+        <span className="time-value">{days}</span>
+        <span className="time-label">d</span>
+      </div>
+      <div className="time-unit">
+        <span className="time-value">{hours}</span>
+        <span className="time-label">h</span>
+      </div>
+      <div className="time-unit">
+        <span className="time-value">{minutes}</span>
+        <span className="time-label">m</span>
+      </div>
+      <div className="time-unit">
+        <span className="time-value">{seconds}</span>
+        <span className="time-label">s</span>
+      </div>
+    </div>
+  );
+};
 
 const StudentAbout = () => {
   const [activeEvent, setActiveEvent] = useState('networking');
@@ -211,26 +235,28 @@ const StudentAbout = () => {
     }]
   };
 
+  const countdownTargetDate = new Date('2024-10-01T00:00:00');
+
   return (
     <div className="student-about-container">
       <div className="program-overview" onClick={toggleOverlay}>
         <div className="program-image-container">
           <img src={CollageExample} alt="Mentorship Program" className="program-image" />
           {overlayVisible && (
-            <div className="overlay-student">
-              <button className="close-button" onClick={toggleOverlay}>X</button>
+            <div className="overlay-2">
+              <button className="close-button-2" onClick={toggleOverlay}>X</button>
               <div className="students-grid">
                 {studentsData.map((student, index) => (
                   <div className="student-box" key={index}>
-                  <a href={student.linkedin} target="_blank" rel="noopener noreferrer">
-                    <div className="student-info">
-                      <p className="student-name">{student.name}</p>
-                      <p className="student-school">{student.school}</p>
-                      <p className="student-major">{student.major}</p>
-                    </div>
-                    <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
-                  </a>
-                </div>
+                    <a href={student.linkedin} target="_blank" rel="noopener noreferrer">
+                      <div className="student-info">
+                        <p className="student-name">{student.name}</p>
+                        <p className="student-school">{student.school}</p>
+                        <p className="student-major">{student.major}</p>
+                      </div>
+                      <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
+                    </a>
+                  </div>
                 ))}
               </div>
             </div>
@@ -302,13 +328,25 @@ const StudentAbout = () => {
         <div className="left-column">
           <div className="stat-item">
             <h3>Live Cohort</h3>
-            <p>
-              <span className="highlight-stat">250 Students</span> across <span className="highlight-stat">60 Universities (US)</span><br />
-              <span className="highlight-stat">8,000 Coaches</span>
-            </p>
+            <div className="stat-icon-item">
+              <FaUserGraduate className="stat-icon" />
+              <p className="highlight-stat">250</p>
+              <p>Students</p>
+            </div>
+            <div className="stat-icon-item">
+              <FaUniversity className="stat-icon" />
+              <p className="highlight-stat">60</p>
+              <p>Universities (US)</p>
+            </div>
+            <div className="stat-icon-item">
+              <FaUserTie className="stat-icon" />
+              <p className="highlight-stat">8,000</p>
+              <p>Coaches</p>
+            </div>
           </div>
           <div className="stat-item">
             <h3>October Applications</h3>
+            <Countdown date={countdownTargetDate} renderer={renderer} />
             <p>
               <span className="highlight-stat">1,200</span> within 2 months<br />
               Projected October Applications: <span className="highlight-stat">5,000</span>
@@ -322,11 +360,30 @@ const StudentAbout = () => {
               <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
             </div>
             <div className="events-image">
-              <img src={activeEvent === 'networking' ? networkingImage : activeEvent === 'speakerSeries' ? speakerSeriesImage : workshopImage} alt="Event" />
+              <img
+                src={
+                  activeEvent === 'networking'
+                    ? networkingImage
+                    : activeEvent === 'speakerSeries'
+                    ? speakerSeriesImage
+                    : workshopImage
+                }
+                alt="Event"
+              />
             </div>
             <div className="events-buttons">
-              <button onClick={() => handleEventClick('networking')} className={activeEvent === 'networking' ? 'active-button' : ''}>Networking Events</button>
-              <button onClick={() => handleEventClick('speakerSeries')} className={activeEvent === 'speakerSeries' ? 'active-button' : ''}>Speaker Series</button>
+              <button
+                onClick={() => handleEventClick('networking')}
+                className={activeEvent === 'networking' ? 'active-button' : ''}
+              >
+                Networking Events
+              </button>
+              <button
+                onClick={() => handleEventClick('speakerSeries')}
+                className={activeEvent === 'speakerSeries' ? 'active-button' : ''}
+              >
+                Speaker Series
+              </button>
             </div>
           </div>
         </div>
