@@ -11,7 +11,7 @@ const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host
     } 
 });
 
-const Company = sequelize.define('Company', {
+const Volunteer = sequelize.define('Volunteer', {
     firstName:{
         type: Sequelize.DataTypes.STRING,
         allowNull: false
@@ -19,6 +19,14 @@ const Company = sequelize.define('Company', {
     lastName:{
         type: Sequelize.DataTypes.STRING,
         allowNull:false
+    },
+    degreeStudied:{
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
+    },
+    currentCompany:{
+        type: Sequelize.DataTypes.STRING,
+        allowNull: false
     },
     email:{
         type: Sequelize.DataTypes.STRING,
@@ -32,37 +40,17 @@ const Company = sequelize.define('Company', {
         type: Sequelize.DataTypes.STRING,
         allowNull: false
     },
-    companyWebsite:{
+    experience:{
         type: Sequelize.DataTypes.STRING,
         allowNull: false
     },
-    industry:{
-        type: Sequelize.DataTypes.STRING,
+    volunteerQ1:{
+        type:Sequelize.DataTypes.STRING,
         allowNull: false
     },
-    currentPartnerships:{
-        type: Sequelize.DataTypes.STRING,
+    volunteerQ2:{
+        type:Sequelize.DataTypes.STRING,
         allowNull: false
-    },
-    areasOfInterest:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
-    },
-    companyQ1:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
-    },
-    companyQ2:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false 
-    },
-    companyQ3:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false 
-    },
-    comments:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: true
     }
 });
 
