@@ -1,47 +1,25 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql2');
-const formRoutes = require('./routes/formRoutes');
-const dotenv = require('dotenv');
+require('dotenv').config(); // Load environment variables
 
-dotenv.config();
+const mysql = require('mysql');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-// MySQL database connection
+// MySQL Connection
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error('Database connection failed:', err.stack);
-    return;
-  }
-  console.log('Connected to MySQL database.');
+db.connect(err => {
+    if (err) {
+        console.error('Error connecting to MySQL:', err);
+        return;
+    }
+    console.log('Connected to MySQL');
 });
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Use form routes
-app.use('/api/forms', formRoutes);
-
-// Catch-all route to handle 404 errors
-app.use((req, res, next) => {
-  res.status(404).send('Sorry, cannot find that!');
-});
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
-});
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+// Example query to test connection
+db.query('SELECT 1', (err, results) => {
+    if (err) throw err;
+    console.log(results);
 });
