@@ -1,10 +1,13 @@
 const { allowedNodeEnvironmentFlags } = require('process');
-const { DB_PASSWORD} = require('./path_config.js-where-password exists');
 const Sequelize = require('sequelize');
 const { type } = require('os');
+const { DataTypes } = Sequelize;
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;
 
 const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host: 'localhost',
-    port: 3307,
+    port: PORT,
     dialect: 'mysql',
     define: {
         freezeTableName: true
@@ -13,64 +16,89 @@ const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host
 
 const Student = sequelize.define('Student',{
     firstName: {
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        get(){
+            const rawFirstName = this.getDataValue('firstName');
+            return rawFirstName ? rawFirstName.toUpperCase() : null;
+        }
     }, 
     lastName: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: 'NO_LAST_NAME' 
+        defaultValue: 'NO_LAST_NAME',
+        get(){
+            const rawLastName = this.getDataValue('lastName');
+            return rawLastName ? rawLastName.toUpperCase() : null;
+        }
     },
     nameofInstitution: {
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false 
     },
     email:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        isEmail:{
+            message: "Email must be of the form foo@bar.com"
+        } 
     },
     phoneNumber:{
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true,
     },
     linkedinURL:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false // Mandatory or not??
+        type: DataTypes.STRING,
+        allowNull: false, 
+        isUrl: {
+            message: "Linkedin URL must be a valid URL"
+        }
     },
     resume:{
-        type: Sequelize.DataTypes.BLOB,
-        allowNull: false
+        type: DataTypes.BLOB,
+        allowNull: false,
+        set(value){
+            const compressedResume = zlib.deflateSync(value);
+            this.setDataValue('resume', compressedResume);
+        },
+        get(){
+            const uncompressedResume = this.getDataValue('resume');
+            return uncompressedResume ? zlib.inflateSync(uncompressedResume) : null;
+        }
+
     },
     currentGPA:{
-        type: Sequelize.DataTypes.FLOAT,
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     internshipExperience:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false 
     },
     top3Companies:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     studentQ1:{
-       type: Sequelize.DataTypes.STRING,
+       type: DataTypes.STRING,
        allowNull: false 
     },
     studentQ2:{
-       type: Sequelize.DataTypes.STRING,
+       type: DataTypes.STRING,
        allowNull: false 
     },
     studentQ3:{
-       type: Sequelize.DataTypes.STRING,
+       type: DataTypes.STRING,
        allowNull: false 
     },  
     studentQ4:{
-       type: Sequelize.DataTypes.STRING,
+       type: DataTypes.STRING,
        allowNull: false 
     },
     studentQ5:{
-       type: Sequelize.DataTypes.STRING,
+       type: DataTypes.STRING,
        allowNull: false 
     }
 });

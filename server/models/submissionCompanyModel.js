@@ -1,10 +1,13 @@
 const { allowedNodeEnvironmentFlags } = require('process');
-const { DB_PASSWORD} = require('./path_config.js-where-password exists');
 const Sequelize = require('sequelize');
 const { type } = require('os');
+const { DataTypes } = Sequelize;
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;
 
 const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host: 'localhost',
-    port: 3307,
+    port: PORT,
     dialect: 'mysql',
     define: {
         freezeTableName: true
@@ -14,55 +17,82 @@ const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host
 const Company = sequelize.define('Company', {
     firstName:{
         type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        get(){
+            const rawFirstName = this.getDataValue('firstName');
+            return rawFirstName ? rawFirstName.toUpperCase() : null;
+        }
     },
     lastName:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull:false
+        type: DataTypes.STRING,
+        allowNull:false,
+        get(){
+            const rawLastName = this.getDataValue('firstName');
+            return rawLastName ? rawLastName.toUpperCase() : null;
+        }
     },
     email:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        isEmail:{
+            message: "Email must be of the form foo@bar.com"
+        } 
     },
     phoneNumber:{
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: true
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        unique: true
     },
     linkedinURL:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        isUrl:{
+            message: "LinkedIn URL must be a valid URL"
+        }
     },
     companyWebsite:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        isUrl:{
+            message: "Company Website URL must be a valid URL"
+        }
     },
     industry:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     currentPartnerships:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     areasOfInterest:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     companyQ1:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     companyQ2:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false 
     },
     companyQ3:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false 
     },
     comments:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: true
+        type: DataTypes.STRING,
+        allowNull: true,
+        set(value){
+            const compressedComments = zlib.deflateSync(value);
+            this.setDataValue('resume', compressedComments);
+        },
+        get(){
+            const uncompressedComments = this.getDataValue('resume');
+            return uncompressedComments ? zlib.inflateSync(uncompressedComments) : null;
+        }
     }
 });
 

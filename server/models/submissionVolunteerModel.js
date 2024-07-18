@@ -1,10 +1,13 @@
 const { allowedNodeEnvironmentFlags } = require('process');
-const { DB_PASSWORD} = require('./path_config.js-where-password exists');
 const Sequelize = require('sequelize');
 const { type } = require('os');
+const { DataTypes } = Sequelize;
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;
 
 const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host: 'localhost',
-    port: 3307,
+    port: PORT,
     dialect: 'mysql',
     define: {
         freezeTableName: true
@@ -13,43 +16,59 @@ const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host
 
 const Volunteer = sequelize.define('Volunteer', {
     firstName:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        get(){
+            const rawFirstName = this.getDataValue('firstName');
+            return rawFirstName ? rawFirstName.toUpperCase() : null;
+        }
     },
     lastName:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull:false
+        type: DataTypes.STRING,
+        allowNull:false,
+        get(){
+            const rawLastName = this.getDataValue('firstName');
+            return rawLastName ? rawLastName.toUpperCase() : null;
+        }
     },
     degreeStudied:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     currentCompany:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        isEmail:{
+            message: "Email must be of the form foo@bar.com"
+        } 
     },
     phoneNumber:{
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: true
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        unique: true
     },
     linkedinURL:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
+        isUrl:{
+            message: "LinkedIn URL must be a valid URL"
+        }
     },
     experience:{
-        type: Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     volunteerQ1:{
-        type:Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     volunteerQ2:{
-        type:Sequelize.DataTypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     }
 });
