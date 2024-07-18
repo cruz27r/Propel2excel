@@ -1,32 +1,50 @@
+require('dotenv').config(); // Load environment variables
+
 const express = require('express');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const mysql = require('mysql2');
-const formRoutes = require('./routes/formRoutes');
+const cors = require('cors');
+
 const app = express();
-const port = process.env.PORT || 3000;
 
-// MySQL database connection
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
-});
-
-db.connect((err) => {
-  if (err) {
-    console.error('Database connection failed:', err.stack);
-    return;
-  }
-  console.log('Connected to MySQL database.');
-});
-
+// Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors()); // Enable CORS
 
-// Use form routes
-app.use('/api/forms', formRoutes);
+// MySQL Connection
+const db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+db.connect(err => {
+    if (err) {
+        console.error('Error connecting to MySQL:', err);
+        return;
+    }
+    console.log('Connected to MySQL');
+});
+
+// Define a simple route
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
+
+// Example route with database query
+app.get('/data', (req, res) => {
+    const query = 'SELECT * FROM your_table';
+    db.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        res.json(results);
+    });
+});
+
+// Start the server
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
