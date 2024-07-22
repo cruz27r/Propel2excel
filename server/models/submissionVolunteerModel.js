@@ -1,70 +1,42 @@
 const { Sequelize, DataTypes } = require('sequelize');
-require('dotenv').config();
-
-const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    dialect: 'mysql',
-    define: {
-        freezeTableName: true
-    }
-});
+const sequelize = require('../config/dbs'); // Adjust the path if needed
 
 const Volunteer = sequelize.define('Volunteer', {
     firstName: {
         type: DataTypes.STRING,
-        allowNull: false,
-        get() {
-            const rawFirstName = this.getDataValue('firstName');
-            return rawFirstName ? rawFirstName.toUpperCase() : null;
-        }
+        allowNull: false
     },
     lastName: {
         type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: 'NO_LAST_NAME',
-        get() {
-            const rawLastName = this.getDataValue('lastName');
-            return rawLastName ? rawLastName.toUpperCase() : null;
-        }
+        allowNull: false
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
-        validate: {
-            isEmail: {
-                msg: "Email must be of the form foo@bar.com"
-            }
-        }
+        unique: true
     },
     phoneNumber: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
+        allowNull: false
     },
     volunteerQ1: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     volunteerQ2: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     volunteerQ3: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     volunteerQ4: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     }
 });
 
-// Model Sync
-Volunteer.sync().then(() => {
-    console.log("Table and model synced successfully");
-}).catch((err) => {
-    console.log("Error syncing table and model", err);
-});
+Volunteer.sync({ alter: true });
 
 module.exports = Volunteer;

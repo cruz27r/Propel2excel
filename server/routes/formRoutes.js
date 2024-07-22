@@ -1,63 +1,71 @@
 const express = require('express');
 const router = express.Router();
-const SubmissionStudent = require('../models/submissionStudentModel');
-const SubmissionCompany = require('../models/submissionCompanyModel');
-const SubmissionVolunteer = require('../models/submissionVolunteerModel');
+const submissionStudentModel = require('../models/submissionStudentModel');
+const submissionCompanyModel = require('../models/submissionCompanyModel');
+const submissionVolunteerModel = require('../models/submissionVolunteerModel');
 
-// Student Submission
-router.post('/submit-student', async (req, res) => {
-    const { name, email, projectTitle, projectDescription } = req.body;
+// Test Database Connection
+router.get('/test', (req, res) => {
+    res.send('Database connection is working');
+});
 
-    const newSubmission = new SubmissionStudent({
-        name,
-        email,
-        projectTitle,
-        projectDescription
-    });
-
+// Get all students
+router.get('/students', async (req, res) => {
     try {
-        const savedSubmission = await newSubmission.save();
-        res.status(201).json(savedSubmission);
+        const students = await submissionStudentModel.findAll();
+        res.json(students);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(500).json({ error: err.message });
     }
 });
 
-// Company Submission
-router.post('/submit-company', async (req, res) => {
-    const { name, email, companyName, companyDescription } = req.body;
-
-    const newSubmission = new SubmissionCompany({
-        name,
-        email,
-        companyName,
-        companyDescription
-    });
-
+// Create a new student
+router.post('/students', async (req, res) => {
     try {
-        const savedSubmission = await newSubmission.save();
-        res.status(201).json(savedSubmission);
+        const newStudent = await submissionStudentModel.create(req.body);
+        res.json(newStudent);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(500).json({ error: err.message });
     }
 });
 
-// Volunteer Submission
-router.post('/submit-volunteer', async (req, res) => {
-    const { name, email, volunteerRole, volunteerDescription } = req.body;
-
-    const newSubmission = new SubmissionVolunteer({
-        name,
-        email,
-        volunteerRole,
-        volunteerDescription
-    });
-
+// Get all companies
+router.get('/companies', async (req, res) => {
     try {
-        const savedSubmission = await newSubmission.save();
-        res.status(201).json(savedSubmission);
+        const companies = await submissionCompanyModel.findAll();
+        res.json(companies);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Create a new company
+router.post('/companies', async (req, res) => {
+    try {
+        const newCompany = await submissionCompanyModel.create(req.body);
+        res.json(newCompany);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Get all volunteers
+router.get('/volunteers', async (req, res) => {
+    try {
+        const volunteers = await submissionVolunteerModel.findAll();
+        res.json(volunteers);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Create a new volunteer
+router.post('/volunteers', async (req, res) => {
+    try {
+        const newVolunteer = await submissionVolunteerModel.create(req.body);
+        res.json(newVolunteer);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
 

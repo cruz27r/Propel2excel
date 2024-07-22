@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 
@@ -62,42 +63,8 @@ function checkFileType(file, cb) {
     }
 }
 
-// Define a simple route
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
-
-// Example route with database query
-app.get('/data', (req, res) => {
-    const query = 'SELECT * FROM your_table';
-    db.query(query, (err, results) => {
-        if (err) {
-            return res.status(500).send(err);
-        }
-        res.json(results);
-    });
-});
-
-// File upload route
-app.post('/upload', (req, res) => {
-    upload(req, res, (err) => {
-        if (err) {
-            res.status(400).send(err);
-        } else {
-            if (req.file == undefined) {
-                res.status(400).send('Error: No File Selected!');
-            } else {
-                res.json({
-                    file: `uploads/${req.file.filename}`
-                });
-            }
-        }
-    });
-});
-
-// Routes for submission models
-const formRoutes = require('./server/routes/formRoutes');
-app.use('/api/form', formRoutes);
+// Routes
+app.use('/api', formRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3306;

@@ -1,32 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const zlib = require('zlib');
-require('dotenv').config();
-
-const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    dialect: 'mysql',
-    define: {
-        freezeTableName: true
-    }
-});
+const sequelize = require('../config/dbs'); // Adjust the path if needed
 
 const Student = sequelize.define('Student', {
     firstName: {
         type: DataTypes.STRING,
-        allowNull: false,
-        get() {
-            const rawFirstName = this.getDataValue('firstName');
-            return rawFirstName ? rawFirstName.toUpperCase() : null;
-        }
+        allowNull: false
     },
     lastName: {
         type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: 'NO_LAST_NAME',
-        get() {
-            const rawLastName = this.getDataValue('lastName');
-            return rawLastName ? rawLastName.toUpperCase() : null;
-        }
+        allowNull: false
     },
     nameofInstitution: {
         type: DataTypes.STRING,
@@ -35,78 +17,54 @@ const Student = sequelize.define('Student', {
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
-        validate: {
-            isEmail: {
-                msg: "Email must be of the form foo@bar.com"
-            }
-        }
+        unique: true
     },
     phoneNumber: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
+        allowNull: false
     },
     linkedinURL: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            isUrl: {
-                msg: "Linkedin URL must be a valid URL"
-            }
-        }
+        allowNull: true
     },
     resume: {
-        type: DataTypes.BLOB,
-        allowNull: false,
-        set(value) {
-            const compressedResume = zlib.deflateSync(value);
-            this.setDataValue('resume', compressedResume);
-        },
-        get() {
-            const uncompressedResume = this.getDataValue('resume');
-            return uncompressedResume ? zlib.inflateSync(uncompressedResume) : null;
-        }
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     currentGPA: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: true
     },
     internshipExperience: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     top3Companies: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     studentQ1: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     studentQ2: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     studentQ3: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     studentQ4: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     },
     studentQ5: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.TEXT,
+        allowNull: true
     }
 });
 
-// Model Sync
-Student.sync().then(() => {
-    console.log("Table and model synced successfully");
-}).catch((err) => {
-    console.log("Error syncing table and model", err);
-});
+Student.sync({ alter: true });
 
 module.exports = Student;
