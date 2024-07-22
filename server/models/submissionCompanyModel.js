@@ -1,104 +1,77 @@
-const { allowedNodeEnvironmentFlags } = require('process');
-const Sequelize = require('sequelize');
-const { type } = require('os');
-const { DataTypes } = Sequelize;
+const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3000;
-
-const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host: 'localhost',
-    port: PORT,
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: 'mysql',
     define: {
         freezeTableName: true
-    } 
+    }
 });
 
 const Company = sequelize.define('Company', {
-    firstName:{
-        type: Sequelize.DataTypes.STRING,
-        allowNull: false,
-        get(){
-            const rawFirstName = this.getDataValue('firstName');
-            return rawFirstName ? rawFirstName.toUpperCase() : null;
-        }
-    },
-    lastName:{
+    companyName: {
         type: DataTypes.STRING,
-        allowNull:false,
-        get(){
-            const rawLastName = this.getDataValue('firstName');
-            return rawLastName ? rawLastName.toUpperCase() : null;
-        }
+        allowNull: false
     },
-    email:{
+    contactPerson: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        isEmail:{
-            message: "Email must be of the form foo@bar.com"
-        } 
+        validate: {
+            isEmail: {
+                msg: "Email must be of the form foo@bar.com"
+            }
+        }
     },
-    phoneNumber:{
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        unique: true
-    },
-    linkedinURL:{
+    phoneNumber: {
         type: DataTypes.STRING,
         allowNull: false,
-        isUrl:{
-            message: "LinkedIn URL must be a valid URL"
-        }
+        unique: true,
     },
-    companyWebsite:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        isUrl:{
-            message: "Company Website URL must be a valid URL"
-        }
-    },
-    industry:{
+    jobTitle: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    currentPartnerships:{
+    companySize: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    areasOfInterest:{
+    industry: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    companyQ1:{
+    location: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    companyQ2:{
+    companyQ1: {
         type: DataTypes.STRING,
-        allowNull: false 
+        allowNull: false
     },
-    companyQ3:{
+    companyQ2: {
         type: DataTypes.STRING,
-        allowNull: false 
+        allowNull: false
     },
-    comments:{
+    companyQ3: {
         type: DataTypes.STRING,
-        allowNull: true,
-        set(value){
-            const compressedComments = zlib.deflateSync(value);
-            this.setDataValue('resume', compressedComments);
-        },
-        get(){
-            const uncompressedComments = this.getDataValue('resume');
-            return uncompressedComments ? zlib.inflateSync(uncompressedComments) : null;
-        }
+        allowNull: false
+    },
+    companyQ4: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 });
 
 // Model Sync
-Volunteer.sync().then((data) => {
+Company.sync().then(() => {
     console.log("Table and model synced successfully");
 }).catch((err) => {
-    console.log("Error syncing table and model");
-})
+    console.log("Error syncing table and model", err);
+});
+
+module.exports = Company;

@@ -1,81 +1,70 @@
-const { allowedNodeEnvironmentFlags } = require('process');
-const Sequelize = require('sequelize');
-const { type } = require('os');
-const { DataTypes } = Sequelize;
+const { Sequelize, DataTypes } = require('sequelize');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3000;
-
-const sequelize = new Sequelize('sequelize-learning', 'root', DB_PASSWORD,{ host: 'localhost',
-    port: PORT,
+const sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: 'mysql',
     define: {
         freezeTableName: true
-    } 
+    }
 });
 
 const Volunteer = sequelize.define('Volunteer', {
-    firstName:{
+    firstName: {
         type: DataTypes.STRING,
         allowNull: false,
-        get(){
+        get() {
             const rawFirstName = this.getDataValue('firstName');
             return rawFirstName ? rawFirstName.toUpperCase() : null;
         }
     },
-    lastName:{
+    lastName: {
         type: DataTypes.STRING,
-        allowNull:false,
-        get(){
-            const rawLastName = this.getDataValue('firstName');
+        allowNull: false,
+        defaultValue: 'NO_LAST_NAME',
+        get() {
+            const rawLastName = this.getDataValue('lastName');
             return rawLastName ? rawLastName.toUpperCase() : null;
         }
     },
-    degreeStudied:{
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    currentCompany:{
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    email:{
+    email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        isEmail:{
-            message: "Email must be of the form foo@bar.com"
-        } 
-    },
-    phoneNumber:{
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        unique: true
-    },
-    linkedinURL:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        isUrl:{
-            message: "LinkedIn URL must be a valid URL"
+        validate: {
+            isEmail: {
+                msg: "Email must be of the form foo@bar.com"
+            }
         }
     },
-    experience:{
+    phoneNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+    },
+    volunteerQ1: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    volunteerQ1:{
+    volunteerQ2: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    volunteerQ2:{
+    volunteerQ3: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    volunteerQ4: {
         type: DataTypes.STRING,
         allowNull: false
     }
 });
 
 // Model Sync
-Volunteer.sync().then((data) => {
+Volunteer.sync().then(() => {
     console.log("Table and model synced successfully");
 }).catch((err) => {
-    console.log("Error syncing table and model");
-})
+    console.log("Error syncing table and model", err);
+});
+
+module.exports = Volunteer;
