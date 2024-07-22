@@ -64,7 +64,7 @@ function checkFileType(file, cb) {
 
 // Define a simple route
 app.get('/', (req, res) => {
-    res.send('Hello, world!');
+    res.send('Hello, world! bro');
 });
 
 // Example route with database query
@@ -96,7 +96,7 @@ app.post('/upload', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3306;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
