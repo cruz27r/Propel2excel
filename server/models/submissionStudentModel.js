@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../config/dbs'); // Adjust the path if needed
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/dbs'); // Ensure this path is correct
 
-const Student = sequelize.define('Student', {
+const Student = sequelize.define('SubmissionStudent', {
     firstName: {
         type: DataTypes.STRING,
         allowNull: false
@@ -12,59 +12,46 @@ const Student = sequelize.define('Student', {
     },
     nameofInstitution: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     phoneNumber: {
         type: DataTypes.STRING,
-        allowNull: false
     },
     linkedinURL: {
         type: DataTypes.STRING,
-        allowNull: true
     },
     resume: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     currentGPA: {
-        type: DataTypes.FLOAT,
-        allowNull: true
+        type: DataTypes.DECIMAL(3, 2),
     },
     internshipExperience: {
-        type: DataTypes.STRING,
-        allowNull: true
+        type: DataTypes.TEXT,
     },
     top3Companies: {
-        type: DataTypes.STRING,
-        allowNull: true
+        type: DataTypes.TEXT,
     },
     studentQ1: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     studentQ2: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     studentQ3: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     studentQ4: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     studentQ5: {
         type: DataTypes.TEXT,
-        allowNull: true
     }
+}, {
+    timestamps: true,
 });
-
-Student.sync({ alter: true });
 
 module.exports = Student;

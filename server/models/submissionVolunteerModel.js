@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../config/dbs'); // Adjust the path if needed
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/dbs'); // Ensure this path is correct
 
-const Volunteer = sequelize.define('Volunteer', {
+const Volunteer = sequelize.define('SubmissionVolunteer', {
     firstName: {
         type: DataTypes.STRING,
         allowNull: false
@@ -12,31 +12,37 @@ const Volunteer = sequelize.define('Volunteer', {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
     },
     phoneNumber: {
         type: DataTypes.STRING,
-        allowNull: false
+    },
+    linkedinURL: {
+        type: DataTypes.STRING,
+    },
+    resume: {
+        type: DataTypes.TEXT,
+    },
+    volunteerExperience: {
+        type: DataTypes.TEXT,
     },
     volunteerQ1: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     volunteerQ2: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     volunteerQ3: {
         type: DataTypes.TEXT,
-        allowNull: true
     },
     volunteerQ4: {
         type: DataTypes.TEXT,
-        allowNull: true
+    },
+    volunteerQ5: {
+        type: DataTypes.TEXT,
     }
+}, {
+    timestamps: true,
 });
-
-Volunteer.sync({ alter: true });
 
 module.exports = Volunteer;
