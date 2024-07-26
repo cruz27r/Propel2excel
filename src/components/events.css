@@ -1,0 +1,141 @@
+.events-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f2f8fb;
+}
+  
+.left-panel, .right-panel {
+    width: 45%;
+}
+.live-cohort, .october-applications {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    height: 30vh;
+    background-color: #fff;
+}
+.live-cohort h2{
+    text-align: center;
+    color:#182C63;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+span{
+    font-weight: 700;
+}
+.cohort-details .detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    transform: translateX(25%);
+    font-size: 20px;
+} 
+
+.cohort-details .detail i {
+    margin-right: 10px;
+}
+
+.detail i{
+    color: #182C63;
+}
+
+.countdown-title{
+    text-align: center;
+    color: #182C63;
+    margin-bottom: 10px;
+}
+.applications-countdown {
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+.applications-countdown span {
+    margin: 0 10px;
+    color: red;
+}
+  
+.applications-countdown strong {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+.stat1{
+    transform: translateX(30%);
+}
+.stat2{
+    transform: translateX(20%);
+}
+.applications-stats p {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.stats-emphasis{
+    font-size: 24px;
+    font-weight: bolder;
+    color: #182C63;
+}
+.right-panel img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.right-panel h2{
+    margin-bottom: 15px;
+}
+.right-panel p{
+    margin-bottom: 15px;
+}
+.event-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transform: translateX(25%);
+}
+  
+.networking-button, .speaker-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #182C63;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.networking-button:hover, .speaker-button:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px){
+    .events-section{
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+    .stat1{
+        transform: translateX(30%);
+    }
+    .stat2{
+        transform: translateX(5%);
+    }
+    .event-buttons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        transform: translateX(10%);
+    }
+}

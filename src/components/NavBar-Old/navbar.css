@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.navbar * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.navbar {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar Styling */
+.navbar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  color: #182C63;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Solid navbar background style when scrolled */
+.navbar .scrolled-navbar {
+  background: rgba(255, 255, 255, 0.9); /* Solid background when scrolled */
+}
+
+/* Center group of links */
+.navbar .center-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem; /* Spacing between the links */
+  position: relative;
+}
+
+.navbar .nav-link {
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #182C63; /* Light text color */
+  position: relative;
+  z-index: 1; /* Ensure the text is above the background */
+}
+
+.navbar .nav-link::after {
+  content: "";
+  background: #182C63; /* Dark blue color for background */
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  z-index: -1; /* Position the background behind the text */
+  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  height: 100%;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #FFFFFF; /* White text color on hover and active */
+}
+
+.navbar .logo-section {
+  width: 30%;
+  height: auto;
+}
+
+.navbar .logo-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  height: auto;
+  width: 100%;
+  max-height: 5em;
+}
+
+.navbar .continue-button .continue-link {
+  text-decoration: none;
+  background-color: #101D42; /* Dark blue background */
+  color: #FCF7FF; /* White text */
+  padding: 2px 3px;
+  border-radius: 25px;
+  font-weight: bold;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+}
+
+.navbar .continue-button .continue-link:hover {
+  background-color: #FCF7FF; /* White background on hover */
+  color: #101D42; /* Dark blue text on hover */
+}
+
+.navbar .header.hide {
+  transform: translateY(-100%);
+}
+
+.navbar .header.show {
+  transform: translateY(0);
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .navbar .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .navbar .logo {
+    max-height: 4em;
+  }
+
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 601px) and (max-width: 1280px) {
+  .navbar .header {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .navbar .logo {
+    max-height: 3.5em;
+  }
+
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
+    padding: 9px 18px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (min-width: 300px) and (max-width: 640px) {
+  .navbar .header {
+    padding: 0.5rem 1rem; /* Reduce padding for mobile */
+  }
+
+  .navbar .logo {
+    max-height: 3em;
+  }
+
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
+    padding: 4px 8px;
+    font-size: 0.7rem; /* Smaller font size for mobile */
+  }
+
+  .navbar .center-links {
+    gap: 0.25rem; /* Reduce gap between links */
+  }
+
+  .navbar .nav-link {
+    padding: 0.3rem 0.4rem; /* Reduce padding for mobile */
+  }
+
+  .navbar .continue-button .continue-link {
+    width: 75px; /* Set a fixed width to make text span two rows */
+    white-space: normal; /* Allow text to wrap */
+  }
+}
+
+/* iPhone-specific adjustments */
+@media (max-width: 375px) {
+  .navbar .header {
+    padding: 0.4rem 0.8rem; /* Further reduce padding for smaller screens */
+  }
+
+  .navbar .logo {
+    max-height: 2.5em;
+  }
+
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
+    padding: 4px 10px;
+    font-size: 0.7rem; /* Slightly smaller font size for smaller screens */
+  }
+
+  .navbar .center-links {
+    gap: 0.25rem; /* Further reduce gap between links */
+  }
+
+  .navbar .nav-link {
+    padding: 0.2rem 0.3rem; /* Further reduce padding for smaller screens */
+  }
+
+  .navbar .continue-button .continue-link {
+    width: 70px; /* Set a smaller fixed width to make text span two rows */
+  }
+}
+
+@media (max-width: 414px) {
+  .navbar .header {
+    padding: 0.4rem 0.9rem; /* Adjust padding for screens up to 414px wide */
+  }
+
+  .navbar .logo {
+    max-height: 2.8em;
+  }
+
+  .navbar .continue-button .continue-link,
+  .navbar .center-links .nav-link {
+    padding: 4px 10px;
+    font-size: 0.7rem; /* Smaller font size for mobile */
+  }
+
+  .navbar .center-links {
+    width: 40%;
+    gap: 0.25rem; /* Reduce gap between links */
+  }
+
+  .navbar .nav-link {
+    padding: 0.3rem 0.4rem; /* Reduce padding for mobile */
+  }
+
+  .navbar .continue-button .continue-link {
+    width: 75px; /* Set a fixed width to make text span two rows */
+    white-space: normal; /* Allow text to wrap */
+  }
+}
