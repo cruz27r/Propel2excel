@@ -1,74 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import logoImage from '../../assets/images/4x/Logo-P2e-final-v1Asset 12.png';
-import './navbar.css';
+import React, { useState } from 'react';
+import logo from './Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png';
+import './Navbar.css';
 
-const NavBar = ({ onLogout }) => {
-  const [showNavBar, setShowNavBar] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const lastScrollY = useRef(window.scrollY);
-  const navbarRef = useRef();
-  const navBarVisibilityTimeout = useRef();
-  const location = useLocation();
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const isHomePage = location.pathname === '/';
-
-  const handleScroll = () => {
-    clearTimeout(navBarVisibilityTimeout.current);
-
-    if (window.scrollY > lastScrollY.current && window.scrollY > (navbarRef.current?.offsetHeight || 0)) {
-      setShowNavBar(false);
-    } else {
-      setShowNavBar(true);
-    }
-
-    navBarVisibilityTimeout.current = setTimeout(() => {
-      if (window.scrollY > (navbarRef.current?.offsetHeight || 0)) {
-        setShowNavBar(false);
-      }
-    }, 5500);
-
-    lastScrollY.current = window.scrollY;
-
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(navBarVisibilityTimeout.current);
-    };
-  }, []);
-
-  const isActiveLink = (path) => location.pathname === path ? 'active' : '';
-
   return (
-    <div className="navbar">
-      <header className='header'>
-        <div className="logo-section">
-          <Link to="/" className="logo-link">
-            <img src={logoImage} alt="Company Logo" className="logo" />
-          </Link>
-        </div>
-
-        <div className="center-links">
-        <Link to="/" className={`nav-link ${isActiveLink('/career-tips')}`}>Home</Link>
-          <Link to="/career-tips" className={`nav-link ${isActiveLink('/career-tips')}`}>Career Tips</Link>
-          <Link to="/hiring-board" className={`nav-link ${isActiveLink('/hiring-board')}`}>Who's Hiring</Link>
-        </div>
-
-        <div className="continue-button">
-          <Link to="/main-application" className="continue-link">Excel Here</Link>
-          {/* <Link onClick={onLogout} className="nav-link">Logout</Link> */}
-        </div>
-      </header>
-    </div>
+    <nav className="navbar">
+      <div className="logo">
+        <img src={logo} width={300} alt="Logo" />
+      </div>
+      <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+        <li><a href="/">Home</a></li>
+        <li><a href="/students">Students</a></li>
+        <li><a href="/volunteer">Volunteer</a></li>
+        <li><a href="/partners">Partners</a></li>
+        <li><a href="/hiring-board">Hiring Board</a></li>
+        <li><a href="/career-tips">Career Tips</a></li>
+        <li><a href="/main-application" className="excel-button">Excel Here</a></li>
+      </ul>
+      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

@@ -1,0 +1,54 @@
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 6vh;
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #182C63;
+}
+
+.hover-info, .hover-info1 {
+    position: absolute;
+    top: 50%;
+    background:rgba(82, 82, 82, 0.5); ;
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    /* transform: translate(-50%, -100%); */
+    width: 150px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+@media (max-width: 800px){
+    .chart-wrapper{
+        width: 60%;
+    }
+}
+@media (max-width: 768px){
+    .chart-container{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+    .chart-wrapper{
+        width: 80%;
+    }
+
+}
