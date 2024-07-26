@@ -1,5 +1,5 @@
 import React from 'react';
-import './HomePage.css';
+import './Homepage.css';
 import photocollage from '../assets/images/photo-collage.png';
 import ProgramComponents from '../components/ProgramComponents.js';
 import StudentPlacement from '../components/StudentPlacement.js';
