@@ -1,7 +1,7 @@
 // src/VideoCarousel.js
 import React, { useState } from 'react';
 import './MeetOurFellows.css';
-import ivanavid from '../assets/videos/0721 (1).mp4'
+import ivanavid from '../assets/videos/buddy-series.mp4';
 
 const MeetOurFellows = () => {
   const videos = [

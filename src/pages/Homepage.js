@@ -1,11 +1,11 @@
 import React from 'react';
-import './Homepage.css';
+import './HomePage.css';
 import photocollage from '../assets/images/photo-collage.png';
-import ProgramComponents from '../components/ProgramComponents';
-import StudentPlacement from '../components/StudentPlacement';
-import EventsSection from '../components/events';
-import CompaniesSection from '../components/CompaniesSection';
-import Footer from '../components/Footer/Footer';
+import ProgramComponents from '../components/ProgramComponents.js';
+import StudentPlacement from '../components/StudentPlacement.js';
+import EventsSection from '../components/events.js';
+import CompaniesSection from '../components/CompaniesSection.js';
+import Footer from '../components/Footer/Footer.js';
 import MeetOurFellows from '../components/MeetOurFellows.js';
 // import './fontAwesome';
 import p2e from '../assets/images/image.png'
@@ -53,7 +53,6 @@ const Homepage = () => {
         <button>Become a Partner</button>
       </div> */}
       <section>
-        <Footer/>
       </section>
     </div>
   );
