@@ -1,0 +1,252 @@
+.homepage{
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.content {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-image: url('../assets/images/Desktop - 1.png');
+    background-size: cover;
+    background-position: center;
+    height: 96vh;
+    z-index: -1;
+    position: relative;
+    width: 100%;
+}
+
+.banner-text{
+    flex: 1;
+    max-width: 30%;
+    margin-left: 5rem;
+}
+.content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000;
+}
+  
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+  
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+.about{
+    display: flex;
+    gap: 3rem;
+    margin-top: 7rem;
+    /* margin-left: 7rem; */
+    height: 76vh;
+    /* background-image: url('../assets/images/blob-scene-haikei.svg'); */
+    background-position: center;
+    background-size: cover;
+}
+.title{
+    font-size: 30px;
+    font-weight: 800;
+    color: #182e78;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.about-text{
+    font-size: 24px;
+    max-width: 70%;
+}
+.image-container1{
+    margin-left: 7rem;
+}
+.text{
+    margin-top: 5.5rem;
+}
+
+span{
+    color: #182e78;
+}
+span:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px){
+    .banner-text{
+        max-width: 30%;
+    }
+
+    .content{
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+        height: 78vh;
+    }
+
+    .content h1{
+        font-size: 28px;
+    }
+
+    .image-container1 img {
+        max-width: 100%;
+        height: 100%;
+    }
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 20px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .about-text {
+        max-width: 100%;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .image-container1 {
+        margin-left: 0;
+    }
+
+    .text {
+        margin-top: 2rem;
+    }
+}
+@media (max-width: 768px){
+    .banner-text{
+        max-width: 30%;
+        margin-left: 0rem;
+        padding: 0;
+    }
+
+    .content{
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+        height: 78vh;
+    }
+
+    .content h1{
+        font-size: 20px;
+    }
+
+    .image-container1 img {
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 20px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .about-text {
+        max-width: 100%;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .image-container1 {
+        margin-left: 0;
+    }
+
+    .text {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 18px;
+    }
+
+    .banner-text {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+} 
+/* @media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: auto;
+        padding-top: 60px; /* Adjust padding as necessary 
+    }
+
+    .banner-text {
+        max-width: 90%;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 20px;
+        font-size: 24px; /* Adjust font size for smaller screens 
+    }
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 20px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .about-text {
+        max-width: 100%;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .image-container1 {
+        margin-left: 0;
+    }
+
+    .text {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .banner-text {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+} */
