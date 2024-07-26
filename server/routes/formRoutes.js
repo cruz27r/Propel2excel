@@ -1,72 +1,53 @@
 const express = require('express');
 const router = express.Router();
-const submissionStudentModel = require('../models/submissionStudentModel');
-const submissionCompanyModel = require('../models/submissionCompanyModel');
-const submissionVolunteerModel = require('../models/submissionVolunteerModel');
+const db = require('../dbs');
 
-// Test Database Connection
-router.get('/test', (req, res) => {
-    res.send('Database connection is working');
+// Student Routes
+router.get('/students', (req, res) => {
+    db.query('SELECT * FROM Students', (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
 });
 
-// Get all students
-router.get('/students', async (req, res) => {
-    try {
-        const students = await submissionStudentModel.findAll();
-        res.json(students);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
+router.post('/students', (req, res) => {
+    const { name, email, resume } = req.body;
+    db.query('INSERT INTO Students (name, email, resume) VALUES (?, ?, ?)', [name, email, resume], (err, results) => {
+        if (err) throw err;
+        res.json({ message: 'Student created', id: results.insertId });
+    });
 });
 
-// Create a new student
-router.post('/students', async (req, res) => {
-    try {
-        const newStudent = await submissionStudentModel.create(req.body);
-        res.json(newStudent);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
+// Company Routes
+router.get('/companies', (req, res) => {
+    db.query('SELECT * FROM Companies', (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
 });
 
-// Get all companies
-router.get('/companies', async (req, res) => {
-    try {
-        const companies = await submissionCompanyModel.findAll();
-        res.json(companies);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
+router.post('/companies', (req, res) => {
+    const { companyName, contactEmail, description } = req.body;
+    db.query('INSERT INTO Companies (companyName, contactEmail, description) VALUES (?, ?, ?)', [companyName, contactEmail, description], (err, results) => {
+        if (err) throw err;
+        res.json({ message: 'Company created', id: results.insertId });
+    });
 });
 
-// Create a new company
-router.post('/companies', async (req, res) => {
-    try {
-        const newCompany = await submissionCompanyModel.create(req.body);
-        res.json(newCompany);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
+// Volunteer Routes
+router.get('/volunteers', (req, res) => {
+    db.query('SELECT * FROM Volunteers', (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
 });
 
-// Get all volunteers
-router.get('/volunteers', async (req, res) => {
-    try {
-        const volunteers = await submissionVolunteerModel.findAll();
-        res.json(volunteers);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-});
-
-// Create a new volunteer
-router.post('/volunteers', async (req, res) => {
-    try {
-        const newVolunteer = await submissionVolunteerModel.create(req.body);
-        res.json(newVolunteer);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
+router.post('/volunteers', (req, res) => {
+    const { name, email, availability } = req.body;
+    db.query('INSERT INTO Volunteers (name, email, availability) VALUES (?, ?, ?)', [name, email, availability], (err, results) => {
+        if (err) throw err;
+        res.json({ message: 'Volunteer created', id: results.insertId });
+    });
 });
 
 module.exports = router;
