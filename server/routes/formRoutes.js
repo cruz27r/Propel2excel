@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../dbs');
+const db = require('../dbs'); // Adjust the path as needed
 
 // Student Routes
 router.get('/students', (req, res) => {

@@ -1,12 +1,11 @@
 require('dotenv').config(); // Load environment variables
 
 const express = require('express');
-const mysql2 = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-const formRoutes = require('./routes/formRoutes');
+const formRoutes = require('./routes/formRoutes'); // Ensure this path is correct
 
 const app = express();
 
@@ -14,13 +13,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors()); // Enable CORS
 
-// MySQL Connection
-const db = require('./config/dbs'); // Import the database connection
-
 // Set up storage engine
 const storage = multer.diskStorage({
     destination: './uploads/',
-    filename: function(req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
@@ -29,7 +25,7 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     limits: { fileSize: 1000000 }, // 1MB file size limit
-    fileFilter: function(req, file, cb) {
+    fileFilter: function (req, file, cb) {
         checkFileType(file, cb);
     }
 }).single('myFile');
