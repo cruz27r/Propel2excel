@@ -1,7 +1,6 @@
 require('dotenv').config(); // Load environment variables
 
 const express = require('express');
-const mysql2 = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
