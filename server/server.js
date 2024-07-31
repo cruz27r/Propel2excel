@@ -1,7 +1,6 @@
 require('dotenv').config(); // Load environment variables
 
 const express = require('express');
-const mysql2 = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
@@ -13,23 +12,6 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors()); // Enable CORS
-
-// MySQL Connection
-const db = mysql2.createConnection({
-    host: process.env.DB_HOST, // RDS Endpoint
-    user: process.env.DB_USER, // RDS Username
-    password: process.env.DB_PASSWORD, // RDS Password
-    database: process.env.DB_NAME, // Database name
-    port: process.env.DB_PORT // Default MySQL port
-});
-
-db.connect(err => {
-    if (err) {
-        console.error('Error connecting to MySQL:', err);
-        return;
-    }
-    console.log('Connected to MySQL');
-});
 
 // Set up storage engine
 const storage = multer.diskStorage({
