@@ -52,7 +52,7 @@ router.post('/companies', (req, res) => {
         INSERT INTO company_submissions (
             companyName, contactPerson, email, phoneNumber, companyURL, description,
             companyQ1, companyQ2, companyQ3, companyQ4, companyQ5
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     const values = [
