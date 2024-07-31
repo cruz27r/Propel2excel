@@ -20,7 +20,7 @@ const db = mysql2.createConnection({
     user: process.env.DB_USER, // RDS Username
     password: process.env.DB_PASSWORD, // RDS Password
     database: process.env.DB_NAME, // Database name
-    port: process.env.DB_PORT // MySQL port
+    port: process.env.DB_PORT // Default MySQL port
 });
 
 db.connect(err => {
