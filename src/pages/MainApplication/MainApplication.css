@@ -3,7 +3,7 @@
 .Application-Page {
   font-family: "Montserrat", sans-serif;
   width: 90%;
-  margin: 20px auto;
+  margin: 100px auto 20px auto; /* Adjusted margin-top to ensure the navbar doesn't cover content */
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
