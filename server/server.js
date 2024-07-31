@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-const formRoutes = require('./routes/formRoutes'); // Include routes
+const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 
@@ -20,7 +20,7 @@ const db = mysql2.createConnection({
     user: process.env.DB_USER, // RDS Username
     password: process.env.DB_PASSWORD, // RDS Password
     database: process.env.DB_NAME, // Database name
-    port: process.env.DB_PORT // Default MySQL port
+    port: process.env.DB_PORT // MySQL port
 });
 
 db.connect(err => {
@@ -60,7 +60,7 @@ function checkFileType(file, cb) {
     if (mimetype && extname) {
         return cb(null, true);
     } else {
-        cb('Error: Images and Text Files Only!');
+        cb('Error: Images Only!');
     }
 }
 
@@ -68,7 +68,7 @@ function checkFileType(file, cb) {
 app.use('/api', formRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 3000; // Use a different port, not 3306
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
