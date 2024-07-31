@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-const formRoutes = require('./routes/formRoutes'); // Ensure this file exists
+const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 
