@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a0833574.css",
-    "main.js": "/static/js/main.abf1d794.js",
+    "main.css": "/static/css/main.fa8dbc65.css",
+    "main.js": "/static/js/main.83d91880.js",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
@@ -39,11 +39,11 @@
     "static/media/2.webp": "/static/media/2.6f6d14e572f8f0048080.webp",
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "index.html": "/index.html",
-    "main.a0833574.css.map": "/static/css/main.a0833574.css.map",
-    "main.abf1d794.js.map": "/static/js/main.abf1d794.js.map"
+    "main.fa8dbc65.css.map": "/static/css/main.fa8dbc65.css.map",
+    "main.83d91880.js.map": "/static/js/main.83d91880.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0833574.css",
-    "static/js/main.abf1d794.js"
+    "static/css/main.fa8dbc65.css",
+    "static/js/main.83d91880.js"
   ]
 }
