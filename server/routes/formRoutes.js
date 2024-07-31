@@ -4,7 +4,7 @@ const db = require('../config/dbs'); // Adjust the path as needed
 
 // Student Routes
 router.get('/students', (req, res) => {
-    db.query('SELECT * FROM Students', (err, results) => {
+    db.query('SELECT * FROM student_submissions', (err, results) => {
         if (err) throw err;
         res.json(results);
     });
@@ -12,7 +12,7 @@ router.get('/students', (req, res) => {
 
 router.post('/students', (req, res) => {
     const { name, email, resume } = req.body;
-    db.query('INSERT INTO Students (name, email, resume) VALUES (?, ?, ?)', [name, email, resume], (err, results) => {
+    db.query('INSERT INTO student_submissions (name, email, resume) VALUES (?, ?, ?)', [name, email, resume], (err, results) => {
         if (err) throw err;
         res.json({ message: 'Student created', id: results.insertId });
     });
@@ -20,7 +20,7 @@ router.post('/students', (req, res) => {
 
 // Company Routes
 router.get('/companies', (req, res) => {
-    db.query('SELECT * FROM Companies', (err, results) => {
+    db.query('SELECT * FROM company_submissions', (err, results) => {
         if (err) throw err;
         res.json(results);
     });
@@ -28,7 +28,7 @@ router.get('/companies', (req, res) => {
 
 router.post('/companies', (req, res) => {
     const { companyName, contactEmail, description } = req.body;
-    db.query('INSERT INTO Companies (companyName, contactEmail, description) VALUES (?, ?, ?)', [companyName, contactEmail, description], (err, results) => {
+    db.query('INSERT INTO company_submissions (companyName, contactEmail, description) VALUES (?, ?, ?)', [companyName, contactEmail, description], (err, results) => {
         if (err) throw err;
         res.json({ message: 'Company created', id: results.insertId });
     });
@@ -36,7 +36,7 @@ router.post('/companies', (req, res) => {
 
 // Volunteer Routes
 router.get('/volunteers', (req, res) => {
-    db.query('SELECT * FROM Volunteers', (err, results) => {
+    db.query('SELECT * FROM volunteer_submissions', (err, results) => {
         if (err) throw err;
         res.json(results);
     });
@@ -44,7 +44,7 @@ router.get('/volunteers', (req, res) => {
 
 router.post('/volunteers', (req, res) => {
     const { name, email, availability } = req.body;
-    db.query('INSERT INTO Volunteers (name, email, availability) VALUES (?, ?, ?)', [name, email, availability], (err, results) => {
+    db.query('INSERT INTO volunteer_submissions (name, email, availability) VALUES (?, ?, ?)', [name, email, availability], (err, results) => {
         if (err) throw err;
         res.json({ message: 'Volunteer created', id: results.insertId });
     });
