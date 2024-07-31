@@ -1,6 +1,7 @@
 require('dotenv').config(); // Load environment variables
 
 const express = require('express');
+const mysql2 = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
@@ -12,6 +13,9 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors()); // Enable CORS
+
+// MySQL Connection
+const db = require('./config/dbs'); // Import the database connection
 
 // Set up storage engine
 const storage = multer.diskStorage({
