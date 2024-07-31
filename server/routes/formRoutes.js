@@ -11,8 +11,8 @@ router.get('/students', (req, res) => {
 });
 
 router.post('/students', (req, res) => {
-    const { name, email, resume } = req.body;
-    db.query('INSERT INTO student_submissions (name, email, resume) VALUES (?, ?, ?)', [name, email, resume], (err, results) => {
+    const { firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume, currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5 } = req.body;
+    db.query('INSERT INTO student_submissions (firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume, currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume, currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5], (err, results) => {
         if (err) throw err;
         res.json({ message: 'Student created', id: results.insertId });
     });
@@ -27,8 +27,8 @@ router.get('/companies', (req, res) => {
 });
 
 router.post('/companies', (req, res) => {
-    const { companyName, contactEmail, description } = req.body;
-    db.query('INSERT INTO company_submissions (companyName, contactEmail, description) VALUES (?, ?, ?)', [companyName, contactEmail, description], (err, results) => {
+    const { companyName, contactPerson, email, phoneNumber, companyURL, description, companyQ1, companyQ2, companyQ3, companyQ4, companyQ5 } = req.body;
+    db.query('INSERT INTO company_submissions (companyName, contactPerson, email, phoneNumber, companyURL, description, companyQ1, companyQ2, companyQ3, companyQ4, companyQ5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [companyName, contactPerson, email, phoneNumber, companyURL, description, companyQ1, companyQ2, companyQ3, companyQ4, companyQ5], (err, results) => {
         if (err) throw err;
         res.json({ message: 'Company created', id: results.insertId });
     });
@@ -43,8 +43,8 @@ router.get('/volunteers', (req, res) => {
 });
 
 router.post('/volunteers', (req, res) => {
-    const { name, email, availability } = req.body;
-    db.query('INSERT INTO volunteer_submissions (name, email, availability) VALUES (?, ?, ?)', [name, email, availability], (err, results) => {
+    const { firstName, lastName, email, phoneNumber, linkedinURL, resume, volunteerExperience, volunteerQ1, volunteerQ2, volunteerQ3, volunteerQ4, volunteerQ5 } = req.body;
+    db.query('INSERT INTO volunteer_submissions (firstName, lastName, email, phoneNumber, linkedinURL, resume, volunteerExperience, volunteerQ1, volunteerQ2, volunteerQ3, volunteerQ4, volunteerQ5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [firstName, lastName, email, phoneNumber, linkedinURL, resume, volunteerExperience, volunteerQ1, volunteerQ2, volunteerQ3, volunteerQ4, volunteerQ5], (err, results) => {
         if (err) throw err;
         res.json({ message: 'Volunteer created', id: results.insertId });
     });
