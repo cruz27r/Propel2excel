@@ -7,36 +7,36 @@ import candidateReadiness from '../assets/images/candidate readiness.jpg';
 import interviewPrep from '../assets/images/interview prep.jpg'
 
 const ProgramComponents = () => {
-  const [activeSection, setActiveSection] = useState('student-requirements');
+  const [activeSection, setActiveSection] = useState('speaking-engagements');
   const rightColumnRef = useRef(null);
 
   const infoBlocks = [
-    {
-      title: 'Student Requirements',
-      details: 'The necessary criteria for students to join the program.',
-      image: studentRequirement,
-      section: 'student-requirements',
-      content: (
-        <>
-          <div className='requirement-list'>
-          <h2 className='list-title'>Academic Requirements</h2>
-          <ul className='list'>
-            <li>Good Academic Standing: A GPA of 3.3 and above.</li>
-            <li>Special Projects: Participation in significant academic projects.</li>
-            <li>Awards and Achievements: Recognition such as the Dr. Martin Luther King Jr. Award.</li>
-          </ul>
-          </div>
-          <div className='info-list'>
-          <h2 className='list-title'>Professional Requirements</h2>
-          <ul className='list'>
-            <li>Leadership Positions: Preferred positions in clubs, sports, or projects.</li>
-            <li>Internship Experience: Experience in top tech, consulting, or banking companies.</li>
-            <li>Business Certifications: Certifications such as CFA, CPA, or other relevant qualifications.</li>
-          </ul>
-          </div>
-        </>
-      )
-    },
+    // {
+    //   title: 'Student Requirements',
+    //   details: 'The necessary criteria for students to join the program.',
+    //   image: studentRequirement,
+    //   section: 'student-requirements',
+    //   content: (
+    //     <>
+    //       <div className='requirement-list'>
+    //       <h2 className='list-title'>Academic Requirements</h2>
+    //       <ul className='list'>
+    //         <li>Good Academic Standing: A GPA of 3.3 and above.</li>
+    //         <li>Special Projects: Participation in significant academic projects.</li>
+    //         <li>Awards and Achievements: Recognition such as the Dr. Martin Luther King Jr. Award.</li>
+    //       </ul>
+    //       </div>
+    //       <div className='info-list'>
+    //       <h2 className='list-title'>Professional Requirements</h2>
+    //       <ul className='list'>
+    //         <li>Leadership Positions: Preferred positions in clubs, sports, or projects.</li>
+    //         <li>Internship Experience: Experience in top tech, consulting, or banking companies.</li>
+    //         <li>Business Certifications: Certifications such as CFA, CPA, or other relevant qualifications.</li>
+    //       </ul>
+    //       </div>
+    //     </>
+    //   )
+    // },
     {
       title: 'Speaking Engagements',
       details: 'Professional speaking engagements foster partnerships with non-target universities and provide industry insights.',
