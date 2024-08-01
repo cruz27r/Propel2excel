@@ -49,6 +49,12 @@ const Student = sequelize.define('SubmissionStudent', {
     },
     studentQ5: {
         type: DataTypes.TEXT,
+    },
+    howDidYouHearAboutUs: {
+        type: DataTypes.TEXT,
+    },
+    organizations: {
+        type: DataTypes.TEXT,
     }
 }, {
     timestamps: true,
