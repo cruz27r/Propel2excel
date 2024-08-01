@@ -17,7 +17,6 @@ app.use(cors({
     allowedHeaders: 'Content-Type,Authorization'
 }));
 
-
 // MySQL Connection
 const db = require('./config/dbs'); // Import the database connection
 
@@ -56,6 +55,16 @@ function checkFileType(file, cb) {
 
 // Routes
 app.use('/api', formRoutes);
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ status: 'ok' });
+});
+
+// Catch-all handler for any request that doesn't match the above routes, send back React's index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 // Start the server
 const PORT = process.env.PORT || 5000;
