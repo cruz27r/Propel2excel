@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from './Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png';
+import { Link } from 'react-router-dom';
+import logo from './Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png'; // Ensure the path is correct
 import './navbar.css';
 
 const Navbar = () => {
@@ -15,13 +16,13 @@ const Navbar = () => {
         <img src={logo} width={300} alt="Logo" />
       </div>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/students">Students</a></li>
-        <li><a href="/volunteer">Volunteer</a></li>
-        <li><a href="/partners">Partners</a></li>
-        <li><a href="/hiring-board">Hiring Board</a></li>
-        <li><a href="/career-tips">Career Tips</a></li>
-        <li><a href="/main-application" className="excel-button">Excel Here</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/students">Students</Link></li>
+        <li><Link to="/volunteers">Volunteers</Link></li>
+        <li><Link to="/company">Company</Link></li>
+        <li><Link to="/hiring-board">Hiring Board</Link></li>
+        <li><Link to="/career-tips">Career Tips</Link></li>
+        <li><Link to="/main-application" className="excel-button">Excel Here</Link></li>
       </ul>
       <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
