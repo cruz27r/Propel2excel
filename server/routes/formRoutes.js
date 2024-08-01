@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/dbs'); // Adjust the path as needed
+const db = require('../config/dbs');
 
-// Middleware to handle JSON body parsing
-router.use(express.json());
+// Health Check Route
+router.get('/health', (req, res) => {
+    res.status(200).json({ status: 'API is healthy' });
+});
 
 // Student Routes
 router.get('/students', (req, res) => {
@@ -16,19 +18,22 @@ router.get('/students', (req, res) => {
 router.post('/students', (req, res) => {
     const {
         firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
-        currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5
+        currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3,
+        studentQ4, studentQ5, howDidYouHearAboutUs, organizations
     } = req.body;
 
     const query = `
         INSERT INTO student_submissions (
             firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
-            currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3,
+            studentQ4, studentQ5, howDidYouHearAboutUs, organizations
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     const values = [
         firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
-        currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5
+        currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3,
+        studentQ4, studentQ5, howDidYouHearAboutUs, organizations
     ];
 
     db.query(query, values, (err, results) => {

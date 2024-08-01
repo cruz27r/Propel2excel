@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './MainApplication.css'; // Importing the CSS file
+import './MainApplication.css';
 import mentorshipVideo from './../../assets/videos/job-interview.mp4';
-import checkmarkIcon from './../../assets/images/check.png'; // Ensure this path is correct
+import checkmarkIcon from './../../assets/images/check.png';
 
 const MainApplication = ({ defaultApplicationType }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -9,8 +9,8 @@ const MainApplication = ({ defaultApplicationType }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    nameofInstitution: '',
     email: '',
+    nameofInstitution: '',
     phoneNumber: '',
     linkedinURL: '',
     resume: null,
@@ -24,8 +24,9 @@ const MainApplication = ({ defaultApplicationType }) => {
     studentQ5: '',
     howDidYouHearAboutUs: '',
     organizations: '',
-    contactPerson: '',
     companyName: '',
+    contactPerson: '',
+    companyURL: '',
     description: '',
     companyQ1: '',
     companyQ2: '',
@@ -56,13 +57,11 @@ const MainApplication = ({ defaultApplicationType }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const url = `http://api.propel2excel.com:5000/api/${applicationType}s`;
+    const url = `/api/${applicationType}s`;
 
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
-      if (formData[key]) {
-        data.append(key, formData[key]);
-      }
+      data.append(key, formData[key]);
     });
 
     fetch(url, {
@@ -75,6 +74,18 @@ const MainApplication = ({ defaultApplicationType }) => {
       })
       .catch((error) => {
         console.error('Error:', error);
+      });
+  };
+
+  const checkHealth = () => {
+    fetch('/api/health')
+      .then(response => response.json())
+      .then(data => {
+        alert(`API Health: ${JSON.stringify(data)}`);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('API is not reachable.');
       });
   };
 
@@ -104,7 +115,7 @@ const MainApplication = ({ defaultApplicationType }) => {
               <option value="company">Company</option>
               <option value="volunteer">Volunteer</option>
             </select>
-            <form className="student-application-form" onSubmit={handleSubmit}>
+            <form className="application-form" onSubmit={handleSubmit}>
               {applicationType === 'student' && (
                 <>
                   <div className="form-row">
@@ -188,10 +199,8 @@ const MainApplication = ({ defaultApplicationType }) => {
                       <label>How did you hear about us?</label>
                       <textarea name="howDidYouHearAboutUs" required onChange={handleInputChange} />
                     </div>
-                  </div>
-                  <div className="form-row">
                     <div className="form-group">
-                      <label>Are you a part of any organizations? If so, which ones?</label>
+                      <label>Organizations:</label>
                       <textarea name="organizations" required onChange={handleInputChange} />
                     </div>
                   </div>
@@ -249,6 +258,8 @@ const MainApplication = ({ defaultApplicationType }) => {
                       <label>Question 4:</label>
                       <textarea name="companyQ4" required onChange={handleInputChange} />
                     </div>
+                  </div>
+                  <div className="form-row">
                     <div className="form-group">
                       <label>Question 5:</label>
                       <textarea name="companyQ5" required onChange={handleInputChange} />
@@ -321,6 +332,7 @@ const MainApplication = ({ defaultApplicationType }) => {
               )}
               <button type="submit">Submit Application</button>
             </form>
+            <button onClick={checkHealth}>Check API Health</button>
           </div>
         </>
       )}
