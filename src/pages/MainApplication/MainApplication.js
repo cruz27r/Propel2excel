@@ -58,7 +58,9 @@ const MainApplication = ({ defaultApplicationType }) => {
 
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
-      data.append(key, formData[key]);
+      if (formData[key] !== null && formData[key] !== '') {
+        data.append(key, formData[key]);
+      }
     });
 
     fetch(url, {
@@ -92,7 +94,7 @@ const MainApplication = ({ defaultApplicationType }) => {
           </div>
           <div className="header">
             <h2>Application for Propel2Excel Fellowship</h2>
-            <p>Please fill out the form below to the best of your ability.</p>
+            <p>Please fill out the form below to best of your ability.</p>
           </div>
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
@@ -100,7 +102,7 @@ const MainApplication = ({ defaultApplicationType }) => {
               <option value="company">Company</option>
               <option value="volunteer">Volunteer</option>
             </select>
-            <form className="application-form" onSubmit={handleSubmit}>
+            <form className="student-application-form" onSubmit={handleSubmit}>
               {applicationType === 'student' && (
                 <>
                   <div className="form-row">
