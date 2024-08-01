@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Navbar from './components/NavBar/Navbar.js';
+import Navbar from './components/NavBar/navbar.js';
 import Homepage from './pages/Homepage.js';
 import MainApplication from './pages/MainApplication/MainApplication';
 import HiringBoard from './components/HiringBoard/HiringBoard';
 import CareerTips from './components/CareerTips/Tips';
-import MaintenanceCover from './MaintenanceCover'; // Import the MaintenanceCover component
+import MaintenanceCover from './MaintenanceCover';
 import Footer from './components/Footer/Footer.js';
 import './App.css';
 
