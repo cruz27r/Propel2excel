@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fa8dbc65.css",
-    "main.js": "/static/js/main.f9fb3327.js",
+    "main.js": "/static/js/main.c1eeb3a3.js",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
@@ -40,10 +40,10 @@
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "index.html": "/index.html",
     "main.fa8dbc65.css.map": "/static/css/main.fa8dbc65.css.map",
-    "main.f9fb3327.js.map": "/static/js/main.f9fb3327.js.map"
+    "main.c1eeb3a3.js.map": "/static/js/main.c1eeb3a3.js.map"
   },
   "entrypoints": [
     "static/css/main.fa8dbc65.css",
-    "static/js/main.f9fb3327.js"
+    "static/js/main.c1eeb3a3.js"
   ]
 }
