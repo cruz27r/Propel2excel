@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/dbs'); // Adjust the path as needed
 
+// Middleware to handle JSON body parsing
+router.use(express.json());
+
 // Student Routes
 router.get('/students', (req, res) => {
     db.query('SELECT * FROM student_submissions', (err, results) => {
