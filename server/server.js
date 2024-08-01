@@ -11,7 +11,12 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors()); // Enable CORS
+app.use(cors({
+    origin: '*', // You can restrict this to specific origins for better security
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+}));
+
 
 // MySQL Connection
 const db = require('./config/dbs'); // Import the database connection

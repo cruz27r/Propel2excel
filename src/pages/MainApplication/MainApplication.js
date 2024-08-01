@@ -56,24 +56,72 @@ const MainApplication = ({ defaultApplicationType }) => {
 
     const url = `http://api.propel2excel.com:5000/api/${applicationType}s`;
 
-    const data = new FormData();
-    Object.keys(formData).forEach((key) => {
-      if (formData[key] !== null && formData[key] !== '') {
-        data.append(key, formData[key]);
-      }
-    });
+    let data = {};
+    if (applicationType === 'student') {
+      data = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        nameofInstitution: formData.nameofInstitution,
+        phoneNumber: formData.phoneNumber,
+        linkedinURL: formData.linkedinURL,
+        resume: formData.resume,
+        currentGPA: formData.currentGPA,
+        internshipExperience: formData.internshipExperience,
+        top3Companies: formData.top3Companies,
+        studentQ1: formData.studentQ1,
+        studentQ2: formData.studentQ2,
+        studentQ3: formData.studentQ3,
+        studentQ4: formData.studentQ4,
+        studentQ5: formData.studentQ5
+      };
+    } else if (applicationType === 'company') {
+      data = {
+        companyName: formData.companyName,
+        contactPerson: formData.contactPerson,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        companyURL: formData.companyURL,
+        description: formData.description,
+        companyQ1: formData.companyQ1,
+        companyQ2: formData.companyQ2,
+        companyQ3: formData.companyQ3,
+        companyQ4: formData.companyQ4,
+        companyQ5: formData.companyQ5
+      };
+    } else if (applicationType === 'volunteer') {
+      data = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber,
+        linkedinURL: formData.linkedinURL,
+        resume: formData.resume,
+        volunteerExperience: formData.volunteerExperience,
+        volunteerQ1: formData.volunteerQ1,
+        volunteerQ2: formData.volunteerQ2,
+        volunteerQ3: formData.volunteerQ3,
+        volunteerQ4: formData.volunteerQ4,
+        volunteerQ5: formData.volunteerQ5
+      };
+    }
+
+    console.log('Submitting data:', data);
 
     fetch(url, {
       method: 'POST',
-      body: data,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     })
-      .then((response) => response.json())
-      .then((result) => {
+    .then((response) => response.json())
+    .then((result) => {
         setIsSubmitted(true);
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.error('Error:', error);
-      });
+    });
   };
 
   return (
@@ -94,7 +142,7 @@ const MainApplication = ({ defaultApplicationType }) => {
           </div>
           <div className="header">
             <h2>Application for Propel2Excel Fellowship</h2>
-            <p>Please fill out the form below to best of your ability.</p>
+            <p>Please fill out the form below to the best of your ability.</p>
           </div>
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
