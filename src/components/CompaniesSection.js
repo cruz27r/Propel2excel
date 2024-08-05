@@ -23,10 +23,8 @@ import mckinseylogo from '../assets/images/mckinsey.png';
 import bainlogo from '../assets/images/bain.png'
 import bcglogo from '../assets/images/Boston_Consulting_Group.1025f1336b5ace0e76f1.png'
 
-
-
 const CompaniesSection = () => {
-  const [category, setCategory] = useState('tech');
+  const [category, setCategory] = useState('all');
 
   const categories = {
     tech: [
@@ -50,8 +48,6 @@ const CompaniesSection = () => {
       { name: 'Morgan Stanley', logo: morganlogo },
       { name: 'US bank', logo: usbanklogo },
       { name: 'PWC', logo: pwclogo },
-      { name: 'Alphabet', logo: alphabetLogo },
-      { name: 'Microsoft', logo: microsoftLogo },
     ],
     consulting: [
       { name: 'Deloitte', logo: deloittelogo },
@@ -60,8 +56,30 @@ const CompaniesSection = () => {
       { name: 'PWC', logo: pwclogo },
       { name: 'Bain', logo: bainlogo },
       { name: 'BCG', logo: bcglogo },
-      // { name: 'Alphabet', logo: alphabetLogo },
-      // { name: 'Microsoft', logo: microsoftLogo },
+    ],
+    all: [
+      { name: 'Google', logo: googleLogo },
+      { name: 'Apple', logo: appleLogo },
+      { name: 'Accenture', logo: accentureLogo },
+      { name: 'Meta', logo: metaLogo },
+      { name: 'Netflix', logo: netflixLogo },
+      { name: 'Amazon', logo: amazonLogo },
+      { name: 'Alphabet', logo: alphabetLogo },
+      { name: 'Microsoft', logo: microsoftLogo },
+      { name: 'Slack', logo: slacklogo },
+      { name: 'IBM', logo: ibm },
+      { name: 'Boeing', logo: boeinglogo },
+      { name: 'General Electric', logo: gelogo },
+      { name: 'Goldman Sachs', logo: goldmansachslogo },
+      { name: 'JP Morgan Chase', logo: jpmorganlogo },
+      { name: 'Wells Fargo', logo: wellsfargologo },
+      { name: 'Morgan Stanley', logo: morganlogo },
+      { name: 'US bank', logo: usbanklogo },
+      { name: 'PWC', logo: pwclogo },
+      { name: 'Deloitte', logo: deloittelogo },
+      { name: 'Mckinsey', logo: mckinseylogo },
+      { name: 'Bain', logo: bainlogo },
+      { name: 'BCG', logo: bcglogo },
     ],
   };
 
@@ -79,6 +97,7 @@ const CompaniesSection = () => {
         ))}
       </div>
       <div className="category-buttons">
+        <button onClick={() => handleCategoryChange('all')} className={category === 'all' ? 'active' : ''}>ALL</button>
         <button onClick={() => handleCategoryChange('tech')} className={category === 'tech' ? 'active' : ''}>TECH</button>
         <button onClick={() => handleCategoryChange('banking')} className={category === 'banking' ? 'active' : ''}>BANKING</button>
         <button onClick={() => handleCategoryChange('consulting')} className={category === 'consulting' ? 'active' : ''}>CONSULTING</button>
