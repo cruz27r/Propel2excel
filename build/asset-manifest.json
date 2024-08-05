@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa8dbc65.css",
-    "main.js": "/static/js/main.c1eeb3a3.js",
+    "main.css": "/static/css/main.1e7531e3.css",
+    "main.js": "/static/js/main.5ab603be.js",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
@@ -13,6 +13,7 @@
     "static/media/remotemeeting.jpg": "/static/media/remotemeeting.b7fdea9dfaf8c569f04a.b7fdea9dfaf8c569f04a.jpg",
     "static/media/speaking engagement.jpg": "/static/media/speaking engagement.b7fdea9dfaf8c569f04a.jpg",
     "static/media/Desktop - 1.png": "/static/media/Desktop - 1.2931dacae5b94ae0b635.png",
+    "static/media/P2E DESIGN (1).png": "/static/media/P2E DESIGN (1).26830c70d1c0b6216f7e.png",
     "static/media/Logo-P2e-final-v1Asset 12.png": "/static/media/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.c5f9e3075a4365128160.png",
     "static/media/General_Electric.png": "/static/media/General_Electric.85a0dd1472481e2e9338.85a0dd1472481e2e9338.png",
     "static/media/USbank.png": "/static/media/USbank.bdb0a4c0d8a682cf6d4d.bdb0a4c0d8a682cf6d4d.png",
@@ -32,18 +33,24 @@
     "static/media/accenture.png": "/static/media/accenture.e6d7136c7361c7f2f18b.png",
     "static/media/gs.webp": "/static/media/gs.1737831668c76d301d54.webp",
     "static/media/ibm.png": "/static/media/ibm.6f5b86441b4c7522d519.6f5b86441b4c7522d519.png",
+    "static/media/mentor.svg": "/static/media/mentor.da3999d26a0733a70314eeaa0933faf6.svg",
     "static/media/check.png": "/static/media/check.74c6deda908c792bf8f0.png",
+    "static/media/interview.svg": "/static/media/interview.d63cfb431c8013a94d803679c0209cba.svg",
     "static/media/Morgan_Stanley_Logo.webp": "/static/media/Morgan_Stanley_Logo.b47d181f8ddb9e20f0f3.b47d181f8ddb9e20f0f3.webp",
+    "static/media/apply.svg": "/static/media/apply.8c07c076cadd7fef3afdbd5fd9ee0dcc.svg",
+    "static/media/mic.svg": "/static/media/mic.67d91f1cdfd9fdaef107b70e70503a0a.svg",
+    "static/media/linkedin (2).svg": "/static/media/linkedin (2).6aa40142c9175e91901830125b3ff742.svg",
     "static/media/1.webp": "/static/media/1.fa3738567bcea872125d.webp",
     "static/media/6.webp": "/static/media/6.4c00bbeb9fd949f7ab66.webp",
     "static/media/2.webp": "/static/media/2.6f6d14e572f8f0048080.webp",
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
+    "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.fa8dbc65.css.map": "/static/css/main.fa8dbc65.css.map",
-    "main.c1eeb3a3.js.map": "/static/js/main.c1eeb3a3.js.map"
+    "main.1e7531e3.css.map": "/static/css/main.1e7531e3.css.map",
+    "main.5ab603be.js.map": "/static/js/main.5ab603be.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa8dbc65.css",
-    "static/js/main.c1eeb3a3.js"
+    "static/css/main.1e7531e3.css",
+    "static/js/main.5ab603be.js"
   ]
 }
