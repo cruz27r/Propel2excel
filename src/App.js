@@ -7,6 +7,7 @@ import HiringBoard from './components/HiringBoard/HiringBoard';
 import CareerTips from './components/CareerTips/Tips';
 import MaintenanceCover from './MaintenanceCover';
 import Footer from './components/Footer/Footer.js';
+import Fellow from './pages/Fellow';
 import './App.css';
 
 const App = () => {
@@ -55,6 +56,7 @@ const AppRoutes = ({ isLoggedIn, onLogin }) => {
       <Route path="/hiring-board" element={<HiringBoard />} />
       <Route path="/career-tips" element={<CareerTips />} />
       <Route path="/main-application" element={<MainApplication />} />
+      <Route path="/fellow" element={<Fellow />} />
     </Routes>
   );
 };
