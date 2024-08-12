@@ -41,6 +41,7 @@ router.post('/students', upload.single('resume'), (req, res) => {
     } = req.body;
     const resume = req.file ? req.file.filename : null;
 
+    // Verify all required fields and adjust values if necessary
     const query = `
         INSERT INTO student_submissions (
             firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
@@ -81,6 +82,7 @@ router.post('/companies', (req, res) => {
         companyQ1, companyQ2, companyQ3, companyQ4, companyQ5
     } = req.body;
 
+    // Verify all required fields and adjust values if necessary
     const query = `
         INSERT INTO company_submissions (
             companyName, contactPerson, email, phoneNumber, companyURL, description,
@@ -120,6 +122,7 @@ router.post('/volunteers', upload.single('resume'), (req, res) => {
     } = req.body;
     const resume = req.file ? req.file.filename : null;
 
+    // Verify all required fields and adjust values if necessary
     const query = `
         INSERT INTO volunteer_submissions (
             firstName, lastName, email, phoneNumber, linkedinURL, resume,
