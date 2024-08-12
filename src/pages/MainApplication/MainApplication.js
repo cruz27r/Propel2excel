@@ -5,7 +5,7 @@ import checkmarkIcon from './../../assets/images/check.png';
 
 const MainApplication = ({ defaultApplicationType }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [applicationType, setApplicationType] = useState(defaultApplicationType || 'student');
+  const [applicationType, setApplicationType] = useState(defaultApplicationType || 'students');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -57,7 +57,7 @@ const MainApplication = ({ defaultApplicationType }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const url = `http://api.propel2excel.com:5000/api/${applicationType}s`;
+    const url = `http://api.propel2excel.com:5000/api/${applicationType}`;
 
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
@@ -68,12 +68,18 @@ const MainApplication = ({ defaultApplicationType }) => {
       method: 'POST',
       body: data,
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((result) => {
         setIsSubmitted(true);
       })
       .catch((error) => {
         console.error('Error:', error);
+        alert('There was an issue submitting your application. Please try again.');
       });
   };
 
@@ -116,7 +122,7 @@ const MainApplication = ({ defaultApplicationType }) => {
               <option value="volunteers">Volunteer</option>
             </select>
             <form className="application-form" onSubmit={handleSubmit}>
-              {applicationType === 'student' && (
+              {applicationType === 'students' && (
                 <>
                   <div className="form-row">
                     <div className="form-group">
@@ -207,7 +213,7 @@ const MainApplication = ({ defaultApplicationType }) => {
                 </>
               )}
 
-              {applicationType === 'company' && (
+              {applicationType === 'companies' && (
                 <>
                   <div className="form-row">
                     <div className="form-group">
@@ -268,7 +274,7 @@ const MainApplication = ({ defaultApplicationType }) => {
                 </>
               )}
 
-              {applicationType === 'volunteer' && (
+              {applicationType === 'volunteers' && (
                 <>
                   <div className="form-row">
                     <div className="form-group">
