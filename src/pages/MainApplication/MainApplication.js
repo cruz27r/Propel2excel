@@ -112,8 +112,8 @@ const MainApplication = ({ defaultApplicationType }) => {
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
               <option value="students">Student</option>
-              <option value="company">Company</option>
-              <option value="volunteer">Volunteer</option>
+              <option value="companies">Company</option>
+              <option value="volunteers">Volunteer</option>
             </select>
             <form className="application-form" onSubmit={handleSubmit}>
               {applicationType === 'student' && (
