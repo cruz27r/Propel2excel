@@ -6,7 +6,9 @@ import checkmarkIcon from './../../assets/images/check.png';
 const MainApplication = ({ defaultApplicationType }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [applicationType, setApplicationType] = useState(defaultApplicationType || 'students');
-  const [formData, setFormData] = useState({
+
+  // Separate form data states for each application type
+  const [studentData, setStudentData] = useState({
     firstName: '',
     lastName: '',
     email: '',
@@ -24,8 +26,13 @@ const MainApplication = ({ defaultApplicationType }) => {
     studentQ5: '',
     howDidYouHearAboutUs: '',
     organizations: '',
+  });
+
+  const [companyData, setCompanyData] = useState({
     companyName: '',
     contactPerson: '',
+    email: '',
+    phoneNumber: '',
     companyURL: '',
     description: '',
     companyQ1: '',
@@ -33,6 +40,15 @@ const MainApplication = ({ defaultApplicationType }) => {
     companyQ3: '',
     companyQ4: '',
     companyQ5: '',
+  });
+
+  const [volunteerData, setVolunteerData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    linkedinURL: '',
+    resume: null,
     volunteerExperience: '',
     volunteerQ1: '',
     volunteerQ2: '',
@@ -43,10 +59,25 @@ const MainApplication = ({ defaultApplicationType }) => {
 
   const handleInputChange = (e) => {
     const { name, value, type, files } = e.target;
-    if (type === 'file') {
-      setFormData({ ...formData, [name]: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
+
+    if (applicationType === 'students') {
+      if (type === 'file') {
+        setStudentData({ ...studentData, [name]: files[0] });
+      } else {
+        setStudentData({ ...studentData, [name]: value });
+      }
+    } else if (applicationType === 'companies') {
+      if (type === 'file') {
+        setCompanyData({ ...companyData, [name]: files[0] });
+      } else {
+        setCompanyData({ ...companyData, [name]: value });
+      }
+    } else if (applicationType === 'volunteers') {
+      if (type === 'file') {
+        setVolunteerData({ ...volunteerData, [name]: files[0] });
+      } else {
+        setVolunteerData({ ...volunteerData, [name]: value });
+      }
     }
   };
 
@@ -56,13 +87,25 @@ const MainApplication = ({ defaultApplicationType }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let url = '';
+    let data = new FormData();
 
-    const url = `http://api.propel2excel.com:5000/api/${applicationType}`;
-
-    const data = new FormData();
-    Object.keys(formData).forEach((key) => {
-      data.append(key, formData[key]);
-    });
+    if (applicationType === 'students') {
+      url = 'http://api.propel2excel.com:5000/api/students';
+      Object.keys(studentData).forEach((key) => {
+        data.append(key, studentData[key]);
+      });
+    } else if (applicationType === 'companies') {
+      url = 'http://api.propel2excel.com:5000/api/companies';
+      Object.keys(companyData).forEach((key) => {
+        data.append(key, companyData[key]);
+      });
+    } else if (applicationType === 'volunteers') {
+      url = 'http://api.propel2excel.com:5000/api/volunteers';
+      Object.keys(volunteerData).forEach((key) => {
+        data.append(key, volunteerData[key]);
+      });
+    }
 
     fetch(url, {
       method: 'POST',
@@ -85,11 +128,11 @@ const MainApplication = ({ defaultApplicationType }) => {
 
   const checkHealth = () => {
     fetch('/api/health')
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         alert(`API Health: ${JSON.stringify(data)}`);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Error:', error);
         alert('API is not reachable.');
       });
@@ -113,7 +156,7 @@ const MainApplication = ({ defaultApplicationType }) => {
           </div>
           <div className="header">
             <h2>Application for Propel2Excel Fellowship</h2>
-            <p>Please fill out the form below to best of your ability.</p>
+            <p>Please fill out the form below to the best of your ability.</p>
           </div>
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
