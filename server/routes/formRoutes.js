@@ -1,6 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/dbs');
+const multer = require('multer');
+const path = require('path');
+
+// Configure Multer for file uploads (resume handling)
+const storage = multer.diskStorage({
+    destination: './uploads/',
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 1000000 }, // 1MB file size limit
+});
 
 // Health Check Route
 router.get('/health', (req, res) => {
@@ -10,17 +25,21 @@ router.get('/health', (req, res) => {
 // Student Routes
 router.get('/students', (req, res) => {
     db.query('SELECT * FROM student_submissions', (err, results) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error fetching students:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
         res.json(results);
     });
 });
 
-router.post('/students', (req, res) => {
+router.post('/students', upload.single('resume'), (req, res) => {
     const {
-        firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
-        currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3,
-        studentQ4, studentQ5, howDidYouHearAboutUs, organizations
+        firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, currentGPA,
+        internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3, studentQ4, studentQ5,
+        howDidYouHearAboutUs, organizations
     } = req.body;
+    const resume = req.file ? req.file.filename : null;
 
     const query = `
         INSERT INTO student_submissions (
@@ -37,15 +56,21 @@ router.post('/students', (req, res) => {
     ];
 
     db.query(query, values, (err, results) => {
-        if (err) throw err;
-        res.json({ message: 'Student created', id: results.insertId });
+        if (err) {
+            console.error('Error inserting student:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        res.status(201).json({ message: 'Student created', id: results.insertId });
     });
 });
 
 // Company Routes
 router.get('/companies', (req, res) => {
     db.query('SELECT * FROM company_submissions', (err, results) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error fetching companies:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
         res.json(results);
     });
 });
@@ -69,24 +94,31 @@ router.post('/companies', (req, res) => {
     ];
 
     db.query(query, values, (err, results) => {
-        if (err) throw err;
-        res.json({ message: 'Company created', id: results.insertId });
+        if (err) {
+            console.error('Error inserting company:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        res.status(201).json({ message: 'Company created', id: results.insertId });
     });
 });
 
 // Volunteer Routes
 router.get('/volunteers', (req, res) => {
     db.query('SELECT * FROM volunteer_submissions', (err, results) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error fetching volunteers:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
         res.json(results);
     });
 });
 
-router.post('/volunteers', (req, res) => {
+router.post('/volunteers', upload.single('resume'), (req, res) => {
     const {
-        firstName, lastName, email, phoneNumber, linkedinURL, resume,
-        volunteerExperience, volunteerQ1, volunteerQ2, volunteerQ3, volunteerQ4, volunteerQ5
+        firstName, lastName, email, phoneNumber, linkedinURL, volunteerExperience,
+        volunteerQ1, volunteerQ2, volunteerQ3, volunteerQ4, volunteerQ5
     } = req.body;
+    const resume = req.file ? req.file.filename : null;
 
     const query = `
         INSERT INTO volunteer_submissions (
@@ -101,8 +133,11 @@ router.post('/volunteers', (req, res) => {
     ];
 
     db.query(query, values, (err, results) => {
-        if (err) throw err;
-        res.json({ message: 'Volunteer created', id: results.insertId });
+        if (err) {
+            console.error('Error inserting volunteer:', err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        res.status(201).json({ message: 'Volunteer created', id: results.insertId });
     });
 });
 

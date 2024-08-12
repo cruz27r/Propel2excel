@@ -57,7 +57,7 @@ const MainApplication = ({ defaultApplicationType }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const url = `/api/${applicationType}s`;
+    const url = `http://api.propel2excel.com:5000/api/${applicationType}s`;
 
     const data = new FormData();
     Object.keys(formData).forEach((key) => {
@@ -111,7 +111,7 @@ const MainApplication = ({ defaultApplicationType }) => {
           </div>
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
-              <option value="student">Student</option>
+              <option value="students">Student</option>
               <option value="company">Company</option>
               <option value="volunteer">Volunteer</option>
             </select>
