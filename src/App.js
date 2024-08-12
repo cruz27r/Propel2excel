@@ -8,6 +8,8 @@ import CareerTips from './components/CareerTips/Tips';
 import MaintenanceCover from './MaintenanceCover';
 import Footer from './components/Footer/Footer.js';
 import Fellow from './pages/Fellow';
+import Volunteer from './pages/Volunteer.js';
+import Partners from './pages/Partners.js';
 import './App.css';
 
 const App = () => {
@@ -51,8 +53,8 @@ const AppRoutes = ({ isLoggedIn, onLogin }) => {
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/students" element={<div>Students Page</div>} />
-      <Route path="/company" element={<div>Company Page</div>} />
-      <Route path="/volunteers" element={<div>Volunteers Page</div>} />
+      <Route path="/volunteer" element={<Volunteer />} />
+      <Route path="/partners" element={<Partners />} />
       <Route path="/hiring-board" element={<HiringBoard />} />
       <Route path="/career-tips" element={<CareerTips />} />
       <Route path="/main-application" element={<MainApplication />} />

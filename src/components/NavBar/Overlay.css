@@ -1,0 +1,320 @@
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover full viewport width */
+    height: 100vh; /* Cover full viewport height */
+    background-color: rgba(24, 44, 99, 0.9); /* Semi-transparent overlay with more blue */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Support Safari 9+ and Safari on iOS 9+ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.overlay {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 90%; /* Adjusted width */
+    max-width: 800px; /* Maximum width */
+    height: auto; /* Auto height */
+    text-align: center;
+    display: flex; /* Enable flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align children */
+    justify-content: center; /* Center content vertically */
+    position: relative; /* Position relative for absolute positioning of children */
+}
+
+.overlay h2 {
+    color: #182C63; /* Matches the blue header color */
+    margin-bottom: 30px;
+    font-size: 2rem; /* Increased font size */
+}
+
+.overlay p {
+    margin-top: 30px; /* Add margin top to move text below buttons */
+    color: #666666; /* Dark grey text */
+    font-size: 1.25rem; /* Increased font size */
+}
+
+.overlay label {
+    display: flex; /* Use flexbox for label */
+    flex: 1; /* Flex grow to split width evenly */
+    margin: 10px;
+    cursor: pointer;
+}
+
+.overlay input[type="radio"] {
+    display: none; /* Hide radio button */
+}
+
+.options-container {
+    display: flex; /* Use flexbox for options */
+    justify-content: space-around; /* Distribute space evenly */
+    width: 100%; /* Full width */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.overlay .option-card {
+    background-color: #fff; /* White background */
+    border: 2px solid #182C63; /* Blue border */
+    color: #182C63; /* Blue text */
+    padding: 20px; /* Increased padding for a larger box */
+    flex: 1; /* Flex grow to split width evenly */
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease;
+    text-align: center; /* Center text */
+    min-width: 100px; /* Minimum width */
+}
+
+.option-card:hover {
+    background-color: #182C63; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+    border: 2px solid #182C63; /* Maintain blue border on hover */
+}
+
+.overlay input[type="radio"]:checked + .option-card {
+    background-color: #182C63; /* Blue background for selected */
+    color: white; /* White text for selected */
+    border: 2px solid #182C63; /* Maintain blue border for selected */
+    transform: scale(1.1); /* Slightly scale up the selected option */
+    z-index: 1; /* Ensure selected option is above other options */
+}
+
+/* Enhance button interactions */
+.overlay button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #182C63;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.overlay button:hover, .overlay button:focus {
+    background-color: #ffffff;
+    color: #182C63;
+    border: 2px solid #182C63;
+    transform: scale(1.05); /* Enlarge on hover/focus for better interactivity */
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 12%; /* Match the width of the return button */
+    height: auto;
+    padding: 10px 20px;
+    background-color: #182C63; /* Main color */
+    color: white; /* White text */
+    border: 2px solid #182C63; /* Border color same as background */
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem; /* Match the font size of the return button */
+    transition: all 0.1s ease;
+    text-align: center; /* Align text to the left */
+    display: flex; /* Using flexbox to align items properly */
+    align-items: center; /* Vertically center the items */
+    overflow: hidden; /* Hides any overflowing content, crucial for pseudo-element animations */
+}
+
+.back-button::before {
+    content: '←'; /* Left-pointing arrow */
+    transform: scale(1.2);
+    margin-right: 10px; /* Space between the arrow and the text */
+    display: inline-block;
+    transition: transform 0.5s ease; /* Transition for moving and scaling */
+}
+
+.back-button:hover::before {
+    transform: translateX(-10px) scale(1.8); /* Moves the arrow to the left and scales it up */
+}
+
+.back-button:hover {
+    background-color: white;
+    color: #182C63;
+    border: 2px solid #182C63; /* Keep the border color on hover */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Positioned in the top-right corner of the overlay */
+    width: 50px; /* Fixed width to maintain the aspect ratio */
+    height: 50px; /* Set height to match the "Back" button's height */
+    padding: 0;
+    background-color: #182C63; /* Main color */
+    color: white; /* White text */
+    border: none; /* No border for a modern look */
+    border-radius: 50%; /* Circular button */
+    cursor: pointer;
+    font-size: 2rem; /* Increased font size for a larger X */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: translate3d(0, 0, 0); /* Force hardware acceleration */
+}
+
+.close-button:hover {
+    background-color: #2a3f73; /* Lighter shade of the main color for hover */
+    transform: rotate(90deg) scale(1.5) translate3d(0, 0, 0); /* Rotate the button 90 degrees, scale up, and force 3D transformation for better performance */
+}
+
+.return-button {
+    position: absolute;
+    top: 10px;
+    right: 15px; /* Positioned slightly left of the close button */
+    width: 12%; /* Match the width of the back button */
+    height: auto;
+    padding: 10px 20px;
+    background-color: #182C63; /* Main color */
+    color: white; /* White text */
+    border: 2px solid #182C63; /* Border color same as background */
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem; /* Match the font size of the back button */
+    transition: all 0.1s ease;
+    text-align: center; /* Ensure text is centered */
+    text-decoration: none; /* Remove underline */
+}
+
+.return-button:hover {
+    background-color: #2a3f73; /* Lighter shade of the main color for hover */
+    color: white; /* Keep text white */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+.selected-option input[type="text"] {
+    padding: 10px; /* Padding for the input */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Border radius for rounded corners */
+    font-size: 1rem; /* Font size */
+    width: 90%; /* Set the width to be 90% of the container */
+    margin: 5px auto; /* Center the input horizontally and add margin */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    background-color: transparent; /* Transparent background */
+    color: #333; /* Text color */
+}
+
+.selected-option {
+    transition: all 0.5s ease; /* Smooth transition for background and transformation */
+}
+
+.selected-option.collapsed {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.selected-option.selected {
+    background-color: #182C63; /* Deep blue background */
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    margin: 20px auto; /* Center the selected option */
+    transform: scale(1.1); /* Slightly scale up the selected option */
+    width: 90%; /* Ensure it's sufficiently wide to catch attention */
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8); /* Subtle shadow for depth */
+}
+
+.option-card.selected {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+/* Text input container styling */
+.text-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.text-input-container input[type="text"] {
+    width: 40%; /* Make the input take full width of its container */
+    height: auto;
+    padding: 20px; /* Increase padding for a larger input field */
+    margin: 10px 0; /* Add some margin for spacing */
+    font-size: 1.5rem; /* Increase font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.text-input-container button {
+    width: 15%; /* Make the button take full width of its container */
+    padding: 15px; /* Increase padding */
+    font-size: 1.2rem; /* Increase font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #182C63; /* Background color */
+    color: #fff; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.text-input-container button:hover {
+    background-color: white; /* Darker background on hover */
+    color: #182C63;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile support changes */
+@media (max-width: 600px) {
+    .overlay {
+        width: 90%; /* Full width on mobile */
+        padding: 20px; /* Reduced padding */
+        height: 70%; /* Adjust height on mobile */
+    }
+
+    .overlay-container {
+        justify-content: center; /* Keep items centered vertically */
+        align-items: center; /* Keep items centered horizontally */
+    }
+
+    .overlay button, .return-button, .close-button, .back-button {
+        font-size: 1rem; /* Reduce font size */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    .back-button, .close-button {
+        width: auto; /* Auto width */
+        height: auto; /* Auto height */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .text-input-container input[type="text"] {
+        width: 80%; /* Full width on mobile */
+    }
+
+    .text-input-container button {
+        width: 50%; /* Full width on mobile */
+    }
+
+    .overlay .option-card {
+        padding: 10px; /* Reduced padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+}

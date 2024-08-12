@@ -12,10 +12,10 @@ const Footer = () => {
           <Link to="/fellow">
             <button className="footer-button">Become a Fellow</button>
           </Link>
-          <Link to="/">
+          <Link to="/volunteer">
             <button className="footer-button">Become a Volunteer</button>
           </Link>
-          <Link to="/">
+          <Link to="/partners">
             <button className="footer-button">Become a Partner</button>
           </Link>
         </div>

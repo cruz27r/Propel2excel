@@ -1,0 +1,265 @@
+.content2 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-image: url('../assets/images/Become-a-volunteer.png');
+    background-size: cover;
+    background-position: center;
+    height: 96vh;
+    z-index: -1;
+    position: relative;
+    width: 100%;
+}
+
+.heroSection-text {
+    flex: 1;
+    max-width: 30%;
+    margin-left: 1.5rem;
+    text-align: center;
+}
+.content2 h1 {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #000;
+}
+.about2 {
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    height: 35vh;
+    display: flex;
+}
+
+.about-text2 {
+    max-width: 70%;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5em;
+}
+
+.program2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.program-title2 {
+    margin-bottom: 10px;
+    color: #182C63;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.program-subtitle2 {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.program-cards2 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card2 {
+    background-color: #f0f8ff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 270px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon2 {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 30%;
+    background-color: #1a73e8;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon2 img {
+    max-width: 100%; /* Ensure the image is not too large */
+    max-height: 100%; /* Ensure the image is not too large */
+}
+
+.card2 h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.card2 p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.fellowship-requirements2 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    line-height: 2;
+}
+
+.fellowship-requirements2 h1 {
+    text-align: center;
+    color: #182C63;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+
+.requirements-section2 h2 {
+    color: #0056b3;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.requirements-section2 ul {
+    list-style-type: none;
+    padding-left: 0;
+    background-color: #f0f8ff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+.requirements-section2 li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+    line-height: 2;
+}
+
+
+@media (max-width: 768px) {
+    .content2 {
+        /* padding: 20px;
+        height: auto; */
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+        height: 78vh;
+    }
+
+    .heroSection-text {
+        max-width: 30%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .content2 h1 {
+        font-size: 2rem;
+    }
+
+    .about2 {
+        flex-direction: column;
+        margin-top: 40px;
+        height: auto;
+    }
+
+    .about-text2 {
+        max-width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .program-cards2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card2 {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .icon2 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card2 h3 {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .card2 p {
+        font-size: 14px;
+    }
+
+    .fellowship-requirements2 {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .fellowship-requirements2 h1 {
+        font-size: 1.8em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .requirements-section2 h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .requirements-section2 ul {
+        padding: 15px;
+    }
+
+    .requirements-section2 li {
+        padding-left: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Smaller devices (mobile, smaller tablets) */
+@media (max-width: 480px) {
+    .content2 h1 {
+        font-size: 3rem;
+    }
+
+    .about-text2 {
+        font-size: 1rem;
+    }
+
+    .icon2 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card2 h3 {
+        font-size: 18px;
+    }
+
+    .card2 p {
+        font-size: 12px;
+    }
+
+    .fellowship-requirements2 h1 {
+        font-size: 1.5em;
+    }
+
+    .requirements-section2 h2 {
+        font-size: 1.3em;
+    }
+
+    .requirements-section2 li {
+        font-size: 12px;
+    }
+}
