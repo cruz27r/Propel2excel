@@ -1,12 +1,12 @@
 /* Navbar.css */
 .navbar {
-  position: absolute;
-  top: 40px;
+  /* position: absolute; */
+  /* top: 40px; */
   width: 100%;
   display: flex;
   justify-content: space-between;
   background: transparent;
-  padding: 10px;
+  padding: 20px 10px;
   z-index: 1000;
 }
 
