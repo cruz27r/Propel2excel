@@ -176,7 +176,9 @@
 
 .left-column, .right-column {
   flex: 1;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .right-column {
@@ -185,14 +187,24 @@
 }
 
 .info-block {
-  background-color: #cccccceb;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: #ecf2f8;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 15px;
   border: 1px solid #ccc;
   margin-bottom: 8px;
-  transition: background-color 0.3s;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+  will-change: background-color, color, box-shadow, transform;
+}
+
+.info-block:hover {
+  background-color: #182C63;
+  color: #f0f0f0;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
 }
 
 .info-block.active {
@@ -244,9 +256,8 @@
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  max-width: 90%;
-  margin-left: 20px;
-  border-radius: 6px;
+  max-width: 100%;
+  padding: 10px 0px;
 }
 
 .info-image.visible {
@@ -278,10 +289,6 @@
 
 .bounce {
   animation: bounce 0.6s ease;
-}
-
-.components-container:hover {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 .list-title {

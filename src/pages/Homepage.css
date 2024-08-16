@@ -41,10 +41,8 @@
 .about{
     display: flex;
     gap: 3rem;
-    margin-top: 7rem;
-    /* margin-left: 7rem; */
-    height: 76vh;
-    /* background-image: url('../assets/images/blob-scene-haikei.svg'); */
+    margin-top: 4rem;
+    height: 70vh;
     background-position: center;
     background-size: cover;
 }

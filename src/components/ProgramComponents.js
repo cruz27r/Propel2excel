@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './programcomponents.css';
-import studentRequirement from '../assets/images/student-requirement.jpg';
-import speakingEngagement from '../assets/images/speaking engagement.jpg';
+// import studentRequirement from '../assets/images/student-requirement.jpg';
+import speakingEngagement from '../assets/images/speaking-engagement.jpg';
 import linkedinRebrand from '../assets/images/linkedin-rebrand.jpg';
 import candidateReadiness from '../assets/images/candidate readiness.jpg';
 import interviewPrep from '../assets/images/interview prep.jpg'
@@ -191,13 +191,15 @@ const ProgramComponents = () => {
               className={`info-block ${activeSection === block.section ? 'active' : ''}`}
               onClick={() => handleSectionChange(block.section)}
             >
-              <h3>{block.title}:</h3>
+              <h3>{block.title}</h3>
               <p>{block.details}</p>
+              <div className='img-box'>
               <img 
                 src={block.image} 
                 alt={block.title} 
                 className={`info-image ${activeSection === block.section ? 'visible' : 'hidden'}`}
               />
+              </div>
             </div>
           ))}
         </div>
