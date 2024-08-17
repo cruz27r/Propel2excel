@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png';
 import GuidingQuestionsOverlay from './Overlay';
@@ -7,6 +7,7 @@ import './navbar.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,11 +21,22 @@ const Navbar = () => {
     setIsOverlayVisible(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="logo">
         <Link to="/">
-          <img src={logo} width={300} alt="Logo" />
+          <img src={logo} width={150} alt="Logo" />
         </Link>
       </div>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
@@ -41,7 +53,7 @@ const Navbar = () => {
       {isOverlayVisible && (
         <GuidingQuestionsOverlay
           onClose={hideOverlay}
-          isChangingAnswers={true} // Pass appropriate props as needed
+          isChangingAnswers={true}
           answers={{}}
           setAnswers={() => {}}
           fromHomePage={false}
