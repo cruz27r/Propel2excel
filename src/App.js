@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer.js';
 import Fellow from './pages/Fellow';
 import Volunteer from './pages/Volunteer.js';
 import Partners from './pages/Partners.js';
+import MeetOurFellows from './Pages/MeetOurFellows';
 import './App.css';
 
 const App = () => {
@@ -59,6 +60,7 @@ const AppRoutes = ({ isLoggedIn, onLogin }) => {
       <Route path="/career-tips" element={<CareerTips />} />
       <Route path="/main-application" element={<MainApplication />} />
       <Route path="/fellow" element={<Fellow />} />
+      <Route path="/meetourfellows" element={<MeetOurFellows />} />
     </Routes>
   );
 };
