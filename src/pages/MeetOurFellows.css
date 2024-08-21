@@ -1,0 +1,67 @@
+.content-1 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-image: url('../assets/images/P2E DESIGN (1).png');
+    background-size: cover;
+    background-position: center;
+    height: 96vh;
+    z-index: -1;
+    position: relative;
+    width: 100%;
+}
+.heroSection-text {
+    flex: 1;
+    max-width: 30%;
+    margin-left: 5rem;
+}
+
+.content-1 h1 {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #000;
+}
+.video-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+.video-container {
+    width: 20%;
+    align-items: left;
+}
+  
+.video-container video {
+    width: 100%;
+    height: auto;
+
+}
+
+
+.vid .title{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+@media (max-width: 1200px){
+    .video-container {
+        width: 50%;
+        align-items: left;
+    }
+}
+@media (max-width: 768px){
+    .arrow{
+        display: none;
+    }
+    .video-container {
+        width: 80%;
+        align-items: left;
+    }
+    .video-carousel{
+        flex-direction: column;
+    }
+}
