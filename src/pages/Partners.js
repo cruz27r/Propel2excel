@@ -244,10 +244,10 @@ const Partners = () => {
                         <a href="https://www.linkedin.com/company/propel2excel/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faLinkedin} style={{ color: '#fff' }} />
                         </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/propel2excel/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faInstagram} style={{ color: '#fff' }} />
                         </a>
-                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://x.com/Propel2Excel" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faTwitter} style={{ color: '#fff' }} />
                         </a>
                     </div>

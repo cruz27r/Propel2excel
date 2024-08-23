@@ -1,12 +1,11 @@
 // src/MeetOurFellows.js
-import React, { useState } from 'react';
+import React from 'react';
 import './MeetOurFellows.css';
 
 const MeetOurFellows = () => {
   const videos = [
     "https://www.youtube.com/embed/9Pj04Vr0GFo?rel=0",
-    "https://www.youtube.com/embed/9Pj04Vr0GFo?rel=0",
-    "https://www.youtube.com/embed/9Pj04Vr0GFo?rel=0",
+    "https://www.youtube.com/embed/Ed6iefqF1s0?si=F7yz_9i7NLNc8ztl",
     // Add more YouTube video URLs as needed
   ];
 
@@ -28,18 +27,6 @@ const MeetOurFellows = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goToPrevious = () => {
-    const newIndex = currentIndex === 0 ? videos.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToNext = () => {
-    const newIndex = currentIndex === videos.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
   return (
     <section className="vid">
       <div className="content-1">
@@ -48,23 +35,17 @@ const MeetOurFellows = () => {
       <h2 className="title">Meet Our Fellows</h2>
 
       <div className="video-carousel">
-        <button className="arrow left-arrow" onClick={goToPrevious} aria-label="Previous Video">
-          <i className="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <div className="video-container">
-          <iframe
-            src={videos[currentIndex]}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title={`Meet Our Fellows Video ${currentIndex + 1}`}
-          ></iframe>
-        </div>
-
-        <button className="arrow right-arrow" onClick={goToNext} aria-label="Next Video">
-          <i className="fa-solid fa-chevron-right"></i>
-        </button>
+        {videos.map((videoUrl, index) => (
+          <div className="video-container" key={index}>
+            <iframe
+              src={videoUrl}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={`Meet Our Fellows Video ${index + 1}`}
+            ></iframe>
+          </div>
+        ))}
       </div>
 
       <div className="testimonials-section">
