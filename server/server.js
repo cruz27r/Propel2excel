@@ -7,6 +7,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const formRoutes = require('./routes/formRoutes'); // Ensure this path is correct
+const sequelize = require('./config/dbs'); // Ensure this path is correct
 
 const app = express();
 
@@ -23,8 +24,14 @@ app.use(cors({
     allowedHeaders: 'Content-Type,Authorization'
 }));
 
-// MySQL Connection
-const db = require('./config/dbs'); // Import the database connection
+// Sequelize Sync
+sequelize.sync({ alter: true }) // Adjust `alter` to true to sync tables without dropping data
+    .then(() => {
+        console.log('Database synced successfully.');
+    })
+    .catch(err => {
+        console.error('Failed to sync database:', err);
+    });
 
 // Set up storage engine for file uploads
 const storage = multer.diskStorage({
@@ -75,7 +82,11 @@ app.get('*', (req, res) => {
 // Global error handler
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send('Something broke!');
+    res.status(500).json({
+        error: 'Internal Server Error',
+        message: err.message,
+        stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
+    });
 });
 
 // Start the server
