@@ -204,10 +204,10 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
           </div>
         </>
       )}
-      <section>
-        <Footer />
-      </section>
     </div>
+    <section>
+      <Footer />
+    </section>
   );
 };
 
