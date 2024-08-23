@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MeetOurFellows.css';
-// import ivanavid from '../assets/videos/0721 (1).mp4'
 
 const MeetOurFellows = () => {
   const videos = [
-    // ivanavid,
+    "https://www.youtube.com/embed/9Pj04Vr0GFo?rel=0", // This should be the only source for the video
   ];
-
 
   return (
     <section className='vid'>
@@ -14,21 +12,21 @@ const MeetOurFellows = () => {
             <h1 className="heroSection-text">Become A Fellow</h1>
         </div>
         <h2 className='title'>Meet Our Fellows</h2>
+        
         <div className="video-carousel"> 
-      {/* <button className="arrow left-arrow" onClick={goToPrevious}>
-      <i class="fa-solid fa-less-than"></i>
-
-      </button> */}
-      <div className="video-container">
-        <video src={videos} controls />
-      </div>
-      {/* <button className="arrow right-arrow" onClick={goToNext}>
-      <i class="fa-solid fa-greater-than"></i>
-      
-      </button> */}
-    </div>
+          {videos.map((video, index) => (
+            <div className="video-container" key={index}>
+              <iframe 
+                src={video}
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+                title={`Meet Our Fellows Video ${index + 1}`}
+              ></iframe>
+            </div>
+          ))}
+        </div>
     </section>
-
   );
 };
 
