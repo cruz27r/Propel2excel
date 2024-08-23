@@ -161,7 +161,7 @@ const Volunteer = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='footer1'>
+            <div className='footer1'>
                 <div className="footer-content1">
                     <div className=''>
                         <button className="footer-button1" onClick={showOverlay}>Apply Now</button>
@@ -191,7 +191,7 @@ const Volunteer = () => {
                     </div>
                     <a href="/privacy-policy">Privacy Policy</a>
                 </div>
-            </div> */}
+            </div>
             {isOverlayVisible && (
             <QuestionOverlay
             onClose={hideOverlay}
