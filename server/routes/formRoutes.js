@@ -22,12 +22,21 @@ router.get('/health', (req, res) => {
     res.status(200).json({ status: 'API is healthy' });
 });
 
+// Generic error handler function
+function handleError(res, err, context = '') {
+    console.error(`${context} Error:`, err);
+    res.status(500).json({
+        error: 'Database error',
+        message: err.message,
+        context: context,
+    });
+}
+
 // Student Routes
 router.get('/students', (req, res) => {
     db.query('SELECT * FROM student_submissions', (err, results) => {
         if (err) {
-            console.error('Error fetching students:', err);
-            return res.status(500).json({ error: 'Database error' });
+            return handleError(res, err, 'Fetching students');
         }
         res.json(results);
     });
@@ -40,6 +49,11 @@ router.post('/students', upload.single('resume'), (req, res) => {
         howDidYouHearAboutUs, organizations
     } = req.body;
     const resume = req.file ? req.file.filename : null;
+
+    // Validate required fields
+    if (!firstName || !lastName || !email) {
+        return res.status(400).json({ error: 'Missing required fields: firstName, lastName, email' });
+    }
 
     // Set default values if howDidYouHearAboutUs or organizations are missing
     const finalHowDidYouHearAboutUs = howDidYouHearAboutUs || 'Unknown';
@@ -61,8 +75,7 @@ router.post('/students', upload.single('resume'), (req, res) => {
 
     db.query(query, values, (err, results) => {
         if (err) {
-            console.error('Error inserting student:', err);
-            return res.status(500).json({ error: 'Database error', details: err.message });
+            return handleError(res, err, 'Inserting student');
         }
         res.status(201).json({ message: 'Student created', id: results.insertId });
     });
@@ -74,6 +87,11 @@ router.post('/companies', (req, res) => {
         companyName, contactPerson, email, phoneNumber, companyURL, description,
         companyQ1, companyQ2, companyQ3, companyQ4, companyQ5
     } = req.body;
+
+    // Validate required fields
+    if (!companyName || !contactPerson || !email) {
+        return res.status(400).json({ error: 'Missing required fields: companyName, contactPerson, email' });
+    }
 
     const query = `
         INSERT INTO company_submissions (
@@ -89,8 +107,7 @@ router.post('/companies', (req, res) => {
 
     db.query(query, values, (err, results) => {
         if (err) {
-            console.error('Error inserting company:', err);
-            return res.status(500).json({ error: 'Database error', details: err.message });
+            return handleError(res, err, 'Inserting company');
         }
         res.status(201).json({ message: 'Company created', id: results.insertId });
     });
@@ -103,6 +120,11 @@ router.post('/volunteers', upload.single('resume'), (req, res) => {
         volunteerQ1, volunteerQ2, volunteerQ3, volunteerQ4, volunteerQ5
     } = req.body;
     const resume = req.file ? req.file.filename : null;
+
+    // Validate required fields
+    if (!firstName || !lastName || !email) {
+        return res.status(400).json({ error: 'Missing required fields: firstName, lastName, email' });
+    }
 
     const query = `
         INSERT INTO volunteer_submissions (
@@ -118,8 +140,7 @@ router.post('/volunteers', upload.single('resume'), (req, res) => {
 
     db.query(query, values, (err, results) => {
         if (err) {
-            console.error('Error inserting volunteer:', err);
-            return res.status(500).json({ error: 'Database error', details: err.message });
+            return handleError(res, err, 'Inserting volunteer');
         }
         res.status(201).json({ message: 'Volunteer created', id: results.insertId });
     });
