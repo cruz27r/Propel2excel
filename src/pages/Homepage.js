@@ -7,6 +7,7 @@ import EventsSection from '../components/events.js';
 import CompaniesSection from '../components/CompaniesSection.js';
 import MeetOurFellows from '../components/MeetOurFellows.js';
 import p2e from '../assets/images/image.png';
+import Footer from '../components/Footer/Footer';
 
 const Homepage = () => {
   return (
@@ -49,6 +50,9 @@ const Homepage = () => {
 
       <section className='meet-our-fellows'>
         <MeetOurFellows />
+      </section>
+      <section>
+        <Footer />
       </section>
       
     </div>
