@@ -17,11 +17,6 @@ const upload = multer({
     limits: { fileSize: 1000000 }, // 1MB file size limit
 });
 
-// Health Check Route
-router.get('/health', (req, res) => {
-    res.status(200).json({ status: 'API is healthy' });
-});
-
 // Generic error handler function
 function handleError(res, err, context = '') {
     console.error(`${context} Error:`, err);
@@ -82,6 +77,15 @@ router.post('/students', upload.single('resume'), (req, res) => {
 });
 
 // Company Routes
+router.get('/companies', (req, res) => {
+    db.query('SELECT * FROM company_submissions', (err, results) => {
+        if (err) {
+            return handleError(res, err, 'Fetching companies');
+        }
+        res.json(results);
+    });
+});
+
 router.post('/companies', (req, res) => {
     const {
         companyName, contactPerson, email, phoneNumber, companyURL, description,
@@ -114,6 +118,15 @@ router.post('/companies', (req, res) => {
 });
 
 // Volunteer Routes
+router.get('/volunteers', (req, res) => {
+    db.query('SELECT * FROM volunteer_submissions', (err, results) => {
+        if (err) {
+            return handleError(res, err, 'Fetching volunteers');
+        }
+        res.json(results);
+    });
+});
+
 router.post('/volunteers', upload.single('resume'), (req, res) => {
     const {
         firstName, lastName, email, phoneNumber, linkedinURL, volunteerExperience,
