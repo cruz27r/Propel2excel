@@ -182,7 +182,7 @@ const Fellow = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='footer1'>
+            <div className='footer1'>
                 <div className="footer-content1">
                     <div className=''>
                         <Link to="/apply">
@@ -214,7 +214,7 @@ const Fellow = () => {
                     </div>
                     <a href="/privacy-policy">Privacy Policy</a>
                 </div>
-            </div> */}
+            </div> 
         </div>
     );
 };
