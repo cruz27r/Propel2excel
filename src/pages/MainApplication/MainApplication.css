@@ -3,12 +3,12 @@
 .Application-Page {
   font-family: "Montserrat", sans-serif;
   width: 90%;
-  margin: 100px auto 20px auto; /* Adjusted margin-top to ensure the navbar doesn't cover content */
+  max-width: 1200px;
+  margin: 100px auto 20px auto;
   padding: 20px;
-  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #f1f4fa, #dbe2ef, #182C63); /* Smooth gradient blending light blue to dark blue */
   color: #333;
 }
 
@@ -21,13 +21,13 @@
 
 .Application-Page .banner-video {
   width: 100%;
-  height: 400px; /* Adjust this value to your desired height */
-  object-fit: cover; /* Ensures the video covers the area while maintaining aspect ratio */
-  object-position: center; /* Centers the visible part of the video */
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .Application-Page .header {
-  width: 60%;
+  width: 80%;
   margin: 0 auto 20px auto;
   text-align: center;
 }
@@ -35,6 +35,7 @@
 .Application-Page .header h2 {
   font-size: 2rem;
   font-weight: 600;
+  color: #182C63;
 }
 
 .Application-Page .header p {
@@ -47,46 +48,43 @@
   margin: 0 auto;
 }
 
-.Application-Page .student-application-form {
+.Application-Page .application-form {
   width: 100%;
-}
-
-.Application-Page .form-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .Application-Page .form-group {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  flex: 1 1 48%; /* Adjust width to take 48% of the row, with space between them */
+  min-width: 250px; /* Ensure a minimum width for smaller screens */
   margin-bottom: 20px;
 }
 
-.Application-Page .form-group-full {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.Application-Page .student-application-form label {
+.Application-Page .form-group label {
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-.Application-Page .student-application-form input,
-.Application-Page .student-application-form textarea {
+.Application-Page .form-group input,
+.Application-Page .form-group textarea,
+.Application-Page .form-group select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.Application-Page .student-application-form textarea {
+.Application-Page .form-group textarea {
   height: 100px;
+  resize: vertical;
 }
 
-.Application-Page .student-application-form button {
+.Application-Page .application-form button {
   width: 100%;
   padding: 15px;
   border: none;
@@ -99,7 +97,7 @@
   transition: background-color 0.3s ease;
 }
 
-.Application-Page .student-application-form button:hover {
+.Application-Page .application-form button:hover {
   background-color: #101d42;
 }
 
@@ -115,7 +113,7 @@
 .Application-Page .confirmation-view h3 {
   font-size: 2rem;
   font-weight: 600;
-  color: #182C63; /* Use your dark blue color */
+  color: #182C63;
   margin-bottom: 20px;
 }
 
@@ -125,8 +123,8 @@
 }
 
 .Application-Page .checkmark-icon {
-  width: 100px; /* Adjust size as needed */
-  height: 100px; /* Adjust size as needed */
+  width: 100px;
+  height: 100px;
   margin-bottom: 20px;
 }
 
@@ -138,5 +136,54 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.Application-Page select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.Application-Page button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #182C63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.Application-Page button:hover {
+  background-color: #101d42;
+}
+
+.Application-Page .json-button,
+.Application-Page .health-button {
+  width: 48%;
+  margin: 0 1%;
+  text-align: center;
+}
+
+.Application-Page .json-button:hover,
+.Application-Page .health-button:hover {
+  background-color: #101d42;
+}
+
+@media (max-width: 768px) {
+  .Application-Page .form-group {
+    width: 100%;
+  }
+
+  .Application-Page .json-button,
+  .Application-Page .health-button {
+    width: 100%;
+    margin: 10px 0;
   }
 }

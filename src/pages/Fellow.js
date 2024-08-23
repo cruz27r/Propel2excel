@@ -191,10 +191,10 @@ const Fellow = () => {
                     </div>
                     <h2>Not a Student?</h2>
                     <div className="footer-buttons1">
-                        <Link to="/">
+                        <Link to="/volunteer">
                             <button className="footer-button1">Become a Volunteer</button>
                         </Link>
-                        <Link to="/">
+                        <Link to="/partners">
                             <button className="footer-button1">Become a Partner</button>
                         </Link>
                     </div>
