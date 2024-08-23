@@ -5,9 +5,15 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 const formRoutes = require('./routes/formRoutes'); // Ensure this path is correct
 
 const app = express();
+
+// Ensure uploads directory exists
+if (!fs.existsSync('./uploads')) {
+    fs.mkdirSync('./uploads');
+}
 
 // Middleware
 app.use(bodyParser.json());
@@ -20,7 +26,7 @@ app.use(cors({
 // MySQL Connection
 const db = require('./config/dbs'); // Import the database connection
 
-// Set up storage engine
+// Set up storage engine for file uploads
 const storage = multer.diskStorage({
     destination: './uploads/',
     filename: function (req, file, cb) {
@@ -28,7 +34,7 @@ const storage = multer.diskStorage({
     }
 });
 
-// Initialize upload
+// Initialize upload middleware
 const upload = multer({
     storage: storage,
     limits: { fileSize: 1000000 }, // 1MB file size limit
@@ -49,7 +55,7 @@ function checkFileType(file, cb) {
     if (mimetype && extname) {
         return cb(null, true);
     } else {
-        cb('Error: Images Only!');
+        cb('Error: Invalid file type!');
     }
 }
 
@@ -64,6 +70,12 @@ app.get('/api/health', (req, res) => {
 // Catch-all handler for any request that doesn't match the above routes, send back React's index.html file
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
 
 // Start the server
