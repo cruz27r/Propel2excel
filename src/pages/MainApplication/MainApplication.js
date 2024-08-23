@@ -98,64 +98,6 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
       });
   };
 
-  const handleJsonSubmitWithTestData = (e) => {
-    e.preventDefault();
-    
-    const testData = {
-        firstName: "John",
-        lastName: "Doe",
-        email: "john.doe@example.com",
-        nameofInstitution: "Example University",
-        phoneNumber: "1234567890",
-        linkedinURL: "http://linkedin.com/in/johndoe",
-        resume: "Link to resume",
-        currentGPA: "3.5",
-        internshipExperience: "Internship details",
-        top3Companies: "Company1, Company2, Company3",
-        studentQ1: "Answer to Q1",
-        studentQ2: "Answer to Q2",
-        studentQ3: "Answer to Q3",
-        studentQ4: "Answer to Q4",
-        studentQ5: "Answer to Q5"
-    };
-
-    console.log('Test data being submitted as JSON:', JSON.stringify(testData, null, 2));
-
-    const url = `http://api.propel2excel.com:5000/api/${applicationType}`;
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(testData),
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(() => {
-      setIsSubmitted(true);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      alert('There was an issue submitting your application. Please try again.');
-    });
-  };
-
-  const checkHealth = () => {
-    fetch('/api/health')
-      .then((response) => response.json())
-      .then((data) => {
-        alert(`API Health: ${JSON.stringify(data)}`);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        alert('API is not reachable.');
-      });
-  };
-
   const renderFields = () => {
     return formFields[applicationType].map(({ label, name, type, accept, required }) => (
       <div className="form-group" key={name}>
@@ -170,44 +112,42 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
   };
 
   return (
-    <div className="Application-Page">
-      {isSubmitted ? (
-        <div className="confirmation-view">
-          <img src={checkmarkIcon} alt="Checkmark" className="checkmark-icon" />
-          <h3>Thank you!</h3>
-          <p>Your submission has been sent.</p>
-        </div>
-      ) : (
-        <>
-          <div className="banner">
-            <video autoPlay loop muted playsInline className="banner-video">
-              <source src={mentorshipVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+    <>
+      <div className="Application-Page">
+        {isSubmitted ? (
+          <div className="confirmation-view">
+            <img src={checkmarkIcon} alt="Checkmark" className="checkmark-icon" />
+            <h3>Thank you!</h3>
+            <p>Your submission has been sent.</p>
           </div>
-          <div className="header">
-            <h2>Application for Propel2Excel Fellowship</h2>
-            <p>Please fill out the form below to the best of your ability.</p>
-          </div>
-          <div className="form">
-            <select value={applicationType} onChange={handleApplicationTypeChange}>
-              <option value="students">Student</option>
-              <option value="companies">Company</option>
-              <option value="volunteers">Volunteer</option>
-            </select>
-            <form className="application-form" onSubmit={handleSubmit}>
-              {renderFields()}
-              <button type="submit">Submit Application</button>
-            </form>
-            {/* <button onClick={handleJsonSubmitWithTestData}>Submit Pre-defined Test Data as JSON</button>
-            <button onClick={checkHealth}>Check API Health</button> */}
-          </div>
-        </>
-      )}
-    </div>
-    <section>
+        ) : (
+          <>
+            <div className="banner">
+              <video autoPlay loop muted playsInline className="banner-video">
+                <source src={mentorshipVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="header">
+              <h2>Application for Propel2Excel Fellowship</h2>
+              <p>Please fill out the form below to the best of your ability.</p>
+            </div>
+            <div className="form">
+              <select value={applicationType} onChange={handleApplicationTypeChange}>
+                <option value="students">Student</option>
+                <option value="companies">Company</option>
+                <option value="volunteers">Volunteer</option>
+              </select>
+              <form className="application-form" onSubmit={handleSubmit}>
+                {renderFields()}
+                <button type="submit">Submit Application</button>
+              </form>
+            </div>
+          </>
+        )}
+      </div>
       <Footer />
-    </section>
+    </>
   );
 };
 
