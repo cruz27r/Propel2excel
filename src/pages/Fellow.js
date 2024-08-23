@@ -185,7 +185,7 @@ const Fellow = () => {
             <div className='footer1'>
                 <div className="footer-content1">
                     <div className=''>
-                        <Link to="/apply">
+                        <Link to="/main-application">
                             <button className="footer-button1">Apply Now</button>
                         </Link>
                     </div>

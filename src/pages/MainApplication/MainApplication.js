@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './MainApplication.css';
 import mentorshipVideo from './../../assets/videos/job-interview.mp4';
 import checkmarkIcon from './../../assets/images/check.png';
-import Footer from '../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const formFields = {
   students: [
