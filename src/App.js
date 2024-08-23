@@ -37,7 +37,6 @@ const App = () => {
       <div className="App">
         <Navbar />
         <AppRoutes isLoggedIn={isLoggedIn} onLogin={handleLogin} />
-        <Footer />
       </div>
     </Router>
   );
