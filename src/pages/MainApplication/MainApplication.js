@@ -77,12 +77,7 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
       data.append(key, formData[key]);
     });
 
-    // Log the form data to the console
-    for (let pair of data.entries()) {
-      console.log(`${pair[0]}: ${pair[1]}`);
-    }
-
-    const url = `http://api.propel2excel.com:5000/api/${applicationType}`;
+    const url = `https://api.propel2excel.com:5000/api/${applicationType}`;
     fetch(url, {
       method: 'POST',
       body: data,
@@ -100,8 +95,53 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
         console.error('Error:', error);
         alert('There was an issue submitting your application. Please try again.');
       });
-};
+  };
 
+  const handleJsonSubmitWithTestData = (e) => {
+    e.preventDefault();
+    
+    const testData = {
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@example.com",
+        nameofInstitution: "Example University",
+        phoneNumber: "1234567890",
+        linkedinURL: "http://linkedin.com/in/johndoe",
+        resume: "Link to resume",
+        currentGPA: "3.5",
+        internshipExperience: "Internship details",
+        top3Companies: "Company1, Company2, Company3",
+        studentQ1: "Answer to Q1",
+        studentQ2: "Answer to Q2",
+        studentQ3: "Answer to Q3",
+        studentQ4: "Answer to Q4",
+        studentQ5: "Answer to Q5"
+    };
+
+    console.log('Test data being submitted as JSON:', JSON.stringify(testData, null, 2));
+
+    const url = `http://api.propel2excel.com:5000/api/${applicationType}`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(testData),
+    })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(() => {
+      setIsSubmitted(true);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      alert('There was an issue submitting your application. Please try again.');
+    });
+  };
 
   const checkHealth = () => {
     fetch('/api/health')
@@ -158,6 +198,7 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
               {renderFields()}
               <button type="submit">Submit Application</button>
             </form>
+            <button onClick={handleJsonSubmitWithTestData}>Submit Pre-defined Test Data as JSON</button>
             <button onClick={checkHealth}>Check API Health</button>
           </div>
         </>
