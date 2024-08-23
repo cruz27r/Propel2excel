@@ -1,38 +1,16 @@
 require('dotenv').config(); // Load environment variables
-const mysql2 = require('mysql2');
+const { Sequelize } = require('sequelize');
 
-const dbConfig = {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
     host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT
-};
+    dialect: 'mysql',
+    port: process.env.DB_PORT,
+    logging: false, // Disable logging; default: console.log
+});
 
-let connection;
+sequelize.authenticate()
+    .then(() => console.log('Connected to MySQL via Sequelize'))
+    .catch(err => console.error('Unable to connect to MySQL via Sequelize:', err));
 
-function handleDisconnect() {
-    connection = mysql2.createConnection(dbConfig);
-
-    connection.connect((err) => {
-        if (err) {
-            console.error('Error connecting to MySQL:', err);
-            setTimeout(handleDisconnect, 2000); // Reconnect after 2 seconds
-        } else {
-            console.log('Connected to MySQL');
-        }
-    });
-
-    connection.on('error', (err) => {
-        console.error('MySQL error', err);
-        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-            handleDisconnect(); // Reconnect on connection loss
-        } else {
-            throw err;
-        }
-    });
-}
-
-handleDisconnect();
-
-module.exports = connection;
+// Export the sequelize instance to use it in other files (e.g., models)
+module.exports = sequelize;

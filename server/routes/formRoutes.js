@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { Student } = require('../models/Students');
-const { Company } = require('../models/Company');
-const { Volunteer } = require('../models/Volunteer');
-
+const Student = require('../models/Students');
+const Company = require('../models/Company');
+const Volunteer = require('../models/Volunteer');
 
 // Configure Multer for file uploads (resume handling)
 const storage = multer.diskStorage({
