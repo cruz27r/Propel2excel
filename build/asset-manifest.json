@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c28ad1c.css",
-    "main.js": "/static/js/main.b33b0f54.js",
+    "main.css": "/static/css/main.988bd71a.css",
+    "main.js": "/static/js/main.9ac0854d.js",
     "static/media/buddy-series.mp4": "/static/media/buddy-series.6b17b8700d458d668602.mp4",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
-    "static/media/student-requirement.jpg": "/static/media/student-requirement.429773a0ad672c798356.jpg",
     "static/media/candidate readiness.jpg": "/static/media/candidate readiness.6bff4144657a40aced3d.jpg",
     "static/media/conference-event.jpg": "/static/media/conference-event.f097fa57bf13a847f4a9.f097fa57bf13a847f4a9.jpg",
     "static/media/photo-collage.png": "/static/media/photo-collage.4c014b96de0abefc65a0.png",
     "static/media/linkedin-rebrand.jpg": "/static/media/linkedin-rebrand.b935fb60b2e3e66acea7.jpg",
     "static/media/remotemeeting.jpg": "/static/media/remotemeeting.b7fdea9dfaf8c569f04a.b7fdea9dfaf8c569f04a.jpg",
-    "static/media/speaking engagement.jpg": "/static/media/speaking engagement.b7fdea9dfaf8c569f04a.jpg",
+    "static/media/speaking-engagement.jpg": "/static/media/speaking-engagement.b7fdea9dfaf8c569f04a.jpg",
     "static/media/Become-a-volunteer.png": "/static/media/Become-a-volunteer.16e97b8927acd7f1ba0e.png",
     "static/media/Desktop - 1.png": "/static/media/Desktop - 1.2931dacae5b94ae0b635.png",
     "static/media/P2E DESIGN (1).png": "/static/media/P2E DESIGN (1).26830c70d1c0b6216f7e.png",
@@ -54,11 +53,11 @@
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.0c28ad1c.css.map": "/static/css/main.0c28ad1c.css.map",
-    "main.b33b0f54.js.map": "/static/js/main.b33b0f54.js.map"
+    "main.988bd71a.css.map": "/static/css/main.988bd71a.css.map",
+    "main.9ac0854d.js.map": "/static/js/main.9ac0854d.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c28ad1c.css",
-    "static/js/main.b33b0f54.js"
+    "static/css/main.988bd71a.css",
+    "static/js/main.9ac0854d.js"
   ]
 }

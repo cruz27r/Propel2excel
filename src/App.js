@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer.js';
 import Fellow from './pages/Fellow';
 import Volunteer from './pages/Volunteer.js';
 import Partners from './pages/Partners.js';
-import MeetOurFellows from './Pages/MeetOurFellows';
+import MeetOurFellows from './pages/MeetOurFellows.js';
 import './App.css';
 
 const App = () => {
