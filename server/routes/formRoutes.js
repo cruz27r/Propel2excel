@@ -41,7 +41,10 @@ router.post('/students', upload.single('resume'), (req, res) => {
     } = req.body;
     const resume = req.file ? req.file.filename : null;
 
-    // Verify all required fields and adjust values if necessary
+    // Set default values if howDidYouHearAboutUs or organizations are missing
+    const finalHowDidYouHearAboutUs = howDidYouHearAboutUs || 'Unknown';
+    const finalOrganizations = organizations || 'Unknown';
+
     const query = `
         INSERT INTO student_submissions (
             firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
@@ -53,36 +56,25 @@ router.post('/students', upload.single('resume'), (req, res) => {
     const values = [
         firstName, lastName, email, nameofInstitution, phoneNumber, linkedinURL, resume,
         currentGPA, internshipExperience, top3Companies, studentQ1, studentQ2, studentQ3,
-        studentQ4, studentQ5, howDidYouHearAboutUs, organizations
+        studentQ4, studentQ5, finalHowDidYouHearAboutUs, finalOrganizations
     ];
 
     db.query(query, values, (err, results) => {
         if (err) {
             console.error('Error inserting student:', err);
-            return res.status(500).json({ error: 'Database error' });
+            return res.status(500).json({ error: 'Database error', details: err.message });
         }
         res.status(201).json({ message: 'Student created', id: results.insertId });
     });
 });
 
 // Company Routes
-router.get('/companies', (req, res) => {
-    db.query('SELECT * FROM company_submissions', (err, results) => {
-        if (err) {
-            console.error('Error fetching companies:', err);
-            return res.status(500).json({ error: 'Database error' });
-        }
-        res.json(results);
-    });
-});
-
 router.post('/companies', (req, res) => {
     const {
         companyName, contactPerson, email, phoneNumber, companyURL, description,
         companyQ1, companyQ2, companyQ3, companyQ4, companyQ5
     } = req.body;
 
-    // Verify all required fields and adjust values if necessary
     const query = `
         INSERT INTO company_submissions (
             companyName, contactPerson, email, phoneNumber, companyURL, description,
@@ -98,23 +90,13 @@ router.post('/companies', (req, res) => {
     db.query(query, values, (err, results) => {
         if (err) {
             console.error('Error inserting company:', err);
-            return res.status(500).json({ error: 'Database error' });
+            return res.status(500).json({ error: 'Database error', details: err.message });
         }
         res.status(201).json({ message: 'Company created', id: results.insertId });
     });
 });
 
 // Volunteer Routes
-router.get('/volunteers', (req, res) => {
-    db.query('SELECT * FROM volunteer_submissions', (err, results) => {
-        if (err) {
-            console.error('Error fetching volunteers:', err);
-            return res.status(500).json({ error: 'Database error' });
-        }
-        res.json(results);
-    });
-});
-
 router.post('/volunteers', upload.single('resume'), (req, res) => {
     const {
         firstName, lastName, email, phoneNumber, linkedinURL, volunteerExperience,
@@ -122,7 +104,6 @@ router.post('/volunteers', upload.single('resume'), (req, res) => {
     } = req.body;
     const resume = req.file ? req.file.filename : null;
 
-    // Verify all required fields and adjust values if necessary
     const query = `
         INSERT INTO volunteer_submissions (
             firstName, lastName, email, phoneNumber, linkedinURL, resume,
@@ -138,7 +119,7 @@ router.post('/volunteers', upload.single('resume'), (req, res) => {
     db.query(query, values, (err, results) => {
         if (err) {
             console.error('Error inserting volunteer:', err);
-            return res.status(500).json({ error: 'Database error' });
+            return res.status(500).json({ error: 'Database error', details: err.message });
         }
         res.status(201).json({ message: 'Volunteer created', id: results.insertId });
     });
