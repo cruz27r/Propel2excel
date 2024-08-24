@@ -1,62 +1,46 @@
 .chart-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;    
     width: 100%;
+    padding: 30px;
     margin-top: 40px;
     margin-bottom: 6vh;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .chart-wrapper {
+    position: relative;
+    width: 50%;
+    height: 450px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: red; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .chart-title {
     font-size: 1.5rem;
+    margin-bottom: 20px;
     text-align: center;
     color: #182C63;
 }
 
-.pie-chart-container {
-    display: flex;
-    height: 400px;
-    width: 90%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    border-radius: 5px; 
-    padding: 5px 0px; 
-  }
-
-.hover-info, .hover-info1 {
-    position: absolute;
-    top: 50%;
-    background:rgba(82, 82, 82, 0.5); ;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    width: 150px;
-    text-align: center;
-    font-size: 0.9rem;
-}
-@media (max-width: 800px){
-    .chart-wrapper{
+@media (max-width: 800px) {
+    .chart-wrapper {
         width: 60%;
     }
 }
-@media (max-width: 768px){
-    .chart-container{
+
+@media (max-width: 768px) {
+    .chart-container {
         flex-direction: column;
         width: 100%;
         justify-content: center;
+        align-items: center;
     }
-    .chart-wrapper{
+    .chart-wrapper {
         width: 80%;
     }
-
 }
