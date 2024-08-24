@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png';
 import GuidingQuestionsOverlay from './Overlay';
-import './navbar.css';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

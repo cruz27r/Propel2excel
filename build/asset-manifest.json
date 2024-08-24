@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.29a058f2.css",
-    "main.js": "/static/js/main.55aac062.js",
+    "main.css": "/static/css/main.fda35ff3.css",
+    "main.js": "/static/js/main.0ca81b32.js",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
     "static/media/Desktop - 2.png": "/static/media/Desktop - 2.1fdb8ce2f0be0f125983.png",
@@ -52,11 +52,11 @@
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.29a058f2.css.map": "/static/css/main.29a058f2.css.map",
-    "main.55aac062.js.map": "/static/js/main.55aac062.js.map"
+    "main.fda35ff3.css.map": "/static/css/main.fda35ff3.css.map",
+    "main.0ca81b32.js.map": "/static/js/main.0ca81b32.js.map"
   },
   "entrypoints": [
-    "static/css/main.29a058f2.css",
-    "static/js/main.55aac062.js"
+    "static/css/main.fda35ff3.css",
+    "static/js/main.0ca81b32.js"
   ]
 }
