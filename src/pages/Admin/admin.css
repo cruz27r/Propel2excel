@@ -1,0 +1,128 @@
+/* src/pages/admin/admin.css */
+
+/* Dark Blue Background */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+    background-color: #182C63; /* Propel2Excel dark blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* White Text and Elements */
+  .admin-title {
+    font-size: 28px;
+    color: #ffffff; /* White for better contrast */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .admin-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .admin-label {
+    margin-bottom: 5px;
+    color: #ffffff; /* White text */
+    font-weight: bold;
+  }
+  
+  .admin-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f0f4f8; /* Light background for input fields */
+    color: #333333; /* Dark text inside inputs */
+  }
+  
+  .admin-button {
+    background-color: #ffffff; /* White background */
+    color: #182C63; /* Dark blue text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-button:hover {
+    background-color: #d1d5db; /* Light gray hover effect */
+  }
+  
+  /* Applications Container with White Background */
+  .applications-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Filter Container */
+  .filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-container label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #ffffff; /* White text for labels */
+  }
+  
+  /* Application Cards with Light Background */
+  .application-card {
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 0;
+  }
+  
+  .application-card h4 {
+    margin: 0 0 10px;
+    color: #182C63; /* Dark blue text for headings */
+  }
+  
+  .application-card p {
+    margin: 5px 0;
+    color: #333333; /* Dark text for details */
+  }
+  
+  /* Status Buttons */
+  .status-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .status-buttons button {
+    background-color: #182C63; /* Dark blue buttons */
+    color: #ffffff; /* White text */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .status-buttons button:hover {
+    background-color: #1e4f7d; /* Slightly lighter blue on hover */
+  }
+  

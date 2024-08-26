@@ -11,6 +11,7 @@ import Fellow from './pages/Fellow';
 import Volunteer from './pages/Volunteer.js';
 import Partners from './pages/Partners.js';
 import MeetOurFellows from './pages/MeetOurFellows.js';
+import AdminLogin from './pages/Admin/admin.js'; // Import the AdminLogin component
 import './App.css';
 
 const App = () => {
@@ -60,6 +61,7 @@ const AppRoutes = ({ isLoggedIn, onLogin }) => {
       <Route path="/main-application" element={<MainApplication />} />
       <Route path="/fellow" element={<Fellow />} />
       <Route path="/meetourfellows" element={<MeetOurFellows />} />
+      <Route path="/admin-login" element={<AdminLogin onLogin={onLogin} />} /> {/* New admin login route */}
     </Routes>
   );
 };

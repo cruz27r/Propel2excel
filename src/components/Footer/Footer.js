@@ -33,7 +33,12 @@ const Footer = () => {
             <FontAwesomeIcon icon={faTwitter} style={{ color: '#fff' }} />
           </a>
         </div>
-        <a href="/privacy-policy">Privacy Policy</a>
+        <div className="footer-links">
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/admin-login">
+            <button className="footer-admin-button">Admin Login</button>
+          </Link>
+        </div>
       </div>
     </footer>
   );
