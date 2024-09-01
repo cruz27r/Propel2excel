@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.fda35ff3.css",
-    "main.js": "/static/js/main.0ca81b32.js",
+    "main.css": "/static/css/main.3ac6b1d8.css",
+    "main.js": "/static/js/main.882e2d6d.js",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
+    "static/media/Desktop - 3.png": "/static/media/Desktop - 3.573c35dae14aa329c8e2.png",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
-    "static/media/Desktop - 2.png": "/static/media/Desktop - 2.1fdb8ce2f0be0f125983.png",
     "static/media/candidate readiness.jpg": "/static/media/candidate readiness.6bff4144657a40aced3d.jpg",
     "static/media/conference-event.jpg": "/static/media/conference-event.f097fa57bf13a847f4a9.f097fa57bf13a847f4a9.jpg",
     "static/media/photo-collage.png": "/static/media/photo-collage.4c014b96de0abefc65a0.png",
@@ -52,11 +52,11 @@
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.fda35ff3.css.map": "/static/css/main.fda35ff3.css.map",
-    "main.0ca81b32.js.map": "/static/js/main.0ca81b32.js.map"
+    "main.3ac6b1d8.css.map": "/static/css/main.3ac6b1d8.css.map",
+    "main.882e2d6d.js.map": "/static/js/main.882e2d6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.fda35ff3.css",
-    "static/js/main.0ca81b32.js"
+    "static/css/main.3ac6b1d8.css",
+    "static/js/main.882e2d6d.js"
   ]
 }
