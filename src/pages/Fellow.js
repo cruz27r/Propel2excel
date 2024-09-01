@@ -163,7 +163,7 @@ const Fellow = () => {
             <div className={`ready ${isReadyVisible ? 'fade-in' : ''}`} ref={readySectionRef}>
                 <h1>Ready to become a Fellow?</h1>
                 <h4>October Cohort Applications closes in:</h4>
-                <div className="application-countdown countdown">
+                {/* <div className="application-countdown countdown">
                     <div className="time-section">
                         <div className="time">{timeLeft.days}</div>
                         <div className="label">D</div>
@@ -180,7 +180,7 @@ const Fellow = () => {
                         <div className="time">{timeLeft.seconds}</div>
                         <div className="label">S</div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className='footer1'>
                 <div className="footer-content1">
