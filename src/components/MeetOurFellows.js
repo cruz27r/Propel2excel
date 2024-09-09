@@ -30,9 +30,10 @@ const MeetOurFellows = () => {
   return (
     <section className="vid">
       <div className="content-1">
-        <h1 className="heroSection-text">Become A Fellow</h1>
+        {/* <h1 className="heroSection-text">Become A Fellow</h1> */}
+        <h2 className="title">Meet Our Fellows</h2>
       </div>
-      <h2 className="title">Meet Our Fellows</h2>
+      {/* <h2 className="title">Meet Our Fellows</h2> */}
 
       <div className="video-carousel">
         {videos.map((videoUrl, index) => (
