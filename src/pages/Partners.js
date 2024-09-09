@@ -224,7 +224,7 @@ const Partners = () => {
             <div className='footer1'>
                 <div className="footer-content1">
                     <div className=''>
-                        <Link to="/invest">
+                        <Link to="/main-application">
                             <button className="footer-button1">Invest Now</button>
                         </Link>
                     </div>

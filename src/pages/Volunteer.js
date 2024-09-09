@@ -163,9 +163,9 @@ const Volunteer = () => {
             </div>
             <div className='footer1'>
                 <div className="footer-content1">
-                    <div className=''>
-                        <button className="footer-button1" onClick={showOverlay}>Apply Now</button>
-                    </div>
+                    <Link to="/main-application">
+                        <button className="footer-button1">Apply Now</button>
+                    </Link>
                     <h2>Not a Volunteer?</h2>
                     <div className="footer-buttons1">
                         <Link to="/fellow">

@@ -1,3 +1,4 @@
+/* General homepage styling */
 .homepage {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -9,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+    padding-top: 120px; /* Add padding to prevent navbar from overlapping */
     background-image: url('../assets/images/Desktop - 3.png');
     background-size: cover;
     background-position: center;
@@ -18,6 +20,13 @@
     width: 100%;
 }
 
+/* Desktop image for banner */
+.banner-text img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Standard banner text for desktop */
 .banner-text {
     flex: 1;
     max-width: 30%;
@@ -107,8 +116,8 @@ span:hover {
     background-color: #0f1a46; /* Slightly darker shade for hover effect */
 }
 
-/* Responsive design adjustments */
-@media (max-width: 1200px) {
+/* Desktop view: no changes */
+@media (min-width: 769px) {
     .banner-text {
         max-width: 30%;
     }
@@ -121,7 +130,7 @@ span:hover {
     }
 
     .content h1 {
-        font-size: 28px;
+        font-size: 48px;
     }
 
     .image-container1 img {
@@ -139,12 +148,12 @@ span:hover {
 
     .title {
         text-align: center;
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .about-text {
         max-width: 100%;
-        font-size: 18px;
+        font-size: 24px;
         text-align: center;
     }
 
@@ -157,80 +166,59 @@ span:hover {
     }
 }
 
+/* Mobile and tablet adjustments (max-width: 768px and smaller) */
 @media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack image and text vertically */
+        justify-content: center; /* Center the content */
+        align-items: center; /* Align items centrally */
+        height: auto;
+        padding: 0; /* Remove extra padding */
+        padding-top: 80px; /* Adjust padding for mobile */
+        background-image: url('../assets/images/p2emobile.png'); /* Use the mobile-specific image */
+        background-size: cover;
+        background-position: center;
+    }
+
     .banner-text {
-        max-width: 30%;
-        margin-left: 0rem;
-        padding: 0;
+        max-width: 90%;
+        text-align: center; /* Center the text */
+        margin: 30px 0 0; /* Move text further down below the image */
+    }
+
+    .banner-text img {
+        display: block;
+        margin: 0 auto; /* Center the image on smaller screens */
+        max-width: 150px; /* Adjust image size for mobile */
+    }
+
+    .banner-text h1 {
+        font-size: 18px; /* Smaller font size for mobile */
+        margin: 30px 0 0; /* Add more spacing between image and text */
+        text-align: center;
+    }
+}
+
+/* Specific mobile adjustments (max-width: 480px) */
+@media (max-width: 480px) {
+    .banner-text h1 {
+        font-size: 16px; /* Further reduce font size for small mobile screens */
+    }
+
+    .banner-text img {
+        max-width: 100px; /* Make the logo smaller on mobile */
     }
 
     .content {
-        background-size: contain;
-        background-repeat: no-repeat;
-        z-index: -1;
-        height: 78vh;
-    }
-
-    .content h1 {
-        font-size: 20px;
-    }
-
-    .image-container1 img {
-        max-width: 100%;
-        height: 100%;
-    }
-
-    .about {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 20px;
-        padding-bottom: 2rem; /* Ensure padding is consistent on smaller screens */
-    }
-
-    .title {
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .about-text {
-        max-width: 100%;
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .image-container1 {
-        margin-left: 0;
-    }
-
-    .text {
-        margin-top: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .content h1 {
-        font-size: 18px;
+        padding-top: 70px; /* Reduce padding further for mobile */
+        background-image: url('../assets/images/p2emobile.png'); /* Ensure mobile image is used */
     }
 
     .banner-text {
-        font-size: 18px;
+        margin: 40px 0 0; /* Ensure text is well below the image */
     }
 
-    .title {
-        font-size: 20px;
-    }
-
-    .about-text {
-        font-size: 16px;
-    }
-
-    .about {
-        gap: 1.5rem;
-    }
-
-    .student-placement,
-    .key-components {
-        padding: 0 15px; /* Add padding to avoid overlap */
+    .banner-text h1 {
+        font-size: 14px; /* Even smaller font for small mobile screens */
     }
 }
