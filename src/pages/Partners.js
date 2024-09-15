@@ -8,7 +8,7 @@ import mentor from '../assets/images/mentor.svg';
 import linkedin from '../assets/images/linkedin (2).svg';
 import talent from '../assets/images/talent.svg';
 import corporate from '../assets/images/corporate.svg';
-import { PieChart, Pie, Tooltip, Cell, Legend } from 'recharts';
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, Cell, Legend } from 'recharts';
 import logo from '../assets/images/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png'
 import future from '../assets/images/future.svg';
 import community from '../assets/images/community.svg';
@@ -21,7 +21,7 @@ const testimonials = [
   { name: 'IB Associate @ BOA', testimonial: 'I am incredibly grateful for this program and I know if other students had this opportunity they\'d feel the same way. I wish Propel2Excel existed sooner, I have already gotten so much value from it in my first financial state of the program like P2E extends to all. It has raised my competencies as well.' },
 ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28FCF', '#FF6361', '#BC5090', '#FFA600'];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28FCF', '#FF6361', '#5770B5', '#FFA600'];
 
 const companySuccessData = [
   { name: 'Success', value: 80 },
@@ -145,49 +145,50 @@ const Partners = () => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <section className="key-stats-section">
-                <h2>Key Statistics</h2>
-                <div className="charts-container">
+            <h2>Key Statistics</h2>
+            <div className="charts-container">
                 <div className="chart-wrapper">
                 <h3 className="chart-title">Company Success Rate</h3>
-                <PieChart width={300} height={300}>
-                  <Pie data={companySuccessData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label>
-                    {companySuccessData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
-              </div>
-              <div className="chart-wrapper">
-                <h3 className="chart-title">Conversion to Full-Time</h3>
-                <PieChart width={300} height={300}>
-                  <Pie data={conversionData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#82ca9d" label>
-                    {conversionData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
-              </div>
-              <div className="chart-wrapper">
-                <h3 className="chart-title">Interviewees Provided</h3>
-                <PieChart width={300} height={300}>
-                  <Pie data={intervieweesData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#ffc658" label>
-                    {intervieweesData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
+                <div className="company-success-status">
+                    <div className="large-percentage-icon">
+                    <span style={{ fontSize: '48px', color: '#0088FE' }}>{companySuccessData[0].value}%</span>
+                    </div>
                 </div>
+                </div>
+
+                <div className="chart-wrapper">
+                <h3 className="chart-title">Employment Offers</h3>
+                <BarChart width={400} height={300} data={conversionData} style={{ margin: '0 auto' }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="value" fill="#82ca9d">
+                    {conversionData.map((entry, index) => (
+                        <Cell
+                        key={`cell-${index}`}
+                        fill={index === 0 ? COLORS[0] : COLORS[6]}
+                        />
+                    ))}
+                    </Bar>
+                </BarChart>
+                </div>
+
+                <div className="chart-wrapper">
+                <h3 className="chart-title">Interviewees Provided</h3>
+                <div className="interviewees-status">
+                    <div className="large-percentage-icon">
+                    <span style={{ fontSize: '48px', color: '#0088FE' }}>100%</span>
+                    </div>
+                </div>
+                </div>
+
                 </div>
             </section>
+
             <section className="testimonials-section">
                 <h2>Investor Testimonials</h2>
                 <div className="testimonials-container">
