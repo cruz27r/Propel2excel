@@ -1,43 +1,44 @@
 .companies-section {
     text-align: center;
     padding: 20px;
-    /* background-color: #f2f8fb; */
-    background: linear-gradient(to bottom,#f2f8fb, #e0f7ff );
+    background: linear-gradient(to bottom, #f2f8fb, #e0f7ff);
 }
-.companies-section h2{
+
+.companies-section h2 {
     color: #182C63;
     margin-bottom: 15px;
     font-weight: 600;
     font-size: 30px;
 }
-.companies-section h3{
+
+.companies-section h3 {
     color: #182C63;
     font-size: 25px;
     text-transform: uppercase;
 }
+
 .companies-logos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
     padding: 20px;
-    margin: 20px 0; 
-    max-width: 800px;
-    transform: translateX(40%);
+    margin: 0 auto; /* Center align */
+    max-width: 800px; /* Limit width for better centering */
 }
-  
+
 .company-logo {
     width: 150px;
     height: auto;
     object-fit: contain;
 }
-  
+
 .category-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
-  
+
 .category-buttons button {
     padding: 10px 20px;
     border: none;
@@ -47,18 +48,16 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
-  
+
 .category-buttons button.active,
 .category-buttons button:hover {
     background-color: #0056b3;
 }
-  
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
     .companies-logos {
         gap: 20px;
         padding: 10px;
-        transform: none;
     }
 
     .company-logo {
@@ -70,7 +69,6 @@
     .companies-logos {
         gap: 20px;
         padding: 10px;
-        transform: none;
     }
 
     .company-logo {
@@ -88,17 +86,32 @@
         width: 100px;
     }
 }
-/* .logo-container {
+
+@media (max-width: 400px) {
+    .company-logo {
+        width: 80px;
+    }
+
+    .companies-logos {
+        gap: 5px;
+    }
+}
+
+
+/* Additional commented-out code for reference */
+/*
+.logo-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 20px;
-  }
-  
-  .logo {
+}
+
+.logo {
     max-width: 100px;
     height: auto;
     object-fit: contain;
-  } */
+}
+*/
