@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ac6b1d8.css",
-    "main.js": "/static/js/main.80ea2e42.js",
+    "main.css": "/static/css/main.4d641d16.css",
+    "main.js": "/static/js/main.961e23dc.js",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/Desktop - 3.png": "/static/media/Desktop - 3.573c35dae14aa329c8e2.png",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
@@ -14,6 +14,7 @@
     "static/media/Become-a-volunteer.png": "/static/media/Become-a-volunteer.16e97b8927acd7f1ba0e.png",
     "static/media/P2E DESIGN (1).png": "/static/media/P2E DESIGN (1).26830c70d1c0b6216f7e.png",
     "static/media/partners.png": "/static/media/partners.e0a867cb3382c434eb4e.png",
+    "static/media/p2emobile2.png": "/static/media/p2emobile2.8fe18db33d43bf70ce71.png",
     "static/media/Logo-P2e-final-v1Asset 12.png": "/static/media/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.c5f9e3075a4365128160.png",
     "static/media/General_Electric.png": "/static/media/General_Electric.85a0dd1472481e2e9338.85a0dd1472481e2e9338.png",
     "static/media/USbank.png": "/static/media/USbank.bdb0a4c0d8a682cf6d4d.bdb0a4c0d8a682cf6d4d.png",
@@ -52,11 +53,11 @@
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.3ac6b1d8.css.map": "/static/css/main.3ac6b1d8.css.map",
-    "main.80ea2e42.js.map": "/static/js/main.80ea2e42.js.map"
+    "main.4d641d16.css.map": "/static/css/main.4d641d16.css.map",
+    "main.961e23dc.js.map": "/static/js/main.961e23dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ac6b1d8.css",
-    "static/js/main.80ea2e42.js"
+    "static/css/main.4d641d16.css",
+    "static/js/main.961e23dc.js"
   ]
 }

@@ -95,25 +95,32 @@ span:hover {
     text-decoration: underline;
 }
 
-.cta-button-container {
-    text-align: center; /* Adjust alignment as necessary */
+/* Application button styling for "Who We Are" section */
+.apply-button-container {
     margin-top: 20px;
+    text-align: center;
 }
 
 .cta-button {
     background-color: #182C63; /* Match the existing branding color */
     color: #fff;
     padding: 12px 25px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    border: none;
+    text-decoration: none;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: #0f1a46; /* Slightly darker shade for hover effect */
+}
+
+.cta-button-container {
+    text-align: center; /* Adjust alignment as necessary */
+    margin-top: 20px;
 }
 
 /* Desktop view: no changes */
@@ -172,53 +179,74 @@ span:hover {
         flex-direction: column; /* Stack image and text vertically */
         justify-content: center; /* Center the content */
         align-items: center; /* Align items centrally */
-        height: auto;
+        height: 100vh; /* Make sure content fills the viewport height */
         padding: 0; /* Remove extra padding */
-        padding-top: 80px; /* Adjust padding for mobile */
-        background-image: url('../assets/images/p2emobile.png'); /* Use the mobile-specific image */
-        background-size: cover;
-        background-position: center;
+        padding-top: 60px; /* Adjust padding for mobile */
+        background-image: url('../assets/images/p2emobile2.png'); /* Use mobile-specific image */
+        background-size: cover; /* Ensure the background image fits the screen */
+        background-position: top center; /* Ensure the top of the image is visible */
+        background-repeat: no-repeat; /* Prevent background image from repeating */
     }
 
     .banner-text {
-        max-width: 90%;
-        text-align: center; /* Center the text */
-        margin: 30px 0 0; /* Move text further down below the image */
+        max-width: 95%; /* Use more space for text */
+        text-align: center; /* Align text to the left for mobile */
+        margin-left: 5%; /* Add left margin for spacing */
+        margin-top: 15px;
+        padding-top: 35px;
     }
 
     .banner-text img {
         display: block;
         margin: 0 auto; /* Center the image on smaller screens */
-        max-width: 150px; /* Adjust image size for mobile */
+        max-width: 120px; /* Increase logo size */
     }
 
     .banner-text h1 {
-        font-size: 18px; /* Smaller font size for mobile */
-        margin: 30px 0 0; /* Add more spacing between image and text */
+        font-size: 24px; /* Increase font size for readability on mobile */
+        margin: 15px 0; /* Add more spacing between lines */
+        text-align: center; /* Align text to the left */
+        line-height: 1.4; /* Adjust line spacing for better readability */
+    }
+
+    .about-text {
+        font-size: 18px; /* Adjust the about text size */
+        max-width: 100%;
         text-align: center;
+        line-height: 1.4; /* Improve readability */
+    }
+
+    .title {
+        font-size: 26px; /* Increase font size */
+        font-weight: 700;
+        color: #182e78;
     }
 }
 
 /* Specific mobile adjustments (max-width: 480px) */
 @media (max-width: 480px) {
     .banner-text h1 {
-        font-size: 16px; /* Further reduce font size for small mobile screens */
+        font-size: 20px; /* Further reduce font size for smaller screens */
+        line-height: 1.3; /* Adjust line spacing for readability */
     }
 
     .banner-text img {
-        max-width: 100px; /* Make the logo smaller on mobile */
+        max-width: 100px; /* Shrink image slightly for very small mobile screens */
     }
 
     .content {
-        padding-top: 70px; /* Reduce padding further for mobile */
-        background-image: url('../assets/images/p2emobile.png'); /* Ensure mobile image is used */
+        padding-top: 50px; /* Further reduce padding for small mobile */
+        background-image: url('../assets/images/p2emobile2.png'); /* Ensure mobile image is used */
+        background-size: cover; /* Ensure the image covers the screen width */
+        background-position: top center; /* Align image to the top center */
     }
 
-    .banner-text {
-        margin: 40px 0 0; /* Ensure text is well below the image */
+    .about-text {
+        font-size: 16px; /* Adjust the about text size for small screens */
+        line-height: 1.4;
     }
 
-    .banner-text h1 {
-        font-size: 14px; /* Even smaller font for small mobile screens */
+    .title {
+        font-size: 22px; /* Slightly increase title font size for small screens */
     }
 }

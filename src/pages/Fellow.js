@@ -162,8 +162,8 @@ const Fellow = () => {
             </div>
             <div className={`ready ${isReadyVisible ? 'fade-in' : ''}`} ref={readySectionRef}>
                 <h1>Ready to become a Fellow?</h1>
-                <h4>October Cohort Applications closes in:</h4>
-                {/* <div className="application-countdown countdown">
+                {/* <h4>October Cohort Applications closes in:</h4>
+                    <div className="application-countdown countdown">
                     <div className="time-section">
                         <div className="time">{timeLeft.days}</div>
                         <div className="label">D</div>

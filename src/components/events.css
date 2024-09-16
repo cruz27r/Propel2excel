@@ -1,141 +1,234 @@
+/* General section styling */
 .events-section {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    background-color: #f2f8fb;
+    background-color: #f5f5f5; /* Light grey background for contrast */
 }
-  
+
 .left-panel, .right-panel {
-    width: 45%;
+    flex: 1;
+    margin: 0 20px;
 }
-.live-cohort, .october-applications {
-    margin-bottom: 20px;
+
+/* Apply Reminder Section */
+.apply-reminder {
+    background-color: #182C63; /* Propel blue background */
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    height: 30vh;
-    background-color: #fff;
-}
-.live-cohort h2{
+    border-radius: 10px;
     text-align: center;
-    color:#182C63;
-    margin-bottom: 15px;
-    font-weight: bolder;
-}
-span{
-    font-weight: 700;
-}
-.cohort-details .detail {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    transform: translateX(25%);
-    font-size: 20px;
-} 
-
-.cohort-details .detail i {
-    margin-right: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* White text for contrast */
 }
 
-.detail i{
-    color: #182C63;
-}
-
-.countdown-title{
-    text-align: center;
-    color: #182C63;
+.apply-reminder h2 {
+    color: #fff; /* White title to stand out */
+    font-size: 24px;
     margin-bottom: 10px;
 }
-.applications-countdown {
-    display: flex;
-    justify-content: space-around;
+
+.apply-reminder p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #f5f5f5; /* Lighter text to ensure readability */
+}
+
+.cta-button {
+    background-color: #fff; /* White button on blue background */
+    color: #182C63; /* Propel blue text */
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0f1a46; /* Darker blue for hover effect */
+    color: #fff; /* White text on hover */
+}
+
+/* Redesigned Modern Stats Section */
+.modern-stats {
+    margin-top: 40px;
+    color: #182C63; /* Propel blue text for titles */
+}
+
+.modern-stats h2 {
     font-size: 24px;
-    font-weight: bold;
-}
-  
-.applications-countdown span {
-    margin: 0 10px;
-    color: red;
-}
-  
-.applications-countdown strong {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    color: black;
-    font-weight: bold;
+    color: #182C63;
+    margin-bottom: 20px;
     text-align: center;
-    margin-top: 10px;
 }
-.stat1{
-    transform: translateX(30%);
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    text-align: center;
 }
-.stat2{
-    transform: translateX(20%);
+
+.stat {
+    background-color: #182C63; /* Propel blue background for stat boxes */
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(50% - 10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* White text for contrast */
 }
-.applications-stats p {
+
+.stat h3 {
+    font-size: 32px;
+    color: #fff; /* White numbers for readability */
     margin: 10px 0;
-    font-size: 20px;
 }
 
-.stats-emphasis{
-    font-size: 24px;
-    font-weight: bolder;
-    color: #182C63;
+.stat p {
+    font-size: 16px;
+    color: #f5f5f5; /* Light grey text for readability */
 }
-.right-panel img {
-    width: 100%;
-    border-radius: 8px;
+
+.stat i {
+    font-size: 40px;
+    color: #fff; /* White icons */
     margin-bottom: 10px;
 }
-.right-panel h2{
-    margin-bottom: 15px;
+
+/* Event Image and Buttons */
+.right-panel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
 }
-.right-panel p{
-    margin-bottom: 15px;
-}
+
 .event-buttons {
     display: flex;
+    justify-content: center;
     gap: 20px;
-    align-items: center;
-    transform: translateX(25%);
 }
-  
-.networking-button, .speaker-button {
-    padding: 10px 20px;
-    border: none;
+
+.event-buttons button {
     background-color: #182C63;
-    color: white;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-  
-.networking-button:hover, .speaker-button:hover {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
 }
 
-@media (max-width: 1200px){
-    .events-section{
+.event-buttons button:hover {
+    background-color: #0f1a46;
+}
+
+/* Mobile compatibility adjustments */
+@media (max-width: 768px) {
+    /* Stack the panels vertically */
+    .events-section {
         flex-direction: column;
+        padding: 20px; /* Reduce padding for mobile */
     }
 
+    /* Adjust the panels to take full width */
     .left-panel, .right-panel {
+        margin: 20px 0;
+        flex: none;
         width: 100%;
     }
+
+    /* Adjust text sizes */
+    .apply-reminder h2 {
+        font-size: 20px;
+    }
+
+    .apply-reminder p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 16px; /* Slightly reduce button font size */
+    }
+
+    /* Adjust stat boxes to take full width on mobile */
+    .stats-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat {
+        width: 100%; /* Each stat box takes full width */
+    }
+
+    /* Adjust stat text sizes */
+    .stat h3 {
+        font-size: 28px; /* Slightly smaller numbers on mobile */
+    }
+
+    .stat p {
+        font-size: 14px; /* Smaller text for mobile */
+    }
+
+    .stat i {
+        font-size: 36px; /* Smaller icons for mobile */
+    }
+
+    /* Adjust image and button layout in the right panel */
+    .right-panel img {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .event-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .event-buttons button {
+        padding: 10px 15px; /* Smaller padding for mobile */
+        font-size: 14px; /* Smaller text size for mobile buttons */
+    }
 }
 
-@media (max-width: 600px){
-    .stat1{
-        transform: translateX(30%);
+/* Further adjustments for small screens */
+@media (max-width: 480px) {
+    /* Reduce text sizes even further */
+    .apply-reminder h2 {
+        font-size: 18px;
     }
-    .stat2{
-        transform: translateX(5%);
+
+    .apply-reminder p {
+        font-size: 14px;
     }
-    .event-buttons {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        transform: translateX(10%);
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Adjust stat boxes */
+    .stat h3 {
+        font-size: 24px;
+    }
+
+    .stat p {
+        font-size: 12px;
+    }
+
+    .stat i {
+        font-size: 32px;
+    }
+
+    .event-buttons button {
+        padding: 8px 12px;
+        font-size: 12px;
     }
 }

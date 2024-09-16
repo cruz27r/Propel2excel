@@ -90,18 +90,24 @@ const CompaniesSection = () => {
   return (
     <section className="companies-section">
       <h2>Companies Represented</h2>
-      <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
-      <div className="companies-logos">
-        {categories[category].map((company) => (
-          <img key={company.name} src={company.logo} alt={company.name} className="company-logo" />
-        ))}
-      </div>
+      {/* <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3> */}
       <div className="category-buttons">
         <button onClick={() => handleCategoryChange('all')} className={category === 'all' ? 'active' : ''}>ALL</button>
         <button onClick={() => handleCategoryChange('tech')} className={category === 'tech' ? 'active' : ''}>TECH</button>
         <button onClick={() => handleCategoryChange('banking')} className={category === 'banking' ? 'active' : ''}>BANKING</button>
         <button onClick={() => handleCategoryChange('consulting')} className={category === 'consulting' ? 'active' : ''}>CONSULTING</button>
       </div>
+      <div className="companies-logos">
+        {categories[category].map((company) => (
+          <img key={company.name} src={company.logo} alt={company.name} className="company-logo" />
+        ))}
+      </div>
+      {/* <div className="category-buttons">
+        <button onClick={() => handleCategoryChange('all')} className={category === 'all' ? 'active' : ''}>ALL</button>
+        <button onClick={() => handleCategoryChange('tech')} className={category === 'tech' ? 'active' : ''}>TECH</button>
+        <button onClick={() => handleCategoryChange('banking')} className={category === 'banking' ? 'active' : ''}>BANKING</button>
+        <button onClick={() => handleCategoryChange('consulting')} className={category === 'consulting' ? 'active' : ''}>CONSULTING</button>
+      </div> */}
     </section>
   );
 };

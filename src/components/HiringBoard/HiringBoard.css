@@ -89,6 +89,7 @@
 
 /* Specific style for the apply button */
 .apply-button {
+    width: 100%;
     background-color: #4CAF50;
     color: white;
     border: none;

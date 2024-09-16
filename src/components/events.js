@@ -1,45 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './events.css';
 import eventImage from '../assets/images/conference-event.f097fa57bf13a847f4a9.jpg'; 
 import speakerEventImage from '../assets/images/remotemeeting.b7fdea9dfaf8c569f04a.jpg';
 
 const EventsSection = () => {
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('2024-10-01T00:00:00');
-    const currentDate = new Date();
-    const difference = targetDate - currentDate;
-
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    } else {
-      timeLeft = {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [currentImage, setCurrentImage] = useState(eventImage);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const handleNetworkingButtonClick = () => {
     setCurrentImage(eventImage);
@@ -52,37 +17,44 @@ const EventsSection = () => {
   return (
     <section className="events-section">
       <div className="left-panel">
-        <div className="live-cohort">
-          <h2>Live Cohort</h2>
-          <div className="cohort-details">
-            <div className="detail">
-              <i className="fas fa-user-graduate fa-2x"></i>
-              <h3><span>250 </span> Students</h3>
-            </div>
-            <div className="detail">
-              <i className="fas fa-university fa-2x"></i>
-              <h3><span>60 </span> Universities (US)</h3>
-            </div>
-            <div className="detail">
-              <i className="fas fa-chalkboard-teacher fa-2x"></i>
-              <h3><span>8,000 </span> Coaches</h3>
-            </div>
-          </div>
+        <div className="apply-reminder">
+          <h2>Get Involved with Propel2Excel Events</h2>
+          <p>
+            Propel2Excel connects ambitious students with professionals in top-tier industries.
+            Be a part of our exclusive events to gain invaluable industry insights and mentorship
+            opportunities. Apply now to join our program and participate in these transformative events!
+          </p>
+          <a href="/main-application" className="cta-button">Apply Now</a> {/* Apply button */}
         </div>
-        <div className="october-applications">
-          <h2 className="countdown-title">October Applications</h2>
-          <div className="applications-countdown">
-            <span>{timeLeft.days} <strong>D</strong></span>
-            <span>{timeLeft.hours} <strong>H</strong></span>
-            <span>{timeLeft.minutes} <strong>M</strong></span>
-            <span>{timeLeft.seconds} <strong>S</strong></span>
-          </div>
-          <div className="applications-stats">
-            <p className="stat1"><span className="stats-emphasis">1,200</span> within 2 months</p>
-            <p className="stat2">Projected October Applications: <span className="stats-emphasis">5000</span></p>
+
+        {/* Redesigned statistics section */}
+        <div className="modern-stats">
+          <h2>Our Reach</h2>
+          <div className="stats-grid">
+            <div className="stat">
+              <i className="fas fa-user-graduate"></i>
+              <h3>250+</h3>
+              <p>Students Enrolled</p>
+            </div>
+            <div className="stat">
+              <i className="fas fa-university"></i>
+              <h3>60+</h3>
+              <p>Universities in the U.S.</p>
+            </div>
+            <div className="stat">
+              <i className="fas fa-chalkboard-teacher"></i>
+              <h3>8,000+</h3>
+              <p>Industry Coaches</p>
+            </div>
+            <div className="stat">
+              <i className="fas fa-briefcase"></i>
+              <h3>5,000+</h3>
+              <p>Applications Projected for October</p>
+            </div>
           </div>
         </div>
       </div>
+
       <div className="right-panel">
         <h2>Events That Lead and Inspire</h2>
         <p>Our exclusive events provide invaluable insights into industry practices and networking opportunities, preparing our fellows to become industry leaders.</p>
