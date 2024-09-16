@@ -141,8 +141,8 @@ const Volunteer = () => {
             </div>
             <div className="ready">
                 <h1>Interested in becoming a Volunteer?</h1>
-                <h4>October Cohort Applications closes in:</h4>
-                {/* <div className="application-countdown countdown">
+                {/* <h4>October Cohort Applications closes in:</h4>
+                    <div className="application-countdown countdown">
                     <div className="time-section">
                         <div className="time">{timeLeft.days}</div>
                         <div className="label">D</div>
