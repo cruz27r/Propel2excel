@@ -224,43 +224,6 @@
     line-height: 1.4;
   }
   
-  .key-stats-section {
-    background: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .key-stats-section h2 {
-    margin-top: 100px;
-    margin-bottom: 10px;
-    color: #182C63;
-    font-weight: 900;
-    font-size: 2em;
-  }
-  
-  .charts-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .chart-wrapper {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-  }
-  
-  .chart-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #182C63;
-  }
-  
   .impact-section {
     background-size: cover;
     background-position: center;
