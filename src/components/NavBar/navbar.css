@@ -15,6 +15,12 @@
 
 .navbar.scrolled {
   background: rgba(87, 112, 181, 0.8); /* Dark background on scroll */
+  
+}
+
+/*update color when scrolled for improved contrast*/
+.navbar.scrolled a{
+  color: #eaecf8;
 }
 
 .logo img {
@@ -31,7 +37,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: black;
+  color: #000000;
   font-size: 18px;
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -40,6 +46,10 @@
 .nav-links a:hover {
   color: #ffffff;
   transform: translateY(-3px);
+}
+
+.navbar.scrolled a:hover{
+  color: #000000;
 }
 
 .nav-links .excel-button {
