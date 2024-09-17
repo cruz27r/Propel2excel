@@ -1,6 +1,7 @@
 import React from 'react';
 import './Homepage.css';
 import photocollage from '../assets/images/photo-collage.png';
+import KeyStatistics from '../components/KeyStatistics.js'
 import ProgramComponents from '../components/ProgramComponents.js';
 import StudentPlacement from '../components/StudentPlacement.js';
 import EventsSection from '../components/events.js';
@@ -39,6 +40,10 @@ const Homepage = () => {
         </div>
       </div>
 
+
+      <section className="key-statistics">
+        <KeyStatistics />
+      </section>
 
       <section className="key-components">
         <ProgramComponents />
