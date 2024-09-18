@@ -70,7 +70,7 @@ const Fellow = () => {
             </div>
             <div className={`about1 ${isAboutVisible ? 'fade-in' : ''}`} ref={aboutSectionRef}>
                 <p className="about-text1">
-                    The Propel2Excel fellowship runs two cohorts per year in the Spring and Fall Semesters.
+                    The Propel2Excel, Inc. fellowship runs two cohorts per year in the Spring and Fall Semesters.
                     The program is completely virtual and fellows are paired with mentors from top tech, banking, and consulting companies based on their career paths.
                 </p>
             </div>
@@ -144,7 +144,7 @@ const Fellow = () => {
                         <div className="icon">
                             <img src={interview} alt="interview icon" />
                         </div>
-                        <p>Schedule an interview</p>
+                        <p>Be selected for an interview</p>
                     </div>
 
                     <div className={`step ${isApplicationVisible ? 'fade-in' : ''}`}>
@@ -200,7 +200,7 @@ const Fellow = () => {
                     </div>
                 </div>
                 <div className="footer-bottom1">
-                    <p>&copy; Propel2Excel 2024. All rights reserved.</p>
+                    <p>&copy; Propel2Excel, Inc. 2024. All rights reserved.</p>
                     <div className="footer-social1">
                         <a href="https://www.linkedin.com/company/propel2excel/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faLinkedin} style={{ color: '#fff' }} />
