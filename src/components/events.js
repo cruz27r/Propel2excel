@@ -26,33 +26,6 @@ const EventsSection = () => {
           </p>
           <a href="/main-application" className="cta-button">Apply Now</a> {/* Apply button */}
         </div>
-
-        {/* Redesigned statistics section */}
-        <div className="modern-stats">
-          <h2>Our Reach</h2>
-          <div className="stats-grid">
-            <div className="stat">
-              <i className="fas fa-user-graduate"></i>
-              <h3>250+</h3>
-              <p>Students Enrolled</p>
-            </div>
-            <div className="stat">
-              <i className="fas fa-university"></i>
-              <h3>60+</h3>
-              <p>Universities in the U.S.</p>
-            </div>
-            <div className="stat">
-              <i className="fas fa-chalkboard-teacher"></i>
-              <h3>8,000+</h3>
-              <p>Industry Coaches</p>
-            </div>
-            <div className="stat">
-              <i className="fas fa-briefcase"></i>
-              <h3>5,000+</h3>
-              <p>Applications Projected for October</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div className="right-panel">

@@ -51,53 +51,6 @@
     color: #fff; /* White text on hover */
 }
 
-/* Redesigned Modern Stats Section */
-.modern-stats {
-    margin-top: 40px;
-    color: #182C63; /* Propel blue text for titles */
-}
-
-.modern-stats h2 {
-    font-size: 24px;
-    color: #182C63;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.stats-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.stat {
-    background-color: #182C63; /* Propel blue background for stat boxes */
-    border-radius: 10px;
-    padding: 20px;
-    width: calc(50% - 10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: #fff; /* White text for contrast */
-}
-
-.stat h3 {
-    font-size: 32px;
-    color: #fff; /* White numbers for readability */
-    margin: 10px 0;
-}
-
-.stat p {
-    font-size: 16px;
-    color: #f5f5f5; /* Light grey text for readability */
-}
-
-.stat i {
-    font-size: 40px;
-    color: #fff; /* White icons */
-    margin-bottom: 10px;
-}
-
 /* Event Image and Buttons */
 .right-panel img {
     max-width: 100%;
