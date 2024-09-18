@@ -20,8 +20,19 @@ import gelogo from '../assets/images/General_Electric.85a0dd1472481e2e9338.png';
 import ibm from '../assets/images/ibm.6f5b86441b4c7522d519.png';
 import slacklogo from '../assets/images/slack.0f2b65123ee4b2562f23.png';
 import mckinseylogo from '../assets/images/mckinsey.png';
-import bainlogo from '../assets/images/bain.png'
-import bcglogo from '../assets/images/Boston_Consulting_Group.1025f1336b5ace0e76f1.png'
+import bainlogo from '../assets/images/bain.png';
+import bcglogo from '../assets/images/Boston_Consulting_Group.1025f1336b5ace0e76f1.png';
+
+// New logos
+import nvidiaLogo from '../assets/images/nvidia.webp';
+import adobeLogo from '../assets/images/adobe.png';
+import citadelLogo from '../assets/images/citadel.svg';
+import citiLogo from '../assets/images/citi.svg';
+import boaLogo from '../assets/images/boa.png';
+import capitalOneLogo from '../assets/images/capital_one.png';
+import easternBankLogo from '../assets/images/eastern_bank.png';
+import citizensBankLogo from '../assets/images/citizens_bank.png';
+// import ewpLogo from '../assets/images/ewp.png';
 
 const CompaniesSection = () => {
   const [category, setCategory] = useState('all');
@@ -40,6 +51,9 @@ const CompaniesSection = () => {
       { name: 'IBM', logo: ibm },
       { name: 'Boeing', logo: boeinglogo },
       { name: 'General Electric', logo: gelogo },
+      { name: 'NVIDIA', logo: nvidiaLogo },
+      { name: 'Adobe', logo: adobeLogo },
+      { name: 'Citadel', logo: citadelLogo },
     ],
     banking: [
       { name: 'Goldman Sachs', logo: goldmansachslogo },
@@ -48,6 +62,11 @@ const CompaniesSection = () => {
       { name: 'Morgan Stanley', logo: morganlogo },
       { name: 'US bank', logo: usbanklogo },
       { name: 'PWC', logo: pwclogo },
+      { name: 'CITI', logo: citiLogo },
+      { name: 'Bank of America', logo: boaLogo },
+      { name: 'Capital One', logo: capitalOneLogo },
+      { name: 'Eastern Bank', logo: easternBankLogo },
+      { name: 'Citizens Bank', logo: citizensBankLogo },
     ],
     consulting: [
       { name: 'Deloitte', logo: deloittelogo },
@@ -56,6 +75,7 @@ const CompaniesSection = () => {
       { name: 'PWC', logo: pwclogo },
       { name: 'Bain', logo: bainlogo },
       { name: 'BCG', logo: bcglogo },
+      // { name: 'EWP', logo: ewpLogo },
     ],
     all: [
       { name: 'Google', logo: googleLogo },
@@ -80,6 +100,15 @@ const CompaniesSection = () => {
       { name: 'Mckinsey', logo: mckinseylogo },
       { name: 'Bain', logo: bainlogo },
       { name: 'BCG', logo: bcglogo },
+      { name: 'NVIDIA', logo: nvidiaLogo },
+      { name: 'Adobe', logo: adobeLogo },
+      { name: 'Citadel', logo: citadelLogo },
+      { name: 'CITI', logo: citiLogo },
+      { name: 'Bank of America', logo: boaLogo },
+      { name: 'Capital One', logo: capitalOneLogo },
+      { name: 'Eastern Bank', logo: easternBankLogo },
+      { name: 'Citizens Bank', logo: citizensBankLogo },
+      // { name: 'EWP', logo: ewpLogo },
     ],
   };
 
@@ -90,7 +119,6 @@ const CompaniesSection = () => {
   return (
     <section className="companies-section">
       <h2>Companies Represented</h2>
-      {/* <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3> */}
       <div className="category-buttons">
         <button onClick={() => handleCategoryChange('all')} className={category === 'all' ? 'active' : ''}>ALL</button>
         <button onClick={() => handleCategoryChange('tech')} className={category === 'tech' ? 'active' : ''}>TECH</button>
@@ -102,12 +130,6 @@ const CompaniesSection = () => {
           <img key={company.name} src={company.logo} alt={company.name} className="company-logo" />
         ))}
       </div>
-      {/* <div className="category-buttons">
-        <button onClick={() => handleCategoryChange('all')} className={category === 'all' ? 'active' : ''}>ALL</button>
-        <button onClick={() => handleCategoryChange('tech')} className={category === 'tech' ? 'active' : ''}>TECH</button>
-        <button onClick={() => handleCategoryChange('banking')} className={category === 'banking' ? 'active' : ''}>BANKING</button>
-        <button onClick={() => handleCategoryChange('consulting')} className={category === 'consulting' ? 'active' : ''}>CONSULTING</button>
-      </div> */}
     </section>
   );
 };
