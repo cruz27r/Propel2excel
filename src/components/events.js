@@ -20,7 +20,7 @@ const EventsSection = () => {
         <div className="apply-reminder">
           <h2>Get Involved with Propel2Excel Events</h2>
           <p>
-            Propel2Excel connects ambitious students with professionals in top-tier industries.
+            Propel2Excel, Inc. connects ambitious students with professionals in top-tier industries.
             Be a part of our exclusive events to gain invaluable industry insights and mentorship
             opportunities. Apply now to join our program and participate in these transformative events!
           </p>
