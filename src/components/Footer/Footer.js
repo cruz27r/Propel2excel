@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; Propel2Excel 2024. All rights reserved.</p>
+        <p>&copy; Propel2Excel, Inc. 2024. All rights reserved.</p>
         <div className="footer-social">
           <a href="https://www.linkedin.com/company/propel2excel/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} style={{ color: '#fff' }} />
