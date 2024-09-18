@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.743f39b0.css",
-    "main.js": "/static/js/main.e4f90e6b.js",
+    "main.css": "/static/css/main.654cabe5.css",
+    "main.js": "/static/js/main.972fe3cc.js",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/Desktop - 3.png": "/static/media/Desktop - 3.573c35dae14aa329c8e2.png",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
@@ -19,15 +19,20 @@
     "static/media/General_Electric.png": "/static/media/General_Electric.85a0dd1472481e2e9338.85a0dd1472481e2e9338.png",
     "static/media/USbank.png": "/static/media/USbank.bdb0a4c0d8a682cf6d4d.bdb0a4c0d8a682cf6d4d.png",
     "static/media/bain.png": "/static/media/bain.c29fee1bc77d026461c5.png",
+    "static/media/capital_one.png": "/static/media/capital_one.ee7111524a52adb6bc0b.png",
     "static/media/meta.png": "/static/media/meta.322d4ea5d2762a5f6ba1.png",
+    "static/media/citizens_bank.png": "/static/media/citizens_bank.f8003fa6518679796503.png",
     "static/media/Boston_Consulting_Group.png": "/static/media/Boston_Consulting_Group.1025f1336b5ace0e76f1.1025f1336b5ace0e76f1.png",
     "static/media/slack.png": "/static/media/slack.0f2b65123ee4b2562f23.0f2b65123ee4b2562f23.png",
     "static/media/mckinsey.png": "/static/media/mckinsey.c939cab64cce866e4a46.png",
+    "static/media/jpmorgan-logo.png": "/static/media/jpmorgan-logo.d3e3e0481bf8abce908a.4daaf78582fdb94cf398.png",
+    "static/media/boa.png": "/static/media/boa.dff94250098a3eb3fa58.png",
+    "static/media/eastern_bank.png": "/static/media/eastern_bank.288903d4dd3702e367d3.png",
     "static/media/Logo-pwc.png": "/static/media/Logo-pwc.09f9068acfa615e99c8a.09f9068acfa615e99c8a.png",
     "static/media/image.png": "/static/media/image.593979182ea43095efd8.png",
     "static/media/netflix.png": "/static/media/netflix.77ba64d8813d5a26e7e7.png",
-    "static/media/jpmorgan-logo.png": "/static/media/jpmorgan-logo.d3e3e0481bf8abce908a.d3e3e0481bf8abce908a.png",
     "static/media/Wells_Fargo.png": "/static/media/Wells_Fargo.ddea222afbf07a398b92.ddea222afbf07a398b92.png",
+    "static/media/adobe.png": "/static/media/adobe.ea3420e1d9b06faf1100.png",
     "static/media/networking.svg": "/static/media/networking.1212f13ab16eec4e233dd0d717e7ca42.svg",
     "static/media/alphabet.png": "/static/media/alphabet.e75f7bc2df4a512ee2bc.png",
     "static/media/apple.png": "/static/media/apple.d5e34e6f137b459c22a3.png",
@@ -45,19 +50,22 @@
     "static/media/workforce.svg": "/static/media/workforce.1eaf35907e24d5e1f7b920d32dbbf89e.svg",
     "static/media/talent.svg": "/static/media/talent.5c6f4d8360735d0947051e428efea00e.svg",
     "static/media/apply.svg": "/static/media/apply.8c07c076cadd7fef3afdbd5fd9ee0dcc.svg",
+    "static/media/citadel.svg": "/static/media/citadel.31059e1e31722d22bee8b0cb4f32778b.svg",
     "static/media/mic.svg": "/static/media/mic.67d91f1cdfd9fdaef107b70e70503a0a.svg",
     "static/media/linkedin (2).svg": "/static/media/linkedin (2).6aa40142c9175e91901830125b3ff742.svg",
+    "static/media/nvidia.webp": "/static/media/nvidia.c77c1ffd50c27a148515.webp",
+    "static/media/citi.svg": "/static/media/citi.c5bd424e86c97e687863775de457d1e2.svg",
     "static/media/1.webp": "/static/media/1.fa3738567bcea872125d.webp",
     "static/media/6.webp": "/static/media/6.4c00bbeb9fd949f7ab66.webp",
     "static/media/2.webp": "/static/media/2.6f6d14e572f8f0048080.webp",
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.743f39b0.css.map": "/static/css/main.743f39b0.css.map",
-    "main.e4f90e6b.js.map": "/static/js/main.e4f90e6b.js.map"
+    "main.654cabe5.css.map": "/static/css/main.654cabe5.css.map",
+    "main.972fe3cc.js.map": "/static/js/main.972fe3cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.743f39b0.css",
-    "static/js/main.e4f90e6b.js"
+    "static/css/main.654cabe5.css",
+    "static/js/main.972fe3cc.js"
   ]
 }
