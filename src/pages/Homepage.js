@@ -16,7 +16,7 @@ const Homepage = () => {
     <div className="homepage">
       <div className="content">
         <h1 className="banner-text">
-          <img src={p2e} width={150} alt="P2E Logo" /> places underrepresented talent at top tech, consulting, and banking companies
+          <img src={p2e} width={150} alt="P2E Logo" /> trains students from underserved universities to excel in top tech, consulting, & banking firms.
           {/* Apply to P2E Button Below the Text, Inside h1 */}
           {/* <div className="apply-button-container">
             <Link to="/main-application" className="cta-button">
@@ -33,9 +33,8 @@ const Homepage = () => {
         <div className="text">
           <h1 className="title">Who We Are</h1>
           <h3 className="about-text">
-            Propel2Excel is a non-profit organization that places and connects ambitious students at non-targeted universities
-            to professionals in top-tier <span>tech, consulting, and banking companies</span> - through the "Ivy League recruiting
-            experience".
+            Propel2Excel, Inc. is a non-profit organization that trains, places, and connects ambitious students at non-target universities
+            to professionals in top-tier <span>tech, consulting, and banking companies</span> through our curated 4 stage "Ivy League recruiting experience." If schools like Harvard, Yale, and MIT can do it, why can't we?
           </h3>
         </div>
       </div>
