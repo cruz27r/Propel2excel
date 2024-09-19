@@ -10,7 +10,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    background-image: url('../assets/images/P2E DESIGN (1).png');
+    /*background-image: url('../assets/images/P2E DESIGN (1).png');*/
+    background: linear-gradient(135deg, #0088F2, #00AEEF);
     background-size: cover;
     background-position: center;
     height: 96vh;
