@@ -1,19 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.654cabe5.css",
-    "main.js": "/static/js/main.972fe3cc.js",
+    "main.css": "/static/css/main.f61ddfce.css",
+    "main.js": "/static/js/main.69e46166.js",
     "static/media/job-interview.mp4": "/static/media/job-interview.51bc695479417c9263dd.mp4",
     "static/media/Desktop - 3.png": "/static/media/Desktop - 3.573c35dae14aa329c8e2.png",
     "static/media/interview prep.jpg": "/static/media/interview prep.9cc6d8b99a23d9a3924f.jpg",
     "static/media/candidate readiness.jpg": "/static/media/candidate readiness.6bff4144657a40aced3d.jpg",
-    "static/media/P2E DESIGN (1).png": "/static/media/P2E DESIGN (1).a542cec55fb4b5c8ca9a.png",
     "static/media/conference-event.jpg": "/static/media/conference-event.f097fa57bf13a847f4a9.f097fa57bf13a847f4a9.jpg",
     "static/media/photo-collage.png": "/static/media/photo-collage.4c014b96de0abefc65a0.png",
     "static/media/linkedin-rebrand.jpg": "/static/media/linkedin-rebrand.b935fb60b2e3e66acea7.jpg",
     "static/media/remotemeeting.jpg": "/static/media/remotemeeting.b7fdea9dfaf8c569f04a.b7fdea9dfaf8c569f04a.jpg",
     "static/media/speaking-engagement.jpg": "/static/media/speaking-engagement.b7fdea9dfaf8c569f04a.jpg",
-    "static/media/Become-a-volunteer.png": "/static/media/Become-a-volunteer.16e97b8927acd7f1ba0e.png",
-    "static/media/partners.png": "/static/media/partners.e0a867cb3382c434eb4e.png",
     "static/media/p2emobile2.png": "/static/media/p2emobile2.8fe18db33d43bf70ce71.png",
     "static/media/Logo-P2e-final-v1Asset 12.png": "/static/media/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.c5f9e3075a4365128160.png",
     "static/media/General_Electric.png": "/static/media/General_Electric.85a0dd1472481e2e9338.85a0dd1472481e2e9338.png",
@@ -39,6 +36,7 @@
     "static/media/Boeing.png": "/static/media/Boeing.232d308c11164ff3fc2f.232d308c11164ff3fc2f.png",
     "static/media/community.svg": "/static/media/community.37f47f6e3cb244e4daeb97179854acfd.svg",
     "static/media/accenture.png": "/static/media/accenture.e6d7136c7361c7f2f18b.png",
+    "static/media/snapchat.webp": "/static/media/snapchat.d1ebec311a038cb84f60.webp",
     "static/media/gs.webp": "/static/media/gs.1737831668c76d301d54.webp",
     "static/media/ibm.png": "/static/media/ibm.6f5b86441b4c7522d519.6f5b86441b4c7522d519.png",
     "static/media/mentor.svg": "/static/media/mentor.da3999d26a0733a70314eeaa0933faf6.svg",
@@ -50,6 +48,7 @@
     "static/media/workforce.svg": "/static/media/workforce.1eaf35907e24d5e1f7b920d32dbbf89e.svg",
     "static/media/talent.svg": "/static/media/talent.5c6f4d8360735d0947051e428efea00e.svg",
     "static/media/apply.svg": "/static/media/apply.8c07c076cadd7fef3afdbd5fd9ee0dcc.svg",
+    "static/media/google.webp": "/static/media/google.c920552d98e3ca0c9df5.webp",
     "static/media/citadel.svg": "/static/media/citadel.31059e1e31722d22bee8b0cb4f32778b.svg",
     "static/media/mic.svg": "/static/media/mic.67d91f1cdfd9fdaef107b70e70503a0a.svg",
     "static/media/linkedin (2).svg": "/static/media/linkedin (2).6aa40142c9175e91901830125b3ff742.svg",
@@ -61,11 +60,11 @@
     "static/media/7.webp": "/static/media/7.30fa2e389bdb7ea0d093.webp",
     "static/media/tick.svg": "/static/media/tick.60d5a36ff9fcaa4d63038c81d6993804.svg",
     "index.html": "/index.html",
-    "main.654cabe5.css.map": "/static/css/main.654cabe5.css.map",
-    "main.972fe3cc.js.map": "/static/js/main.972fe3cc.js.map"
+    "main.f61ddfce.css.map": "/static/css/main.f61ddfce.css.map",
+    "main.69e46166.js.map": "/static/js/main.69e46166.js.map"
   },
   "entrypoints": [
-    "static/css/main.654cabe5.css",
-    "static/js/main.972fe3cc.js"
+    "static/css/main.f61ddfce.css",
+    "static/js/main.69e46166.js"
   ]
 }
