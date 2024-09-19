@@ -1,0 +1,144 @@
+/* Navbar.css */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 20px 10px;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.5s ease;
+  }
+  
+  .navbar.scrolled {
+    background: rgba(87, 112, 181, 0.8); /* Dark background on scroll */
+    
+  }
+  
+  /*update color when scrolled for improved contrast*/
+  .navbar.scrolled a{
+    color: #eaecf8;
+  }
+  
+  .logo img {
+    width: 150px;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+  }
+  
+  .navbar.scrolled a:hover{
+    color: #000000;
+  }
+  
+  .nav-links .excel-button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .nav-links .excel-button:hover {
+    background-color: #1b6bff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.5s ease;
+  }
+  
+  .hamburger span {
+    background: black;
+    border-radius: 2px;
+    height: 2px;
+    margin: 4px;
+    width: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    gap: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDown 0.5s forwards;
+  }
+  
+  @keyframes slideDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+    }
+  
+    .nav-links.open a {
+      color: white;
+      transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links.open a:hover {
+      transform: translateY(-2px); 
+      text-decoration: underline; 
+  }
+  
+    .logo img {
+      width: 100px;
+    }
+  }
+  

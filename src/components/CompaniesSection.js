@@ -32,6 +32,8 @@ import boaLogo from '../assets/images/boa.png';
 import capitalOneLogo from '../assets/images/capital_one.png';
 import easternBankLogo from '../assets/images/eastern_bank.png';
 import citizensBankLogo from '../assets/images/citizens_bank.png';
+import Google from '../assets/images/google.webp';
+import snapchat from '../assets/images/snapchat.webp';
 // import ewpLogo from '../assets/images/ewp.png';
 
 const CompaniesSection = () => {
@@ -54,6 +56,8 @@ const CompaniesSection = () => {
       { name: 'NVIDIA', logo: nvidiaLogo },
       { name: 'Adobe', logo: adobeLogo },
       { name: 'Citadel', logo: citadelLogo },
+      { name: 'Google', logo: Google },
+      { name: 'Snapchat', logo: snapchat },
     ],
     banking: [
       { name: 'Goldman Sachs', logo: goldmansachslogo },
@@ -108,6 +112,8 @@ const CompaniesSection = () => {
       { name: 'Capital One', logo: capitalOneLogo },
       { name: 'Eastern Bank', logo: easternBankLogo },
       { name: 'Citizens Bank', logo: citizensBankLogo },
+      { name: 'Google', logo: Google },
+      { name: 'Snapchat', logo: snapchat },
       // { name: 'EWP', logo: ewpLogo },
     ],
   };
