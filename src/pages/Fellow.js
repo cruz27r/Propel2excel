@@ -10,6 +10,7 @@ import linkedin from '../assets/images/linkedin (2).svg';
 import interview from '../assets/images/interview.svg';
 import decision from '../assets/images/tick.svg';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import logo from '../assets/images/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png'
 
 const Fellow = () => {
     const calculateTimeLeft = () => {
@@ -66,7 +67,10 @@ const Fellow = () => {
     return (
         <div className="fellow">
             <div className={`content1 ${isHeroVisible ? 'fade-in' : ''}`} ref={heroSectionRef}>
-                <h1 className="heroSection-text">Become A Fellow</h1>
+            <div className="heroSection-text">
+                    <h1>Become A Fellow</h1>
+                    <p>Invest in Your Future with <img src={logo} width={200}></img></p>
+                </div>
             </div>
             <div className={`about1 ${isAboutVisible ? 'fade-in' : ''}`} ref={aboutSectionRef}>
                 <p className="about-text1">
