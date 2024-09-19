@@ -41,7 +41,8 @@ const CompaniesSection = () => {
 
   const categories = {
     tech: [
-      { name: 'Google', logo: googleLogo },
+      { name: 'Google', logo: Google },
+      // { name: 'Google', logo: googleLogo },
       { name: 'Apple', logo: appleLogo },
       { name: 'Accenture', logo: accentureLogo },
       { name: 'Meta', logo: metaLogo },
@@ -56,7 +57,6 @@ const CompaniesSection = () => {
       { name: 'NVIDIA', logo: nvidiaLogo },
       { name: 'Adobe', logo: adobeLogo },
       { name: 'Citadel', logo: citadelLogo },
-      { name: 'Google', logo: Google },
       { name: 'Snapchat', logo: snapchat },
     ],
     banking: [
@@ -82,7 +82,8 @@ const CompaniesSection = () => {
       // { name: 'EWP', logo: ewpLogo },
     ],
     all: [
-      { name: 'Google', logo: googleLogo },
+      { name: 'Google', logo: Google },
+      // { name: 'Google', logo: googleLogo },
       { name: 'Apple', logo: appleLogo },
       { name: 'Accenture', logo: accentureLogo },
       { name: 'Meta', logo: metaLogo },
@@ -112,7 +113,6 @@ const CompaniesSection = () => {
       { name: 'Capital One', logo: capitalOneLogo },
       { name: 'Eastern Bank', logo: easternBankLogo },
       { name: 'Citizens Bank', logo: citizensBankLogo },
-      { name: 'Google', logo: Google },
       { name: 'Snapchat', logo: snapchat },
       // { name: 'EWP', logo: ewpLogo },
     ],
