@@ -1,10 +1,11 @@
 .content3 {
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 50px;
-    background-image: url('../assets/images/partners.png');
+    /*background-image: url('../assets/images/partners.png');*/
+    background: linear-gradient(135deg, #0088F2, #00AEEF);
     background-size: cover;
     background-position: center;
     height: 96vh;
@@ -15,8 +16,8 @@
 
 .heroSection-text3 {
     flex: 1;
-    max-width: 30%;
-    margin-left: 1.5rem;
+    max-width: 70%;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -25,6 +26,12 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.heroSection-text3 img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
 .content3 h1 {
     font-size: 7rem;
     font-weight: bold;
