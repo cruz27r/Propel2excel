@@ -22,14 +22,28 @@
 
 .heroSection-text {
     flex: 1;
-    max-width: 30%;
+    max-width: 70%;
     margin-left: 1.5rem;
+    text-align: center;
+}
+
+.heroSection-text p{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.heroSection-text img {
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 .content1 h1 {
     font-size: 7rem;
     font-weight: bold;
     color: #000;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .about1 {

@@ -10,6 +10,7 @@ import linkedin from '../assets/images/linkedin (2).svg';
 import interview from '../assets/images/interview.svg';
 import decision from '../assets/images/tick.svg';
 import QuestionOverlay from '../pages/QuestionOverlay.js';
+import logo from '../assets/images/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png'
 
 const Volunteer = () => {
     const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -58,8 +59,9 @@ const Volunteer = () => {
     return(
         <div className="volunteer">
             <div className="content2">
-                <div className="heroSection-text">
+                <div className="heroSection-text2">
                     <h1>Become A Volunteer</h1>
+                    <p>Invest in the Future with <img src={logo} width={200}></img></p>
                 </div>
             </div>
             <div className="about2">

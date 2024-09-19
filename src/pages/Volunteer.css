@@ -1,7 +1,7 @@
 .content2 {
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 50px;
     /*background-image: url('../assets/images/Become-a-volunteer.png');*/
@@ -12,19 +12,29 @@
     z-index: -1;
     position: relative;
     width: 100%;
+    text-align: center;
+    flex: 1;
+    margin: 0 auto;
 }
 
-.heroSection-text {
-    flex: 1;
-    max-width: 30%;
-    margin-left: 1.5rem;
-    text-align: center;
+.heroSection-text2 p{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
+
+.heroSection-text2 img {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
 .content2 h1 {
     font-size: 7rem;
     font-weight: bold;
     color: #000;
+    margin: 0 auto;
 }
+
 .about2 {
     justify-content: center;
     text-align: center;
