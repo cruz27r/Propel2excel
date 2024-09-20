@@ -16,7 +16,7 @@ const Homepage = () => {
     <div className="homepage">
       <div className="content">
         <h1 className="banner-text">
-          <img src={p2e} width={150} alt="P2E Logo" /> trains students from underserved universities to excel in top tech, consulting, & banking firms.
+          <img src={p2e} width={150} alt="P2E Logo" /> trains and places students from underserved universities in top tech, consulting, & banking firms.
           {/* Apply to P2E Button Below the Text, Inside h1 */}
           {/* <div className="apply-button-container">
             <Link to="/main-application" className="cta-button">
