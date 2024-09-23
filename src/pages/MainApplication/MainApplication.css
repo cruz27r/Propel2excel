@@ -161,7 +161,8 @@
 }
 
 .Application-Page button:hover {
-  background-color: #101d42;
+  background-color: white;
+  box-shadow: 10px 5px 5px rgb(255, 255, 255);
 }
 
 .Application-Page .json-button,
