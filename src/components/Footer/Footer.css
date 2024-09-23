@@ -9,8 +9,9 @@
 
 .footer-links {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
+    align-items: center;
 }
 
 .footer-admin-button {
@@ -75,7 +76,6 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
     margin-top: 40px;
     margin-bottom: 30px;
     max-width: 28%;
@@ -99,6 +99,7 @@
 }
 
 @media (max-width: 1200px) {
+
     .footer {
         height: 56vh;
     }
@@ -106,7 +107,9 @@
     .footer-bottom {
         flex-direction: column;
     }
-
+    .footer-buttons{
+        flex-wrap: wrap;
+    }
     .footer-social {
         margin-top: 10px;
         margin-bottom: 10px;
