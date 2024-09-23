@@ -199,8 +199,8 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
               {renderFields()}
               <button type="submit">Submit Application</button>
             </form>
-            <button onClick={handleJsonSubmitWithTestData}>Submit Pre-defined Test Data as JSON</button>
-            <button onClick={checkHealth}>Check API Health</button>
+            {/* <button onClick={handleJsonSubmitWithTestData}>Submit Pre-defined Test Data as JSON</button>
+            <button onClick={checkHealth}>Check API Health</button> */}
           </div>
         </>
       )}
