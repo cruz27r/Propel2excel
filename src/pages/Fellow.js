@@ -12,6 +12,7 @@ import decision from '../assets/images/tick.svg';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import logo from '../assets/images/Logo-P2e-final-v1Asset 12.c5f9e3075a4365128160.png'
 
+
 const Fellow = () => {
     const calculateTimeLeft = () => {
         const targetDate = new Date('2024-10-01T00:00:00');
@@ -201,7 +202,7 @@ const Fellow = () => {
                 <div className="footer-content1">
                     <div className=''>
                         <Link to="/main-application">
-                            <button className="footer-button1">Apply Now</button>
+                            <button className="footer-button1 apply-button">Apply Now</button>
                         </Link>
                     </div>
                     <h2>Not a Student?</h2>

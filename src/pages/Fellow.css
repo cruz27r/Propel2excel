@@ -418,7 +418,11 @@
     max-width: 28%;
     transform: translateX(128%);
 }
-  
+
+.footer-content1 .apply-button{
+    font-size: 30px;
+    width: 30%;
+}
 .footer-button1 {
     background-color: #1c2a4d;
     color: white;
@@ -432,6 +436,7 @@
     transition: 0.3s;
     font-weight: bold;
 }
+
   
 .footer-button1:hover {
     background-color: #162040;
