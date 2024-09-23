@@ -55,8 +55,10 @@
 }
 
 .footer-social {
-    margin-left: -50px;
+    margin-left: 100px;
     margin-right: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-bottom p {
@@ -78,7 +80,7 @@
     gap: 40px;
     margin-top: 40px;
     margin-bottom: 30px;
-    max-width: 28%;
+    max-width: 29%;
     transform: translateX(128%);
 }
 
