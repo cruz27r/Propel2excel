@@ -51,6 +51,13 @@ const Partners = () => {
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
+    const [activeAccordion, setActiveAccordion] = useState(null);
+
+    const toggleAccordion = (accordionIndex) => {
+        // If the clicked accordion is already open, close it; otherwise, open it
+        setActiveAccordion(activeAccordion === accordionIndex ? null : accordionIndex);
+    };
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
@@ -131,6 +138,128 @@ const Partners = () => {
                 </div>
             </div>
 
+
+            <div class='uni-leaders'>
+            <h1 class='uni-leaders-heading'>Universities &amp; Leaders Represented</h1>
+            <button
+                className={`accordion ${activeAccordion === 1 ? 'active' : ''}`}
+                onClick={() => toggleAccordion(1)}
+            >
+                Universities Represented
+                <span className="plus-sign"> +</span>
+            </button>
+            <div className={`panel ${activeAccordion === 1 ? 'show' : ''}`}>
+            <h3>PWI's</h3>
+            <ul>
+                <li>Baruch College</li>
+                <li>Alverno College</li>
+                <li>Cornell College</li>
+                <li>University of San Francisco</li>
+                <li>SUNY at Albany</li>
+                <li>University of Cincinnati</li>
+                <li>Drexel University</li>
+                <li>St. John's University</li>
+                <li>UMass Boston</li>
+                <li>UMass Lowell</li>
+                <li>UMass Dartmouth</li>
+                <li>Brooklyn College</li>
+                <li>University of Rhode Island</li>
+                <li>Suffolk University</li>
+                <li>Long Island University</li>
+                <li>University of Ottawa</li>
+                <li>Kennesaw State University</li>
+                <li>Florida Atlantic University</li>
+                <li>Dallas College</li>
+                <li>Indiana University</li>
+                <li>Virginia Commonwealth University</li>
+                <li>University of Illinois at Chicago</li>
+                <li>Arizona State University</li>
+                <li>Menlo College</li>
+                <li>The University of Texas at San Antonio</li>
+                <li>Montgomery College</li>
+                <li>The University of Texas Dallas</li>
+                <li>The University of Washington Bothell</li>
+                <li>Mercy University</li>
+                <li>SUNY Oswego</li>
+                <li>Minnesota State University of Mankato</li>
+                <li>George Mason University</li>
+                <li>The University of Texas at Arlington</li>
+                <li>Fisk University</li>
+                <li>Meredith College</li>
+                <li>University of North Texas</li>
+                <li>McNeese State University</li>
+                <li>University of the Virgin Islands</li>
+                <li>Essex County College</li>
+                <li>Texas Tech University</li>
+                <li>Oregon State University</li>
+                <li>Grambling State University</li>
+                <li>Georgia Southern University</li>
+                <li>University of Colorado Boulder</li>
+                <li>Willamette University</li>
+                <li>Chapman University</li>
+                <li>University of Arkansas Fayetteville</li>
+            </ul>
+
+            <h3>HBCUs</h3>
+            <ul>
+                <li>South Carolina State University</li>
+                <li>Bluefield State University</li>
+                <li>Tougaloo College</li>
+                <li>Alabama State University</li>
+                <li>Alabama A&amp;M University</li>
+                <li>University of Arkansas - Pine Bluff</li>
+                <li>Oakwood University</li>
+                <li>Kentucky State University</li>
+                <li>Fort Valley State University</li>
+                <li>Coppin State University</li>
+                <li>Johnson C. Smith University</li>
+                <li>Alcorn State University</li>
+                <li>Cheyney University of Pennsylvania</li>
+                <li>Tennessee State University</li>
+                <li>Howard University</li>
+                <li>Jackson State University</li>
+            </ul>
+
+            </div>
+
+            {/* Second Accordion Section */}
+            <button
+                className={`accordion ${activeAccordion === 2 ? 'active' : ''}`}
+                onClick={() => toggleAccordion(2)}
+            >
+                Well-Respected Leaders Supporting Propel2Excel's Mission
+                <span className="plus-sign"> +</span>
+            </button>
+            <div className={`panel ${activeAccordion === 2 ? 'show' : ''}`}>
+            <ul>
+                <li>Chancellor Suerez-Orosco (Chancellor - UMass Boston)</li>
+                <li>Dr. J Keith Motley (Former Chancellor - UMass Boston)</li>
+                <li>Kate Walsh (Former Chief Executive Officer at Boston Medical Center)</li>
+                <li>Kenn Turner (President &amp; Chief Executive Officer at Massachusetts Life Sciences Center)</li>
+                <li>Paul Francisco (Chief Diversity Officer at State Street)</li>
+                <li>Yvonne Garcia (Chief of Staff at State Street, to the CEO)</li>
+                <li>Shelley Stewart (Senior Partner at McKinsey &amp; Co.)</li>
+                <li>John Slyconish (Treasurer at Fidelity Investments)</li>
+                <li>K.J. Vincent (Vice President of Early Career Programs at Wells Fargo)</li>
+                <li>Dave Dauphinais (Associate Partner)</li>
+                <li>Sydney Streets (Senior Manager of Recruiting at McKinsey &amp; Co.)</li>
+                <li>Eyden Thomas Henley (Senior Recruiter of Campus &amp; Diversity at McKinsey &amp; Co.)</li>
+                <li>Carmen Mandujano (Talent Manager at McKinsey &amp; Co.)</li>
+                <li>Adjatay Nyadjroh (Practice Manager at McKinsey &amp; Co.)</li>
+                <li>Semilore Olatunde (#1 Buddy at McKinsey &amp; Co.)</li>
+                <li>Tamara Olsen (Bainee - Partner &amp; EVP)</li>
+                <li>Sheena Calton (Bainee - recruiting)</li>
+                <li>Melissa Pena (Bainee - recruiting)</li>
+                <li>Paris Cook Brown (Bainee - student in Propel2Excel)</li>
+                <li>Emerson Foster (Head of HR Business Unit at Takeda)</li>
+                <li>Kerry Bowie (Founder, President, and Executive Director at Majira Project)</li>
+                <li>Claudette Blot (Director of Multicultural Club at Bentley University)</li>
+                <li>Joseph Cooper (Chair of Sports Leadership &amp; Black Life at UMass Boston)</li>
+                <li>Phifer Turner (Program Manager at Google)</li>
+            </ul>
+            </div>
+            </div>
+
             <section className="testimonials-section">
                 <h2>Investor Testimonials</h2>
                 <div className="testimonials-container">
@@ -141,6 +270,7 @@ const Partners = () => {
               </div>
             ))}
           </div>
+
         </section>
             <div className="ready">
                 <h1>Ready to Invest with Propel2Excel?</h1>
