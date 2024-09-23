@@ -175,6 +175,10 @@
 .Application-Page .health-button:hover {
   background-color: #101d42;
 }
+.starlabel label:after { 
+  content:" *"; 
+  color: red;
+}
 
 @media (max-width: 768px) {
   .Application-Page .form-group {

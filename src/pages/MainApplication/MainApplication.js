@@ -158,12 +158,12 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
 
   const renderFields = () => {
     return formFields[applicationType].map(({ label, name, type, accept, required }) => (
-      <div className="form-group" key={name}>
+      <div className="form-group starlabel" key={name}>
         <label>{label}</label>
         {type === 'textarea' ? (
           <textarea name={name} required={required} onChange={handleInputChange} />
         ) : (
-          <input type={type} name={name} accept={accept} required={required} onChange={handleInputChange} />
+          <input type={type} name={name} accept={accept} required={required} onChange={handleInputChange}  />
         )}
       </div>
     ));
@@ -186,8 +186,8 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
             </video>
           </div>
           <div className="header">
-            <h2>Application for Propel2Excel Fellowship</h2>
-            <p>Please fill out the form below to the best of your ability.</p>
+            <h2>Join us at Propel2Excel</h2>
+            <p>Using the dropdown menu below, select Student, Volunteer, or Partner. Please fill out the form below to the best of your ability.</p>
           </div>
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
