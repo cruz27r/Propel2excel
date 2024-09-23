@@ -85,6 +85,7 @@
 .footer-button {
     background-color: #1c2a4d;
     color: white;
+    font-weight: bold;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -92,10 +93,13 @@
     font-size: 16px;
     width: 9rem;
     height: 7vh;
+    transition: 0.3s;
 }
 
 .footer-button:hover {
-    background-color: #162040;
+    background-color: white;
+    color: black;
+    box-shadow: 10px 5px 5px rgb(30, 121, 201);
 }
 
 @media (max-width: 1200px) {
