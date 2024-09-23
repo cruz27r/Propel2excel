@@ -75,7 +75,7 @@ const Fellow = () => {
             <div className={`about1 ${isAboutVisible ? 'fade-in' : ''}`} ref={aboutSectionRef}>
                 <p className="about-text1">
                     The Propel2Excel, Inc. fellowship runs two cohorts per year in the Spring and Fall Semesters.
-                    The program is completely virtual and fellows are paired with mentors from top tech, banking, and consulting companies based on their career paths.
+                    The program is completely virtual and fellows are paired with coaches from top tech, banking, and consulting companies based on their career paths.
                 </p>
             </div>
             <div className={`program ${isProgramVisible ? 'fade-in' : ''}`} ref={programSectionRef}>
@@ -117,6 +117,17 @@ const Fellow = () => {
             <div className={`fellowship-requirements ${isRequirementsVisible ? 'fade-in' : ''}`} ref={requirementsSectionRef}>
                 <h1>Fellowship Requirements</h1>
                 <div className="requirements-section">
+                    <h2>The Ideal Propel2Excel Student</h2>
+                    <p>Beyond a resume and LinkedIn, the ideal student is also:</p>
+                    <br></br>
+                    <ul>
+                        <li>Ambitious</li>
+                        <li>Resilient</li>
+                        <li>A strong communicator</li>
+                        <li>A great problem Solver</li>
+                    </ul>
+                </div>
+                <div className="requirements-section">
                     <h2>Academic Requirements</h2>
                     <ul>
                         <li>Good Academic Standing: A GPA of 3.3 and above.</li>
@@ -141,7 +152,7 @@ const Fellow = () => {
                         <div className="icon">
                             <img src={apply} width={250} alt="apply icon" />
                         </div>
-                        <p>Submit an online application</p>
+                        <p>Ready your resume and LinkedIn and submit an online application</p>
                     </div>
 
                     <div className={`step ${isApplicationVisible ? 'fade-in' : ''}`}>
