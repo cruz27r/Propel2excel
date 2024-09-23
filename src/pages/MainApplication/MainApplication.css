@@ -8,7 +8,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #f1f4fa, #dbe2ef, #182C63); /* Smooth gradient blending light blue to dark blue */
+  background: linear-gradient(135deg, #9fc2f3, #dbe2ef, #9bc5f3); /* Smooth gradient blending light blue to dark blue */
   color: #333;
 }
 
@@ -64,8 +64,8 @@
 }
 
 .Application-Page .form-group label {
-  font-weight: 500;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .Application-Page .form-group input,
