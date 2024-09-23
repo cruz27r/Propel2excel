@@ -202,7 +202,7 @@ const Fellow = () => {
                 <div className="footer-content1">
                     <div className=''>
                         <Link to="/main-application">
-                            <button className="footer-button1 apply-button">Apply Now</button>
+                            <button className="footer-button1 main-button">Apply Now</button>
                         </Link>
                     </div>
                     <h2>Not a Student?</h2>
