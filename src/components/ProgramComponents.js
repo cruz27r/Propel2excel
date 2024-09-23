@@ -38,7 +38,7 @@ const ProgramComponents = () => {
     //   )
     // },
     {
-      title: 'Speaking Engagements',
+      title: '#1 - Speaking Engagements',
       details: 'Professional speaking engagements foster partnerships with non-target universities and provide industry insights.',
       image: speakingEngagement,
       section: 'speaking-engagements',
@@ -70,7 +70,7 @@ const ProgramComponents = () => {
       )
     },
     {
-      title: 'LinkedIn & Resume Rebrand',
+      title: '#2 - Resume Rebrand',
       details: 'Experts with over 10 years of experience optimize students\' LinkedIn profiles and resumes.',
       image: linkedinRebrand,
       section: 'linkedin-rebrand',
@@ -102,7 +102,7 @@ const ProgramComponents = () => {
       )
     },
     {
-      title: 'Interview Preparation',
+      title: '#3 - Interview Preparation',
       details: 'Students receive mock interviews and feedback from current professionals to enhance their readiness.',
       image: interviewPrep,
       section: 'interview-prep',
@@ -134,7 +134,7 @@ const ProgramComponents = () => {
       )
     },
     {
-      title: 'Candidate Readiness',
+      title: '#4 - Candidate Readiness',
       details: 'Experts with over 10 years of experience optimize students\' LinkedIn profiles and resumes.',
       image: candidateReadiness,
       section: 'candidate-readiness',
@@ -182,7 +182,7 @@ const ProgramComponents = () => {
 
   return (
     <section className="program-components">
-      <h1 className="section-title">Key Components of the Program</h1>
+      <h1 className="section-title">Our Ivy League Recruiting Process</h1>
       <div className="components-container">
         <div className="left-column">
           {infoBlocks.map((block, index) => (
