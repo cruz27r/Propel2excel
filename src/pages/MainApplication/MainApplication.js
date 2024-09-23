@@ -187,7 +187,7 @@ const MainApplication = ({ defaultApplicationType = 'students' }) => {
           </div>
           <div className="header">
             <h2>Join us at Propel2Excel</h2>
-            <p>Using the dropdown menu below, select Student, Volunteer, or Partner. Please fill out the form below to the best of your ability.</p>
+            <p>Using the dropdown menu below, select Student, Volunteer, or Company. Please fill out the form below to the best of your ability.</p>
           </div>
           <div className="form">
             <select value={applicationType} onChange={handleApplicationTypeChange}>
