@@ -27,7 +27,21 @@
     width: 150px;
     transition: width 0.3s ease;
   }
-  
+  .logo img {
+    -webkit-mask-image: linear-gradient(45deg,#ffffff 25%,rgba(244, 234, 234, 0.2) 50%,#ffffff 75%);
+    mask-image: linear-gradient(45deg,#ffffff 25%,rgba(244, 234, 234, 0.2) 50%,#ffffff 75%);
+    -webkit-mask-size: 800%;
+    mask-size: 800%;
+    -webkit-mask-position: 0;
+    mask-position: 0;
+  }
+
+  .logo img:hover {
+      transition: mask-position 2s ease,-webkit-mask-position 2s ease;
+      -webkit-mask-position: 120%;
+      mask-position: 120%;
+      opacity: 1;
+  }
   .nav-links {
     list-style: none;
     display: flex;
