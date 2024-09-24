@@ -63,22 +63,22 @@ const KeyStatistics = () => {
         <div className="stats-grid">
           <div className="stat">
             <i className="fas fa-user-graduate"></i>
-            <h3>250+</h3>
+            <h3>150+</h3>
             <p>Students Enrolled</p>
           </div>
           <div className="stat">
             <i className="fas fa-university"></i>
             <h3>120+</h3>
-            <p>Universities including 30 HBCUs</p>
+            <p>Universities including 30+ HBCUs and 20+ community colleges</p>
           </div>
           <div className="stat">
             <i className="fas fa-chalkboard-teacher"></i>
-            <h3>8,000+</h3>
+            <h3>9,000+</h3>
             <p>Industry Coaches</p>
           </div>
           <div className="stat">
             <i className="fas fa-briefcase"></i>
-            <h3>5,000+</h3>
+            <h3>8,200+</h3>
             <p>Applications Projected for October</p>
           </div>
         </div>
