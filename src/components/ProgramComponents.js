@@ -44,14 +44,14 @@ const ProgramComponents = () => {
       section: 'speaking-engagements',
       content: (
         <>
-          <div className='requirement-list'>
+          {/* <div className='requirement-list'>
           <h2 className='list-title'>Common Mistakes</h2>
           <ul className='list'>
             <li>Lack of industry exposure.</li>
             <li>Insufficient networking opportunities.</li>
             <li>Limited access to professional insights.</li>
           </ul>
-          </div>
+          </div> */}
           <div className='info-list'>
           <h2 className='list-title'>Our Focus</h2>
           <ul className='list'>
@@ -76,14 +76,14 @@ const ProgramComponents = () => {
       section: 'linkedin-rebrand',
       content: (
         <>
-          <div className='requirement-list'>
+          {/* <div className='requirement-list'>
           <h2 className='list-title'>Common Mistakes</h2>
           <ul className='list'>
             <li>Incomplete or outdated profiles.</li>
             <li>Unprofessional profile photos.</li>
             <li>Failure to showcase skills and accomplishments.</li>
           </ul>
-          </div>
+          </div> */}
           <div className='info-list'>
           <h2 className='list-title'>Our Focus</h2>
           <ul className='list'>
@@ -108,14 +108,14 @@ const ProgramComponents = () => {
       section: 'interview-prep',
       content: (
         <>
-          <div className='requirement-list'>
+          {/* <div className='requirement-list'>
           <h2 className='list-title'>Common Mistakes</h2>
           <ul className='list'>
             <li>Lack of preparation and research.</li>
             <li>Inability to effectively communicate skills and experiences.</li>
             <li>Failure to ask insightful questions or engage with the interviewer.</li>
           </ul>
-          </div>
+          </div> */}
           <div className='info-list'>
           <h2 className='list-title'>Our Focus</h2>
           <ul className='list'>
@@ -140,14 +140,14 @@ const ProgramComponents = () => {
       section: 'candidate-readiness',
       content: (
         <>
-          <div className='requirement-list'>
+          {/* <div className='requirement-list'>
           <h2 className='list-title'>Common Mistakes</h2>
           <ul className='list'>
             <li>Unclear career goals and paths.</li>
             <li>Not being adequately prepared for job applications.</li>
             <li>Missing out on suitable job opportunities.</li>
           </ul>
-          </div>
+          </div> */}
           <div className='info-list'>
           <h2 className='list-title'>Our Focus</h2>
           <ul className='list'>
