@@ -466,6 +466,10 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    .footer-content1 .main-button{
+        font-size: 28px;
+        width: 200px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -548,6 +552,10 @@
     .requirements-section li {
         padding-left: 20px;
         font-size: 14px;
+    }
+    .footer-content1 .main-button{
+        font-size: 28px;
+        width: 200px;
     }
 }
 

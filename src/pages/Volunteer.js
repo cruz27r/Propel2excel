@@ -171,7 +171,7 @@ const Volunteer = () => {
             <div className='footer1'>
                 <div className="footer-content1">
                     <Link to="/main-application">
-                        <button className="footer-button1">Apply Now</button>
+                        <button className="footer-button1 main-button">Apply Now</button>
                     </Link>
                     <h2>Not a Volunteer?</h2>
                     <div className="footer-buttons1">
