@@ -90,7 +90,10 @@
     font-weight: bold;
     border: none;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
     cursor: pointer;
     font-size: 16px;
     width: 9rem;
