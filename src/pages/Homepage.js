@@ -27,15 +27,16 @@ const Homepage = () => {
       </div>
 
       <div className="about">
-        <div className="image-container1">
-          <img src={photocollage} width={700} alt="Photo Collage" />
-        </div>
+        
         <div className="text">
           <h1 className="title">Who We Are</h1>
-          <h3 className="about-text">
-            Propel2Excel, Inc. is a non-profit organization that trains, places, and connects ambitious students at non-target universities
+          <p className="about-text">
+            <span>Propel2Excel, Inc.</span> is a non-profit organization that trains, places, and connects ambitious students at non-target universities
             to professionals in top-tier <span>tech, consulting, and banking companies</span> through our curated 4 stage "Ivy League recruiting experience." If schools like Harvard, Yale, and MIT can do it, why can't we?
-          </h3>
+          </p>
+        </div>
+        <div className="image-container1">
+          <img src={photocollage} width={700} alt="Photo Collage" />
         </div>
       </div>
 

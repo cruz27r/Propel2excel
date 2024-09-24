@@ -83,17 +83,15 @@
 
 .about-text {
     font-size: 24px;
-    max-width: 100%; /* Allow the text to take full width */
     text-align: center; /* Center align the text */
 }
 
-span {
-    color: #182e78;
+.about-text span {
+    color: #009DF0;
+    font-weight: bold;
+    font-style: italic;
 }
 
-span:hover {
-    text-decoration: underline;
-}
 
 /* Application button styling for "Who We Are" section */
 .apply-button-container {
@@ -127,6 +125,7 @@ span:hover {
 @media (min-width: 769px) {
     .banner-text {
         max-width: 30%;
+        font-size: 48px;
     }
 
     .content {
