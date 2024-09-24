@@ -71,7 +71,7 @@ const ProgramComponents = () => {
     },
     {
       title: '#2 - Resume Rebrand',
-      details: 'Experts with over 10 years of experience optimize students\' LinkedIn profiles and resumes.',
+      details: 'Experts with over 10 years of experience optimize students\' resumes to give them the best chances for success.',
       image: linkedinRebrand,
       section: 'linkedin-rebrand',
       content: (
