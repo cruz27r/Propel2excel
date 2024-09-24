@@ -80,9 +80,8 @@ const Volunteer = () => {
                         <h3>Speaker Series</h3>
                         <p>
                             As industry professionals in tech, banking, and consulting companies, 
-                            you will deliver Speaker Series lectures hosted by P2E. 
-                            These events allows you to share insights and perspectives gained from years of experience. 
-                            By volunteering, you have the opportunity to connect with and train talented individuals.
+                            you will deliver Speaker Series lectures hosted by P2E. You are required to commit to <strong>3 speaker series a year</strong> to speak and engage with students on something you’re passionate about. 
+                            These events allows you to share insights and connect with and train talented individuals.
                         </p>
                     </div>
                     <div className={`card2`}>
