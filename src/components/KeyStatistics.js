@@ -2,7 +2,7 @@ import React from 'react';
 import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 import './KeyStatistics.css';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28FCF', '#FF6361', '#5770B5', '#FFA600'];
+const COLORS = ['#0088FE', '#4A90E2', '#5DADE2', '#85C1E9', '#2874A6', '#1F618D', '#5499C7', '#2980B9'];
 
 const companySuccessData = [
   { name: 'Success', value: 2 },
@@ -10,8 +10,9 @@ const companySuccessData = [
 ];
 
 const conversionData = [
-  { name: 'Full-time', value: 60 },
-  { name: 'Internship', value: 40 },
+  { name: 'Internship', value: 70 },
+  { name: 'Apprenticeship', value: 20 },
+  { name: 'Full-time', value: 10 },
 ];
 
 const intervieweesData = [
@@ -44,7 +45,7 @@ const KeyStatistics = () => {
             <Tooltip />
             <Bar dataKey="value" fill="#82ca9d">
               {conversionData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={index === 0 ? COLORS[0] : COLORS[6]} />
+                <Cell key={`cell-${index}`} fill={index === 0 ? COLORS[0] : index === 1 ? COLORS[1] : COLORS[2]} />
               ))}
             </Bar>
           </BarChart>
