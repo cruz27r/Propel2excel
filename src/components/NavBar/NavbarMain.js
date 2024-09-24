@@ -43,7 +43,7 @@ const NavbarComponent = () => {
         <li><a href="/">Home</a></li>
         <li><a href="/hiring-board">Hiring Board</a></li>
         <li><a href="/">Career Tips</a></li>
-        <li><a href="#" className="excel-button" onClick={showOverlay}>Excel Here</a></li>
+        <li class="excel-wrapper"><a href="#" className="excel-button" onClick={showOverlay}>Excel Here</a></li>
       </ul>
       <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
