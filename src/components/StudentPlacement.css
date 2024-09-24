@@ -13,7 +13,7 @@
 .chart-wrapper {
     position: relative;
     width: 50%;
-    height: 450px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center; 

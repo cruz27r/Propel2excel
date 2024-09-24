@@ -45,12 +45,12 @@ const Homepage = () => {
         <KeyStatistics />
       </section>
 
-      <section className="key-components">
-        <ProgramComponents />
-      </section>
-
       <section className="student-placement">
         <StudentPlacement />
+      </section>
+
+      <section className="key-components">
+        <ProgramComponents />
       </section>
 
       <section className="event">
