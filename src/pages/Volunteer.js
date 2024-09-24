@@ -66,16 +66,12 @@ const Volunteer = () => {
             </div>
             <div className="about2">
                 <p className='about-text2'> 
-                    At Propel2Excel, each fellow is uniquely positioned to work with personalized mentors in their chosen field. 
-                    With access to over 50 mentors from diverse industries and universities, all members can expand their networks 
-                    and gain exposure to a wide array of perspectives and experiences. <br></br>
-                    The mentor-fellow relationship is a cornerstone of the Propel2Excel experience, 
-                    playing a crucial role in helping fellows achieve their goals and succeed in their selected fields.
+                    At Propel2Excel, Inc., volunteers show up as cohort leads and/or speakers. They play a crucial role in delivering our Ivy League Recruiting Experience by helping fellows achieve their goals and succeed in their selected fields through coaching, resume rebrands, and speaker series.
                 </p>
             </div>
             <div className='program2'>
                 <h1 className="program-title2">The Program</h1>
-                <p className="program-subtitle2">Why Join Propel2Excel?</p>
+                <p className="program-subtitle2">Why Volunteer With Propel2Excel?</p>
                 <div className="program-cards2">
                     <div className={`card2`}>
                         <div className="icon2">
@@ -86,7 +82,7 @@ const Volunteer = () => {
                             As industry professionals in tech, banking, and consulting companies, 
                             you will deliver Speaker Series lectures hosted by P2E. 
                             These events allows you to share insights and perspectives gained from years of experience. 
-                            By volunteering, you have the opportunity to connect with and groom talented individuals.
+                            By volunteering, you have the opportunity to connect with and train talented individuals.
                         </p>
                     </div>
                     <div className={`card2`}>
@@ -103,11 +99,21 @@ const Volunteer = () => {
                         <div className="icon2">
                             <img src={linkedin} width={30} alt="linkedin icon" />
                         </div>
-                        <h3>LinkedIn Rebrand</h3>
+                        <h3>Resume Rebrand</h3>
                         <p>
                             As a mentor, you would share your insights on having a good LinkedIn profile and resume.
                         </p>
                     </div>
+                </div>
+            </div>
+            <div className = "fellowship-requirements2">
+            <h1>Benefits</h1>
+                <div class="requirements-section2 benefits">
+                    <ul>
+                        <li>Exposure to 10k+ professionals at FAANG, MBB, and Big Banks</li>
+                        <li>Unlimited Resume Rebrands from our network of experts</li>
+                        <li>Networking events with CEOs and other leaders</li>
+                    </ul>
                 </div>
             </div>
             <div className='fellowship-requirements2'>
